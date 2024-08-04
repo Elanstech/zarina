@@ -25,10 +25,10 @@
             overflow: hidden;
         }
         header {
-            background: #e3f2fd;
-            color: #333;
+            background: #2b3e50;
+            color: #fff;
             padding: 10px 0;
-            border-bottom: 3px solid #bbdefb;
+            border-bottom: 3px solid #1a1f26;
             position: fixed;
             width: 100%;
             top: 0;
@@ -38,7 +38,7 @@
             align-items: center;
         }
         header a {
-            color: #333;
+            color: #fff;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
@@ -65,8 +65,8 @@
         .hero {
             text-align: center;
             padding: 100px 20px;
-            background: #bbdefb;
-            color: #333;
+            background: #1a1f26;
+            color: #fff;
             margin-top: 100px;
             transition: all 0.3s ease-in-out;
         }
@@ -81,12 +81,24 @@
             color: #1e88e5;
         }
         footer {
-            background: #e3f2fd;
-            color: #333;
+            background: #2b3e50;
+            color: #fff;
             text-align: center;
             padding: 10px;
-            border-top: 3px solid #bbdefb;
+            border-top: 3px solid #1a1f26;
             transition: all 0.3s ease-in-out;
+        }
+        .social-media {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .social-media a {
+            margin: 0 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .social-media a:hover {
+            transform: scale(1.2);
         }
     </style>
 </head>
@@ -108,14 +120,14 @@
     </header>
 
     <section id="home" class="hero">
-        <div class="container">
+        <div class="container" data-aos="fade-in">
             <h1>Welcome to East Coast Realty by Zarina</h1>
             <p>Your trusted real estate partner</p>
         </div>
     </section>
 
     <section id="about">
-        <div class="container">
+        <div class="container" data-aos="fade-up">
             <h2>About Us</h2>
             <p>East Coast Realty by Zarina was founded by Zarina Yusupov, a passionate real estate professional dedicated to helping clients find their dream homes and investment properties. With years of experience in the industry, Zarina has built a reputation for excellence, integrity, and personalized service.</p>
             <p>Our company specializes in renting and selling apartments and houses in the Rego Park and Forest Hills area. We offer comprehensive solutions to ensure a seamless and successful real estate experience.</p>
@@ -125,7 +137,7 @@
     </section>
 
     <section id="services">
-        <div class="container">
+        <div class="container" data-aos="fade-right">
             <h2>Our Services</h2>
             <p>We offer a range of services to meet your real estate needs, including renting and selling apartments and houses. Our experienced agents are here to guide you through every step of the process, providing market insights and expert advice.</p>
             <ul>
@@ -136,7 +148,7 @@
     </section>
 
     <section id="mls">
-        <div class="container">
+        <div class="container" data-aos="fade-left">
             <h2>MLS Listings</h2>
             <p>To view our available properties, please visit our MLS listings:</p>
             <a href="https://onekeymls.com/realtor/agents/Zarina-Yusupova/120719" target="_blank">View MLS Listings</a>
@@ -144,26 +156,8 @@
     </section>
 
     <section id="contact">
-        <div class="container">
+        <div class="container" data-aos="fade-up">
             <h2>Contact Us</h2>
             <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
             <form action="mailto:contact@eastcoastrealty.com" method="post" enctype="text/plain">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-            <p>Email: <a href="mailto:contact@eastcoastrealty.com">contact@eastcoastrealty.com</a></p>
-            <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+                <input type="text" name="name" placeholder
