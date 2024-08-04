@@ -34,6 +34,8 @@
             top: 0;
             z-index: 1000;
             transition: all 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
         }
         header a {
             color: #333;
@@ -46,15 +48,19 @@
             padding: 0;
             list-style: none;
             text-align: right;
+            flex-grow: 1;
         }
         header li {
             display: inline;
             padding: 0 20px;
         }
         .logo {
-            float: left;
-            font-size: 1.5em;
-            color: #333;
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
         }
         .hero {
             text-align: center;
@@ -86,18 +92,19 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="logo">East Coast Realty by Zarina</div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#properties">Properties</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+        <div class="logo">
+            <img src="path_to_your_image/Screenshot 2024-08-04 at 7.10.14 PM.png" alt="East Coast Realty by Zarina">
+            <span>East Coast Realty by Zarina</span>
         </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#mls">MLS Listings</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section id="home" class="hero">
@@ -111,7 +118,7 @@
         <div class="container">
             <h2>About Us</h2>
             <p>East Coast Realty by Zarina was founded by Zarina Yusupov, a passionate real estate professional dedicated to helping clients find their dream homes and investment properties. With years of experience in the industry, Zarina has built a reputation for excellence, integrity, and personalized service.</p>
-            <p>Our company specializes in residential and commercial real estate, offering a wide range of services to meet the diverse needs of our clients. From property buying and selling to renting and investment advisory, we provide comprehensive solutions to ensure a seamless and successful real estate experience.</p>
+            <p>Our company specializes in renting and selling apartments and houses in the Rego Park and Forest Hills area. We offer comprehensive solutions to ensure a seamless and successful real estate experience.</p>
             <p>Zarina Yusupov, the founder and CEO, is known for her deep understanding of the real estate market, keen negotiation skills, and unwavering commitment to client satisfaction. Under her leadership, East Coast Realty has grown into a trusted and respected name in the real estate industry.</p>
             <p>At East Coast Realty, we believe in building long-term relationships with our clients, guided by our core values of honesty, transparency, and professionalism. Our dedicated team of experienced agents is always ready to assist you with your real estate needs, ensuring you receive the best possible service and results.</p>
         </div>
@@ -120,36 +127,19 @@
     <section id="services">
         <div class="container">
             <h2>Our Services</h2>
-            <p>We offer a range of services to meet your real estate needs, including buying, selling, and renting properties. Our experienced agents are here to guide you through every step of the process, providing market insights and expert advice.</p>
+            <p>We offer a range of services to meet your real estate needs, including renting and selling apartments and houses. Our experienced agents are here to guide you through every step of the process, providing market insights and expert advice.</p>
             <ul>
                 <li>Residential Property Sales</li>
-                <li>Commercial Property Sales</li>
-                <li>Property Rentals</li>
-                <li>Real Estate Investment Advisory</li>
-                <li>Property Management</li>
+                <li>Residential Property Rentals</li>
             </ul>
         </div>
     </section>
 
-    <section id="properties">
+    <section id="mls">
         <div class="container">
-            <h2>Available Properties</h2>
-            <div id="property-list">
-                <!-- Property listings will be added here dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <section id="manage-properties">
-        <div class="container">
-            <h2>Manage Properties</h2>
-            <form id="property-form">
-                <input type="text" id="address" placeholder="Address" required>
-                <input type="number" id="price" placeholder="Price" required>
-                <textarea id="description" placeholder="Description" required></textarea>
-                <input type="url" id="imageUrl" placeholder="Image URL" required>
-                <button type="submit">Add Property</button>
-            </form>
+            <h2>MLS Listings</h2>
+            <p>To view our available properties, please visit our MLS listings:</p>
+            <a href="https://onekeymls.com/realtor/agents/Zarina-Yusupova/120719" target="_blank">View MLS Listings</a>
         </div>
     </section>
 
