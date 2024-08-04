@@ -29,6 +29,8 @@ header {
     top: 0;
     z-index: 1000;
     transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
 }
 
 header a {
@@ -43,6 +45,7 @@ header ul {
     padding: 0;
     list-style: none;
     text-align: right;
+    flex-grow: 1;
 }
 
 header li {
@@ -51,17 +54,15 @@ header li {
 }
 
 .logo {
-    float: left;
-    font-size: 1.5em;
-    color: #333;
+    display: flex;
+    align-items: center;
 }
 
-.hero {
-    text-align: center;
-    padding: 100px 20px;
-    background: #bbdefb;
-    color: #333;
-    margin
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
 .hero {
     text-align: center;
     padding: 100px 20px;
@@ -75,20 +76,17 @@ section {
     padding: 50px 20px;
     background: #fff;
     margin-top: 20px;
+    transition: all 0
+section {
+    padding: 50px 20px;
+    background: #fff;
+    margin-top: 20px;
     transition: all 0.3s ease-in-out;
 }
 
 section h2 {
     font-size: 2em;
     color: #1e88e5;
-}
-
-#property-list div {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    text-align: left;
 }
 
 footer {
