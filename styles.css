@@ -62,67 +62,40 @@ header li {
     background: #bbdefb;
     color: #333;
     margin
-/* styles.css */
-
-body {
-    font-family: 'Playfair Display', serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
-    transition: all 0.3s ease-in-out;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
-header {
-    background: #e3f2fd;
-    color: #333;
-    padding: 10px 0;
-    border-bottom: 3px solid #bbdefb;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    transition: all 0.3s ease-in-out;
-}
-
-header a {
-    color: #333;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-    transition: color 0.3s ease-in-out;
-}
-
-header ul {
-    padding: 0;
-    list-style: none;
-    text-align: right;
-}
-
-header li {
-    display: inline;
-    padding: 0 20px;
-}
-
-.logo {
-    float: left;
-    font-size: 1.5em;
-    color: #333;
-}
-
 .hero {
     text-align: center;
     padding: 100px 20px;
     background: #bbdefb;
     color: #333;
-    margin
+    margin-top: 100px;
+    transition: all 0.3s ease-in-out;
+}
+
+section {
+    padding: 50px 20px;
+    background: #fff;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+section h2 {
+    font-size: 2em;
+    color: #1e88e5;
+}
+
+#property-list div {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+footer {
+    background: #e3f2fd;
+    color: #333;
+    text-align: center;
+    padding: 10px;
+    border-top: 3px solid #bbdefb;
+    transition: all 0.3s ease-in-out;
+}
