@@ -69,6 +69,41 @@
             color: #fff;
             margin-top: 100px;
             transition: all 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-title {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease-in-out;
+        }
+        .hero-subtitle {
+            font-size: 1.5em;
+            font-weight: lighter;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-in-out;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         section {
             padding: 50px 20px;
@@ -122,8 +157,8 @@
 
     <section id="home" class="hero">
         <div class="container" data-aos="fade-in">
-            <h1>Welcome to East Coast Realty by Zarina</h1>
-            <p>Your trusted real estate partner</p>
+            <h1 class="hero-title">Discover Your Dream Home</h1>
+            <p class="hero-subtitle">Expert Guidance in Rego Park and Forest Hills Real Estate</p>
         </div>
     </section>
 
@@ -176,9 +211,23 @@
             <p>Email: <a href="mailto:contact@eastcoastrealty.com">contact@eastcoastrealty.com</a></p>
             <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
         </div>
+        <div class
+    <section id="contact">
+        <div class="container" data-aos="fade-up">
+            <h2>Contact Us</h2>
+            <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
+            <form action="mailto:contact@eastcoastrealty.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p>Email: <a href="mailto:contact@eastcoastrealty.com">contact@eastcoastrealty.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+        </div>
         <div class="social-media">
             <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank">
-                <img src="path_to_facebook_icon/facebook_icon.png" alt="Facebook">
+                <img src="https://elanstech.github.io/zarina/facebook_icon.png" alt="Facebook">
             </a>
         </div>
     </section>
@@ -199,16 +248,18 @@
             });
         });
     </script>
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/66b0137232dca6db2cb9f4ed/1i4fsntm4';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/66b0137232dca6db2cb9f4ed/1i4fsntm4';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
 </body>
 </html>
