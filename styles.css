@@ -63,11 +63,10 @@ header li {
 
 .hero {
     text-align: center;
-    padding: 100px 20px;
-    background: #1a1f26;
+    padding: 150px 20px;
+    background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/background.jpg') no-repeat center center/cover;
     color: #fff;
-    margin-top: 100px;
-    transition: all 0.3s ease-in-out;
+    margin-top: 70px;
     position: relative;
     overflow: hidden;
 }
