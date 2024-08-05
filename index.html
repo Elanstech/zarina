@@ -7,147 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.12.7/jarallax.css">
-    <style>
-        body {
-            font-family: 'Playfair Display', serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-            transition: all 0.3s ease-in-out;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        header {
-            background: #2b3e50;
-            color: #fff;
-            padding: 10px 0;
-            border-bottom: 3px solid #1a1f26;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease-in-out;
-            display: flex;
-            align-items: center;
-        }
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-            transition: color 0.3s ease-in-out;
-        }
-        header ul {
-            padding: 0;
-            list-style: none;
-            text-align: right;
-            flex-grow: 1;
-        }
-        header li {
-            display: inline;
-            padding: 0 20px;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        .logo img {
-            height: 50px;
-            margin-right: 10px;
-        }
-        .hero {
-            text-align: center;
-            padding: 150px 20px;
-            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/Backround.png') no-repeat center center;
-            background-size: cover;
-            color: #fff;
-            margin-top: 70px;
-            position: relative;
-            overflow: hidden;
-        }
-        .hero-title {
-            font-size: 3em;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            animation: fadeInDown 1s ease-in-out;
-        }
-        .hero-subtitle {
-            font-size: 1.5em;
-            font-weight: lighter;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease-in-out;
-        }
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        section {
-            padding: 50px 20px;
-            background: #fff;
-            margin-top: 20px;
-            transition: all 0.3s ease-in-out;
-        }
-        section h2 {
-            font-size: 2em;
-            color: #1e88e5;
-        }
-        .location {
-            padding: 50px 20px;
-            background: #fff;
-            margin-top: 20px;
-            text-align: center;
-        }
-        .location h2 {
-            font-size: 2em;
-            color: #1e88e5;
-            margin-bottom: 20px;
-        }
-        footer {
-            background: #2b3e50;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            border-top: 3px solid #1a1f26;
-            transition: all 0.3s ease-in-out;
-        }
-        .social-media {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-        .social-media a {
-            margin: 0 10px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .social-media a:hover {
-            transform: scale(1.2);
-        }
-    </style>
-    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -208,23 +68,18 @@
             <div class="elfsight-app-02075f07-4a0b-4bfc-adf6-5578c4f26b9c" data-elfsight-app-lazy></div>
         </div>
     </section>
-    <div class="social-media">
-    <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank">
-        <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/facebook_icon.png" alt="Facebook">
-    </a>
-    <a href="https://www.instagram.com/your_instagram_profile" target="_blank">
-        <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/instagram_icon.png" alt="Instagram">
-    </a>
-</div>
-
-
+    <section id="location" class="location">
+    <div class="container" data-aos="fade-up">
+        <h2>Our Location</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</section>
     <section id="contact">
         <div class="container" data-aos="fade-up">
             <h2>Contact Us</h2>
             <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
             <form action="mailto:contact@eastcoastrealty.com" method="post" enctype="text/plain">
                 <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email"
                 <input type="email" name="email" placeholder="Your Email" required>
                 <textarea name="message" placeholder="Your Message" required></textarea>
                 <button type="submit">Send Message</button>
@@ -235,6 +90,9 @@
         <div class="social-media">
             <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank">
                 <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/facebook_icon.png" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/your_instagram_profile" target="_blank">
+                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/instagram_icon.png" alt="Instagram">
             </a>
         </div>
     </section>
@@ -247,14 +105,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.12.7/jarallax.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            AOS.init();
-            jarallax(document.querySelectorAll('.jarallax'), {
-                speed: 0.5
-            });
-        });
-    </script>
+    <script src="scripts.js"></script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
