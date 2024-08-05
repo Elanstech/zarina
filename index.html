@@ -35,12 +35,38 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: all 0.3s ease-in-out;
             display: flex;
+            justify-content: space-between;
             align-items: center;
         }
 
-        header a {
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        nav {
+            margin-right: 20px;
+        }
+
+        nav ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
             color: #fff;
             text-decoration: none;
             text-transform: uppercase;
@@ -48,26 +74,8 @@
             transition: color 0.3s ease-in-out;
         }
 
-        header ul {
-            padding: 0;
-            list-style: none;
-            text-align: right;
-            flex-grow: 1;
-        }
-
-        header li {
-            display: inline;
-            padding: 0 20px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 50px;
-            margin-right: 10px;
+        nav ul li a:hover {
+            color: #bbdefb;
         }
 
         .hero {
