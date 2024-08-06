@@ -20,6 +20,7 @@
             width: 80%;
             margin: auto;
             overflow: hidden;
+            padding: 20px;
         }
 
         header {
@@ -88,6 +89,19 @@
             margin-bottom: 20px;
         }
 
+        .property {
+            margin-bottom: 40px;
+        }
+
+        .property img {
+            width: 100%;
+            height: auto;
+        }
+
+        .property-details {
+            margin-top: 10px;
+        }
+
         footer {
             background: #2b3e50;
             color: #fff;
@@ -132,21 +146,64 @@
     <section id="mls-listings">
         <div class="container" data-aos="fade-up">
             <h1>MLS Listings</h1>
-            <p>Explore the latest MLS listings to find your dream home.</p>
-            <p>Click the link below to view our live MLS listings:</p>
-            <a href="https://onekeymls.com/realtor/agents/Zarina-Yusupova/120719" target="_blank" class="cta-button">View MLS Listings</a>
-        </div>
-    </section>
+            
+            <div class="property">
+                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/park-city-estates.jpg" alt="Park City Estates">
+                <div class="property-details">
+                    <h2>For Rent: Studio Apartment in Park City Estates</h2>
+                    <p><strong>Location:</strong> Heart of Rego Park</p>
+                    <p><strong>Rent:</strong> $1,800/month</p>
+                    <p>Cozy studio apartment available in the well-maintained Park City Estates! This charming unit features a private balcony, offering a peaceful retreat in the heart of Rego Park. Enjoy comfortable living in a prime location with convenient access to shopping, dining, and transportation.</p>
+                    <p><strong>Features:</strong></p>
+                    <ul>
+                        <li>Cozy living space</li>
+                        <li>Private balcony</li>
+                        <li>Well-maintained building</li>
+                        <li>Prime location in Rego Park</li>
+                    </ul>
+                    <p>Don't miss out on this fantastic opportunity! Call 718-271-2121 for more information or to schedule a viewing.</p>
+                </div>
+            </div>
 
-    <section id="featured-properties">
-        <div class="container" data-aos="fade-up">
-            <h2>Featured Properties</h2>
-            <p>Here are some of our featured properties:</p>
-            <ul>
-                <li>Property 1: Description, price, etc.</li>
-                <li>Property 2: Description, price, etc.</li>
-                <li>Property 3: Description, price, etc.</li>
-            </ul>
+            <div class="property">
+                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/ridgewood.jpg" alt="Ridgewood">
+                <div class="property-details">
+                    <h2>For Rent: 1 Bedroom, 1 Bathroom Apartment in Ridgewood</h2>
+                    <p><strong>Location:</strong> Palmetto Street, Ridgewood</p>
+                    <p><strong>Rent:</strong> $1,700/month</p>
+                    <p>Discover this simple yet cozy 1-bedroom, 1-bathroom apartment available now on Palmetto Street in Ridgewood. This charming unit offers a comfortable living space in a great location, close to shopping, dining, and public transportation.</p>
+                    <p><strong>Features:</strong></p>
+                    <ul>
+                        <li>1 Bedroom, 1 Bathroom</li>
+                        <li>Cozy and simple living space</li>
+                        <li>Great location in Ridgewood</li>
+                    </ul>
+                    <p><strong>Move-In Requirements:</strong></p>
+                    <ul>
+                        <li>1 month rent</li>
+                        <li>1 month security deposit</li>
+                        <li>1 month broker's fee</li>
+                    </ul>
+                    <p>Don't miss out on this fantastic opportunity! Call 718-271-2121 for more information or to schedule a viewing.</p>
+                </div>
+            </div>
+
+            <div class="property">
+                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/judge-street.jpg" alt="Judge Street">
+                <div class="property-details">
+                    <h2>For Rent: 1 Bedroom, 1 Bathroom Apartment on Judge Street</h2>
+                    <p><strong>Location:</strong> Heart of Elmhurst</p>
+                    <p><strong>Rent:</strong> $2,000/month</p>
+                    <p>Discover this cozy 1-bedroom, 1-bathroom apartment available for rent on Judge Street. Located in the heart of Elmhurst, this well-maintained walk-up building offers plenty of windows for natural light and ample closets and storage space. This charming unit is available for an August move-in.</p>
+                    <p><strong>Highlights:</strong></p>
+                    <ul>
+                        <li>Cozy living space</li>
+                        <li>Natural light</li>
+                        <li>Ample closets and storage space</li>
+                    </ul>
+                    <p>Don't miss out on this fantastic opportunity! Call 718-271-2121 for more information or to schedule a viewing.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -169,15 +226,4 @@
             });
 
             // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+            document.querySelectorAll('a[href
