@@ -81,12 +81,23 @@
         .hero {
             text-align: center;
             padding: 150px 20px;
-            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/Backround.png') no-repeat center center;
+            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/backroundimage.jpg') no-repeat center center;
             background-size: cover;
             color: #fff;
             margin-top: 70px;
             position: relative;
             overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Add a dark overlay */
+            z-index: 1;
         }
 
         .hero-title {
@@ -95,6 +106,8 @@
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             animation: fadeInDown 1s ease-in-out;
+            position: relative;
+            z-index: 2;
         }
 
         .hero-subtitle {
@@ -102,28 +115,8 @@
             font-weight: lighter;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
             animation: fadeInUp 1s ease-in-out;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            position: relative;
+            z-index: 2;
         }
 
         section {
@@ -271,84 +264,93 @@
     </style>
 </head>
 <body>
-   <header>
-    <div class="logo">
-        <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo.png" alt="East Coast Realty by Zarina">
-        <span>East Coast Realty by Zarina</span>
-    </div>
-    <nav>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
-        <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
-        <li><a href="home-worth.html">What's Your Home Worth?</a></li>
-        <li><a href="mls-listings.html">MLS Listings</a></li>
-    </ul>
-</nav>
-</header>
-    <section id="home" class="hero">
-    <div class="container" data-aos="fade-in">
-        <h1 class="hero-title">Discover Your Dream Home</h1>
-        <p class="hero-subtitle">Expert Guidance in Rego Park and Forest Hills Real Estate</p>
-    </div>
-</section>
+    <header>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo.png" alt="East Coast Realty by Zarina">
+                        <span>East Coast Realty by Zarina</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
+                <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                <li><a href="home-worth.html">What's Your Home Worth?</a></li>
+                <li><a href="mls-listings.html">MLS Listings</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<section id="about">
-    <div class="container" data-aos="fade-up">
-        <h2>About Us</h2>
-        <p>East Coast Realty by Zarina was founded by Zarina Yusupov, a passionate real estate professional dedicated to helping clients find their dream homes and investment properties. With years of experience in the industry, Zarina has built a reputation for excellence, integrity, and personalized service.</p>
-        <p>Our company specializes in renting and selling apartments and houses in the Rego Park and Forest Hills area. We offer comprehensive solutions to ensure a seamless and successful real estate experience.</p>
-        <p>Zarina Yusupov, the founder and CEO, is known for her deep understanding of the real estate market, keen negotiation skills, and unwavering commitment to client satisfaction. Under her leadership, East Coast Realty has grown into a trusted and respected name in the real estate industry.</p>
-    </div>
-</section>
-<section id="services">
-    <div class="container" data-aos="fade-right">
-        <h2>Our Services</h2>
-        <p>We offer a range of services to meet your real estate needs, including renting and selling apartments and houses. Our experienced agents are here to guide you through every step of the process, providing market insights and expert advice.</p>
-        <ul>
-            <li>Residential Property Sales</li>
-            <li>Residential Property Rentals</li>
-        </ul>
-    </div>
-</section>
- <section id="mls">
-    <div class="container" data-aos="fade-left">
-        <h2>MLS Listings</h2>
-        <p>To view our available properties, please visit our MLS listings:</p>
-        <a href="https://onekeymls.com/realtor/agents/Zarina-Yusupova/120719" target="_blank">View MLS Listings</a>
-    </div>
-</section>
-<section id="reviews">
+    <section id="home" class="hero">
+        <div class="container" data-aos="fade-in">
+            <h1 class="hero-title">Discover Your Dream Home</h1>
+            <p class="hero-subtitle">Expert Guidance in Rego Park and Forest Hills Real Estate</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container" data-aos="fade-up">
+            <h2>About Us</h2>
+            <p>East Coast Realty by Zarina was founded by Zarina Yusupov, a passionate real estate professional dedicated to helping clients find their dream homes and investment properties. With years of experience in the industry, Zarina has built a reputation for excellence, integrity, and personalized service.</p>
+            <p>Our company specializes in renting and selling apartments and houses in the Rego Park and Forest Hills area. We offer comprehensive solutions to ensure a seamless and successful real estate experience.</p>
+            <p>Zarina Yusupov, the founder and CEO, is known for her deep understanding of the real estate market, keen negotiation skills, and unwavering commitment to client satisfaction. Under her leadership, East Coast Realty has grown into a trusted and respected name in the real estate industry.</p>
+            <p>At East Coast Realty, we believe in building long-term relationships with our clients, guided by our core values of honesty, transparency, and professionalism. Our dedicated team of experienced agents is always ready to assist you with your real estate needs, ensuring you receive the best possible service and results.</p>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container" data-aos="fade-right">
+            <h2>Our Services</h2>
+            <p>We offer a range of services to meet your real estate needs, including renting and selling apartments and houses. Our experienced agents are here to guide you through every step of the process, providing market insights and expert advice.</p>
+            <ul>
+                <li>Residential Property Sales</li>
+                <li>Residential Property Rentals</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="mls">
+        <div class="container" data-aos="fade-left">
+            <h2>MLS Listings</h2>
+            <p>To view our available properties, please visit our MLS listings:</p>
+            <a href="https://onekeymls.com/realtor/agents/Zarina-Yusupova/120719" target="_blank">View MLS Listings</a>
+        </div>
+    </section>
+
+    <section id="reviews">
         <div class="container" data-aos="fade-up">
             <h2>Google Reviews</h2>
             <div class="elfsight-app-02075f07-4a0b-4bfc-adf6-5578c4f26b9c" data-elfsight-app-lazy></div>
         </div>
     </section>
- <section id="contact">
-    <div class="container" data-aos="fade-up">
-        <h2>Contact Us</h2>
-        <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
-        <form action="mailto:contact@eastcoastrealty.com" method="post" enctype="text/plain">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        <p>Email: <a href="mailto:contact@eastcoastrealty.com">contact@eastcoastrealty.com</a></p>
-        <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
- <div class="social-media">
-    <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width: 24px; height: auto;">
-    </a>
-</div>
-</section>
+
+    <section id="contact">
+        <div class="container" data-aos="fade-up">
+            <h2>Contact Us</h2>
+            <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
+            <form action="mailto:contact@eastcoastrealty.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p>Email: <a href="mailto:contact@eastcoastrealty.com">contact@eastcoastrealty.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+        </div>
+        <div class="social-media">
+            <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width: 24px; height: auto;">
+            </a>
+        </div>
+    </section>
+
     <section id="location">
-    <div class="container" data-aos="fade-up">
-        <h2>Our Location</h2>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12094.006578048647!2d-73.87054852287737!3d40.72898604225458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25e346f9f0617%3A0xb19ba7d5ff9f8d02!2sEast%20Coast%20Realty%20by%20Zarina!5e0!3m2!1sen!2sus!4v1722964823445!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-</section>
-<footer>
+        <div class="container" data-aos="fade-up">
+            <h2>Our Location</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12094.006578048647!2d-73.87054852287737!3d40.72898604225458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25e346f9f0617%3A0xb19ba7d5ff9f8d02!2sEast%20Coast%20Realty%20by%20Zarina!5e0!3m2!1sen!2sus!4v1722964823445!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <footer>
         <div class="container">
             <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p>
         </div>
