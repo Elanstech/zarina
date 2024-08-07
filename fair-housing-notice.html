@@ -1,52 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fair Housing Notice - East Coast Realty by Zarina</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    <link rel="stylesheet" href="style.css"> <!-- Ensure this path is correct -->
 </head>
 <body>
     <header>
         <div class="logo">
             <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
         </div>
-       <nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
-        <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
-        <li><a href="home-worth.html">What's Your Home Worth?</a></li>
-        <li><a href="mls-listings.html">MLS Listings</a></li>
-        <li><a href="faq.html">FAQ</a></li> <!-- Link to FAQ page -->
-    </ul>
-</nav>
-
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
+                <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                <li><a href="home-worth.html">What's Your Home Worth?</a></li>
+                <li><a href="mls-listings.html">MLS Listings</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <section id="fair-housing">
+    <section id="fair-housing-notice">
         <div class="container" data-aos="fade-up">
             <h1>Fair Housing Notice</h1>
-            <p>Click the image below to view the Fair Housing Notice:</p>
-            <a href="https://raw.githubusercontent.com/Elanstech/zarina/main/fairhousingnotice.png" target="_blank">
-                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/fairhousingnotice.png" alt="Fair Housing Notice" style="width:100%; max-width:600px;">
-            </a>
+            <img src="path_to_fair_housing_notice_image.jpg" alt="Fair Housing Notice">
         </div>
     </section>
-
     <footer>
         <div class="container">
             <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></
+        </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.12.7/jarallax.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Initialize AOS
             AOS.init();
-
-            // Initialize jarallax
             jarallax(document.querySelectorAll('.jarallax'), {
                 speed: 0.5
             });
