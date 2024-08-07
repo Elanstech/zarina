@@ -4,32 +4,276 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>East Coast Realty by Zarina</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> <!-- Ensure this path is correct -->
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            transition: all 0.3s ease-in-out;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #2b3e50;
+            color: #fff;
+            padding: 10px 0;
+            border-bottom: 3px solid #1a1f26;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .logo img {
+            height: 80px;
+            margin-right: 10px;
+        }
+
+        nav {
+            margin-right: 20px;
+        }
+
+        nav ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #bbdefb;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 150px 20px;
+            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/backround.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease-in-out;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5em;
+            font-weight: lighter;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-in-out;
+            position: relative;
+            z-index: 2;
+        }
+
+        section {
+            padding: 50px 20px;
+            background: #fff;
+            margin-top: 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        section h2 {
+            font-size: 2em;
+            color: #1e88e5;
+        }
+
+        footer {
+            background: #2b3e50;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-top: 3px solid #1a1f26;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .social-media a:hover {
+            transform: scale(1.2);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #1e88e5;
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            margin: 20px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .cta-button:hover {
+            background-color: #1565c0;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact input, .contact textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .contact button {
+            padding: 10px 20px;
+            background: #1e88e5;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .contact button:hover {
+            background-color: #1565c0;
+        }
+
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            background-color: #1e88e5;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo {
+                margin-left: 10px;
+                margin-bottom: 10px;
+            }
+
+            nav {
+                margin-right: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero {
+                padding: 100px 20px;
+                background-size: cover;
+            }
+
+            .hero-title {
+                font-size: 2em;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2em;
+            }
+
+            section {
+                padding: 30px 10px;
+            }
+
+            section h2 {
+                font-size: 1.5em;
+            }
+
+            .contact input, .contact textarea {
+                width: 90%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
-                <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
-                <li><a href="home-worth.html">What's Your Home Worth?</a></li>
-                <li><a href="mls-listings.html">MLS Listings</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="home" class="hero">
-        <div class="container" data-aos="fade-in">
-            <h1 class="hero-title">Discover Your Dream Home</h1>
-            <p class="hero-subtitle">Expert Guidance in Rego Park and Forest Hills Real Estate</p>
-        </div>
-    </section>
+  <header>
+    <div class="logo">
+        <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
+            <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+            <li><a href="home-worth.html">What's Your Home Worth?</a></li>
+            <li><a href="mls-listings.html">MLS Listings</a></li>
+        </ul>
+    </nav>
+</header>
+<section id="home" class="hero">
+    <div class="container" data-aos="fade-in">
+        <h1 class="hero-title">Discover Your Dream Home</h1>
+        <p class="hero-subtitle">Expert Guidance in Rego Park and Forest Hills Real Estate</p>
+    </div>
+</section>
+
     <section id="about">
         <div class="container" data-aos="fade-up">
             <h2>About Us</h2>
@@ -39,16 +283,19 @@
             <p>At East Coast Realty, we believe in building long-term relationships with our clients, guided by our core values of honesty, transparency, and professionalism. Our dedicated team of experienced agents is always ready to assist you with your real estate needs, ensuring you receive the best possible service and results.</p>
         </div>
     </section>
+
     <section id="services">
         <div class="container" data-aos="fade-right">
             <h2>Our Services</h2>
-            <p>We offer a range of services to meet your real estate needs, including renting and selling apartments and houses. Our experienced agents are here to guide you through every step of the process, providing market insights and expert advice.</p>
+            <p>We offer a range of services to meet your real estate needs, including renting and selling apartments and houses
+                        <p>We offer a range of services to meet your real estate needs, including renting and selling apartments and houses. Our experienced agents are here to guide you through every step of the process, providing market insights and expert advice.</p>
             <ul>
                 <li>Residential Property Sales</li>
                 <li>Residential Property Rentals</li>
             </ul>
         </div>
     </section>
+
     <section id="mls">
         <div class="container" data-aos="fade-left">
             <h2>MLS Listings</h2>
@@ -56,32 +303,20 @@
             <a href="https://onekeymls.com/realtor/agents/Zarina-Yusupova/120719" target="_blank">View MLS Listings</a>
         </div>
     </section>
-    <section id="faq">
-        <div class="container" data-aos="fade-up">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <h3>What is the process of renting a home?</h3>
-                <p>The process involves finding a rental property, submitting an application, providing necessary documentation (e.g., proof of income, credit report, references), signing the lease agreement, and paying the initial costs (e.g., security deposit, first month's rent). We guide you through each step to ensure a smooth experience.</p>
-            </div>
-            <div class="faq-item">
-                <h3>How can I schedule a viewing?</h3>
-                <p>You can schedule a viewing by contacting us through the contact form or calling our office directly.</p>
-            </div>
-            <a href="faq.html" class="cta-button">More FAQs</a>
-        </div>
-    </section>
+
     <section id="reviews">
         <div class="container" data-aos="fade-up">
             <h2>Google Reviews</h2>
             <div class="elfsight-app-02075f07-4a0b-4bfc-adf6-5578c4f26b9c" data-elfsight-app-lazy></div>
         </div>
     </section>
-    <section id="location">
+     <section id="location">
         <div class="container" data-aos="fade-up">
             <h2>Our Location</h2>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12094.006578048647!2d-73.87054852287737!3d40.72898604225458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25e346f9f0617%3A0xb19ba7d5ff9f8d02!2sEast%20Coast%20Realty%20by%20Zarina!5e0!3m2!1sen!2sus!4v1722964823445!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
+
     <section id="contact">
         <div class="container" data-aos="fade-up">
             <h2>Contact Us</h2>
@@ -106,11 +341,15 @@
             <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.12.7/jarallax.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Initialize AOS
             AOS.init();
+
+            // Initialize jarallax
             jarallax(document.querySelectorAll('.jarallax'), {
                 speed: 0.5
             });
