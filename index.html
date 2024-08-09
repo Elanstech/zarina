@@ -38,6 +38,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -53,13 +54,16 @@ header {
 
 nav {
     margin-right: 20px;
+    flex-grow: 1;
 }
 
 nav ul {
     padding: 0;
     list-style: none;
     display: flex;
+    justify-content: space-between;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -251,6 +255,93 @@ footer {
 
     .contact input, .contact textarea {
         width: 90%;
+    }
+}
+
+#our-staff {
+    text-align: center;
+    padding: 50px 20px;
+    background: url('path/to/your/background-image.jpg') no-repeat center center; /* Add background image */
+    background-size: cover; /* Ensure the image covers the section */
+    position: relative; /* Ensure the overlay covers the section */
+    color: #fff; /* White text color */
+}
+
+#our-staff::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: -1;
+}
+
+#our-staff .container {
+    max-width: 100%; /* Ensure full width */
+    padding: 50px 20px;
+}
+
+#our-staff h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #fff; /* White text color */
+}
+
+#our-staff p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #fff; /* White text color */
+}
+
+.staff-tiles {
+    display: flex;
+    justify-content: space-between; /* Space between each box */
+    flex-wrap: nowrap; /* Prevent wrapping to next line */
+    gap: 20px; /* Adjust spacing between boxes */
+}
+
+.staff-tile {
+    background: #fff;
+    color: #333;
+    padding: 15px; /* Adjusted padding */
+    border-radius: 8px;
+    text-align: center;
+    width: 200px; /* Adjusted width for smaller boxes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.staff-tile img {
+    max-width: 100%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.staff-tile h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.staff-tile p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.staff-tile a {
+    color: #0039b3;
+    text-decoration: none;
+}
+
+.staff-tile:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced hover effect */
+}
+
+@media (max-width: 768px) {
+    .staff-tile {
+        width: 100%;
     }
 }
 
