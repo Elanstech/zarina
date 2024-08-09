@@ -275,6 +275,7 @@ footer {
 }
 
 #our-staff .container {
+    max-width: 100%; /* Ensure full width */
     padding: 50px 20px;
 }
 
@@ -290,13 +291,11 @@ footer {
     color: #fff; /* White text color */
 }
 
-.staff-tiles {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+.staff-tile {
+    flex: 1; /* Allow boxes to resize to fit in one line */
+    max-width: 200px; /* Adjust width as needed */
+    padding: 15px; /* Adjust padding */
 }
-
 .staff-tile {
     background: #fff;
     color: #333;
