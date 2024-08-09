@@ -8,144 +8,180 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <style>
         body {
-    font-family: 'Playfair Display', serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
-    transition: all 0.3s ease-in-out;
-}
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            transition: all 0.3s ease-in-out;
+        }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-    padding: 20px;
-}
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
 
-header {
-    background: #2b3e50;
-    color: #fff;
-    padding: 10px 0;
-    border-bottom: 3px solid #1a1f26;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        header {
+            background: #2b3e50;
+            color: #fff;
+            padding: 10px 0;
+            border-bottom: 3px solid #1a1f26;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.logo {
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
 
-.logo img {
-    height: 50px; /* Adjusted to match the size in index.html */
-    margin-right: 10px;
-}
+        .logo a {
+            text-decoration: none;
+        }
 
-nav {
-    margin-right: 20px;
-}
+        .logo img {
+            height: 80px;
+            margin-right: 10px;
+        }
 
-nav ul {
-    padding: 0;
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
+        nav {
+            margin-right: 20px;
+        }
 
-nav ul li {
-    display: inline;
-}
+        nav ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-    transition: color 0.3s ease-in-out;
-}
+        nav ul li {
+            display: inline;
+        }
 
-nav ul li a:hover {
-    color: #bbdefb;
-}
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: color 0.3s ease-in-out;
+        }
 
-section {
-    padding: 50px 20px;
-    background: #fff;
-    margin-top: 80px;
-    transition: all 0.3s ease-in-out;
-}
+        nav ul li a:hover {
+            color: #bbdefb;
+        }
 
-section h1, section h2 {
-    font-size: 2em;
-    color: #0000F4; /* Updated */
-    text-align: center;
-    margin-bottom: 20px;
-}
+        section {
+            padding: 50px 20px;
+            background: #fff;
+            margin-top: 80px;
+            transition: all 0.3s ease-in-out;
+        }
 
-.faq-item {
-    margin-bottom: 20px;
-}
+        section h1, section h2 {
+            font-size: 2em;
+            color: #0000F4;
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-.faq-item h3 {
-    font-size: 1.5em;
-    color: #333;
-}
+        .faq-item {
+            margin-bottom: 20px;
+        }
 
-.faq-item p {
-    font-size: 1em;
-    color: #666;
-}
+        .faq-item h3 {
+            font-size: 1.5em;
+            color: #333;
+        }
 
-footer {
-    background: #2b3e50;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    border-top: 3px solid #1a1f26;
-    transition: all 0.3s ease-in-out;
-}
+        .faq-item p {
+            font-size: 1em;
+            color: #666;
+        }
 
-.social-media {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
+        footer {
+            background: #2b3e50;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-top: 3px solid #1a1f26;
+            transition: all 0.3s ease-in-out;
+        }
 
-.social-media a {
-    margin: 0 10px;
-    transition: transform 0.3s ease-in-out;
-}
+        .social-media {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
 
-.social-media a:hover {
-    transform: scale(1.2);
-}
-</style>
+        .social-media a {
+            margin: 0 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .social-media a:hover {
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo {
+                margin-left: 10px;
+                margin-bottom: 10px;
+            }
+
+            nav {
+                margin-right: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                text-align: center;
+            }
+
+            section {
+                padding: 30px 10px;
+            }
+
+            section h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
 </head>
 <body>
-<header>
-    <div class="logo">
-        <a href="index.html">
-            <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
-        </a>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
-            <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
-            <li><a href="home-worth.html">What's Your Home Worth?</a></li>
-            <li><a href="mls-listings.html">MLS Listings</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
+                <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                <li><a href="home-worth.html">What's Your Home Worth?</a></li>
+                <li><a href="mls-listings.html">MLS Listings</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <section id="faq">
         <div class="container" data-aos="fade-up">
             <h1>Frequently Asked Questions</h1>
@@ -157,68 +193,32 @@ footer {
                 <h3>How can I schedule a viewing?</h3>
                 <p>You can schedule a viewing by contacting us through the contact form or calling our office directly.</p>
             </div>
-            <div class="faq-item">
-                <h3>What documents do I need to rent a property?</h3>
-                <p>Typically, you'll need to provide proof of income, a credit report, and references. Specific requirements may vary.</p>
-            </div>
-            <div class="faq-item">
-                <h3>How do I prepare my home for sale?</h3>
-                <p>To prepare your home for sale, consider cleaning, decluttering, making minor repairs, and staging the property to appeal to buyers.</p>
-            </div>
-            <div class="faq-item">
-                <h3>What are closing costs?</h3>
-                <p>Closing costs are fees associated with the finalization of a real estate transaction, including attorney fees, title insurance, and taxes.</p>
-            </div>
-            <div class="faq-item">
-                <h3>What is a security deposit?</h3>
-                <p>A security deposit is a sum of money paid by a tenant to the landlord before moving in. It serves as a security against any potential damages or unpaid rent. The deposit is usually refundable at the end of the lease, provided there are no damages or unpaid dues.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Can I negotiate the rent?</h3>
-                <p>In many cases, it is possible to negotiate the rent with the landlord, especially if the property has been on the market for a while or if you are willing to sign a longer lease. Our agents can help you with the negotiation process.</p>
-            </div>
-            <div class="faq-item">
-                <h3>What should I look for during a property viewing?</h3>
-                <p>During a property viewing, you should check the overall condition of the property, including the structure, plumbing, electrical systems, and any included appliances. It's also important to consider the neighborhood, accessibility, and proximity to amenities.</p>
-            </div>
-            <div class="faq-item">
-                <h3>How long does it take to close on a house?</h3>
-                <p>The time it takes to close on a house can vary, but it typically takes around 30 to 45 days from the time the offer is accepted until closing. This period includes the time needed for inspections, appraisals, and securing a mortgage.</p>
-            </div>
-            <div class="faq-item">
-                <h3>What is the difference between a fixed-rate and an adjustable-rate mortgage?</h3>
-                <p>A fixed-rate mortgage has an interest rate that remains the same throughout the life of the loan, providing predictable monthly payments. An adjustable-rate mortgage (ARM) has an interest rate that can change periodically, usually in relation to an index, resulting in varying monthly payments.</p>
-            </div>
+            <a href="faq.html" class="cta-button">More FAQs</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p
-                </div>
+            <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p>
+        </div>
+        <div class="social-media">
+            <a href="https://www.facebook.com/eastcoastrealtybyzarina/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width: 24px; height: auto;">
+            </a>
+            <a href="https://twitter.com/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg" alt="Twitter" style="width: 24px; height: auto;">
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 24px; height: auto;">
+            </a>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.12.7/jarallax.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize AOS
             AOS.init();
-
-            // Initialize jarallax
-            jarallax(document.querySelectorAll('.jarallax'), {
-                speed: 0.5
-            });
-
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
         });
     </script>
 </body>
