@@ -252,7 +252,83 @@ footer {
     .contact input, .contact textarea {
         width: 90%;
     }
-}
+    
+    #our-staff {
+    text-align: center;
+    padding: 50px 20px;
+    background: #fff;
+    
+    }
+    
+    #our-staff h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #0000F4;
+    
+    }
+    
+    #our-staff p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #333; 
+    
+    }
+    
+    .staff-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    }
+    
+    .staff-member {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 30%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    
+    }
+    
+    .staff-member img {
+    max-width: 100%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    
+    }
+    
+    .staff-member h3 {
+    font-size: 1.5em;
+    color: #0039b3;
+    margin-bottom: 10px;
+    
+    }
+    
+    .staff-member p {
+    font-size: 1em;
+    color: #666;
+    
+    }
+    
+    .staff-member a {
+    color: #0039b3;
+    text-decoration: none;
+    
+    }
+    
+    .staff-member:hover {
+    transform: translateY(-10px);
+    
+    }
+    
+    @media (max-width: 768px) {
+    .staff-member {
+        width: 100%;
+        }
+    }
 </style>
 </head>
 <body>
@@ -294,6 +370,50 @@ footer {
             <a href="https://onekeymls.com/realtor/agents/Zarina-Yusupova/120719" target="_blank">View MLS Listings</a>
         </div>
     </section>
+    <section id="our-staff">
+    <div class="container" data-aos="fade-up">
+        <h2>Our Staff</h2>
+        <p>Meet our dedicated team of real estate professionals:</p>
+        <div class="staff-members">
+            <div class="staff-member">
+                <img src="path/to/mike-rubinov.jpg" alt="Mike Rubinov">
+                <h3>Mike Rubinov</h3>
+                <p>646-339-2626</p>
+                <p><a href="mailto:mrubinov@aol.com">mrubinov@aol.com</a></p>
+            </div>
+            <div class="staff-member">
+                <img src="path/to/linda-li.jpg" alt="Linda (Zheng Li)">
+                <h3>Linda (Zheng Li)</h3>
+                <p>718-249-9726</p>
+                <p><a href="mailto:lindali188@gmail.com">lindali188@gmail.com</a></p>
+            </div>
+            <div class="staff-member">
+                <img src="path/to/bhagwant-kaur.jpg" alt="Bhagwant Kaur">
+                <h3>Bhagwant Kaur</h3>
+                <p>929-398-2849</p>
+                <p><a href="mailto:bhagwantkaur58@gmail.com">bhagwantkaur58@gmail.com</a></p>
+            </div>
+            <div class="staff-member">
+                <img src="path/to/bahtiyor-sirojev.jpg" alt="Bahtiyor Sirojev">
+                <h3>Bahtiyor Sirojev</h3>
+                <p>929-264-3901</p>
+                <p><a href="mailto:bahtiyorsirojev@yahoo.com">bahtiyorsirojev@yahoo.com</a></p>
+            </div>
+            <div class="staff-member">
+                <img src="path/to/gabriel-borohov.jpg" alt="Gabriel Borohov">
+                <h3>Gabriel Borohov</h3>
+                <p>646-623-8973</p>
+                <p><a href="mailto:gborohov@aol.com">gborohov@aol.com</a></p>
+            </div>
+            <div class="staff-member">
+                <img src="path/to/zarina-yusupova.jpg" alt="Zarina Yusupova">
+                <h3>Zarina Yusupova</h3>
+                <p>718-644-4666</p>
+                <p><a href="mailto:broker@eastcoastrealty.net">broker@eastcoastrealty.net</a></p>
+            </div>
+        </div>
+    </div>
+</section>
     <section id="faq">
     <div class="container" data-aos="fade-up">
         <h2>Frequently Asked Questions</h2>
