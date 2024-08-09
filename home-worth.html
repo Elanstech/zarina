@@ -8,110 +8,254 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <style>
         body {
-    font-family: 'Playfair Display', serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
-    transition: all 0.3s ease-in-out;
-}
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            transition: all 0.3s ease-in-out;
+        }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
 
-header {
-    background: #2b3e50;
-    color: #fff;
-    padding: 10px 0;
-    border-bottom: 3px solid #1a1f26;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        header {
+            background: #2b3e50;
+            color: #fff;
+            padding: 10px 0;
+            border-bottom: 3px solid #1a1f26;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.logo {
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
 
-.logo img {
-    height: 80px;
-    margin-right: 10px;
-}
+        .logo img {
+            height: 80px;
+            margin-right: 10px;
+        }
 
-nav {
-    margin-right: 20px;
-}
+        nav {
+            margin-right: 20px;
+        }
 
-nav ul {
-    padding: 0;
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
+        nav ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
 
-nav ul li {
-    display: inline;
-}
+        nav ul li {
+            display: inline;
+        }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-    transition: color 0.3s ease-in-out;
-}
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: color 0.3s ease-in-out;
+        }
 
-nav ul li a:hover {
-    color: #bbdefb;
-}
+        nav ul li a:hover {
+            color: #bbdefb;
+        }
 
-section {
-    padding: 50px 20px;
-    background: #fff;
-    margin-top: 80px;
-    transition: all 0.3s ease-in-out;
-}
+        .home-worth {
+            text-align: center;
+            padding: 100px 20px;
+            background: #fff;
+            background-image: url('https://via.placeholder.com/1600x900');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: #fff;
+        }
 
-section h1, section h2 {
-    font-size: 2em;
-    color: #0000F4; /* Updated */
-    text-align: center;
-    margin-bottom: 20px;
-}
+        .home-worth::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
 
-footer {
-    background: #2b3e50;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    border-top: 3px solid #1a1f26;
-    transition: all 0.3s ease-in-out;
-}
+        .home-worth .container {
+            position: relative;
+            z-index: 2;
+        }
 
-.social-media {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-}
+        .home-worth h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-in-out;
+        }
 
-.social-media a {
-    margin: 0 10px;
-    transition: transform 0.3s ease-in-out;
-}
+        .home-worth p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-in-out;
+        }
 
-.social-media a:hover {
-    transform: scale(1.2);
-}
-</style>
+        .valuation-steps {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+
+        .step {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 30%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .step img {
+            max-width: 100%;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .step h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0000F4;
+            color: #fff;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .cta-button:hover {
+            background-color: #0000cc;
+        }
+
+        footer {
+            background: #2b3e50;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-top: 3px solid #1a1f26;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .social-media a:hover {
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo {
+                margin-left: 10px;
+                margin-bottom: 10px;
+            }
+
+            nav {
+                margin-right: 10px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .home-worth {
+                padding: 50px 20px;
+            }
+
+            .home-worth h2 {
+                font-size: 2em;
+            }
+
+            .home-worth p {
+                font-size: 1em;
+            }
+
+            .valuation-steps {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .step {
+                width: 80%;
+                margin: auto;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -119,54 +263,39 @@ footer {
             <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
         </div>
         <nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
-        <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
-        <li><a href="home-worth.html">What's Your Home Worth?</a></li>
-        <li><a href="mls-listings.html">MLS Listings</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-    </ul>
-</nav>
-
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
+                <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                <li><a href="home-worth.html">What's Your Home Worth?</a></li>
+                <li><a href="mls-listings.html">MLS Listings</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="home-worth">
+    <section id="home-worth" class="home-worth">
         <div class="container" data-aos="fade-up">
-            <h1>What's Your Home Worth?</h1>
-            <h2>Find Out the Value of Your Home</h2>
-            <form action="mailto:contact@eastcoastrealty.com" method="post" enctype="text/plain">
-                <div class="form-group">
-                    <label for="name">Your Name:</label>
-                    <input type="text" id="name" name="name" required>
+            <h2>What's Your Home Worth?</h2>
+            <p>Find out the value of your home in today's market. Our expert valuation tool provides accurate and up-to-date estimates.</p>
+            <div class="valuation-steps">
+                <div class="step" data-aos="fade-right" data-aos-delay="200">
+                    <img src="https://via.placeholder.com/100" alt="Step 1">
+                    <h3>Step 1</h3>
+                    <p>Enter your home's details.</p>
                 </div>
-                <div class="form-group">
-                    <label for="email">Your Email:</label>
-                    <input type="email" id="email" name="email" required>
+                <div class="step" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://via.placeholder.com/100" alt="Step 2">
+                    <h3>Step 2</h3>
+                    <p>Our tool analyzes the market.</p>
                 </div>
-                <div class="form-group">
-                    <label for="phone">Your Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" required>
+                <div class="step" data-aos="fade-left" data-aos-delay="600">
+                    <img src="https://via.placeholder.com/100" alt="Step 3">
+                    <h3>Step 3</h3>
+                    <p>Receive your home's valuation.</p>
                 </div>
-                <div class="form-group">
-                    <label for="address">Property Address:</label>
-                    <input type="text" id="address" name="address" required>
-                </div>
-                <div class="form-group">
-                    <label for="details">Additional Details:</label>
-                    <textarea id="details" name="details" placeholder="Please provide any additional details about your property."></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="reason">Reason for Inquiry:</label>
-                    <select id="reason" name="reason" required>
-                        <option value="">Select a reason</option>
-                        <option value="selling">Selling</option>
-                        <option value="refinancing">Refinancing</option>
-                        <option value="curiosity">Just Curious</option>
-                    </select>
-                </div>
-                <button type="submit" class="submit-button">Submit</button>
-            </form>
+            </div>
+            <a href="home-worth.html" class="cta-button">Get Your Estimate</a>
         </div>
     </section>
 
@@ -174,19 +303,18 @@ footer {
         <div class="container">
             <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p>
         </div>
+        <div class="social-media">
+            <a href="https://www.facebook.com/eastcoastrealtybyzarina/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width: 24px; height: auto;">
+            </a>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.12.7/jarallax.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize AOS
             AOS.init();
-
-            // Initialize jarallax
-            jarallax(document.querySelectorAll('.jarallax'), {
-                speed: 0.5
-            });
 
             // Smooth scrolling for navigation links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
