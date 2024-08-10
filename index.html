@@ -304,12 +304,11 @@
         }
 
         #our-staff {
-            text-align: center;
-            padding: 50px 20px;
-            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/staffbr.jpg') no-repeat center center;
-            background-size: cover;
-            position: relative;
-            color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    background: #f4f4f4;
+    position: relative;
+    color: #333;
         }
 
         #our-staff::before {
@@ -323,67 +322,69 @@
             z-index: -1;
         }
 
-        #our-staff .container {
-            max-width: 100%;
-            padding: 50px 20px;
-        }
+      #our-staff .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        #our-staff h2 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            color: #fff;
-        }
+      #our-staff h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #0000F4;
+}
 
-        #our-staff p {
-            font-size: 1.2em;
-            margin-bottom: 40px;
-            color: #fff;
-        }
+       #our-staff p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #666;
+}
 
-        .staff-tiles {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            justify-items: center;
-        }
+       .staff-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
 
         .staff-tile {
-            background: #fff;
-            color: #333;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            width: 100%;
-            max-width: 300px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+    max-width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+       .staff-tile img {
+    max-width: 100%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+      .staff-info h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
         }
 
-        .staff-tile img {
-            max-width: 100%;
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
+    .staff-info p {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
 
-        .staff-tile h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-        }
+.staff-info a {
+    color: #0039b3;
+    text-decoration: none;
+}
 
-        .staff-tile p {
-            font-size: 1em;
-            margin-bottom: 10px;
-        }
-
-        .staff-tile a {
-            color: #0039b3;
-            text-decoration: none;
-        }
-
-        .staff-tile:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
+      .staff-tile:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
         /* Hamburger Menu CSS */
 .menu-icon {
     display: none;
