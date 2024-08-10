@@ -303,12 +303,13 @@
             }
         }
 
-        #our-staff {
+       #our-staff {
     text-align: center;
     padding: 50px 20px;
     background: #f4f4f4;
     position: relative;
     color: #333;
+    overflow-x: auto;
         }
 
         #our-staff::before {
@@ -322,46 +323,41 @@
             z-index: -1;
         }
 
-      #our-staff .container {
+     #our-staff .container {
     max-width: 1200px;
     margin: 0 auto;
-}
-
-      #our-staff h2 {
+}     
+#our-staff h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
     color: #0000F4;
 }
 
-       #our-staff p {
+      #our-staff p {
     font-size: 1.2em;
     margin-bottom: 40px;
     color: #666;
 }
 
-       .staff-tiles {
+      .staff-tiles {
     display: flex;
-    flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
+    padding: 10px;
 }
 
         .staff-tile {
     background: #fff;
     color: #333;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 20px;
     text-align: center;
-    width: 100%;
-    max-width: 250px;
+    width: 250px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-shrink: 0;
 }
        .staff-tile img {
-    max-width: 100%;
+    width: 100%;
     border-radius: 50%;
     margin-bottom: 15px;
 }
@@ -371,7 +367,7 @@
     margin-bottom: 10px;
         }
 
-    .staff-info p {
+   .staff-info p {
     font-size: 1em;
     margin-bottom: 5px;
 }
@@ -380,10 +376,20 @@
     color: #0039b3;
     text-decoration: none;
 }
+    .staff-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-      .staff-tile:hover {
+     .staff-tile:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+    @media (max-width: 768px) {
+    .staff-tiles {
+        flex-direction: column;
+        align-items: center;
+    }
 }
         /* Hamburger Menu CSS */
 .menu-icon {
