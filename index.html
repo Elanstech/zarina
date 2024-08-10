@@ -638,7 +638,23 @@
             s1.setAttribute('crossorigin','*');
             s0.parentNode.insertBefore(s1,s0);
         })();
-    </script>
+        <script>
+    function scrollLeft() {
+        const container = document.querySelector('.staff-tiles');
+        container.scrollBy({
+            left: -300, // Adjust the scroll distance as needed
+            behavior: 'smooth'
+        });
+    }
+
+    function scrollRight() {
+        const container = document.querySelector('.staff-tiles');
+        container.scrollBy({
+            left: 300, // Adjust the scroll distance as needed
+            behavior: 'smooth'
+        });
+    }
+</script>
     <!--End of Tawk.to Script-->
     <!--Elfsight Script-->
     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
