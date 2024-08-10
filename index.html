@@ -317,6 +317,25 @@
             .contact input, .contact textarea {
                 width: 90%;
             }
+            #our-staff {
+                text-align: center;
+                padding: 50px 20px;
+                background: url('path/to/your-background-image.jpg') no-repeat center center;
+                background-size: cover;
+                color: #fff; /* White text color */
+                position: relative;
+                z-index: 1;
+            }
+            #our-staff::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5); /* Optional overlay */
+                z-index: -1;
+            }
 
             .staff-tiles {
                 flex-direction: column;
@@ -377,18 +396,23 @@
         <p>Welcome to East Coast Realty by Zarina, where expertise meets dedication. Led by Zarina Yusupov, a seasoned real estate professional with over 20 years of experience, our company specializes in residential sales and investment properties in the vibrant communities of Rego Park and Forest Hills. As the Owner and Broker, Zarina brings a wealth of knowledge in fluctuating market trends, ever-changing mortgage interest rates, and Co-Op board packages, along with a plethora of insights into all things real estate and investments. Known for her diligence and unwavering commitment, Zarina is dedicated to helping you find your dream home or the perfect investment property with confidence and ease. Trust East Coast Realty by Zarina to guide you through every step of your real estate journey.</p>
     </div>
 </section>
-<section id="mls">
-    <div class="container" data-aos="fade-left">
-        <h2>MLS Listings</h2>
-        <p>To view our available properties, please visit our MLS listings:</p>
-        <a href="https://onekeymls.com/realtor/agents/Zarina-Yusupova/120719" target="_blank" class="cta-button">View MLS Listings</a>
-    </div>
-</section>
-<section id="our-staff">
+    <section id="our-staff">
     <div class="container" data-aos="fade-up">
         <h2>Our Staff</h2>
         <p>Meet our dedicated team of real estate professionals:</p>
         <div class="staff-tiles">
+            <div class="staff-tile">
+                <img src="path/to/zarina-yusupova.jpg" alt="Zarina Yusupova">
+                <h3>Zarina Yusupova</h3>
+                <p>718-644-4666</p>
+                <p><a href="mailto:broker@eastcoastrealty.net">broker@eastcoastrealty.net</a></p>
+            </div>
+            <div class="staff-tile">
+                <img src="path/to/gabriel-borohov.jpg" alt="Gabriel Borohov">
+                <h3>Gabriel Borohov</h3>
+                <p>646-623-8973</p>
+                <p><a href="mailto:gborohov@aol.com">gborohov@aol.com</a></p>
+            </div>
             <div class="staff-tile">
                 <img src="path/to/mike-rubinov.jpg" alt="Mike Rubinov">
                 <h3>Mike Rubinov</h3>
@@ -412,18 +436,6 @@
                 <h3>Bahtiyor Sirojev</h3>
                 <p>929-264-3901</p>
                 <p><a href="mailto:bahtiyorsirojev@yahoo.com">bahtiyorsirojev@yahoo.com</a></p>
-            </div>
-            <div class="staff-tile">
-                <img src="path/to/gabriel-borohov.jpg" alt="Gabriel Borohov">
-                <h3>Gabriel Borohov</h3>
-                <p>646-623-8973</p>
-                <p><a href="mailto:gborohov@aol.com">gborohov@aol.com</a></p>
-            </div>
-            <div class="staff-tile">
-                <img src="path/to/zarina-yusupova.jpg" alt="Zarina Yusupova">
-                <h3>Zarina Yusupova</h3>
-                <p>718-644-4666</p>
-                <p><a href="mailto:broker@eastcoastrealty.net">broker@eastcoastrealty.net</a></p>
             </div>
         </div>
     </div>
