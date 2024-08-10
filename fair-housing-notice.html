@@ -6,6 +6,7 @@
     <title>Fair Housing Notice</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             font-family: 'Playfair Display', serif;
@@ -20,24 +21,45 @@
             scroll-behavior: smooth;
         }
 
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-
         header {
-            background: #2b3e50;
-            color: #fff;
-            padding: 10px 0;
+            padding: 10px 20px;
             border-bottom: 3px solid #1a1f26;
-            position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: all 0.3s ease-in-out;
             display: flex;
             align-items: center;
+            background: #2b3e50;
+            position: fixed;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        header .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        header nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        header ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            margin: 0;
+        }
+
+        header li {
+            display: inline;
+            padding: 0 20px;
         }
 
         header a {
@@ -48,110 +70,54 @@
             transition: color 0.3s ease-in-out;
         }
 
-        header ul {
-            padding: 0;
-            list-style: none;
-            text-align: right;
-            flex-grow: 1;
-        }
-
-        header li {
-            display: inline;
-            padding: 0 20px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 50px;
-            margin-right: 10px;
-        }
-
-        .hero {
+        .container {
+            width: 80%;
+            margin: auto;
+            padding-top: 80px; /* Adjust for fixed header */
             text-align: center;
-            padding: 100px 20px;
-            background: #1a1f26;
-            color: #fff;
-            margin-top: 100px;
-            transition: all 0.3s ease-in-out;
-            position: relative;
-            overflow: hidden;
         }
 
-        .hero-title {
-            font-size: 3em;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            animation: fadeInDown 1s ease-in-out;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5em;
-            font-weight: lighter;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease-in-out;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        section {
-            padding: 50px 20px;
-            background: #fff;
-            margin-top: 20px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        section h2 {
-            font-size: 2em;
+        h1 {
+            text-align: center;
             color: #1e88e5;
+            margin-bottom: 20px;
+            font-size: 2.5em;
         }
 
-        footer {
-            background: #2b3e50;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            border-top: 3px solid #1a1f26;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .social-media {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-
-        .social-media a {
-            margin: 0 10px;
+        .notice-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease-in-out;
         }
 
-        .social-media a:hover {
-            transform: scale(1.2);
+        .notice-image:hover {
+            transform: scale(1.05);
+        }
+
+        .content {
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .content a {
+            color: #1e88e5;
+            text-decoration: none;
+        }
+
+        .content a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -163,11 +129,6 @@
             </a>
         </div>
         <nav>
-            <div class="nav-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
             <ul class="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
@@ -179,26 +140,25 @@
         </nav>
     </header>
 
-    <section id="fair-housing-notice">
-        <div class="container" data-aos="fade-up">
-            <h2>Fair Housing Notice</h2>
-            <p>[Insert Fair Housing Notice Content Here]</p>
+    <div class="container">
+        <h1 data-aos="fade-down">Fair Housing Notice</h1>
+        <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/fairhousingnotice.png" alt="Fair Housing Notice" class="notice-image" data-aos="zoom-in">
+        <div class="content" data-aos="fade-up">
+            <p>
+                This is the fair housing notice content. It is important to adhere to fair housing laws and regulations to ensure equality in housing opportunities for all. 
+                Learn more about fair housing by visiting the 
+                <a href="https://www.hud.gov/program_offices/fair_housing_equal_opp">HUD Fair Housing page</a>.
+            </p>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p>
-        </div>
-    </footer>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.12.7/jarallax.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            AOS.init();
-            jarallax(document.querySelectorAll('.jarallax'), {
-                speed: 0.5
+            AOS.init({
+                duration: 1000,
+                easing: 'ease-in-out',
+                once: true
             });
         });
     </script>
