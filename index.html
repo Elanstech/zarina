@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>East Coast Realty by Zarina</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
@@ -25,6 +26,8 @@
             background: url(https://raw.githubusercontent.com/Elanstech/zarina/main/backround.jpg) no-repeat center center;
             background-size: cover;
             color: #fff;
+            position: relative;
+            z-index: 1;
         }
 
         .container {
@@ -33,54 +36,59 @@
             overflow: hidden;
         }
 
- header {
-    padding: 10px 20px; /* Adjust padding for more spacing */
-    border-bottom: 3px solid #1a1f26;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    background: #2b3e50; /* Match this color with your logo */
-    position: fixed;
-}
+        header {
+            padding: 10px 20px;
+            border-bottom: 3px solid #1a1f26;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            background: #2b3e50;
+            position: fixed;
+        }
 
-header .logo {
-    display: flex;
-    align-items: center;
-    margin-right: 20px; /* Add margin to the right of the logo */
-}
+        header .logo {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
 
-header .logo img {
-    height: 40px; /* Adjust the height of the logo */
-    margin-right: 10px; /* Adjust the margin for spacing */
-}
+        header .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
 
-header nav {
-    flex-grow: 1; /* Allow nav to take the remaining space */
-    display: flex;
-    justify-content: flex-end; /* Align nav items to the right */
-}
+        header nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
 
-header ul {
-    padding: 0;
-    list-style: none;
-    display: flex;
-    margin: 0;
-}
+        header ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            margin: 0;
+        }
 
-header li {
-    display: inline;
-    padding: 0 20px;
-}
+        header li {
+            display: inline;
+            padding: 0 20px;
+        }
 
-header a {
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-    transition: color 0.3s ease-in-out;
-}
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        header a:hover {
+            color: #bbdefb;
+        }
+
         .hero {
             text-align: center;
             padding: 150px 20px 100px;
@@ -101,6 +109,77 @@ header a {
             font-weight: lighter;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
             animation: fadeInUp 1s ease-in-out;
+        }
+
+        .section {
+            padding: 50px 20px;
+            background: #fff;
+            margin-top: 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            color: #1e88e5;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-content h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        footer {
+            background: #2b3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            border-top: 3px solid #1a1f26;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .social-media a:hover {
+            transform: scale(1.2);
         }
 
         @keyframes fadeInDown {
@@ -124,61 +203,16 @@ header a {
                 transform: translateY(0);
             }
         }
-
-        section {
-            padding: 50px 20px;
-            background: #fff;
-            margin-top: 20px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        section h2 {
-            font-size: 2em;
-            color: #1e88e5;
-        }
-
-        footer {
-            background: #2b3e50;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            border-top: 3px solid #1a1f26;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .social-media {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-
-        .social-media a {
-            margin: 0 10px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .social-media a:hover {
-            transform: scale(1.2);
-        }
-
-        .social-media i {
-            font-size: 24px;
-        }
     </style>
 </head>
 <body>
     <header>
         <div class="logo">
             <a href="index.html">
-                <img src="logo-removebg-preview.png" alt="East Coast Realty by Zarina">
+                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
             </a>
         </div>
         <nav>
-            <div class="nav-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
             <ul class="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
@@ -197,49 +231,80 @@ header a {
         </div>
     </section>
 
-    <section id="about">
-        <div class="container" data-aos="fade-up">
+    <section class="section" id="about" data-aos="fade-up">
+        <div class="container">
             <h2>About Us</h2>
-            <p>Welcome to East Coast Realty by Zarina, where expertise meets dedication. Led by Zarina Yusupov, a seasoned real estate professional with over 20 years of experience, our company specializes in residential sales and investment properties in the vibrant communities of Rego Park and Forest Hills. As the Owner and Broker, Zarina brings a wealth of knowledge in fluctuating market trends, ever-changing mortgage interest rates, and Co-Op board packages, along with a plethora of insights into all things real estate and investments. Known for her diligence and unwavering commitment, Zarina is dedicated to helping you find your dream home or the perfect investment property with confidence and ease. Trust East Coast Realty by Zarina to guide you through every step of your real estate journey.</p>
-            <p>East Coast Realty by Zarina was founded by Zarina Yusupov, a passionate real estate professional dedicated to helping clients find their dream homes and investment properties. With years of experience in the industry, Zarina has built a reputation for excellence, integrity, and personalized service.</p>
-            <p>Our company specializes in renting and selling apartments and houses in the Rego Park and Forest Hills area. We offer comprehensive solutions to ensure a seamless and successful real estate experience.</p>
-            <p>Zarina Yusupov, the founder and CEO, is known for her deep understanding of the real estate market, keen negotiation skills, and unwavering commitment to client satisfaction. Under her leadership, East Coast Realty has grown into a trusted and respected name in the real estate industry.</p>
-            <p>At East Coast Realty, we believe in building long-term relationships with our clients, guided by our core values of honesty, transparency, and professionalism. Our dedicated team of experienced agents is always ready to assist you with your real estate needs, ensuring you receive the best possible service and results.</p>
+            <div class="card" data-aos="fade-right">
+                <div class="card-content">
+                    <h3>Welcome to East Coast Realty by Zarina</h3>
+                    <p>Led by Zarina Yusupov, a seasoned real estate professional with over 20 years of experience, our company specializes in residential sales and investment properties in the vibrant communities of Rego Park and Forest Hills. As the Owner and Broker, Zarina brings a wealth of knowledge in fluctuating market trends, ever-changing mortgage interest rates, and Co-Op board packages, along with a plethora of insights into all things real estate and investments. Known for her diligence and unwavering commitment, Zarina is dedicated to helping you find your dream home or the perfect investment property with confidence and ease. Trust East Coast Realty by Zarina to guide you through every step of your real estate journey.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="mls">
-        <div class="container" data-aos="fade-left">
+    <section class="section" id="services" data-aos="fade-left">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="card" data-aos="fade-up">
+                <div class="card-content">
+                    <h3>Residential Property Sales</h3>
+                    <p>We offer comprehensive solutions to ensure a seamless and successful real estate experience.</p>
+                </div>
+            </div>
+            <div class="card" data-aos="fade-up">
+                <div class="card-content">
+                    <h3>Residential Property Rentals</h3>
+                    <p>Our experienced agents are here to guide you through every step of the process, providing market insights and expert advice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="mls" data-aos="fade-right">
+        <div class="container">
             <h2>MLS Listings</h2>
-            <p>To view our available properties, please visit our MLS listings:</p>
-            <a href="https://onekeymls.com/realtor/agents/Zarina-Yusupova/120719" target="_blank">View MLS Listings</a>
+            <div class="card" data-aos="fade-up">
+                <div class="card-content">
+                    <p>To view our available properties, please visit our MLS listings:</p>
+                    <a href="https://onekeymls.com/realtor/agents/Zarina-Yusupova/120719" target="_blank">View MLS Listings</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="reviews">
-        <div class="container" data-aos="fade-up">
+    <section class="section" id="reviews" data-aos="fade-left">
+        <div class="container">
             <h2>Google Reviews</h2>
-            <div class="elfsight-app-02075f07-4a0b-4bfc-adf6-5578c4f26b9c" data-elfsight-app-lazy></div>
+            <div class="card" data-aos="fade-up">
+                <div class="card-content">
+                    <div class="elfsight-app-02075f07-4a0b-4bfc-adf6-5578c4f26b9c" data-elfsight-app-lazy></div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="contact">
-        <div class="container" data-aos="fade-up">
+    <section class="section" id="contact" data-aos="fade-right">
+        <div class="container">
             <h2>Contact Us</h2>
-            <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
-            <form action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-            <p>Email: <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a></p>
-            <p>Phone: <a href="tel:+17182712121">718-271-2121</a></p>
-        </div>
-        <div class="social-media">
-            <a href="https://www.facebook.com/eastcoastrealtybyzarina/" target="_blank">
-                <i class="fab fa-facebook-f"></i>
-            </a>
+            <div class="card" data-aos="fade-up">
+                <div class="card-content">
+                    <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
+                    <form action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                    <p>Email: <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a></p>
+                    <p>Phone: <a href="tel:+17182712121">718-271-2121</a></p>
+                </div>
+            </div>
+            <div class="social-media" data-aos="fade-up">
+                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -250,12 +315,12 @@ header a {
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.12.7/jarallax.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            AOS.init();
-            jarallax(document.querySelectorAll('.jarallax'), {
-                speed: 0.5
+            AOS.init({
+                duration: 1000,
+                easing: 'ease-in-out',
+                once: true
             });
         });
     </script>
