@@ -34,7 +34,7 @@
         }
 
         header {
-            padding: 10px 0;
+            padding: 10px 20px; /* Add some padding to the header */
             border-bottom: 3px solid #1a1f26;
             width: 100%;
             top: 0;
@@ -45,19 +45,23 @@
             position: fixed;
         }
 
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-            transition: color 0.3s ease-in-out;
+        header .logo {
+            display: flex;
+            align-items: center;
+            margin-right: 20px; /* Add margin to the right of the logo */
+        }
+
+        header nav {
+            flex-grow: 1; /* Allow nav to take the remaining space */
+            text-align: right; /* Align the nav items to the right */
         }
 
         header ul {
             padding: 0;
             list-style: none;
-            text-align: right;
-            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end; /* Ensure nav items are at the right end */
+            margin: 0;
         }
 
         header li {
@@ -65,14 +69,12 @@
             padding: 0 20px;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 50px;
-            margin-right: 10px;
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: color 0.3s ease-in-out;
         }
 
         .hero {
@@ -201,6 +203,7 @@
             <p>At East Coast Realty, we believe in building long-term relationships with our clients, guided by our core values of honesty, transparency, and professionalism. Our dedicated team of experienced agents is always ready to assist you with your real estate needs, ensuring you receive the best possible service and results.</p>
         </div>
     </section>
+
     <section id="mls">
         <div class="container" data-aos="fade-left">
             <h2>MLS Listings</h2>
