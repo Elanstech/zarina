@@ -293,24 +293,14 @@
                 width: 90%;
             }
 
-          .staff-tiles {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    justify-items: center;
+            .staff-tiles {
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             .staff-tile {
-    background: #fff;
-    color: #333;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    width: 100%;
-    max-width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-
+                width: calc(100% - 40px);
+                margin-bottom: 20px;
             }
         }
 
@@ -351,137 +341,76 @@
             color: #fff;
         }
 
-      .staff-tiles {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    justify-items: center;
-}
+        .staff-tiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
 
         .staff-tile {
             background: #fff;
             color: #333;
-            padding: 15px;
+            padding: 20px;
             border-radius: 8px;
             text-align: center;
-            width: 200px;
-            box-shadow:            0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease-in-out;
         }
 
-       .staff-tile img {
-    max-width: 100%;
-    border-radius: 50%;
-    margin-bottom: 15px;
+        .staff-tile img {
+            max-width: 100%;
+            border-radius: 50%;
+            margin-bottom: 15px;
         }
 
-       .staff-tile h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+        .staff-tile h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
         }
 
-       .staff-tile p {
-    font-size: 1em;
-    margin-bottom: 10px;
-}
+        .staff-tile p {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
 
-.staff-tile a {
-    color: #0039b3;
-    text-decoration: none;
-}
-      .staff-tile:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-@media (max-width: 768px) {
-    .staff-tile {
-        max-width: 100%;
-  .menu-icon {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    margin-right: 20px;
-}
+        .staff-tile a {
+            color: #0039b3;
+            text-decoration: none;
+        }
 
-.menu-icon .bar {
-    height: 4px;
-    width: 25px;
-    background-color: #fff;
-    margin: 3px 0;
-    transition: all 0.3s ease-in-out;
-}
-
-.nav-list {
-    padding: 0;
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-list li {
-    display: inline;
-}
-
-.nav-list li a {
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-    transition: color 0.3s ease-in-out;
-}
-
-.nav-list li a:hover {
-    color: #bbdefb;
-}
-
-@media (max-width: 768px) {
-    .menu-icon {
-        display: flex;
-    }
-
-    .nav-list {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-list.active {
-        display: flex;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-    }
-}
+        .staff-tile:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body>
 <button id="back-to-top">&#8679;</button>
-   <header>
-    <div class="logo">
-        <a href="index.html">
-            <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
-        </a>
-    </div>
-    <nav>
-        <div class="menu-icon">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
+            </a>
         </div>
-        <ul class="nav-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
-            <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
-            <li><a href="home-worth.html">What's Your Home Worth?</a></li>
-            <li><a href="mls-listings.html">MLS Listings</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-        </ul>
-    </nav>
-</header>
+        <nav>
+            <div class="menu-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
+                <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                <li><a href="home-worth.html">What's Your Home Worth?</a></li>
+                <li><a href="mls-listings.html">MLS Listings</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
     <section id="home" class="hero">
         <div class="container" data-aos="fade-in">
             <h1 class="hero-title">Discover Your Dream Home</h1>
@@ -501,50 +430,51 @@
             <p>To view our available properties, please visit our MLS listings:</p>
             <a href="https://onekeymls.com/realtor/agents/Zarina-Yusupova/120719" target="_blank">View MLS Listings</a>
         </div>
-  <section id="our-staff">
-    <div class="container" data-aos="fade-up">
-        <h2>Our Staff</h2>
-        <p>Meet our dedicated team of real estate professionals:</p>
-        <div class="staff-tiles">
-            <div class="staff-tile">
-                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/zarina.jpg" alt="Zarina Yusupova">
-                <h3>Zarina Yusupova</h3>
-                <p>718-644-4666</p>
-                <p><a href="mailto:broker@eastcoastrealty.net">broker@eastcoastrealty.net</a></p>
-            </div>
-            <div class="staff-tile">
-                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/Gabby.jpg" alt="Gabriel Borohov">
-                <h3>Gabriel Borohov</h3>
-                <p>646-623-8973</p>
-                <p><a href="mailto:gborohov@aol.com">gborohov@aol.com</a></p>
-            </div>
-            <div class="staff-tile">
-                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/Mike%20Pictures.jpg" alt="Mike Rubinov">
-                <h3>Mike Rubinov</h3>
-                <p>646-339-2626</p>
-                <p><a href="mailto:mrubinov@aol.com">mrubinov@aol.com</a></p>
-            </div>
-            <div class="staff-tile">
-                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/linda.jpg" alt="Linda (Zheng Li)">
-                <h3>Linda (Zheng Li)</h3>
-                <p>718-249-9726</p>
-                <p><a href="mailto:lindali188@gmail.com">lindali188@gmail.com</a></p>
-            </div>
-            <div class="staff-tile">
-                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/bagituz.jpg" alt="Bhagwant Kaur">
-                <h3>Bhagwant Kaur</h3>
-                <p>929-398-2849</p>
-                <p><a href="mailto:bhagwantkaur58@gmail.com">bhagwantkaur58@gmail.com</a></p>
-            </div>
-            <div class="staff-tile">
-                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/Bakht.jpg" alt="Bahtiyor Sirojev">
-                <h3>Bahtiyor Sirojev</h3>
-                <p>929-264-3901</p>
-                <p><a href="mailto:bahtiyorsirojev@yahoo.com">bahtiyorsirojev@yahoo.com</a></p>
+    </section>
+    <section id="our-staff">
+        <div class="container" data-aos="fade-up">
+            <h2>Our Staff</h2>
+            <p>Meet our dedicated team of real estate professionals:</p>
+            <div class="staff-tiles">
+                <div class="staff-tile">
+                    <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/zarina.jpg" alt="Zarina Yusupova">
+                    <h3>Zarina Yusupova</h3>
+                    <p>718-644-4666</p>
+                    <p><a href="mailto:broker@eastcoastrealty.net">broker@eastcoastrealty.net</a></p>
+                </div>
+                <div class="staff-tile">
+                    <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/Gabby.jpg" alt="Gabriel Borohov">
+                    <h3>Gabriel Borohov</h3>
+                    <p>646-623-8973</p>
+                    <p><a href="mailto:gborohov@aol.com">gborohov@aol.com</a></p>
+                </div>
+                <div class="staff-tile">
+                    <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/Mike%20Pictures.jpg" alt="Mike Rubinov">
+                    <h3>Mike Rubinov</h3>
+                    <p>646-339-2626</p>
+                    <p><a href="mailto:mrubinov@aol.com">mrubinov@aol.com</a></p>
+                </div>
+                <div class="staff-tile">
+                    <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/linda.jpg" alt="Linda (Zheng Li)">
+                    <h3>Linda (Zheng Li)</h3>
+                    <p>718-249-9726</p>
+                    <p><a href="mailto:lindali188@gmail.com">lindali188@gmail.com</a></p>
+                </div>
+                <div class="staff-tile">
+                    <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/bagituz.jpg" alt="Bhagwant Kaur">
+                    <h3>Bhagwant Kaur</h3>
+                    <p>929-398-2849</p>
+                    <p><a href="mailto:bhagwantkaur58@gmail.com">bhagwantkaur58@gmail.com</a></p>
+                </div>
+                <div class="staff-tile">
+                    <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/Bakht.jpg" alt="Bahtiyor Sirojev">
+                    <h3>Bahtiyor Sirojev</h3>
+                    <p>929-264-3901</p>
+                    <p><a href="mailto:bahtiyorsirojev@yahoo.com">bahtiyorsirojev@yahoo.com</a></p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
     <section id="faq">
         <div class="container" data-aos="fade-up">
             <h2>Frequently Asked Questions</h2>
@@ -568,7 +498,7 @@
     <section id="location">
         <div class="container" data-aos="fade-up">
             <h2>Our Location</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12094.006578048647!2d-73.87054852287737!3d40.72898604225458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25e346f9f0617%3A0xb19ba7d5ff9f8d02!2sEast%20Coast%20Realty%20by%20Zarina!5e0!3m2!1sen!2sus!4v1722964823445!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer            -when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12094.006578048647!2d-73.87054852287737!3d40.72898604225458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25e346f9f0617%3A0xb19ba7d5ff9f8d02!2sEast%20Coast%20Realty%20by%20Zarina!5e0!3m2!1sen!2sus!4v1722964823445!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
     <section id="contact">
@@ -665,18 +595,6 @@
     <!--End of Tawk.to Script-->
     <!--Elfsight Script-->
     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-        <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const menuIcon = document.querySelector('.menu-icon');
-        const navList = document.querySelector('.nav-list');
-
-        menuIcon.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
-    });
-</script>
-
 </body>
 </html>
-
 
