@@ -23,7 +23,7 @@
         }
 
         .background {
-            background: url(https://raw.githubusercontent.com/Elanstech/zarina/main/backround.jpg) no-repeat center center;
+            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/backround.jpg') no-repeat center center;
             background-size: cover;
             color: #fff;
             position: relative;
@@ -159,6 +159,20 @@
             color: #666;
         }
 
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #1e88e5;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background: #0d47a1;
+        }
+
         footer {
             background: #2b3e50;
             color: #fff;
@@ -180,6 +194,81 @@
 
         .social-media a:hover {
             transform: scale(1.2);
+        }
+
+        /* Contact Us Section */
+        .section#contact {
+            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/backround.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            padding: 60px 20px;
+        }
+
+        .contact-card {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .contact-content {
+            text-align: center;
+        }
+
+        .contact-content p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #ccc;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+        }
+
+        .btn {
+            background: #1e88e5;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background: #0d47a1;
         }
 
         @keyframes fadeInDown {
@@ -237,11 +326,30 @@
             <div class="card" data-aos="fade-right">
                 <div class="card-content">
                     <h3>Welcome to East Coast Realty by Zarina</h3>
-                    <p>Welcome to East Coast Realty by Zarina, where expertise meets dedication. Led by Zarina Yusupov, a seasoned real estate professional with over 20 years of experience, our company specializes in residential sales and investment properties in the vibrant communities of Rego Park and Forest Hills. As the Owner and Broker, Zarina brings a wealth of knowledge in fluctuating market trends, ever-changing mortgage interest rates, and Co-Op board packages, along with a plethora of insights into all things real estate and investments. Known for her diligence and unwavering commitment, Zarina is dedicated to helping you find your dream home or the perfect investment property with confidence and ease. Trust East Coast Realty by Zarina to guide you through every step of your real estate journey.</p>
+                    <p>Led by Zarina Yusupov, a seasoned real estate professional with over 20 years of experience, our company specializes in residential sales and investment properties in the vibrant communities of Rego Park and Forest Hills. As the Owner and Broker, Zarina brings a wealth of knowledge in fluctuating market trends, ever-changing mortgage interest rates, and Co-Op board packages, along with a plethora of insights into all things real estate and investments. Known for her diligence and unwavering commitment, Zarina is dedicated to helping you find your dream home or the perfect investment property with confidence and ease. Trust East Coast Realty by Zarina to guide you through every step of your real estate journey.</p>
                 </div>
             </div>
         </div>
     </section>
+
+    <section class="section" id="services" data-aos="fade-left">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="card" data-aos="fade-up">
+                <div class="card-content">
+                    <h3>Residential Property Sales</h3>
+                    <p>We offer comprehensive solutions to ensure a seamless and successful real estate experience.</p>
+                </div>
+            </div>
+            <div class="card" data-aos="fade-up">
+                <div class="card-content">
+                    <h3>Residential Property Rentals</h3>
+                    <p>Our experienced agents are here to guide you through every step of the process, providing market insights and expert advice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section" id="mls" data-aos="fade-right">
         <div class="container">
             <h2>MLS Listings</h2>
@@ -265,17 +373,52 @@
         </div>
     </section>
 
+    <section class="section" id="faq-teaser" data-aos="fade-up">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="card" data-aos="fade-up">
+                <div class="card-content">
+                    <h3>What services do you offer?</h3>
+                    <p>We offer residential property sales, rentals, and investment property management.</p>
+                </div>
+            </div>
+            <div class="card" data-aos="fade-up">
+                <div class="card-content">
+                    <h3>How can I contact you?</h3>
+                    <p>You can contact us via email at <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a> or call us at <a href="tel:+17182712121">718-271-2121</a>.</p>
+                </div>
+            </div>
+            <div class="card" data-aos="fade-up">
+                <div class="card-content">
+                    <h3>Where are you located?</h3>
+                    <p>We are located in Rego Park and Forest Hills.</p>
+                </div>
+            </div>
+            <div class="card" data-aos="fade-up">
+                <div class="card-content">
+                    <a href="faq.html" class="btn">View All FAQs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section" id="contact" data-aos="fade-right">
         <div class="container">
             <h2>Contact Us</h2>
-            <div class="card" data-aos="fade-up">
-                <div class="card-content">
+            <div class="contact-card" data-aos="fade-up">
+                <div class="contact-content">
                     <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
                     <form action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="message" placeholder="Your Message" required></textarea>
-                        <button type="submit">Send Message</button>
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
                     </form>
                     <p>Email: <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a></p>
                     <p>Phone: <a href="tel:+17182712121">718-271-2121</a></p>
