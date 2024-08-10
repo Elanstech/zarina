@@ -393,38 +393,95 @@
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-
 @media (max-width: 768px) {
     .staff-tile {
         max-width: 100%;
+  .menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.menu-icon .bar {
+    height: 4px;
+    width: 25px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-list li {
+    display: inline;
+}
+
+.nav-list li a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-list li a:hover {
+    color: #bbdefb;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
     }
 }
     </style>
 </head>
 <body>
 <button id="back-to-top">&#8679;</button>
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
-            </a>
+   <header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
+        </a>
+    </div>
+    <nav>
+        <div class="menu-icon">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
-        <nav>
-            <div class="menu-icon">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
-                <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
-                <li><a href="home-worth.html">What's Your Home Worth?</a></li>
-                <li><a href="mls-listings.html">MLS Listings</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-            </ul>
-        </nav>
-    </header>
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
+            <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+            <li><a href="home-worth.html">What's Your Home Worth?</a></li>
+            <li><a href="mls-listings.html">MLS Listings</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </nav>
+</header>
     <section id="home" class="hero">
         <div class="container" data-aos="fade-in">
             <h1 class="hero-title">Discover Your Dream Home</h1>
@@ -608,6 +665,17 @@
     <!--End of Tawk.to Script-->
     <!--Elfsight Script-->
     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+        <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuIcon = document.querySelector('.menu-icon');
+        const navList = document.querySelector('.nav-list');
+
+        menuIcon.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    });
+</script>
+
 </body>
 </html>
 
