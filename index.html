@@ -6,6 +6,7 @@
     <title>East Coast Realty by Zarina</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             font-family: 'Playfair Display', serif;
@@ -40,8 +41,8 @@
             z-index: 1000;
             display: flex;
             align-items: center;
-            background: transparent;
-            position: absolute;
+            background: #2b3e50; /* Match this color with your logo */
+            position: fixed;
         }
 
         header a {
@@ -153,40 +154,42 @@
         .social-media a:hover {
             transform: scale(1.2);
         }
+
+        .social-media i {
+            font-size: 24px;
+        }
     </style>
 </head>
 <body>
-    <div class="background">
-        <header>
-            <div class="logo">
-                <a href="index.html">
-                    <img src="logo-removebg-preview.png" alt="East Coast Realty by Zarina">
-                </a>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo-removebg-preview.png" alt="East Coast Realty by Zarina">
+            </a>
+        </div>
+        <nav>
+            <div class="nav-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-            <nav>
-                <div class="nav-toggle" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <ul class="nav-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
-                    <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
-                    <li><a href="home-worth.html">What's Your Home Worth?</a></li>
-                    <li><a href="mls-listings.html">MLS Listings</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                </ul>
-            </nav>
-        </header>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
+                <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                <li><a href="home-worth.html">What's Your Home Worth?</a></li>
+                <li><a href="mls-listings.html">MLS Listings</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <section id="home" class="hero">
-            <div class="container" data-aos="fade-in">
-                <h1 class="hero-title">Discover Your Dream Home</h1>
-                <p class="hero-subtitle">Expert Guidance in Rego Park and Forest Hills Real Estate</p>
-            </div>
-        </section>
-    </div>
+    <section id="home" class="hero background">
+        <div class="container" data-aos="fade-in">
+            <h1 class="hero-title">Discover Your Dream Home</h1>
+            <p class="hero-subtitle">Expert Guidance in Rego Park and Forest Hills Real Estate</p>
+        </div>
+    </section>
 
     <section id="about">
         <div class="container" data-aos="fade-up">
@@ -198,18 +201,6 @@
             <p>At East Coast Realty, we believe in building long-term relationships with our clients, guided by our core values of honesty, transparency, and professionalism. Our dedicated team of experienced agents is always ready to assist you with your real estate needs, ensuring you receive the best possible service and results.</p>
         </div>
     </section>
-
-    <section id="services">
-        <div class="container" data-aos="fade-right">
-            <h2>Our Services</h2>
-            <p>We offer a range of services to meet your real estate needs, including renting and selling apartments and houses. Our experienced agents are here to guide you through every step of the process, providing market insights and expert advice.</p>
-            <ul>
-                <li>Residential Property Sales</li>
-                <li>Residential Property Rentals</li>
-            </ul>
-        </div>
-    </section>
-
     <section id="mls">
         <div class="container" data-aos="fade-left">
             <h2>MLS Listings</h2>
@@ -240,7 +231,7 @@
         </div>
         <div class="social-media">
             <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank">
-                <img src="facebook_icon.png" alt="Facebook">
+                <i class="fab fa-facebook-f"></i>
             </a>
         </div>
     </section>
