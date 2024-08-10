@@ -80,30 +80,40 @@
         }
 
         section {
-            padding: 50px 20px;
+            padding: 100px 20px 50px 20px;
             background: #fff;
             margin-top: 80px;
             transition: all 0.3s ease-in-out;
         }
 
         section h1, section h2 {
-            font-size: 2em;
+            font-size: 2.5em;
             color: #0000F4;
             text-align: center;
             margin-bottom: 20px;
         }
 
         .faq-item {
+            background: #f1f1f1;
+            border-radius: 8px;
             margin-bottom: 20px;
+            padding: 20px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
         .faq-item h3 {
-            font-size: 1.5em;
+            font-size: 1.75em;
             color: #333;
+            margin-bottom: 10px;
         }
 
         .faq-item p {
-            font-size: 1em;
+            font-size: 1.2em;
             color: #666;
         }
 
@@ -160,6 +170,14 @@
             section h2 {
                 font-size: 1.5em;
             }
+
+            .faq-item h3 {
+                font-size: 1.25em;
+            }
+
+            .faq-item p {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
@@ -181,6 +199,7 @@
             </ul>
         </nav>
     </header>
+
     <section id="faq">
         <div class="container" data-aos="fade-up">
             <h1>Frequently Asked Questions</h1>
@@ -192,9 +211,21 @@
                 <h3>How can I schedule a viewing?</h3>
                 <p>You can schedule a viewing by contacting us through the contact form or calling our office directly.</p>
             </div>
-            <a href="faq.html" class="cta-button">More FAQs</a>
+            <div class="faq-item">
+                <h3>What are the requirements for renting a property?</h3>
+                <p>The requirements typically include a completed rental application, proof of income, a credit report, and references. Some properties may have additional requirements.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do you offer property management services?</h3>
+                <p>Yes, we offer comprehensive property management services including tenant screening, rent collection, maintenance, and more. Contact us for details.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can you help with buying a home?</h3>
+                <p>Yes, we offer assistance with buying homes, including market analysis, property tours, negotiation, and closing services. Our experienced agents are here to help you find your dream home.</p>
+            </div>
         </div>
     </section>
+
     <footer>
         <div class="container">
             <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p>
@@ -203,14 +234,9 @@
             <a href="https://www.facebook.com/eastcoastrealtybyzarina/" target="_blank">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width: 24px; height: auto;">
             </a>
-            <a href="https://twitter.com/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg" alt="Twitter" style="width: 24px; height: auto;">
-            </a>
-            <a href="https://www.instagram.com/" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 24px; height: auto;">
-            </a>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
