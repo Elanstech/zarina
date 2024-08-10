@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ</title>
+    <title>FAQ - East Coast Realty by Zarina</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <style>
-        /* Include the same CSS as in index.html */
         body {
             font-family: 'Playfair Display', serif;
             margin: 0;
@@ -14,11 +15,14 @@
             color: #333;
             transition: all 0.3s ease-in-out;
         }
+
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
+            padding: 20px;
         }
+
         header {
             background: #2b3e50;
             color: #fff;
@@ -32,27 +36,33 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .logo {
             display: flex;
             align-items: center;
             margin-left: 20px;
         }
+
         .logo img {
-            height: 80px;
+            height: 50px; /* Adjust to match the size in index.html */
             margin-right: 10px;
         }
+
         nav {
             margin-right: 20px;
         }
+
         nav ul {
             padding: 0;
             list-style: none;
             display: flex;
             gap: 20px;
         }
+
         nav ul li {
             display: inline;
         }
+
         nav ul li a {
             color: #fff;
             text-decoration: none;
@@ -60,41 +70,39 @@
             font-size: 16px;
             transition: color 0.3s ease-in-out;
         }
+
         nav ul li a:hover {
             color: #bbdefb;
         }
+
         section {
             padding: 50px 20px;
             background: #fff;
             margin-top: 80px;
             transition: all 0.3s ease-in-out;
         }
+
         section h1, section h2 {
             font-size: 2em;
-            color: #0000F4; 
+            color: #1e88e5;
             text-align: center;
             margin-bottom: 20px;
         }
+
         .faq-item {
             margin-bottom: 20px;
-            padding: 20px;
-            background: #f9f9f9;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            transition: box-shadow 0.3s ease-in-out;
         }
-        .faq-item:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
+
         .faq-item h3 {
-            font-size: 1.75em;
+            font-size: 1.5em;
             color: #333;
-            margin-bottom: 10px;
         }
+
         .faq-item p {
-            font-size: 1.2em;
+            font-size: 1em;
             color: #666;
         }
+
         footer {
             background: #2b3e50;
             color: #fff;
@@ -103,57 +111,27 @@
             border-top: 3px solid #1a1f26;
             transition: all 0.3s ease-in-out;
         }
+
         .social-media {
             display: flex;
             justify-content: center;
             margin: 20px 0;
         }
+
         .social-media a {
             margin: 0 10px;
             transition: transform 0.3s ease-in-out;
         }
+
         .social-media a:hover {
             transform: scale(1.2);
-        }
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .logo {
-                margin-left: 10px;
-                margin-bottom: 10px;
-            }
-            nav {
-                margin-right: 10px;
-            }
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-                width: 100%;
-                text-align: center;
-            }
-            section {
-                padding: 30px 10px;
-            }
-            section h2 {
-                font-size: 1.5em;
-            }
-            .faq-item h3 {
-                font-size: 1.5em;
-            }
-            .faq-item p {
-                font-size: 1em;
-            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="logo">
-            <a href="index.html">
-                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
-            </a>
+            <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
         </div>
         <nav>
             <ul>
@@ -166,7 +144,7 @@
             </ul>
         </nav>
     </header>
-    
+
     <section id="faq">
         <div class="container" data-aos="fade-up">
             <h1>Frequently Asked Questions</h1>
@@ -178,23 +156,50 @@
                 <h3>How can I schedule a viewing?</h3>
                 <p>You can schedule a viewing by contacting us through the contact form or calling our office directly.</p>
             </div>
-            <a href="faq.html" class="cta-button">More FAQs</a>
+            <div class="faq-item">
+                <h3>What documents do I need to rent a property?</h3>
+                <p>Typically, you'll need to provide proof of income, a credit report, and references. Specific requirements may vary.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I prepare my home for sale?</h3>
+                <p>To prepare your home for sale, consider cleaning, decluttering, making minor repairs, and staging the property to appeal to buyers.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What are closing costs?</h3>
+                <p>Closing costs are fees associated with the finalization of a real estate transaction, including attorney fees, title insurance, and taxes.</p>
+            </div>
+            <!-- Add more FAQs as needed -->
         </div>
     </section>
-    
+
     <footer>
         <div class="container">
             <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p>
         </div>
     </footer>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            AOS.init();
-        });
-    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.12.7/jarallax.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize AOS
+            AOS.init();
+
+            // Initialize jarallax
+            jarallax(document.querySelectorAll('.jarallax'), {
+                speed: 0.5
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
