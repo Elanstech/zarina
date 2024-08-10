@@ -303,71 +303,76 @@
             }
         }
 
-       #our-staff {
+  #our-staff {
     text-align: center;
     padding: 50px 20px;
     background: #f4f4f4;
     position: relative;
     color: #333;
-    overflow-x: auto;
-        }
+    overflow: hidden;
+}
 
-        #our-staff::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: -1;
-        }
-
-     #our-staff .container {
+#our-staff .container {
     max-width: 1200px;
     margin: 0 auto;
-}     
+}
+
 #our-staff h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
     color: #0000F4;
 }
 
-      #our-staff p {
+#our-staff p {
     font-size: 1.2em;
     margin-bottom: 40px;
     color: #666;
 }
 
-      .staff-tiles {
+.staff-tiles-container {
+    position: relative;
     display: flex;
-    gap: 20px;
-    padding: 10px;
+    align-items: center;
 }
 
-        .staff-tile {
+.staff-tiles {
+    display: flex;
+    gap: 20px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.staff-tile {
     background: #fff;
     color: #333;
     padding: 20px;
     border-radius: 20px;
     text-align: center;
-    width: 250px;
+    min-width: 250px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
     flex-shrink: 0;
 }
-       .staff-tile img {
+
+.staff-tile img {
     width: 100%;
     border-radius: 50%;
     margin-bottom: 15px;
 }
 
-      .staff-info h3 {
+.staff-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.staff-info h3 {
     font-size: 1.5em;
     margin-bottom: 10px;
-        }
+}
 
-   .staff-info p {
+.staff-info p {
     font-size: 1em;
     margin-bottom: 5px;
 }
@@ -376,82 +381,47 @@
     color: #0039b3;
     text-decoration: none;
 }
-    .staff-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-     .staff-tile:hover {
+.staff-tile:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-    @media (max-width: 768px) {
-    .staff-tiles {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-        /* Hamburger Menu CSS */
-.menu-icon {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    margin-right: 20px;
-}
 
-.menu-icon .bar {
-    height: 4px;
-    width: 25px;
-    background-color: #fff;
-    margin: 3px 0;
-    transition: all 0.3s ease-in-out;
-}
-
-.nav-list {
-    padding: 0;
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-list li {
-    display: inline;
-}
-
-.nav-list li a {
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
     color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-    transition: color 0.3s ease-in-out;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    transition: background 0.3s ease;
 }
 
-.nav-list li a:hover {
-    color: #bbdefb;
+.nav-arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
 }
 
 @media (max-width: 768px) {
-    .menu-icon {
-        display: flex;
+    .staff-tiles {
+        flex-direction: column;
     }
 
-    .nav-list {
+    .nav-arrow {
         display: none;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-list.active {
-        display: flex;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
     }
 }
+       
 </style>
 </head>
 <body>
@@ -502,55 +472,59 @@
     <div class="container" data-aos="fade-up">
         <h2>Our Staff</h2>
         <p>Meet our dedicated team of real estate professionals:</p>
-        <div class="staff-tiles">
-            <div class="staff-tile">
-                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/zarina.jpg" alt="Zarina Yusupova">
-                <div class="staff-info">
-                    <h3>Zarina Yusupova</h3>
-                    <p>718-644-4666</p>
-                    <p><a href="mailto:broker@eastcoastrealty.net">broker@eastcoastrealty.net</a></p>
+        <div class="staff-tiles-container">
+            <div class="staff-tiles">
+                <div class="staff-tile">
+                    <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/zarina.jpg" alt="Zarina Yusupova">
+                    <div class="staff-info">
+                        <h3>Zarina Yusupova</h3>
+                        <p>718-644-4666</p>
+                        <p><a href="mailto:broker@eastcoastrealty.net">broker@eastcoastrealty.net</a></p>
+                    </div>
+                </div>
+                <div class="staff-tile">
+                    <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/Gabby.jpg" alt="Gabriel Borohov">
+                    <div class="staff-info">
+                        <h3>Gabriel Borohov</h3>
+                        <p>646-623-8973</p>
+                        <p><a href="mailto:gborohov@aol.com">gborohov@aol.com</a></p>
+                    </div>
+                </div>
+                <div class="staff-tile">
+                    <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/Mike%20Pictures.jpg" alt="Mike Rubinov">
+                    <div class="staff-info">
+                        <h3>Mike Rubinov</h3>
+                        <p>646-339-2626</p>
+                        <p><a href="mailto:mrubinov@aol.com">mrubinov@aol.com</a></p>
+                    </div>
+                </div>
+                <div class="staff-tile">
+                    <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/linda.jpg" alt="Linda (Zheng Li)">
+                    <div class="staff-info">
+                        <h3>Linda (Zheng Li)</h3>
+                        <p>718-249-9726</p>
+                        <p><a href="mailto:lindali188@gmail.com">lindali188@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="staff-tile">
+                    <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/bagituz.jpg" alt="Bhagwant Kaur">
+                    <div class="staff-info">
+                        <h3>Bhagwant Kaur</h3>
+                        <p>929-398-2849</p>
+                        <p><a href="mailto:bhagwantkaur58@gmail.com">bhagwantkaur58@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="staff-tile">
+                    <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/Bakht.jpg" alt="Bahtiyor Sirojev">
+                    <div class="staff-info">
+                        <h3>Bahtiyor Sirojev</h3>
+                        <p>929-264-3901</p>
+                        <p><a href="mailto:bahtiyorsirojev@yahoo.com">bahtiyorsirojev@yahoo.com</a></p>
+                    </div>
                 </div>
             </div>
-            <div class="staff-tile">
-                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/Gabby.jpg" alt="Gabriel Borohov">
-                <div class="staff-info">
-                    <h3>Gabriel Borohov</h3>
-                    <p>646-623-8973</p>
-                    <p><a href="mailto:gborohov@aol.com">gborohov@aol.com</a></p>
-                </div>
-            </div>
-            <div class="staff-tile">
-                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/Mike%20Pictures.jpg" alt="Mike Rubinov">
-                <div class="staff-info">
-                    <h3>Mike Rubinov</h3>
-                    <p>646-339-2626</p>
-                    <p><a href="mailto:mrubinov@aol.com">mrubinov@aol.com</a></p>
-                </div>
-            </div>
-            <div class="staff-tile">
-                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/linda.jpg" alt="Linda (Zheng Li)">
-                <div class="staff-info">
-                    <h3>Linda (Zheng Li)</h3>
-                    <p>718-249-9726</p>
-                    <p><a href="mailto:lindali188@gmail.com">lindali188@gmail.com</a></p>
-                </div>
-            </div>
-            <div class="staff-tile">
-                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/bagituz.jpg" alt="Bhagwant Kaur">
-                <div class="staff-info">
-                    <h3>Bhagwant Kaur</h3>
-                    <p>929-398-2849</p>
-                    <p><a href="mailto:bhagwantkaur58@gmail.com">bhagwantkaur58@gmail.com</a></p>
-                </div>
-            </div>
-            <div class="staff-tile">
-                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/Bakht.jpg" alt="Bahtiyor Sirojev">
-                <div class="staff-info">
-                    <h3>Bahtiyor Sirojev</h3>
-                    <p>929-264-3901</p>
-                    <p><a href="mailto:bahtiyorsirojev@yahoo.com">bahtiyorsirojev@yahoo.com</a></p>
-                </div>
-            </div>
+            <div class="nav-arrow left-arrow" onclick="scrollLeft()">&#9664;</div>
+            <div class="nav-arrow right-arrow" onclick="scrollRight()">&#9654;</div>
         </div>
     </div>
 </section>
