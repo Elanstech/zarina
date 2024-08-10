@@ -13,18 +13,112 @@
             background-color: #f9f9f9;
             color: #333;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
+            flex-direction: column;
+            min-height: 100vh;
         }
+
+        header {
+            background: #2b3e50;
+            color: #fff;
+            padding: 10px 0;
+            border-bottom: 3px solid #1a1f26;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .logo img {
+            height: 80px;
+            margin-right: 10px;
+        }
+
+        nav {
+            margin-right: 20px;
+            flex-grow: 1;
+        }
+
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        .menu-icon .bar {
+            height: 4px;
+            width: 25px;
+            background-color: #fff;
+            margin: 3px 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-list {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-list li {
+            display: inline;
+        }
+
+        .nav-list li a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-list li a:hover {
+            color: #bbdefb;
+        }
+
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: flex;
+            }
+
+            .nav-list {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-list.active {
+                display: flex;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+        }
+
         .container {
             max-width: 600px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             background-color: #fff;
             border-radius: 8px;
+            margin: 120px auto; /* Adjust for fixed header */
+            text-align: center;
         }
+
         .cta-button {
             display: inline-block;
             padding: 10px 20px;
@@ -36,16 +130,64 @@
             transition: background-color 0.3s ease-in-out;
             margin-top: 20px;
         }
+
         .cta-button:hover {
             background-color: #0000cc;
+        }
+
+        footer {
+            background: #2b3e50;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-top: 3px solid #1a1f26;
+            transition: all 0.3s ease-in-out;
+            margin-top: auto;
         }
     </style>
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
+            </a>
+        </div>
+        <nav>
+            <div class="menu-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
+                <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                <li><a href="home-worth.html">What's Your Home Worth?</a></li>
+                <li><a href="mls-listings.html">MLS Listings</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
         <h1>View Our Properties</h1>
         <p>To view our available properties, please visit our MLS listings:</p>
         <a href="https://onekeymls.com/realtor/agents/Zarina-Yusupova/120719" target="_blank" class="cta-button">View MLS Listings</a>
     </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuIcon = document.querySelector('.menu-icon');
+            const navList = document.querySelector('.nav-list');
+
+            menuIcon.addEventListener('click', () => {
+                navList.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
