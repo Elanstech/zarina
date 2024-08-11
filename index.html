@@ -49,6 +49,24 @@
             justify-content: space-between;
         }
 
+        .back-button {
+            display: none;
+            align-items: center;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .back-button i {
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .back-button span {
+            color: #fff;
+            margin-left: 10px;
+            font-size: 16px;
+        }
+
         header .logo {
             display: flex;
             align-items: center;
@@ -343,6 +361,10 @@
             .card {
                 margin-bottom: 20px;
             }
+
+            .back-button {
+                display: flex;
+            }
         }
 
         /* Styles for Mobile Phones */
@@ -414,11 +436,18 @@
                 padding: 10px 20px;
                 font-size: 1em;
             }
+
+            .back-button {
+                display: flex;
+            }
         }
     </style>
 </head>
 <body>
     <header>
+        <div class="back-button" onclick="window.history.back();">
+            <i class="fas fa-arrow-left"></i><span>Back</span>
+        </div>
         <div class="logo">
             <a href="index.html">
                 <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
