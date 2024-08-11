@@ -37,7 +37,7 @@
         }
 
         header {
-            padding: 10px 20px;
+            padding: 20px 20px;
             border-bottom: 3px solid #1a1f26;
             width: 100%;
             top: 0;
@@ -47,56 +47,36 @@
             background: #2b3e50;
             position: fixed;
             justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        .back-button {
-            display: none;
-            align-items: center;
-            margin-right: 20px;
-            cursor: pointer;
+        .logo {
+            flex-grow: 1;
+            text-align: center;
         }
 
-        .back-button i {
-            font-size: 20px;
-            color: #fff;
+        .logo img {
+            height: 60px; /* Increased logo size */
         }
 
-        .back-button span {
-            color: #fff;
-            margin-left: 10px;
-            font-size: 16px;
-        }
-
-        header .logo {
+        nav {
+            flex-grow: 2;
             display: flex;
-            align-items: center;
-            margin-right: 20px;
+            justify-content: center;
         }
 
-        header .logo img {
-            height: 40px;
-            margin-right: 10px;
-        }
-
-        header nav {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        header ul {
+        nav ul {
             padding: 0;
             list-style: none;
             display: flex;
             margin: 0;
         }
 
-        header li {
-            display: inline;
+        nav li {
             padding: 0 20px;
         }
 
-        header a {
+        nav a {
             color: #fff;
             text-decoration: none;
             text-transform: uppercase;
@@ -104,7 +84,7 @@
             transition: color 0.3s ease-in-out;
         }
 
-        header a:hover {
+        nav a:hover {
             color: #bbdefb;
         }
 
@@ -361,10 +341,6 @@
             .card {
                 margin-bottom: 20px;
             }
-
-            .back-button {
-                display: flex;
-            }
         }
 
         /* Styles for Mobile Phones */
@@ -374,7 +350,7 @@
             }
 
             header .logo img {
-                height: 30px;
+                height: 50px; /* Adjusted logo size for mobile */
             }
 
             .hamburger {
@@ -436,18 +412,11 @@
                 padding: 10px 20px;
                 font-size: 1em;
             }
-
-            .back-button {
-                display: flex;
-            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="back-button" onclick="window.history.back();">
-            <i class="fas fa-arrow-left"></i><span>Back</span>
-        </div>
         <div class="logo">
             <a href="index.html">
                 <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
