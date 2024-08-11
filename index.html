@@ -292,6 +292,96 @@
                 transform: translateY(0);
             }
         }
+
+        /* Styles for Tablets */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header nav ul li {
+                padding: 10px 0;
+            }
+
+            .hero {
+                padding: 100px 20px 50px;
+            }
+
+            .section {
+                padding: 30px 20px;
+            }
+
+            .card {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Styles for Mobile Phones */
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+            }
+
+            header .logo img {
+                height: 30px;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header nav ul li {
+                padding: 10px 0;
+            }
+
+            .hero {
+                padding: 80px 20px 30px;
+            }
+
+            .hero-title {
+                font-size: 2em;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2em;
+            }
+
+            .section {
+                padding: 20px 10px;
+            }
+
+            .card {
+                margin-bottom: 20px;
+            }
+
+            .card-content h3 {
+                font-size: 1.2em;
+            }
+
+            .card-content p {
+                font-size: 0.9em;
+            }
+
+            .contact-card {
+                padding: 20px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                font-size: 0.9em;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 <body>
