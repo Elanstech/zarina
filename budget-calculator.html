@@ -511,6 +511,64 @@
                 flex: 1 1 100%;
             }
         }
+
+        /* Slider Styles */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            margin: 20px 0;
+        }
+
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity .15s ease-in-out;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #1e88e5;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: background 0.3s ease-in-out;
+        }
+
+        .slider::-webkit-slider-thumb:hover {
+            background: #0d47a1;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #1e88e5;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: background 0.3s ease-in-out;
+        }
+
+        .slider::-moz-range-thumb:hover {
+            background: #0d47a1;
+        }
     </style>
 </head>
 <body>
@@ -553,19 +611,35 @@
                     <form id="budgetForm">
                         <div class="form-group">
                             <label for="income">Monthly Income:</label>
-                            <input type="number" id="income" required>
+                            <div class="slider-label">
+                                <span id="incomeValue">0</span>
+                                <span>$20,000</span>
+                            </div>
+                            <input type="range" id="income" class="slider" min="0" max="20000" step="100" oninput="updateSliderValue('income', 'incomeValue')" required>
                         </div>
                         <div class="form-group">
                             <label for="expenses">Monthly Expenses:</label>
-                            <input type="number" id="expenses" required>
+                            <div class="slider-label">
+                                <span id="expensesValue">0</span>
+                                <span>$10,000</span>
+                            </div>
+                            <input type="range" id="expenses" class="slider" min="0" max="10000" step="100" oninput="updateSliderValue('expenses', 'expensesValue')" required>
                         </div>
                         <div class="form-group">
                             <label for="savings">Savings:</label>
-                            <input type="number" id="savings" required>
+                            <div class="slider-label">
+                                <span id="savingsValue">0</span>
+                                <span>$200,000</span>
+                            </div>
+                            <input type="range" id="savings" class="slider" min="0" max="200000" step="1000" oninput="updateSliderValue('savings', 'savingsValue')" required>
                         </div>
                         <div class="form-group">
                             <label for="downPayment">Down Payment:</label>
-                            <input type="number" id="downPayment" required>
+                            <div class="slider-label">
+                                <span id="downPaymentValue">0</span>
+                                <span>$200,000</span>
+                            </div>
+                            <input type="range" id="downPayment" class="slider" min="0" max="200000" step="1000" oninput="updateSliderValue('downPayment', 'downPaymentValue')" required>
                         </div>
                         <button type="submit" class="btn">Calculate</button>
                     </form>
@@ -633,6 +707,12 @@
             hamburger.classList.toggle('active');
             navUL.classList.toggle('active');
         });
+
+        function updateSliderValue(sliderId, valueId) {
+            const slider = document.getElementById(sliderId);
+            const value = document.getElementById(valueId);
+            value.innerText = slider.value;
+        }
     </script>
 </body>
 </html>
