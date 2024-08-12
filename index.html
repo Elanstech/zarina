@@ -9,7 +9,6 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Existing CSS */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -21,14 +20,6 @@
 
         html {
             scroll-behavior: smooth;
-        }
-
-        .background {
-            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/backround.jpg') no-repeat center center;
-            background-size: cover;
-            color: #fff;
-            position: relative;
-            z-index: 1;
         }
 
         .container {
@@ -49,6 +40,7 @@
             position: fixed;
             justify-content: space-between;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            animation: fadeInDown 1s ease-in-out;
         }
 
         .logo {
@@ -190,6 +182,7 @@
             color: rgb(1, 0, 244);
             text-align: center;
             margin-bottom: 20px;
+            animation: fadeInDown 1s ease-in-out;
         }
 
         .card {
@@ -199,6 +192,7 @@
             padding: 20px;
             margin-bottom: 30px;
             transition: transform 0.3s ease-in-out;
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .card:hover {
@@ -207,7 +201,9 @@
 
         .card img {
             max-width: 100%;
-            border-radius: 15px 15px 0 0;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
         }
 
         .card-content {
@@ -224,6 +220,31 @@
             font-size: 1em;
             line-height: 1.6;
             color: #666;
+        }
+
+        .staff-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .staff-member {
+            flex: 1 1 calc(50% - 20px);
+            margin: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .staff-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .staff-photo {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
         }
 
         .map-container {
@@ -254,37 +275,6 @@
             flex-wrap: wrap;
         }
 
-        footer {
-            background: #2b3e50;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            border-top: 3px solid #1a1f26;
-        }
-
-        .social-media {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-
-        .social-media a {
-            margin: 0 10px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .social-media a:hover {
-            transform: scale(1.2);
-        }
-
-        /* Contact Us Section */
-        .section#contact {
-            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/backround.jpg') no-repeat center center;
-            background-size: cover;
-            color: #fff;
-            padding: 60px 20px;
-        }
-
         .contact-card {
             background: rgba(0, 0, 0, 0.7);
             border-radius: 15px;
@@ -313,6 +303,7 @@
         .form-group {
             margin-bottom: 20px;
         }
+
         .form-group input,
         .form-group textarea {
             width: 100%;
@@ -349,6 +340,29 @@
 
         .btn:hover {
             background: #0d47a1;
+        }
+
+        footer {
+            background: #2b3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            border-top: 3px solid #1a1f26;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .social-media a:hover {
+            transform: scale(1.2);
         }
 
         @keyframes fadeInDown {
@@ -409,8 +423,8 @@
                 margin-bottom: 20px;
             }
 
-            .map-reviews-container {
-                flex-direction: column;
+            .staff-member {
+                flex: 1 1 100%;
             }
         }
 
@@ -470,38 +484,15 @@
                 font-size: 0.9em;
             }
 
-            .contact-card {
-                padding: 20px;
-            }
-
-            .form-group input,
-            .form-group textarea {
-                font-size: 0.9em;
-            }
-
-            .btn {
-                padding: 10px 20px;
-                font-size: 1em;
-            }
-
-            .button-container {
-                display: flex;
-                flex-direction: column;
-            }
-
-            .button-container .btn {
-                margin: 10px 0;
-            }
-
-            .map-reviews-container {
-                flex-direction: column;
+            .staff-member {
+                flex: 1 1 100%;
             }
         }
     </style>
-    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head>
 <body>
-    <header>
+    <header data-aos="fade-down">
         <div class="logo">
             <a href="index.html">
                 <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
@@ -575,30 +566,49 @@
         </div>
     </section>
 
-    <section class="section" id="faq-teaser" data-aos="fade-up">
+    <section class="section" id="our-staff" data-aos="fade-up">
         <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="card" data-aos="fade-up">
-                <div class="card-content">
-                    <h3>What services do you offer?</h3>
-                    <p>We offer residential property sales, rentals, and investment property management.</p>
+            <h2>Our Staff</h2>
+            <div class="staff-container">
+                <div class="staff-member" data-aos="fade-up">
+                    <img src="path-to-image.jpg" alt="Zarina Yusupova" class="staff-photo">
+                    <div class="card-content">
+                        <h3>Zarina Yusupova</h3>
+                        <p>Phone: 718-644-4666</p>
+                        <p>Email: <a href="mailto:broker@eastcoastrealty.net">broker@eastcoastrealty.net</a></p>
+                    </div>
                 </div>
-            </div>
-            <div class="card" data-aos="fade-up">
-                <div class="card-content">
-                    <h3>How can I contact you?</h3>
-                    <p>You can contact us via email at <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a> or call us at <a href="tel:+17182712121">718-271-2121</a>.</p>
+                <div class="staff-member" data-aos="fade-up">
+                    <img src="path-to-image.jpg" alt="Gabriel Borohov" class="staff-photo">
+                    <div class="card-content">
+                        <h3>Gabriel Borohov</h3>
+                        <p>Phone: 646-623-8973</p>
+                        <p>Email: <a href="mailto:gborohov@aol.com">gborohov@aol.com</a></p>
+                    </div>
                 </div>
-            </div>
-            <div class="card" data-aos="fade-up">
-                <div class="card-content">
-                    <h3>Where are you located?</h3>
-                    <p>We are located in Rego Park and Forest Hills.</p>
+                <div class="staff-member" data-aos="fade-up">
+                    <img src="path-to-image.jpg" alt="Mike Rubinov" class="staff-photo">
+                    <div class="card-content">
+                        <h3>Mike Rubinov</h3>
+                        <p>Phone: 646-339-2626</p>
+                        <p>Email: <a href="mailto:mrubinov@aol.com">mrubinov@aol.com</a></p>
+                    </div>
                 </div>
-            </div>
-            <div class="card" data-aos="fade-up">
-                <div class="card-content">
-                    <a href="faq.html" class="btn">View All FAQs</a>
+                <div class="staff-member" data-aos="fade-up">
+                    <img src="path-to-image.jpg" alt="Linda (Zheng Li)" class="staff-photo">
+                    <div class="card-content">
+                        <h3>Linda (Zheng Li)</h3>
+                        <p>Phone: 718-249-9726</p>
+                        <p>Email: <a href="mailto:lindali188@gmail.com">lindali188@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="staff-member" data-aos="fade-up">
+                    <img src="path-to-image.jpg" alt="Bhagwant Kaur" class="staff-photo">
+                    <div class="card-content">
+                        <h3>Bhagwant Kaur</h3>
+                        <p>Phone: 929-398-2849</p>
+                        <p>Email: <a href="mailto:bhagwantkaur58@gmail.com">bhagwantkaur58@gmail.com</a></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -634,7 +644,7 @@
         </div>
     </section>
 
-    <footer>
+    <footer data-aos="fade-up">
         <div class="container">
             <div class="social-media">
                 <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="facebook-button">
