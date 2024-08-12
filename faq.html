@@ -41,6 +41,7 @@
             position: fixed;
             justify-content: space-between;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            animation: fadeInDown 1s ease-in-out;
         }
 
         .logo {
@@ -68,6 +69,11 @@
 
         nav li {
             padding: 0 20px;
+            border-bottom: 1px solid #fff; /* Add a bottom border */
+        }
+
+        nav li:last-child {
+            border-bottom: none; /* Remove the bottom border for the last item */
         }
 
         nav a {
@@ -87,7 +93,7 @@
             flex-direction: column;
             cursor: pointer;
             position: absolute;
-            right: 50px;
+            right: calc(1in);
         }
 
         .hamburger div {
@@ -281,11 +287,33 @@
                 max-width: 70%;
             }
         }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 </head>
 <body>
-    <header>
+    <header data-aos="fade-down">
         <div class="logo">
             <a href="index.html">
                 <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
@@ -299,6 +327,7 @@
                 <li><a href="home-worth.html">What's Your Home Worth?</a></li>
                 <li><a href="mls-listings.html">MLS Listings</a></li>
                 <li><a href="faq.html">FAQ</a></li>
+                <li><a href="budget-calculator.html">Budget Calculator</a></li>
             </ul>
         </nav>
         <div class="hamburger" id="hamburger">
@@ -369,7 +398,7 @@
         </div>
     </section>
 
-    <footer>
+    <footer data-aos="fade-up">
         <div class="container">
             <div class="social-media">
                 <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="facebook-button">
