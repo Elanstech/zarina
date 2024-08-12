@@ -698,21 +698,40 @@
                 easing: 'ease-in-out',
                 once: true
             });
+
+            const hamburger = document.getElementById('hamburger');
+            const navUL = document.querySelector('.nav-list');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navUL.classList.toggle('active');
+            });
+
+            function updateSliderValue(sliderId, valueId) {
+                const slider = document.getElementById(sliderId);
+                const value = document.getElementById(valueId);
+                value.innerText = slider.value;
+            }
+
+            const budgetForm = document.getElementById('budgetForm');
+            budgetForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent form from reloading the page
+
+                // Get form values
+                const income = parseFloat(document.getElementById('income').value);
+                const expenses = parseFloat(document.getElementById('expenses').value);
+                const savings = parseFloat(document.getElementById('savings').value);
+                const downPayment = parseFloat(document.getElementById('downPayment').value);
+
+                // Calculate affordable home price
+                const monthlySavings = income - expenses;
+                const loanAmount = (monthlySavings * 12 * 30) + savings + downPayment;
+
+                // Display result
+                const result = document.getElementById('result');
+                result.innerHTML = `<h3>Affordable Home Price: $${loanAmount.toFixed(2)}</h3>`;
+            });
         });
-
-        const hamburger = document.getElementById('hamburger');
-        const navUL = document.querySelector('.nav-list');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navUL.classList.toggle('active');
-        });
-
-        function updateSliderValue(sliderId, valueId) {
-            const slider = document.getElementById(sliderId);
-            const value = document.getElementById(valueId);
-            value.innerText = slider.value;
-        }
     </script>
 </body>
 </html>
