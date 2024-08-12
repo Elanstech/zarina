@@ -242,6 +242,106 @@
             transform: scale(1.2);
         }
 
+        /* Contact Us Section */
+        .section#contact {
+            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/backround.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            padding: 60px 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .contact-card {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .contact-content {
+            text-align: center;
+        }
+
+        .contact-content p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #ccc;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+        }
+
+        .btn {
+            background: #1e88e5;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background: #0d47a1;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Styles for Tablets */
         @media (max-width: 768px) {
             .container {
@@ -417,6 +517,11 @@
                     <p>Email: <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a></p>
                     <p>Phone: <a href="tel:+17182712121">718-271-2121</a></p>
                 </div>
+            </div>
+            <div class="social-media" data-aos="fade-up">
+                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
             </div>
         </div>
     </section>
