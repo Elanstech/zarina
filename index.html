@@ -37,7 +37,7 @@
         }
 
         header {
-            padding: 20px;
+            padding: 20px 20px;
             border-bottom: 3px solid #1a1f26;
             width: 100%;
             top: 0;
@@ -57,13 +57,13 @@
 
         .logo img {
             height: 60px;
+            margin-right: 20px;
         }
 
         nav {
             flex-grow: 1;
             display: flex;
             justify-content: center;
-            align-items: center;
         }
 
         nav ul {
@@ -94,14 +94,14 @@
             flex-direction: column;
             cursor: pointer;
             position: absolute;
-            left: 20px;
+            right: 20px;
         }
 
         .hamburger div {
-            width: 30px;
+            width: 25px;
             height: 3px;
             background-color: #fff;
-            margin: 5px 0;
+            margin: 4px 0;
             transition: all 0.3s ease-in-out;
         }
 
@@ -132,8 +132,8 @@
             flex-direction: column;
             position: fixed;
             top: 0;
-            left: 0;
-            width: 100%;
+            right: 0;
+            width: 200px;
             height: 100vh;
             background: #2b3e50;
             justify-content: center;
@@ -570,11 +570,6 @@
 </head>
 <body>
     <header>
-        <div class="hamburger" id="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
         <div class="logo">
             <a href="index.html">
                 <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
@@ -590,6 +585,11 @@
                 <li><a href="faq.html">FAQ</a></li>
             </ul>
         </nav>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </header>
 
     <section id="home" class="hero background">
