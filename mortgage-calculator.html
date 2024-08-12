@@ -511,6 +511,64 @@
                 flex: 1 1 100%;
             }
         }
+
+        /* Slider Styles */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 50px;
+            margin: 20px 0;
+        }
+
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity .15s ease-in-out;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #1e88e5;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: background 0.3s ease-in-out;
+        }
+
+        .slider::-webkit-slider-thumb:hover {
+            background: #0d47a1;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #1e88e5;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: background 0.3s ease-in-out;
+        }
+
+        .slider::-moz-range-thumb:hover {
+            background: #0d47a1;
+        }
     </style>
 </head>
 <body>
@@ -553,23 +611,43 @@
                     <form id="mortgageForm">
                         <div class="form-group">
                             <label for="homePrice">Home Price:</label>
-                            <input type="number" id="homePrice" required>
+                            <div class="slider-label">
+                                <span id="homePriceValue">0</span>
+                                <span>$1,000,000</span>
+                            </div>
+                            <input type="range" id="homePrice" class="slider" min="0" max="1000000" step="1000" oninput="updateSliderValue('homePrice', 'homePriceValue')" required>
                         </div>
                         <div class="form-group">
                             <label for="downPayment">Down Payment:</label>
-                            <input type="number" id="downPayment" required>
+                            <div class="slider-label">
+                                <span id="downPaymentValue">0</span>
+                                <span>$200,000</span>
+                            </div>
+                            <input type="range" id="downPayment" class="slider" min="0" max="200000" step="1000" oninput="updateSliderValue('downPayment', 'downPaymentValue')" required>
                         </div>
                         <div class="form-group">
                             <label for="loanAmount">Loan Amount:</label>
-                            <input type="number" id="loanAmount" required>
+                            <div class="slider-label">
+                                <span id="loanAmountValue">0</span>
+                                <span>$1,000,000</span>
+                            </div>
+                            <input type="range" id="loanAmount" class="slider" min="0" max="1000000" step="1000" oninput="updateSliderValue('loanAmount', 'loanAmountValue')" required>
                         </div>
                         <div class="form-group">
                             <label for="interestRate">Interest Rate (%):</label>
-                            <input type="number" id="interestRate" step="0.01" required>
+                            <div class="slider-label">
+                                <span id="interestRateValue">0</span>
+                                <span>10%</span>
+                            </div>
+                            <input type="range" id="interestRate" class="slider" min="0" max="10" step="0.01" oninput="updateSliderValue('interestRate', 'interestRateValue')" required>
                         </div>
                         <div class="form-group">
                             <label for="loanTerm">Loan Term (years):</label>
-                            <input type="number" id="loanTerm" required>
+                            <div class="slider-label">
+                                <span id="loanTermValue">0</span>
+                                <span>30 years</span>
+                            </div>
+                            <input type="range" id="loanTerm" class="slider" min="0" max="30" step="1" oninput="updateSliderValue('loanTerm', 'loanTermValue')" required>
                         </div>
                         <button type="submit" class="btn">Calculate</button>
                     </form>
@@ -637,6 +715,12 @@
             hamburger.classList.toggle('active');
             navUL.classList.toggle('active');
         });
+
+        function updateSliderValue(sliderId, valueId) {
+            const slider = document.getElementById(sliderId);
+            const value = document.getElementById(valueId);
+            value.innerText = slider.value;
+        }
     </script>
 </body>
 </html>
