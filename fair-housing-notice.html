@@ -128,54 +128,14 @@
             transform: translateX(0);
         }
 
-        .hero {
-            text-align: center;
-            padding: 150px 20px 100px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-title {
-            font-size: 3em;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            animation: fadeInDown 1s ease-in-out;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5em;
-            font-weight: lighter;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease-in-out;
-        }
-
-        .button-container {
-            margin-top: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            background: #1e88e5;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 10px;
-            font-size: 1.2em;
-            margin: 10px;
-            transition: background 0.3s ease-in-out;
-        }
-
-        .btn:hover {
-            background: #0d47a1;
-        }
-
         .section {
             padding: 50px 20px;
             background: #fff;
             margin-top: 20px;
             transition: all 0.3s ease-in-out;
             text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
         .section h2 {
@@ -183,6 +143,7 @@
             color: rgb(1, 0, 244);
             text-align: center;
             margin-bottom: 20px;
+            animation: fadeInDown 1s ease-in-out;
         }
 
         .card {
@@ -192,6 +153,7 @@
             padding: 20px;
             margin-bottom: 30px;
             transition: transform 0.3s ease-in-out;
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .card:hover {
@@ -201,6 +163,7 @@
         .card img {
             max-width: 100%;
             border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
         .card-content {
@@ -251,6 +214,7 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             border-radius: 15px;
             margin-top: 30px;
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .contact-card {
@@ -459,7 +423,7 @@
             }
         }
     </style>
-    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head>
 <body>
     <header>
@@ -485,12 +449,15 @@
         </div>
     </header>
 
-    <section class="section">
+    <section class="section" data-aos="fade-up">
         <div class="container">
             <h2>Fair Housing Notice</h2>
             <div class="card">
                 <div class="card-content">
                     <img src="https://github.com/Elanstech/zarina/blob/main/fairhousingnotice.png?raw=true" alt="Fair Housing Notice">
+                    <h3>Ensuring Equal Housing Opportunities</h3>
+                    <p>At East Coast Realty by Zarina, we are committed to ensuring that everyone has equal access to housing opportunities. We adhere to the principles of the Fair Housing Act and do not discriminate against any individual based on race, color, religion, sex, national origin, disability, or familial status.</p>
+                    <p>If you believe you have been discriminated against, please contact us immediately. We take these matters very seriously and will work to address your concerns promptly and thoroughly.</p>
                 </div>
             </div>
         </div>
