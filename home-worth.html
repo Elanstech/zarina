@@ -22,6 +22,14 @@
             scroll-behavior: smooth;
         }
 
+        .background {
+            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/homeworthbackround.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
         .container {
             width: 80%;
             margin: auto;
@@ -41,6 +49,7 @@
             position: fixed;
             justify-content: space-between;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            animation: fadeInDown 1s ease-in-out;
         }
 
         .logo {
@@ -68,6 +77,11 @@
 
         nav li {
             padding: 0 20px;
+            border-bottom: 1px solid #fff; /* Add a bottom border */
+        }
+
+        nav li:last-child {
+            border-bottom: none; /* Remove the bottom border for the last item */
         }
 
         nav a {
@@ -87,7 +101,7 @@
             flex-direction: column;
             cursor: pointer;
             position: absolute;
-            right: 50px;
+            right: calc(1in);
         }
 
         .hamburger div {
@@ -185,6 +199,7 @@
             color: rgb(1, 0, 244);
             text-align: center;
             margin-bottom: 20px;
+            animation: fadeInDown 1s ease-in-out;
         }
 
         .card {
@@ -194,6 +209,7 @@
             padding: 20px;
             margin-bottom: 30px;
             transition: transform 0.3s ease-in-out;
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .card:hover {
@@ -309,6 +325,28 @@
 
         .social-media a:hover {
             transform: scale(1.2);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Styles for Tablets */
@@ -427,7 +465,7 @@
     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 </head>
 <body>
-    <header>
+    <header data-aos="fade-down">
         <div class="logo">
             <a href="index.html">
                 <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
@@ -441,6 +479,7 @@
                 <li><a href="home-worth.html">What's Your Home Worth?</a></li>
                 <li><a href="mls-listings.html">MLS Listings</a></li>
                 <li><a href="faq.html">FAQ</a></li>
+                <li><a href="budget-calculator.html">Budget Calculator</a></li>
             </ul>
         </nav>
         <div class="hamburger" id="hamburger">
@@ -450,14 +489,14 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
+    <section class="hero background">
+        <div class="container" data-aos="fade-in">
             <h1 class="hero-title">What's Your Home Worth?</h1>
             <p class="hero-subtitle">Find out what your home is worth with our free, no-obligation home value estimate.</p>
         </div>
     </section>
 
-    <section class="section">
+    <section class="section" data-aos="fade-up">
         <div class="container">
             <h2>Get Your Home Value Estimate</h2>
             <div class="card">
@@ -487,7 +526,7 @@
         </div>
     </section>
 
-    <footer>
+    <footer data-aos="fade-up">
         <div class="container">
             <div class="social-media">
                 <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="facebook-button">
