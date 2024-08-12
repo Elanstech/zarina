@@ -48,6 +48,26 @@
             height: 60px; /* Increased logo size */
             margin-right: 20px;
         }
+        .social-media {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.facebook-button {
+    color: #fff;
+    font-size: 1.5em;
+    text-decoration: none;
+    margin-left: 20px; /* Add margin to the left of the button */
+    transition: transform 0.3s ease-in-out;
+}
+
+.facebook-button:hover {
+    transform: scale(1.2);
+    color: #bbdefb;
+}
 
         nav {
             flex-grow: 1;
@@ -300,7 +320,11 @@
             <div></div>
             <div></div>
             <div></div>
-        </div>
+            <div class="social-media">
+    <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="facebook-button">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+</div>
     </header>
 
     <section id="faq">
