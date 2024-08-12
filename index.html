@@ -63,7 +63,7 @@ nav ul {
 }
 
 nav li {
-    padding: 0 20px;
+    padding: 0 10px; /* Adjust padding to fit within display */
     border-bottom: 1px solid #fff; /* Add a bottom border */
 }
 
@@ -78,7 +78,6 @@ nav a {
     font-size: 16px;
     transition: color 0.3s ease-in-out;
     white-space: nowrap; /* Ensure text doesn't wrap */
-    padding-right: 1in; /* Move text to the right */
 }
 
 nav a:hover {
@@ -90,7 +89,7 @@ nav a:hover {
     flex-direction: column;
     cursor: pointer;
     position: absolute;
-    right: 1in; /* Adjust position to the right */
+    right: 20px; /* Adjust position to the right */
 }
 
 .hamburger div {
@@ -136,6 +135,9 @@ nav ul.active {
     padding: 150px 20px 100px;
     position: relative;
     overflow: hidden;
+    background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/homeworthbackround.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
 }
 
 .hero-title {
@@ -347,6 +349,12 @@ nav ul.active {
 
 .btn:hover {
     background: #0d47a1;
+}
+
+.section.background {
+    background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/contactbackground.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
 }
 
 footer {
