@@ -76,6 +76,11 @@
 
         nav li {
             padding: 0 20px;
+            border-bottom: 1px solid #fff; /* Add a bottom border */
+        }
+
+        nav li:last-child {
+            border-bottom: none; /* Remove the bottom border for the last item */
         }
 
         nav a {
@@ -95,7 +100,7 @@
             flex-direction: column;
             cursor: pointer;
             position: absolute;
-            right: 50px;
+            right: calc(1in);
         }
 
         .hamburger div {
@@ -207,6 +212,13 @@
             transform: translateY(-10px);
         }
 
+        .card img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+
         .card-content {
             padding: 15px;
         }
@@ -221,24 +233,6 @@
             font-size: 1em;
             line-height: 1.6;
             color: #666;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            font-size: 1em;
         }
 
         .staff-container {
@@ -544,10 +538,10 @@
         </div>
     </header>
 
-    <section class="section hero background" id="budget-calculator">
+    <section id="home" class="hero background">
         <div class="container" data-aos="fade-in">
             <h1 class="hero-title">Budget Calculator</h1>
-            <p class="hero-subtitle">Plan Your Home Buying Budget</p>
+            <p class="hero-subtitle">Estimate Your Home Buying Budget</p>
         </div>
     </section>
 
@@ -566,20 +560,12 @@
                             <input type="number" id="expenses" required>
                         </div>
                         <div class="form-group">
-                            <label for="savings">Monthly Savings:</label>
+                            <label for="savings">Savings:</label>
                             <input type="number" id="savings" required>
                         </div>
                         <div class="form-group">
-                            <label for="loan">Loan Amount:</label>
-                            <input type="number" id="loan" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="interest">Interest Rate (%):</label>
-                            <input type="number" id="interest" step="0.01" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="term">Loan Term (years):</label>
-                            <input type="number" id="term" required>
+                            <label for="downPayment">Down Payment:</label>
+                            <input type="number" id="downPayment" required>
                         </div>
                         <button type="submit" class="btn">Calculate</button>
                     </form>
@@ -646,27 +632,6 @@
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navUL.classList.toggle('active');
-        });
-
-        document.getElementById('budgetForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const income = parseFloat(document.getElementById('income').value);
-            const expenses = parseFloat(document.getElementById('expenses').value);
-            const savings = parseFloat(document.getElementById('savings').value);
-            const loan = parseFloat(document.getElementById('loan').value);
-            const interest = parseFloat(document.getElementById('interest').value) / 100 / 12;
-            const term = parseFloat(document.getElementById('term').value) * 12;
-
-            const monthlyPayment = loan * interest / (1 - Math.pow(1 + interest, -term));
-            const totalMonthlyCost = monthlyPayment + expenses + savings;
-            const affordable = income >= totalMonthlyCost;
-
-            let resultText = `<h3>Results</h3>`;
-            resultText += `<p>Monthly Loan Payment: $${monthlyPayment.toFixed(2)}</p>`;
-            resultText += `<p>Total Monthly Cost: $${totalMonthlyCost.toFixed(2)}</p>`;
-            resultText += `<p>${affordable ? 'You can afford this loan.' : 'This loan exceeds your budget.'}</p>`;
-
-            document.getElementById('result').innerHTML = resultText;
         });
     </script>
 </body>
