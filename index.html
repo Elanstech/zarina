@@ -37,7 +37,7 @@
         }
 
         header {
-            padding: 20px 20px;
+            padding: 20px;
             border-bottom: 3px solid #1a1f26;
             width: 100%;
             top: 0;
@@ -56,14 +56,14 @@
         }
 
         .logo img {
-            height: 60px; /* Increased logo size */
-            margin-right: 20px;
+            height: 60px;
         }
 
         nav {
             flex-grow: 1;
             display: flex;
             justify-content: center;
+            align-items: center;
         }
 
         nav ul {
@@ -93,7 +93,8 @@
             display: flex;
             flex-direction: column;
             cursor: pointer;
-            z-index: 1001;
+            position: absolute;
+            left: 20px;
         }
 
         .hamburger div {
@@ -195,7 +196,7 @@
 
         .section h2 {
             font-size: 2em;
-            color: rgb(1, 0, 244); /* Updated color */
+            color: rgb(1, 0, 244);
             text-align: center;
             margin-bottom: 20px;
         }
@@ -224,7 +225,7 @@
 
         .card-content h3 {
             font-size: 1.5em;
-            color: rgb(1, 0, 244); /* Updated color */
+            color: rgb(1, 0, 244);
             margin-bottom: 10px;
         }
 
@@ -237,7 +238,7 @@
         .map-container {
             position: relative;
             overflow: hidden;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            padding-top: 56.25%;
         }
 
         .map-container iframe {
@@ -261,7 +262,7 @@
 
         .map-section h2 {
             font-size: 2em;
-            color: rgb(1, 0, 244); /* Updated color */
+            color: rgb(1, 0, 244);
             text-align: center;
             margin-bottom: 20px;
         }
@@ -282,7 +283,7 @@
 
         .reviews-section h2 {
             font-size: 2em;
-            color: rgb(1, 0, 244); /* Updated color */
+            color: rgb(1, 0, 244);
             text-align: center;
             margin-bottom: 20px;
         }
@@ -492,7 +493,7 @@
             }
 
             header .logo img {
-                height: 50px; /* Adjusted logo size for mobile */
+                height: 50px;
             }
 
             .hamburger {
@@ -569,6 +570,11 @@
 </head>
 <body>
     <header>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <div class="logo">
             <a href="index.html">
                 <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
@@ -584,11 +590,6 @@
                 <li><a href="faq.html">FAQ</a></li>
             </ul>
         </nav>
-        <div class="hamburger" id="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
     </header>
 
     <section id="home" class="hero background">
