@@ -22,17 +22,16 @@
         }
 
         header {
-            background: #1e88e5; /* Updated color */
-            color: #fff;
-            padding: 20px;
-            border-bottom: 3px solid #0d47a1; /* Updated border color */
-            position: fixed;
+            padding: 20px 20px;
+            border-bottom: 3px solid #1a1f26;
             width: 100%;
             top: 0;
             z-index: 1000;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            background: #2b3e50;
+            position: fixed;
+            justify-content: space-between;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
@@ -105,6 +104,24 @@
             transform: rotate(45deg) translate(-6px, -6px);
         }
 
+        nav ul {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 60px;
+            right: 0;
+            background: #2b3e50;
+            width: 200px;
+            height: 100vh;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        nav ul.active {
+            transform: translateX(0);
+        }
+
         .container {
             width: 80%;
             margin: auto;
@@ -154,13 +171,98 @@
         .content a:hover {
             text-decoration: underline;
         }
+
+        footer {
+            background: #2b3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            border-top: 3px solid #1a1f26;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .social-media a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Styles for Tablets */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                padding: 10px 0;
+            }
+
+            .container {
+                width: 90%;
+            }
+
+            .content {
+                margin-top: 20px;
+            }
+        }
+
+        /* Styles for Mobile Phones */
+        @media (max-width: 480px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                padding: 10px 0;
+            }
+
+            header .logo img {
+                height: 50px; /* Adjusted logo size for mobile */
+            }
+
+            .container {
+                width: 95%;
+            }
+
+            .content {
+                margin-top: 20px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="logo">
             <a href="index.html">
-                <img src="logo-removebg-preview.png" alt="East Coast Realty by Zarina">
+                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
             </a>
         </div>
         <nav>
@@ -191,6 +293,12 @@
             </p>
         </div>
     </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
