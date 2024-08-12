@@ -92,11 +92,11 @@
         }
 
         .hamburger {
-            display: flex;
+            display: none;
             flex-direction: column;
             cursor: pointer;
             position: absolute;
-            right: 50px; /* Adjusted value to move the menu more to the left */
+            right: 20px;
         }
 
         .hamburger div {
@@ -172,26 +172,26 @@
 
         /* Styles for Tablets */
         @media (max-width: 768px) {
-            .container {
-                width: 90%;
-            }
-
             .hamburger {
                 display: flex;
             }
 
-            header nav ul {
+            nav ul {
                 flex-direction: column;
                 text-align: center;
                 display: none;
             }
 
-            header nav ul.active {
+            nav ul.active {
                 display: flex;
             }
 
-            header nav ul li {
+            nav ul li {
                 padding: 10px 0;
+            }
+
+            .container {
+                width: 90%;
             }
 
             .section {
@@ -209,30 +209,30 @@
 
         /* Styles for Mobile Phones */
         @media (max-width: 480px) {
-            .container {
-                width: 95%;
+            .hamburger {
+                display: flex;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                padding: 10px 0;
             }
 
             header .logo img {
                 height: 50px; /* Adjusted logo size for mobile */
             }
 
-            .hamburger {
-                display: flex;
-            }
-
-            header nav ul {
-                flex-direction: column;
-                text-align: center;
-                display: none;
-            }
-
-            header nav ul.active {
-                display: flex;
-            }
-
-            header nav ul li {
-                padding: 10px 0;
+            .container {
+                width: 95%;
             }
 
             .section {
