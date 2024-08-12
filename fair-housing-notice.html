@@ -22,7 +22,7 @@
         }
 
         header {
-            padding: 10px 20px;
+            padding: 20px 20px;
             border-bottom: 3px solid #1a1f26;
             width: 100%;
             top: 0;
@@ -31,6 +31,8 @@
             align-items: center;
             background: #2b3e50;
             position: fixed;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         header .logo {
@@ -68,6 +70,38 @@
             text-transform: uppercase;
             font-size: 16px;
             transition: color 0.3s ease-in-out;
+        }
+
+        header a:hover {
+            color: #bbdefb;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            position: absolute;
+            right: 50px; /* Adjusted value to move the menu more to the left */
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(-45deg) translate(-6px, 6px);
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(45deg) translate(-6px, -6px);
         }
 
         .container {
@@ -138,6 +172,11 @@
                 <li><a href="faq.html">FAQ</a></li>
             </ul>
         </nav>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </header>
 
     <div class="container">
@@ -160,6 +199,14 @@
                 easing: 'ease-in-out',
                 once: true
             });
+        });
+
+        const hamburger = document.getElementById('hamburger');
+        const navUL = document.querySelector('.nav-list');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navUL.classList.toggle('active');
         });
     </script>
 </body>
