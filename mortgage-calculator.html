@@ -613,25 +613,25 @@
                             <label for="homePrice">Home Price:</label>
                             <div class="slider-label">
                                 <span id="homePriceValue">0</span>
-                                <span>$10,000,000</span>
+                                <span>$1,000,000</span>
                             </div>
-                            <input type="range" id="homePrice" class="slider" min="0" max="10000000" step="1000" oninput="updateSliderValue('homePrice', 'homePriceValue')" required>
+                            <input type="range" id="homePrice" class="slider" min="0" max="1000000" step="1000" oninput="updateSliderValue('homePrice', 'homePriceValue')" required>
                         </div>
                         <div class="form-group">
                             <label for="downPayment">Down Payment:</label>
                             <div class="slider-label">
                                 <span id="downPaymentValue">0</span>
-                                <span>$500,000</span>
+                                <span>$200,000</span>
                             </div>
-                            <input type="range" id="downPayment" class="slider" min="0" max="500000" step="1000" oninput="updateSliderValue('downPayment', 'downPaymentValue')" required>
+                            <input type="range" id="downPayment" class="slider" min="0" max="200000" step="1000" oninput="updateSliderValue('downPayment', 'downPaymentValue')" required>
                         </div>
                         <div class="form-group">
                             <label for="loanAmount">Loan Amount:</label>
                             <div class="slider-label">
                                 <span id="loanAmountValue">0</span>
-                                <span>$5,000,000</span>
+                                <span>$1,000,000</span>
                             </div>
-                            <input type="range" id="loanAmount" class="slider" min="0" max="5000000" step="1000" oninput="updateSliderValue('loanAmount', 'loanAmountValue')" required>
+                            <input type="range" id="loanAmount" class="slider" min="0" max="1000000" step="1000" oninput="updateSliderValue('loanAmount', 'loanAmountValue')" required>
                         </div>
                         <div class="form-group">
                             <label for="interestRate">Interest Rate (%):</label>
@@ -706,21 +706,40 @@
                 easing: 'ease-in-out',
                 once: true
             });
+
+            const hamburger = document.getElementById('hamburger');
+            const navUL = document.querySelector('.nav-list');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navUL.classList.toggle('active');
+            });
+
+            function updateSliderValue(sliderId, valueId) {
+                const slider = document.getElementById(sliderId);
+                const value = document.getElementById(valueId);
+                value.innerText = slider.value;
+            }
+
+            const mortgageForm = document.getElementById('mortgageForm');
+            mortgageForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent form from reloading the page
+
+                // Get form values
+                const homePrice = parseFloat(document.getElementById('homePrice').value);
+                const downPayment = parseFloat(document.getElementById('downPayment').value);
+                const loanAmount = homePrice - downPayment;
+                const interestRate = parseFloat(document.getElementById('interestRate').value) / 100 / 12;
+                const loanTerm = parseInt(document.getElementById('loanTerm').value) * 12;
+
+                // Calculate monthly mortgage payment
+                const monthlyPayment = (loanAmount * interestRate) / (1 - Math.pow((1 + interestRate), -loanTerm));
+
+                // Display result
+                const result = document.getElementById('result');
+                result.innerHTML = `<h3>Monthly Payment: $${monthlyPayment.toFixed(2)}</h3>`;
+            });
         });
-
-        const hamburger = document.getElementById('hamburger');
-        const navUL = document.querySelector('.nav-list');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navUL.classList.toggle('active');
-        });
-
-        function updateSliderValue(sliderId, valueId) {
-            const slider = document.getElementById(sliderId);
-            const value = document.getElementById(valueId);
-            value.innerText = slider.value;
-        }
     </script>
 </body>
 </html>
