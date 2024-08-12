@@ -34,6 +34,7 @@
             width: 80%;
             margin: auto;
             overflow: hidden;
+            padding-top: 80px; /* Adjust for fixed header */
         }
 
         header {
@@ -56,7 +57,7 @@
         }
 
         .logo img {
-            height: 60px; /* Increased logo size */
+            height: 60px;
             margin-right: 20px;
         }
 
@@ -94,7 +95,7 @@
             flex-direction: column;
             cursor: pointer;
             position: absolute;
-            right: 50px; /* Adjusted value to move the menu more to the left */
+            right: 50px;
         }
 
         .hamburger div {
@@ -106,7 +107,7 @@
         }
 
         .hamburger.active div:nth-child(1) {
-            transform: rotate(-45deg) translate(-6px, 6px); /* Adjusted animation */
+            transform: rotate(-45deg) translate(-6px, 6px);
         }
 
         .hamburger.active div:nth-child(2) {
@@ -114,7 +115,7 @@
         }
 
         .hamburger.active div:nth-child(3) {
-            transform: rotate(45deg) translate(-6px, -6px); /* Adjusted animation */
+            transform: rotate(45deg) translate(-6px, -6px);
         }
 
         nav ul {
@@ -186,7 +187,7 @@
 
         .section h2 {
             font-size: 2em;
-            color: rgb(1, 0, 244); /* Updated color */
+            color: rgb(1, 0, 244);
             text-align: center;
             margin-bottom: 20px;
         }
@@ -215,7 +216,7 @@
 
         .card-content h3 {
             font-size: 1.5em;
-            color: rgb(1, 0, 244); /* Updated color */
+            color: rgb(1, 0, 244);
             margin-bottom: 10px;
         }
 
@@ -228,7 +229,7 @@
         .map-container {
             position: relative;
             overflow: hidden;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            padding-top: 56.25%;
         }
 
         .map-container iframe {
@@ -242,81 +243,29 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
-        .map-section {
-            background: #f1f1f1;
-            padding: 50px 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            margin-top: 30px;
-        }
-
-        .map-section h2 {
-            font-size: 2em;
-            color: rgb(1, 0, 244); /* Updated color */
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .map-section p {
-            text-align: center;
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-
-        .reviews-section {
-            background: #fff;
-            padding: 50px 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            margin-top: 30px;
-        }
-
-        .reviews-section h2 {
-            font-size: 2em;
-            color: rgb(1, 0, 244); /* Updated color */
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .review-card {
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-bottom: 30px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .review-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .review-card img {
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            margin-right: 15px;
-        }
-
-        .review-content {
+        .two-column {
             display: flex;
-            align-items: center;
+            justify-content: space-between;
         }
 
-        .review-text {
-            flex-grow: 1;
+        .two-column .card {
+            flex: 1;
+            margin-right: 10px;
         }
 
-        .review-text h3 {
-            font-size: 1.2em;
-            color: #333;
-            margin-bottom: 10px;
+        .two-column .card:last-child {
+            margin-right: 0;
         }
 
-        .review-text p {
-            font-size: 1em;
-            line-height: 1.6;
-            color: #666;
+        @media (max-width: 768px) {
+            .two-column {
+                flex-direction: column;
+            }
+
+            .two-column .card {
+                margin-bottom: 20px;
+                margin-right: 0;
+            }
         }
 
         footer {
@@ -340,102 +289,6 @@
 
         .social-media a:hover {
             transform: scale(1.2);
-        }
-
-        /* Contact Us Section */
-        .section#contact {
-            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/backround.jpg') no-repeat center center;
-            background-size: cover;
-            color: #fff;
-            padding: 60px 20px;
-        }
-
-        .contact-card {
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .contact-content {
-            text-align: center;
-        }
-
-        .contact-content p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-
-        form {
-            margin-top: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1em;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            transition: background 0.3s ease-in-out;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #ccc;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            background: rgba(255, 255, 255, 0.2);
-            outline: none;
-        }
-
-        .btn {
-            background: #1e88e5;
-            color: #fff;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: background 0.3s ease-in-out;
-        }
-
-        .btn:hover {
-            background: #0d47a1;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         /* Styles for Tablets */
@@ -482,7 +335,7 @@
             }
 
             header .logo img {
-                height: 50px; /* Adjusted logo size for mobile */
+                height: 50px;
             }
 
             .hamburger {
@@ -519,10 +372,6 @@
                 padding: 20px 10px;
             }
 
-            .card {
-                margin-bottom: 20px;
-            }
-
             .card-content h3 {
                 font-size: 1.2em;
             }
@@ -531,27 +380,13 @@
                 font-size: 0.9em;
             }
 
-            .contact-card {
-                padding: 20px;
-            }
-
-            .form-group input,
-            .form-group textarea {
-                font-size: 0.9em;
-            }
-
-            .btn {
-                padding: 10px 20px;
-                font-size: 1em;
-            }
-
-            .button-container {
-                display: flex;
+            .two-column {
                 flex-direction: column;
             }
 
-            .button-container .btn {
-                margin: 10px 0;
+            .two-column .card {
+                margin-bottom: 20px;
+                margin-right: 0;
             }
         }
     </style>
@@ -616,20 +451,22 @@
         </div>
     </section>
 
-    <section class="section map-section" id="location" data-aos="fade-up">
+    <section class="section two-column" id="reviews-location" data-aos="fade-up">
         <div class="container">
-            <h2>Our Location</h2>
-            <p>Find us on the map below to visit our office or get directions.</p>
-            <div class="map-container" data-aos="fade-up">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4646.716306973879!2d-73.86681941389628!3d40.729390604868186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25e346f9f0617%3A0xb19ba7d5ff9f8d02!2sEast%20Coast%20Realty%20by%20Zarina!5e0!3m2!1sen!2sus!4v1723354955822!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="card" data-aos="fade-up">
+                <div class="card-content">
+                    <h3>Google Reviews</h3>
+                    <div class="elfsight-app-02075f07-4a0b-4bfc-adf6-5578c4f26b9c" data-elfsight-app-lazy></div>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <section class="section reviews-section" id="reviews" data-aos="fade-left">
-        <div class="container">
-            <h2>Google Reviews</h2>
-            <div class="elfsight-app-02075f07-4a0b-4bfc-adf6-5578c4f26b9c" data-elfsight-app-lazy></div>
+            <div class="card" data-aos="fade-up">
+                <div class="card-content">
+                    <h3>Our Location</h3>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4646.716306973879!2d-73.86681941389628!3d40.729390604868186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25e346f9f0617%3A0xb19ba7d5ff9f8d02!2sEast%20Coast%20Realty%20by%20Zarina!5e0!3m2!1sen!2sus!4v1723354955822!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -683,11 +520,6 @@
                     <p>Email: <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a></p>
                     <p>Phone: <a href="tel:+17182712121">718-271-2121</a></p>
                 </div>
-            </div>
-            <div class="social-media" data-aos="fade-up">
-                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
             </div>
         </div>
     </section>
