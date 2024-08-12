@@ -657,4 +657,17 @@
             const interest = parseFloat(document.getElementById('interest').value) / 100 / 12;
             const term = parseFloat(document.getElementById('term').value) * 12;
 
-            const monthlyPayment = loan * interest / (1 -
+            const monthlyPayment = loan * interest / (1 - Math.pow(1 + interest, -term));
+            const totalMonthlyCost = monthlyPayment + expenses + savings;
+            const affordable = income >= totalMonthlyCost;
+
+            let resultText = `<h3>Results</h3>`;
+            resultText += `<p>Monthly Loan Payment: $${monthlyPayment.toFixed(2)}</p>`;
+            resultText += `<p>Total Monthly Cost: $${totalMonthlyCost.toFixed(2)}</p>`;
+            resultText += `<p>${affordable ? 'You can afford this loan.' : 'This loan exceeds your budget.'}</p>`;
+
+            document.getElementById('result').innerHTML = resultText;
+        });
+    </script>
+</body>
+</html>
