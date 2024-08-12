@@ -34,7 +34,6 @@
             width: 80%;
             margin: auto;
             overflow: hidden;
-            padding-top: 80px; /* Adjust for fixed header */
         }
 
         header {
@@ -107,7 +106,7 @@
         }
 
         .hamburger.active div:nth-child(1) {
-            transform: rotate(-45deg) translate(-6px, 6px);
+            transform: rotate(-45deg) translate(-6px, 6px); /* Adjusted animation */
         }
 
         .hamburger.active div:nth-child(2) {
@@ -115,7 +114,7 @@
         }
 
         .hamburger.active div:nth-child(3) {
-            transform: rotate(45deg) translate(-6px, -6px);
+            transform: rotate(45deg) translate(-6px, -6px); /* Adjusted animation */
         }
 
         nav ul {
@@ -136,32 +135,188 @@
             transform: translateX(0);
         }
 
+        .hero {
+            text-align: center;
+            padding: 150px 20px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5em;
+            font-weight: lighter;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #1e88e5;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            margin: 10px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background: #0d47a1;
+        }
+
         .section {
             padding: 50px 20px;
             background: #fff;
+            margin-top: 20px;
             transition: all 0.3s ease-in-out;
         }
 
-        .section h1 {
-            font-size: 2.5em;
+        .section h2 {
+            font-size: 2em;
             color: rgb(1, 0, 244); /* Updated color */
             text-align: center;
             margin-bottom: 20px;
         }
 
-        .calculator-container {
-            background: rgba(255, 255, 255, 0.9);
+        .card {
+            background: #fff;
             border-radius: 15px;
-            padding: 20px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease-in-out;
         }
 
-        .calculator-container iframe {
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-content h3 {
+            font-size: 1.5em;
+            color: rgb(1, 0, 244); /* Updated color */
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            border: none;
+            height: 100%;
+            border: 0;
             border-radius: 15px;
-            height: 600px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-section {
+            background: #f1f1f1;
+            padding: 50px 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .map-section h2 {
+            font-size: 2em;
+            color: rgb(1, 0, 244); /* Updated color */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .map-section p {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .reviews-section {
+            background: #fff;
+            padding: 50px 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .reviews-section h2 {
+            font-size: 2em;
+            color: rgb(1, 0, 244); /* Updated color */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .review-card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .review-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .review-card img {
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+        }
+
+        .review-content {
+            display: flex;
+            align-items: center;
+        }
+
+        .review-text {
+            flex-grow: 1;
+        }
+
+        .review-text h3 {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .review-text p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #666;
         }
 
         footer {
@@ -187,84 +342,220 @@
             transform: scale(1.2);
         }
 
+        /* Contact Us Section */
+        .section#contact {
+            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/backround.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            padding: 60px 20px;
+        }
+
+        .contact-card {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .contact-content {
+            text-align: center;
+        }
+
+        .contact-content p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #ccc;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+        }
+
+        .btn {
+            background: #1e88e5;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background: #0d47a1;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Styles for Tablets */
         @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
             .hamburger {
                 display: flex;
             }
 
-            nav ul {
+            header nav ul {
                 flex-direction: column;
                 text-align: center;
                 display: none;
             }
 
-            nav ul.active {
+            header nav ul.active {
                 display: flex;
             }
 
-            nav ul li {
+            header nav ul li {
                 padding: 10px 0;
             }
 
-            .container {
-                width: 90%;
+            .hero {
+                padding: 100px 20px 50px;
             }
 
             .section {
                 padding: 30px 20px;
             }
 
-            .calculator-container {
-                padding: 15px;
-            }
-
-            .calculator-container iframe {
-                height: 500px;
+            .card {
+                margin-bottom: 20px;
             }
         }
 
         /* Styles for Mobile Phones */
         @media (max-width: 480px) {
-            .hamburger {
-                display: flex;
-            }
-
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-                display: none;
-            }
-
-            nav ul.active {
-                display: flex;
-            }
-
-            nav ul li {
-                padding: 10px 0;
+            .container {
+                width: 95%;
             }
 
             header .logo img {
                 height: 50px; /* Adjusted logo size for mobile */
             }
 
-            .container {
-                width: 95%;
+            .hamburger {
+                display: flex;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                text-align: center;
+                display: none;
+            }
+
+            header nav ul.active {
+                display: flex;
+            }
+
+            header nav ul li {
+                padding: 10px 0;
+            }
+
+            .hero {
+                padding: 80px 20px 30px;
+            }
+
+            .hero-title {
+                font-size: 2em;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2em;
             }
 
             .section {
                 padding: 20px 10px;
             }
 
-            .calculator-container {
-                padding: 10px;
+            .card {
+                margin-bottom: 20px;
             }
 
-            .calculator-container iframe {
-                height: 400px;
+            .card-content h3 {
+                font-size: 1.2em;
+            }
+
+            .card-content p {
+                font-size: 0.9em;
+            }
+
+            .contact-card {
+                padding: 20px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                font-size: 0.9em;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+
+            .button-container {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .button-container .btn {
+                margin: 10px 0;
             }
         }
     </style>
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 </head>
 <body>
     <header>
@@ -290,10 +581,114 @@
         </div>
     </header>
 
-    <section id="home" class="section background">
-        <div class="container" data-aos="fade-up">
-            <h1>Welcome to East Coast Realty by Zarina</h1>
-            <p>Your trusted real estate partner in New York City. Whether you're looking to buy, sell, or rent, we are here to help you every step of the way.</p>
+    <section id="home" class="hero background">
+        <div class="container" data-aos="fade-in">
+            <h1 class="hero-title">Discover Your Dream Home</h1>
+            <p class="hero-subtitle">Expert Guidance in Rego Park and Forest Hills Real Estate</p>
+            <div class="button-container">
+                <a href="#contact" class="btn">Contact Us</a>
+                <a href="mls-listings.html" class="btn">View Properties</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about" data-aos="fade-up">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="card" data-aos="fade-right">
+                <div class="card-content">
+                    <h3>Welcome to East Coast Realty by Zarina</h3>
+                    <p>Led by Zarina Yusupov, a seasoned real estate professional with over 20 years of experience, our company specializes in residential sales and investment properties in the vibrant communities of Rego Park and Forest Hills. As the Owner and Broker, Zarina brings a wealth of knowledge in fluctuating market trends, ever-changing mortgage interest rates, and Co-Op board packages, along with a plethora of insights into all things real estate and investments. Known for her diligence and unwavering commitment, Zarina is dedicated to helping you find your dream home or the perfect investment property with confidence and ease. Trust East Coast Realty by Zarina to guide you through every step of your real estate journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="mls" data-aos="fade-right">
+        <div class="container">
+            <h2>MLS Listings</h2>
+            <div class="card" data-aos="fade-up">
+                <div class="card-content">
+                    <p>To view our available properties, please visit our MLS listings:</p>
+                    <a href="https://onekeymls.com/realtor/agents/Zarina-Yusupova/120719" target="_blank">View MLS Listings</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section map-section" id="location" data-aos="fade-up">
+        <div class="container">
+            <h2>Our Location</h2>
+            <p>Find us on the map below to visit our office or get directions.</p>
+            <div class="map-container" data-aos="fade-up">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4646.716306973879!2d-73.86681941389628!3d40.729390604868186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25e346f9f0617%3A0xb19ba7d5ff9f8d02!2sEast%20Coast%20Realty%20by%20Zarina!5e0!3m2!1sen!2sus!4v1723354955822!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="section reviews-section" id="reviews" data-aos="fade-left">
+        <div class="container">
+            <h2>Google Reviews</h2>
+            <div class="elfsight-app-02075f07-4a0b-4bfc-adf6-5578c4f26b9c" data-elfsight-app-lazy></div>
+        </div>
+    </section>
+
+    <section class="section" id="faq-teaser" data-aos="fade-up">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="card" data-aos="fade-up">
+                <div class="card-content">
+                    <h3>What services do you offer?</h3>
+                    <p>We offer residential property sales, rentals, and investment property management.</p>
+                </div>
+            </div>
+            <div class="card" data-aos="fade-up">
+                <div class="card-content">
+                    <h3>How can I contact you?</h3>
+                    <p>You can contact us via email at <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a> or call us at <a href="tel:+17182712121">718-271-2121</a>.</p>
+                </div>
+            </div>
+            <div class="card" data-aos="fade-up">
+                <div class="card-content">
+                    <h3>Where are you located?</h3>
+                    <p>We are located in Rego Park and Forest Hills.</p>
+                </div>
+            </div>
+            <div class="card" data-aos="fade-up">
+                <div class="card-content">
+                    <a href="faq.html" class="btn">View All FAQs</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact" data-aos="fade-right">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-card" data-aos="fade-up">
+                <div class="contact-content">
+                    <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
+                    <form action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                    <p>Email: <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a></p>
+                    <p>Phone: <a href="tel:+17182712121">718-271-2121</a></p>
+                </div>
+            </div>
+            <div class="social-media" data-aos="fade-up">
+                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
         </div>
     </section>
 
