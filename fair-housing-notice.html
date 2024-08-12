@@ -22,11 +22,18 @@
             scroll-behavior: smooth;
         }
 
+        .background {
+            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/backround.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
-            padding-top: 80px; /* Adjust for fixed header */
         }
 
         header {
@@ -41,6 +48,7 @@
             position: fixed;
             justify-content: space-between;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            animation: fadeInDown 1s ease-in-out;
         }
 
         .logo {
@@ -68,6 +76,11 @@
 
         nav li {
             padding: 0 20px;
+            border-bottom: 1px solid #fff; /* Add a bottom border */
+        }
+
+        nav li:last-child {
+            border-bottom: none; /* Remove the bottom border for the last item */
         }
 
         nav a {
@@ -87,7 +100,7 @@
             flex-direction: column;
             cursor: pointer;
             position: absolute;
-            right: 50px;
+            right: calc(1in);
         }
 
         .hamburger div {
@@ -128,14 +141,53 @@
             transform: translateX(0);
         }
 
+        .hero {
+            text-align: center;
+            padding: 150px 20px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5em;
+            font-weight: lighter;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #1e88e5;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            margin: 10px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background: #0d47a1;
+        }
+
         .section {
             padding: 50px 20px;
             background: #fff;
             margin-top: 20px;
             transition: all 0.3s ease-in-out;
-            text-align: center;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
         .section h2 {
@@ -146,13 +198,14 @@
             animation: fadeInDown 1s ease-in-out;
         }
 
-        .card img {
-    max-width: 80%; /* Change from 100% to 80% */
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    margin: auto; /* Center the image horizontally */
-    display: block; /* Ensure block display for centering */
-      
+        .card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease-in-out;
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .card:hover {
@@ -163,6 +216,7 @@
             max-width: 100%;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
         }
 
         .card-content {
@@ -181,39 +235,65 @@
             color: #666;
         }
 
-        footer {
-            background: #2b3e50;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            border-top: 3px solid #1a1f26;
-        }
-
-        .social-media {
+        .staff-container {
             display: flex;
-            justify-content: center;
-            margin: 20px 0;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
 
-        .social-media a {
-            margin: 0 10px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .social-media a:hover {
-            transform: scale(1.2);
-        }
-
-        /* Contact Us Section */
-        .section#contact {
-            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/backround.jpg') no-repeat center center;
-            background-size: cover;
-            color: #fff;
-            padding: 60px 20px;
+        .staff-member {
+            flex: 1 1 calc(33% - 20px); /* Default to smaller size */
+            margin: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             border-radius: 15px;
-            margin-top: 30px;
-            animation: fadeInUp 1s ease-in-out;
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+        }
+
+        .staff-member.large {
+            flex: 1 1 calc(66% - 20px); /* Make Zarina's photo larger */
+        }
+
+        .staff-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .staff-photo {
+            width: 100%;
+            height: 300px;               /* Adjust height */
+            object-fit: cover;           /* Cover the area */
+            object-position: 50% 20%;    /* Fine-tune the position, adjust the second value to move up/down */
+            display: block;
+            margin: auto;
+        }
+
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%;
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-section, .reviews-section {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .map-reviews-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
 
         .contact-card {
@@ -235,10 +315,6 @@
         .contact-content p {
             font-size: 1.2em;
             margin-bottom: 20px;
-        }
-
-        form {
-            margin-top: 20px;
         }
 
         .form-group {
@@ -281,6 +357,29 @@
 
         .btn:hover {
             background: #0d47a1;
+        }
+
+        footer {
+            background: #2b3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            border-top: 3px solid #1a1f26;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .social-media a:hover {
+            transform: scale(1.2);
         }
 
         @keyframes fadeInDown {
@@ -340,6 +439,13 @@
             .card {
                 margin-bottom: 20px;
             }
+
+            .staff-member {
+                flex: 1 1 100%;
+            }
+            .staff-member.large {
+                flex: 1 1 100%;
+            }
         }
 
         /* Styles for Mobile Phones */
@@ -398,34 +504,17 @@
                 font-size: 0.9em;
             }
 
-            .contact-card {
-                padding: 20px;
+            .staff-member {
+                flex: 1 1 100%;
             }
-
-            .form-group input,
-            .form-group textarea {
-                font-size: 0.9em;
-            }
-
-            .btn {
-                padding: 10px 20px;
-                font-size: 1em;
-            }
-
-            .button-container {
-                display: flex;
-                flex-direction: column;
-            }
-
-            .button-container .btn {
-                margin: 10px 0;
+            .staff-member.large {
+                flex: 1 1 100%;
             }
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head>
 <body>
-    <header>
+    <header data-aos="fade-down">
         <div class="logo">
             <a href="index.html">
                 <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
@@ -439,6 +528,7 @@
                 <li><a href="home-worth.html">What's Your Home Worth?</a></li>
                 <li><a href="mls-listings.html">MLS Listings</a></li>
                 <li><a href="faq.html">FAQ</a></li>
+                <li><a href="budget-calculator.html">Budget Calculator</a></li>
             </ul>
         </nav>
         <div class="hamburger" id="hamburger">
@@ -448,7 +538,12 @@
         </div>
     </header>
 
-    <section class="section" data-aos="fade-up">
+    <section id="home" class="hero background">
+        <div class="container" data-aos="fade-in">
+            <h1 class="hero-title">Fair Housing Notice</h1>
+        </div>
+    </section>
+   <section class="section" data-aos="fade-up">
         <div class="container">
             <h2>Fair Housing Notice</h2>
             <div class="card">
@@ -461,8 +556,7 @@
             </div>
         </div>
     </section>
-
-    <section class="section" id="contact" data-aos="fade-right">
+    <section class="section background" id="contact" data-aos="fade-right">
         <div class="container">
             <h2>Contact Us</h2>
             <div class="contact-card" data-aos="fade-up">
@@ -492,7 +586,7 @@
         </div>
     </section>
 
-    <footer>
+    <footer data-aos="fade-up">
         <div class="container">
             <div class="social-media">
                 <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="facebook-button">
