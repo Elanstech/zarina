@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-    body {
+        body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
@@ -256,8 +256,9 @@ nav ul.active {
 
 .staff-photo {
     width: 100%;
-    height: 300px;
-    object-fit: cover;
+    height: 300px;               /* Adjust height */
+    object-fit: cover;           /* Cover the area */
+    object-position: 50% 20%;    /* Fine-tune the position, adjust the second value to move up/down */
     display: block;
     margin: auto;
 }
