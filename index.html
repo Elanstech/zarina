@@ -16,10 +16,12 @@ body {
     background-color: #f9f9f9;
     color: #333;
     transition: all 0.3s ease-in-out;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 header {
@@ -76,7 +78,7 @@ nav a {
     font-size: 16px;
     transition: color 0.3s ease-in-out;
     white-space: nowrap; /* Ensure text doesn't wrap */
-    padding-right: 3in; /* Move text to the right */
+    padding-right: 1in; /* Move text to the right */
 }
 
 nav a:hover {
@@ -88,7 +90,7 @@ nav a:hover {
     flex-direction: column;
     cursor: pointer;
     position: absolute;
-    right: calc(1in);
+    right: 1in; /* Adjust position to the right */
 }
 
 .hamburger div {
