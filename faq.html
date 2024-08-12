@@ -26,10 +26,10 @@
         }
 
         header {
-            background: #2b3e50;
+            background: #1e88e5; /* Updated color */
             color: #fff;
             padding: 20px;
-            border-bottom: 3px solid #1a1f26;
+            border-bottom: 3px solid #0d47a1; /* Updated border color */
             position: fixed;
             width: 100%;
             top: 0;
@@ -80,9 +80,11 @@
         }
 
         .hamburger {
-            display: none;
+            display: flex;
             flex-direction: column;
             cursor: pointer;
+            position: absolute;
+            right: 50px; /* Adjusted value to move the menu more to the left */
         }
 
         .hamburger div {
@@ -91,6 +93,18 @@
             background-color: #fff;
             margin: 4px 0;
             transition: all 0.3s ease-in-out;
+        }
+
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(-45deg) translate(-6px, 6px);
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(45deg) translate(-6px, -6px);
         }
 
         section {
@@ -353,6 +367,7 @@
         const navUL = document.querySelector('.nav-list');
 
         hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
             navUL.classList.toggle('active');
         });
     </script>
