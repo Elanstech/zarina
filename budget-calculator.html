@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budget Calculator - East Coast Realty by Zarina</title>
+    <title>Personal Budget Planner - East Coast Realty by Zarina</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Common Styles */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #f0f0f0;
             color: #333;
             transition: all 0.3s ease-in-out;
         }
@@ -25,7 +24,7 @@
             width: 80%;
             margin: auto;
             overflow: hidden;
-            padding-top: 80px; /* Adjust for fixed header */
+            padding-top: 80px;
         }
         header {
             padding: 20px 20px;
@@ -62,10 +61,10 @@
         }
         nav li {
             padding: 0 20px;
-            border-bottom: 1px solid #fff; /* Add a bottom border */
+            border-bottom: 1px solid #fff;
         }
         nav li:last-child {
-            border-bottom: none; /* Remove the bottom border for the last item */
+            border-bottom: none;
         }
         nav a {
             color: #fff;
@@ -82,7 +81,7 @@
             flex-direction: column;
             cursor: pointer;
             position: absolute;
-            right: calc(1in);
+            right: 0.5in;
         }
         .hamburger div {
             width: 25px;
@@ -114,18 +113,173 @@
             z-index: 1000;
         }
         nav ul.active {
-            transform: translateX(0);
+            transform: translateX(-1in);
         }
-        section {
+        .hero {
+            text-align: center;
+            padding: 150px 20px 100px;
+            position: relative;
+            overflow: hidden;
+            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/homeworthbackround.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+        }
+        .hero-title {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease-in-out;
+        }
+        .hero-subtitle {
+            font-size: 1.5em;
+            font-weight: lighter;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #1e88e5;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            margin: 10px;
+            transition: background 0.3s ease-in-out;
+        }
+        .btn:hover {
+            background: #0d47a1;
+        }
+        .section {
             padding: 50px 20px;
             background: #fff;
+            margin-top: 20px;
             transition: all 0.3s ease-in-out;
         }
-        section h1 {
-            font-size: 2.5em;
+        .section h2 {
+            font-size: 2em;
             color: rgb(1, 0, 244);
             text-align: center;
             margin-bottom: 20px;
+            animation: fadeInDown 1s ease-in-out;
+        }
+        .card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease-in-out;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card img {
+            max-width: 100%;
+            border-radius: 15px 15px 0 0;
+        }
+        .card-content {
+            padding: 15px;
+        }
+        .card-content h3 {
+            font-size: 1.5em;
+            color: rgb(1, 0, 244);
+            margin-bottom: 10px;
+        }
+        .card-content p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #666;
+        }
+        .budget-calculator {
+            background: #fff;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .budget-calculator h2 {
+            font-size: 2em;
+            color: rgb(1, 0, 244);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .calculator-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .form-group input,
+        .form-group select {
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            background: rgba(0, 0, 0, 0.05);
+            color: #333;
+        }
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 15px;
+            background: #ddd;
+            border-radius: 10px;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        .slider:hover {
+            opacity: 1;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            background: #1e88e5;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #1e88e5;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #333;
+        }
+        .btn {
+            background: #1e88e5;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+            text-align: center;
+        }
+        .btn:hover {
+            background: #0d47a1;
         }
         footer {
             background: #2b3e50;
@@ -166,7 +320,6 @@
                 transform: translateY(0);
             }
         }
-        /* Styles for Tablets */
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -189,7 +342,6 @@
                 padding: 30px 20px;
             }
         }
-        /* Styles for Mobile Phones */
         @media (max-width: 480px) {
             .hamburger {
                 display: flex;
@@ -243,11 +395,19 @@
         </div>
     </header>
 
-    <section id="budget-calculator">
-        <div class="container" data-aos="fade-up">
-            <h1>Budget Calculator</h1>
-            <div class="calculator">
-                <form>
+    <section id="home" class="hero background">
+        <div class="container" data-aos="fade-in">
+            <h1 class="hero-title">Personal Budget Planner</h1>
+            <p class="hero-subtitle">Plan your finances and manage your expenses with ease.</p>
+        </div>
+    </section>
+
+    <section class="section" data-aos="fade-up">
+        <div class="container">
+            <h2>Budget Your Finances</h2>
+            <div class="budget-calculator">
+                <h2>Enter Your Income and Expenses</h2>
+                <form class="calculator-form">
                     <div class="form-group">
                         <label for="income">Monthly Income ($):</label>
                         <input type="number" id="income" name="income" required>
@@ -256,9 +416,21 @@
                         <label for="expenses">Monthly Expenses ($):</label>
                         <input type="number" id="expenses" name="expenses" required>
                     </div>
+                    <div class="form-group">
+                        <label for="slider-income">Adjust Income:</label>
+                        <input type="range" id="slider-income" name="slider-income" min="0" max="20000" value="5000" class="slider">
+                        <span id="income-value">$5,000</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="slider-expenses">Adjust Expenses:</label>
+                        <input type="range" id="slider-expenses" name="slider-expenses" min="0" max="20000" value="2000" class="slider">
+                        <span id="expenses-value">$2,000</span>
+                    </div>
                     <button type="button" onclick="calculateBudget()" class="btn">Calculate</button>
                 </form>
-                <h2>Monthly Savings: <span id="monthly-savings">$0.00</span></h2>
+                <div class="result">
+                    Monthly Savings: <span id="monthly-savings">$0.00</span>
+                </div>
             </div>
         </div>
     </section>
@@ -292,11 +464,23 @@
             navUL.classList.toggle('active');
         });
 
+        const incomeSlider = document.getElementById('slider-income');
+        const incomeValue = document.getElementById('income-value');
+        incomeSlider.oninput = function() {
+            incomeValue.innerHTML = '$' + parseInt(this.value).toLocaleString();
+        }
+
+        const expensesSlider = document.getElementById('slider-expenses');
+        const expensesValue = document.getElementById('expenses-value');
+        expensesSlider.oninput = function() {
+            expensesValue.innerHTML = '$' + parseInt(this.value).toLocaleString();
+        }
+
         function calculateBudget() {
-            const income = document.getElementById('income').value;
-            const expenses = document.getElementById('expenses').value;
+            const income = parseFloat(incomeSlider.value);
+            const expenses = parseFloat(expensesSlider.value);
             const savings = income - expenses;
-            document.getElementById('monthly-savings').innerText = '$' + savings.toFixed(2);
+            document.getElementById('monthly-savings').innerText = '$' + savings.toFixed(2).toLocaleString();
         }
     </script>
 </body>
