@@ -80,7 +80,7 @@
             border-bottom: 1px solid rgb(1, 0, 244);
         }
 
-        .hero .hamburger {
+        .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
@@ -89,27 +89,27 @@
             right: 20px;
         }
 
-        .hero .hamburger div {
+        .hamburger div {
             width: 25px;
             height: 3px;
-            background-color: #fff;
+            background-color: #000;
             margin: 4px 0;
             transition: all 0.3s ease-in-out;
         }
 
-        .hero .hamburger.active div:nth-child(1) {
+        .hamburger.active div:nth-child(1) {
             transform: rotate(-45deg) translate(-6px, 6px);
         }
 
-        .hero .hamburger.active div:nth-child(2) {
+        .hamburger.active div:nth-child(2) {
             opacity: 0;
         }
 
-        .hero .hamburger.active div:nth-child(3) {
+        .hamburger.active div:nth-child(3) {
             transform: rotate(45deg) translate(-6px, -6px);
         }
 
-        .hero nav ul {
+        nav ul {
             display: none;
             flex-direction: column;
             position: fixed;
@@ -123,7 +123,7 @@
             z-index: 1000;
         }
 
-        .hero nav ul.active {
+        nav ul.active {
             display: flex;
             transform: translateX(0);
         }
@@ -187,11 +187,26 @@
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
+            border: 2px solid rgb(1, 0, 244);
+            padding: 20px;
+            border-radius: 15px;
+            background: #fff;
         }
 
-        .about-content {
+        .about-content, .about-image {
             flex: 1;
-            padding-right: 20px;
+            padding: 20px;
+        }
+
+        .about-image {
+            max-width: 100%;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
         .about-content h3 {
@@ -205,18 +220,6 @@
             font-size: 1em;
             line-height: 1.6;
             color: #666;
-        }
-
-        .about-image {
-            flex: 1;
-            max-width: 300px;
-            text-align: center;
-        }
-
-        .about-image img {
-            max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
         .about-contact {
@@ -312,11 +315,11 @@
             .hero nav ul {
                 flex-direction: column;
                 text-align: center;
-                display: none;
             }
 
-            .hero nav ul.active {
+            nav ul.active {
                 display: flex;
+                transform: translateX(0);
             }
 
             .hero nav ul li {
@@ -331,50 +334,11 @@
                 flex-direction: column;
             }
 
-            .about-content {
-                padding-right: 0;
-                margin-bottom: 20px;
+            .about-content, .about-image {
+                padding: 10px;
             }
+        }
 
-            .about-image {
-                max-width: 100%;
-                margin-bottom: 20px;
-            .about-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    border: 2px solid rgb(1, 0, 244);
-    padding: 20px;
-    border-radius: 15px;
-    background: #fff;
-}
-
-.about-content, .about-image {
-    flex: 1;
-    padding: 20px;
-}
-
-.about-image {
-    max-width: 100%;
-    text-align: center;
-}
-
-.about-image img {
-    max-width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 768px) {
-    .about-container {
-        flex-direction: column;
-    }
-
-    .about-content, .about-image {
-        padding: 10px;
-    }
-}
         /* Styles for Mobile Phones */
         @media (max-width: 480px) {
             .container {
@@ -467,6 +431,9 @@
         <div class="container">
             <h2>About Us</h2>
             <div class="about-container">
+                <div class="about-image">
+                    <img src="https://github.com/Elanstech/zarina/blob/main/zarina.jpg?raw=true" alt="Zarina Yusupova">
+                </div>
                 <div class="about-content">
                     <h3>Welcome to East Coast Realty by Zarina</h3>
                     <p>Led by Zarina Yusupov, a seasoned real estate professional with over 20 years of experience, our company specializes in residential sales and investment properties in the vibrant communities of Rego Park and Forest Hills. As the Owner and Broker, Zarina brings a wealth of knowledge in fluctuating market trends, ever-changing mortgage interest rates, and Co-Op board packages, along with a plethora of insights into all things real estate and investments. Known for her diligence and unwavering commitment, Zarina is dedicated to helping you find your dream home or the perfect investment property with confidence and ease. Trust East Coast Realty by Zarina to guide you through every step of your real estate journey.</p>
@@ -474,9 +441,6 @@
                         <p>Phone: <a href="tel:+17186444666">718-644-4666</a></p>
                         <p>Email: <a href="mailto:broker@eastcoastrealty.net">broker@eastcoastrealty.net</a></p>
                     </div>
-                </div>
-                <div class="about-image">
-                    <img src="https://github.com/Elanstech/zarina/blob/main/zarina.jpg?raw=true" alt="Zarina Yusupova">
                 </div>
             </div>
         </div>
@@ -533,7 +497,7 @@
                 </div>
             </div>
             <div class="social-media" data-aos="fade-up">
-                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="btn">
+                <a href="https://www.facebook.com/eastcoastrealtybyzarina/" target="_blank" class="btn">
                     <i class="fab fa-facebook-f"></i> Facebook
                 </a>
             </div>
