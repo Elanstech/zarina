@@ -237,30 +237,25 @@
             color: #666;
         }
 
-        .contact-form {
-            background: #f1f1f1;
-            padding: 50px 20px;
+        .contact-card {
+            background: rgba(0, 0, 0, 0.7);
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            margin-top: 30px;
-            animation: fadeInUp 1s ease-in-out;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
         }
 
-        .contact-form h2 {
-            font-size: 2em;
-            color: rgb(1, 0, 244);
-            text-align: center;
-            margin-bottom: 20px;
+        .contact-card:hover {
+            transform: translateY(-10px);
         }
 
-        .contact-form p {
+        .contact-content {
             text-align: center;
+        }
+
+        .contact-content p {
             font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-
-        form {
-            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         .form-group {
@@ -275,34 +270,19 @@
             border-radius: 10px;
             font-size: 1em;
             background: rgba(255, 255, 255, 0.1);
-            color: #333;
+            color: #fff;
             transition: background 0.3s ease-in-out;
         }
 
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-            color: #666;
+            color: #ccc;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             background: rgba(255, 255, 255, 0.2);
             outline: none;
-        }
-
-        .btn {
-            background: #1e88e5;
-            color: #fff;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: background 0.3s ease-in-out;
-        }
-
-        .btn:hover {
-            background: #0d47a1;
         }
 
         footer {
@@ -420,7 +400,7 @@
             .card-content p {
                 font-size: 0.9em;
             }
-            .contact-form {
+            .contact-card {
                 padding: 20px;
             }
             .form-group input,
