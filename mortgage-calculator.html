@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dream Home Mortgage Calculator - East Coast Realty by Zarina</title>
+    <title>Mortgage Calculator - East Coast Realty by Zarina</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -13,19 +13,22 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #f9f9f9;
             color: #333;
             transition: all 0.3s ease-in-out;
         }
+
         html {
             scroll-behavior: smooth;
         }
+
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
-            padding-top: 80px;
+            padding-top: 80px; /* Adjust for fixed header */
         }
+
         header {
             padding: 20px 20px;
             border-bottom: 3px solid #1a1f26;
@@ -40,32 +43,39 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             animation: fadeInDown 1s ease-in-out;
         }
+
         .logo {
             display: flex;
             align-items: center;
         }
+
         .logo img {
             height: 60px;
             margin-right: 20px;
         }
+
         nav {
             flex-grow: 1;
             display: flex;
             justify-content: center;
         }
+
         nav ul {
             padding: 0;
             list-style: none;
             display: flex;
             margin: 0;
         }
+
         nav li {
             padding: 0 20px;
-            border-bottom: 1px solid #fff;
+            border-bottom: 1px solid #fff; /* Add a bottom border */
         }
+
         nav li:last-child {
-            border-bottom: none;
+            border-bottom: none; /* Remove the bottom border for the last item */
         }
+
         nav a {
             color: #fff;
             text-decoration: none;
@@ -73,16 +83,19 @@
             font-size: 16px;
             transition: color 0.3s ease-in-out;
         }
+
         nav a:hover {
             color: #bbdefb;
         }
+
         .hamburger {
             display: flex;
             flex-direction: column;
             cursor: pointer;
             position: absolute;
-            right: 45px;
+            right: 0.5in;
         }
+
         .hamburger div {
             width: 25px;
             height: 3px;
@@ -90,15 +103,19 @@
             margin: 4px 0;
             transition: all 0.3s ease-in-out;
         }
+
         .hamburger.active div:nth-child(1) {
             transform: rotate(-45deg) translate(-6px, 6px);
         }
+
         .hamburger.active div:nth-child(2) {
             opacity: 0;
         }
+
         .hamburger.active div:nth-child(3) {
             transform: rotate(45deg) translate(-6px, -6px);
         }
+
         nav ul {
             display: flex;
             flex-direction: column;
@@ -112,54 +129,27 @@
             transition: transform 0.3s ease-in-out;
             z-index: 1000;
         }
+
         nav ul.active {
-            transform: translateX(0);
+            transform: translateX(-0.3in); /* Move the bar closer */
         }
-        .hero {
-            text-align: center;
-            padding: 150px 20px 100px;
-            position: relative;
-            overflow: hidden;
-            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/homeworthbackround.jpg') no-repeat center center;
-            background-size: cover;
-            color: #fff;
-        }
-        .hero-title {
-            font-size: 3em;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            animation: fadeInDown 1s ease-in-out;
-        }
-        .hero-subtitle {
-            font-size: 1.5em;
-            font-weight: lighter;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease-in-out;
-        }
-        .button-container {
-            margin-top: 20px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            background: #1e88e5;
+
+        nav a {
             color: #fff;
             text-decoration: none;
-            border-radius: 10px;
-            font-size: 1.2em;
-            margin: 10px;
-            transition: background 0.3s ease-in-out;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: color 0.3s ease-in-out;
+            padding-left: 0.3in; /* Adjust this value to move the text */
         }
-        .btn:hover {
-            background: #0d47a1;
-        }
+
         .section {
             padding: 50px 20px;
             background: #fff;
             margin-top: 20px;
             transition: all 0.3s ease-in-out;
         }
+
         .section h2 {
             font-size: 2em;
             color: rgb(1, 0, 244);
@@ -167,6 +157,7 @@
             margin-bottom: 20px;
             animation: fadeInDown 1s ease-in-out;
         }
+
         .card {
             background: #fff;
             border-radius: 15px;
@@ -176,53 +167,58 @@
             transition: transform 0.3s ease-in-out;
             animation: fadeInUp 1s ease-in-out;
         }
+
         .card:hover {
             transform: translateY(-10px);
         }
+
         .card img {
             max-width: 100%;
             border-radius: 15px 15px 0 0;
         }
+
         .card-content {
             padding: 15px;
         }
+
         .card-content h3 {
             font-size: 1.5em;
             color: rgb(1, 0, 244);
             margin-bottom: 10px;
         }
+
         .card-content p {
             font-size: 1em;
             line-height: 1.6;
             color: #666;
         }
-        .mortgage-calculator {
-            background: #fff;
+
+        .calculator {
             padding: 50px;
+            background: #fff;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            animation: fadeInUp 1s ease-in-out;
         }
-        .mortgage-calculator h2 {
+
+        .calculator h2 {
             font-size: 2em;
             color: rgb(1, 0, 244);
             text-align: center;
             margin-bottom: 20px;
         }
-        .calculator-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+
         .form-group {
             display: flex;
             flex-direction: column;
+            margin-bottom: 20px;
         }
+
         .form-group label {
-            margin-bottom: 10px;
             font-size: 1.2em;
+            margin-bottom: 10px;
             color: #333;
         }
+
         .form-group input,
         .form-group select {
             padding: 15px;
@@ -232,41 +228,14 @@
             background: rgba(0, 0, 0, 0.05);
             color: #333;
         }
-        .slider {
-            -webkit-appearance: none;
-            width: 100%;
-            height: 15px;
-            background: #ddd;
-            border-radius: 10px;
-            outline: none;
-            opacity: 0.7;
-            transition: opacity 0.2s;
-        }
-        .slider:hover {
-            opacity: 1;
-        }
-        .slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 25px;
-            height: 25px;
-            background: #1e88e5;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-        .slider::-moz-range-thumb {
-            width: 25px;
-            height: 25px;
-            background: #1e88e5;
-            border-radius: 50%;
-            cursor: pointer;
-        }
+
         .result {
             text-align: center;
-            margin-top: 20px;
             font-size: 1.5em;
             color: #333;
+            margin-top: 20px;
         }
+
         .btn {
             background: #1e88e5;
             color: #fff;
@@ -278,9 +247,11 @@
             transition: background 0.3s ease-in-out;
             text-align: center;
         }
+
         .btn:hover {
             background: #0d47a1;
         }
+
         footer {
             background: #2b3e50;
             color: #fff;
@@ -288,18 +259,22 @@
             padding: 20px 0;
             border-top: 3px solid #1a1f26;
         }
+
         .social-media {
             display: flex;
             justify-content: center;
             margin: 20px 0;
         }
+
         .social-media a {
             margin: 0 10px;
             transition: transform 0.3s ease-in-out;
         }
+
         .social-media a:hover {
             transform: scale(1.2);
         }
+
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -310,6 +285,7 @@
                 transform: translateY(0);
             }
         }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -320,55 +296,110 @@
                 transform: translateY(0);
             }
         }
+
+        /* Styles for Tablets */
         @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-                display: none;
-            }
-            nav ul.active {
-                display: flex;
-            }
-            nav ul li {
-                padding: 10px 0;
-            }
             .container {
                 width: 90%;
             }
-            .section {
-                padding: 30px 20px;
-            }
-        }
-        @media (max-width: 480px) {
+
             .hamburger {
                 display: flex;
             }
-            nav ul {
+
+            header nav ul {
                 flex-direction: column;
                 text-align: center;
                 display: none;
             }
-            nav ul.active {
+
+            header nav ul.active {
                 display: flex;
             }
-            nav ul li {
+
+            header nav ul li {
                 padding: 10px 0;
             }
-            header .logo img {
-                height: 50px;
+
+            .section {
+                padding: 30px 20px;
             }
+
+            .card {
+                margin-bottom: 20px;
+            }
+
+            .calculator {
+                padding: 30px;
+            }
+        }
+
+        /* Styles for Mobile Phones */
+        @media (max-width: 480px) {
             .container {
                 width: 95%;
             }
+
+            header .logo img {
+                height: 50px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                text-align: center;
+                display: none;
+            }
+
+            header nav ul.active {
+                display: flex;
+            }
+
+            header nav ul li {
+                padding: 10px 0;
+            }
+
+            nav a {
+                padding-left: 0.3in; /* Ensure this is included in the media query for mobile */
+            }
+
             .section {
                 padding: 20px 10px;
             }
+
+            .card {
+                margin-bottom: 20px;
+            }
+
+            .card-content h3 {
+                font-size: 1.2em;
+            }
+
+            .card-content p {
+                font-size: 0.9em;
+            }
+
+            .calculator {
+                padding: 20px;
+            }
+
+            .form-group label {
+                font-size: 1em;
+            }
+
+            .form-group input,
+            .form-group select {
+                font-size: 0.9em;
+            }
+
+            .result {
+                font-size: 1.2em;
+            }
         }
     </style>
-    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 </head>
 <body>
     <header data-aos="fade-down">
@@ -395,50 +426,27 @@
         </div>
     </header>
 
-    <section id="home" class="hero background">
-        <div class="container" data-aos="fade-in">
-            <h1 class="hero-title">Dream Home Mortgage Calculator</h1>
-            <p class="hero-subtitle">Find out your monthly payments and take a step closer to your dream home.</p>
-        </div>
-    </section>
-
     <section class="section" data-aos="fade-up">
         <div class="container">
-            <h2>Calculate Your Monthly Payments</h2>
-            <div class="mortgage-calculator">
-                <h2>Enter Your Details</h2>
-                <form class="calculator-form">
+            <h2>Mortgage Calculator</h2>
+            <div class="calculator" data-aos="fade-right">
+                <form id="mortgageForm">
                     <div class="form-group">
-                        <label for="loan-amount">Loan Amount ($):</label>
-                        <input type="number" id="loan-amount" name="loan-amount" required>
+                        <label for="principal">Loan Amount ($):</label>
+                        <input type="number" id="principal" name="principal" required>
                     </div>
                     <div class="form-group">
-                        <label for="interest-rate">Annual Interest Rate (%):</label>
-                        <input type="number" id="interest-rate" name="interest-rate" step="0.01" required>
+                        <label for="interest">Interest Rate (%):</label>
+                        <input type="number" id="interest" name="interest" step="0.01" required>
                     </div>
                     <div class="form-group">
-                        <label for="loan-term">Loan Term (years):</label>
-                        <input type="number" id="loan-term" name="loan-term" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="slider-loan-amount">Adjust Loan Amount:</label>
-                        <input type="range" id="slider-loan-amount" name="slider-loan-amount" min="10000" max="1000000" value="300000" class="slider">
-                        <span id="loan-amount-value">$300,000</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="slider-interest-rate">Adjust Interest Rate:</label>
-                        <input type="range" id="slider-interest-rate" name="slider-interest-rate" min="0.5" max="10" step="0.1" value="4.5" class="slider">
-                        <span id="interest-rate-value">4.5%</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="slider-loan-term">Adjust Loan Term:</label>
-                        <input type="range" id="slider-loan-term" name="slider-loan-term" min="1" max="30" value="30" class="slider">
-                        <span id="loan-term-value">30 years</span>
+                        <label for="years">Term (years):</label>
+                        <input type="number" id="years" name="years" required>
                     </div>
                     <button type="button" onclick="calculateMortgage()" class="btn">Calculate</button>
                 </form>
                 <div class="result">
-                    Monthly Payment: <span id="monthly-payment">$0.00</span>
+                    Monthly Payment: <span id="monthlyPayment">$0.00</span>
                 </div>
             </div>
         </div>
@@ -473,31 +481,15 @@
             navUL.classList.toggle('active');
         });
 
-        const loanAmountSlider = document.getElementById('slider-loan-amount');
-        const loanAmountValue = document.getElementById('loan-amount-value');
-        loanAmountSlider.oninput = function() {
-            loanAmountValue.innerHTML = '$' + parseInt(this.value).toLocaleString();
-        }
-
-        const interestRateSlider = document.getElementById('slider-interest-rate');
-        const interestRateValue = document.getElementById('interest-rate-value');
-        interestRateSlider.oninput = function() {
-            interestRateValue.innerHTML = this.value + '%';
-        }
-
-        const loanTermSlider = document.getElementById('slider-loan-term');
-        const loanTermValue = document.getElementById('loan-term-value');
-        loanTermSlider.oninput = function() {
-            loanTermValue.innerHTML = this.value + ' years';
-        }
-
         function calculateMortgage() {
-            const loanAmount = parseFloat(loanAmountSlider.value);
-            const interestRate = parseFloat(interestRateSlider.value) / 100 / 12;
-            const loanTerm = parseFloat(loanTermSlider.value) * 12;
-            const x = Math.pow(1 + interestRate, loanTerm);
-            const monthlyPayment = (loanAmount * x * interestRate) / (x - 1);
-            document.getElementById('monthly-payment').innerText = '$' + monthlyPayment.toFixed(2).toLocaleString();
+            const principal = parseFloat(document.getElementById('principal').value);
+            const interest = parseFloat(document.getElementById('interest').value) / 100 / 12;
+            const payments = parseFloat(document.getElementById('years').value) * 12;
+
+            const x = Math.pow(1 + interest, payments);
+            const monthly = (principal * x * interest) / (x - 1);
+
+            document.getElementById('monthlyPayment').innerText = `$${monthly.toFixed(2).toLocaleString()}`;
         }
     </script>
 </body>
