@@ -28,7 +28,7 @@
         }
 
         .hero {
-            background: url('https://github.com/Elanstech/zarina/blob/main/homeworthbackround.jpg?raw=true') no-repeat center center/cover;
+            background: url('https://source.unsplash.com/random/1920x1080?real-estate') no-repeat center center/cover;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -238,6 +238,26 @@
             text-decoration: underline;
         }
 
+        .map-reviews-container {
+            display: flex;
+            justify-content: space-between;
+            border: 2px solid rgb(1, 0, 244);
+            padding: 20px;
+            border-radius: 15px;
+            background: #fff;
+            margin-top: 20px;
+        }
+
+        .map-section, .reviews-section {
+            flex: 1;
+            padding: 20px;
+            max-width: 48%;
+        }
+
+        .map-section {
+            border-right: 1px solid rgb(1, 0, 244);
+        }
+
         .map-container {
             position: relative;
             overflow: hidden;
@@ -339,6 +359,19 @@
 
             .about-content, .about-image {
                 padding: 10px;
+            }
+
+            .map-reviews-container {
+                flex-direction: column;
+            }
+
+            .map-section {
+                border-right: none;
+                border-bottom: 1px solid rgb(1, 0, 244);
+            }
+
+            .map-section, .reviews-section {
+                max-width: 100%;
             }
         }
 
