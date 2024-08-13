@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mortgage Calculator - East Coast Realty by Zarina</title>
+    <title>Dream Home Mortgage Calculator - East Coast Realty by Zarina</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Common Styles */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background-color: #f0f0f0;
             color: #333;
             transition: all 0.3s ease-in-out;
         }
@@ -25,7 +24,7 @@
             width: 80%;
             margin: auto;
             overflow: hidden;
-            padding-top: 80px; /* Adjust for fixed header */
+            padding-top: 80px;
         }
         header {
             padding: 20px 20px;
@@ -62,10 +61,10 @@
         }
         nav li {
             padding: 0 20px;
-            border-bottom: 1px solid #fff; /* Add a bottom border */
+            border-bottom: 1px solid #fff;
         }
         nav li:last-child {
-            border-bottom: none; /* Remove the bottom border for the last item */
+            border-bottom: none;
         }
         nav a {
             color: #fff;
@@ -82,7 +81,7 @@
             flex-direction: column;
             cursor: pointer;
             position: absolute;
-            right: calc(1in);
+            right: 45px;
         }
         .hamburger div {
             width: 25px;
@@ -116,106 +115,87 @@
         nav ul.active {
             transform: translateX(0);
         }
-        section {
+        .hero {
+            text-align: center;
+            padding: 150px 20px 100px;
+            position: relative;
+            overflow: hidden;
+            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/homeworthbackround.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+        }
+        .hero-title {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease-in-out;
+        }
+        .hero-subtitle {
+            font-size: 1.5em;
+            font-weight: lighter;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #1e88e5;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            margin: 10px;
+            transition: background 0.3s ease-in-out;
+        }
+        .btn:hover {
+            background: #0d47a1;
+        }
+        .section {
             padding: 50px 20px;
             background: #fff;
+            margin-top: 20px;
             transition: all 0.3s ease-in-out;
         }
-        section h1 {
-            font-size: 2.5em;
+        .section h2 {
+            font-size: 2em;
             color: rgb(1, 0, 244);
             text-align: center;
             margin-bottom: 20px;
+            animation: fadeInDown 1s ease-in-out;
         }
-        footer {
-            background: #2b3e50;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            border-top: 3px solid #1a1f26;
-        }
-        .social-media {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-        .social-media a {
-            margin: 0 10px;
+        .card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
             transition: transform 0.3s ease-in-out;
+            animation: fadeInUp 1s ease-in-out;
         }
-        .social-media a:hover {
-            transform: scale(1.2);
+        .card:hover {
+            transform: translateY(-10px);
         }
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .card img {
+            max-width: 100%;
+            border-radius: 15px 15px 0 0;
         }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .card-content {
+            padding: 15px;
         }
-        /* Styles for Tablets */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-                display: none;
-            }
-            nav ul.active {
-                display: flex;
-            }
-            nav ul li {
-                padding: 10px 0;
-            }
-            .container {
-                width: 90%;
-            }
-            .section {
-                padding: 30px 20px;
-            }
+        .card-content h3 {
+            font-size: 1.5em;
+            color: rgb(1, 0, 244);
+            margin-bottom: 10px;
         }
-        /* Styles for Mobile Phones */
-        @media (max-width: 480px) {
-            .hamburger {
-                display: flex;
-            }
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-                display: none;
-            }
-            nav ul.active {
-                display: flex;
-            }
-            nav ul li {
-                padding: 10px 0;
-            }
-            header .logo img {
-                height: 50px;
-            }
-            .container {
-                width: 95%;
-            }
-            .section {
-                padding: 20px 10px;
-            }
+        .card-content p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #666;
         }
-        /* Custom Styles for Mortgage Calculator */
         .mortgage-calculator {
             background: #fff;
             padding: 50px;
@@ -301,6 +281,92 @@
         .btn:hover {
             background: #0d47a1;
         }
+        footer {
+            background: #2b3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            border-top: 3px solid #1a1f26;
+        }
+        .social-media {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .social-media a {
+            margin: 0 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .social-media a:hover {
+            transform: scale(1.2);
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                display: none;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav ul li {
+                padding: 10px 0;
+            }
+            .container {
+                width: 90%;
+            }
+            .section {
+                padding: 30px 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .hamburger {
+                display: flex;
+            }
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                display: none;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            nav ul li {
+                padding: 10px 0;
+            }
+            header .logo img {
+                height: 50px;
+            }
+            .container {
+                width: 95%;
+            }
+            .section {
+                padding: 20px 10px;
+            }
+        }
     </style>
     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 </head>
@@ -329,11 +395,18 @@
         </div>
     </header>
 
-    <section id="mortgage-calculator">
-        <div class="container" data-aos="fade-up">
-            <h1>Mortgage Calculator</h1>
+    <section id="home" class="hero background">
+        <div class="container" data-aos="fade-in">
+            <h1 class="hero-title">Dream Home Mortgage Calculator</h1>
+            <p class="hero-subtitle">Find out your monthly payments and take a step closer to your dream home.</p>
+        </div>
+    </section>
+
+    <section class="section" data-aos="fade-up">
+        <div class="container">
+            <h2>Calculate Your Monthly Payments</h2>
             <div class="mortgage-calculator">
-                <h2>Calculate Your Monthly Mortgage Payment</h2>
+                <h2>Enter Your Details</h2>
                 <form class="calculator-form">
                     <div class="form-group">
                         <label for="loan-amount">Loan Amount ($):</label>
