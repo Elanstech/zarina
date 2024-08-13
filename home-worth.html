@@ -16,6 +16,8 @@
             background-color: #f9f9f9;
             color: #333;
             transition: all 0.3s ease-in-out;
+            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/background.jpg') no-repeat center center fixed;
+            background-size: cover;
         }
 
         html {
@@ -145,9 +147,11 @@
 
         .section {
             padding: 50px 20px;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
             margin-top: 20px;
             transition: all 0.3s ease-in-out;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
         .section h2 {
@@ -193,6 +197,25 @@
             color: #666;
         }
 
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1em;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 1em;
+        }
+
         .btn {
             background: #1e88e5;
             color: #fff;
@@ -203,6 +226,8 @@
             cursor: pointer;
             transition: background 0.3s ease-in-out;
             text-align: center;
+            display: block;
+            width: 100%;
         }
 
         .btn:hover {
@@ -334,6 +359,16 @@
             .card-content p {
                 font-size: 0.9em;
             }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 10px;
+            }
+
+            .btn {
+                font-size: 1em;
+                padding: 10px;
+            }
         }
     </style>
 </head>
@@ -385,6 +420,36 @@
                         <button type="submit" class="btn">Submit</button>
                     </form>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section background" id="contact" data-aos="fade-right">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-card" data-aos="fade-up">
+                <div class="contact-content">
+                    <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
+                    <form id="contactForm" action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                    <p>Email: <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a></p>
+                    <p>Phone: <a href="tel:+17182712121">718-271-2121</a></p>
+                </div>
+            </div>
+            <div class="social-media" data-aos="fade-up">
+                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
             </div>
         </div>
     </section>
