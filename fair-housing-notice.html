@@ -359,6 +359,36 @@
         </div>
     </section>
 
+    <section class="section background" id="contact" data-aos="fade-right">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-card" data-aos="fade-up">
+                <div class="contact-content">
+                    <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
+                    <form id="contactForm" action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                    <p>Email: <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a></p>
+                    <p>Phone: <a href="tel:+17182712121">718-271-2121</a></p>
+                </div>
+            </div>
+            <div class="social-media" data-aos="fade-up">
+                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <footer data-aos="fade-up">
         <div class="container">
             <div class="social-media">
@@ -386,6 +416,12 @@
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navUL.classList.toggle('active');
+        });
+
+        // Prevent default form submission for "Contact Us" form
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Form submission is disabled for this demo.');
         });
     </script>
 </body>
