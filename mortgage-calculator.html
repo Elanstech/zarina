@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mortgage Calculator - East Coast Realty by Zarina</title>
+    <title>Budget Calculator - East Coast Realty by Zarina</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -16,6 +16,8 @@
             background-color: #f9f9f9;
             color: #333;
             transition: all 0.3s ease-in-out;
+            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/background.jpg') no-repeat center center fixed;
+            background-size: cover;
         }
 
         html {
@@ -93,7 +95,7 @@
             flex-direction: column;
             cursor: pointer;
             position: absolute;
-            right: 0.5in;
+            right: calc(1in);
         }
 
         .hamburger div {
@@ -131,7 +133,7 @@
         }
 
         nav ul.active {
-            transform: translateX(-0.3in); /* Move the bar closer */
+            transform: translateX(0);
         }
 
         nav a {
@@ -145,9 +147,11 @@
 
         .section {
             padding: 50px 20px;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
             margin-top: 20px;
             transition: all 0.3s ease-in-out;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
         .section h2 {
@@ -156,41 +160,6 @@
             text-align: center;
             margin-bottom: 20px;
             animation: fadeInDown 1s ease-in-out;
-        }
-
-        .card {
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-bottom: 30px;
-            transition: transform 0.3s ease-in-out;
-            animation: fadeInUp 1s ease-in-out;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card img {
-            max-width: 100%;
-            border-radius: 15px 15px 0 0;
-        }
-
-        .card-content {
-            padding: 15px;
-        }
-
-        .card-content h3 {
-            font-size: 1.5em;
-            color: rgb(1, 0, 244);
-            margin-bottom: 10px;
-        }
-
-        .card-content p {
-            font-size: 1em;
-            line-height: 1.6;
-            color: #666;
         }
 
         .calculator {
@@ -207,53 +176,19 @@
             margin-bottom: 20px;
         }
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 20px;
+        .iframe-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 aspect ratio */
         }
 
-        .form-group label {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .form-group input,
-        .form-group select {
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1em;
-            background: rgba(0, 0, 0, 0.05);
-            color: #333;
-        }
-
-        .form-group select {
-            cursor: pointer;
-        }
-
-        .result {
-            text-align: center;
-            font-size: 1.5em;
-            color: #333;
-            margin-top: 20px;
-        }
-
-        .btn {
-            background: #1e88e5;
-            color: #fff;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: background 0.3s ease-in-out;
-            text-align: center;
-        }
-
-        .btn:hover {
-            background: #0d47a1;
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         footer {
@@ -329,10 +264,6 @@
                 padding: 30px 20px;
             }
 
-            .card {
-                margin-bottom: 20px;
-            }
-
             .calculator {
                 padding: 30px;
             }
@@ -374,33 +305,12 @@
                 padding: 20px 10px;
             }
 
-            .card {
-                margin-bottom: 20px;
-            }
-
-            .card-content h3 {
-                font-size: 1.2em;
-            }
-
-            .card-content p {
-                font-size: 0.9em;
-            }
-
             .calculator {
                 padding: 20px;
             }
 
-            .form-group label {
-                font-size: 1em;
-            }
-
-            .form-group input,
-            .form-group select {
-                font-size: 0.9em;
-            }
-
-            .result {
-                font-size: 1.2em;
+            .iframe-container {
+                padding-top: 75%; /* 4:3 aspect ratio for mobile */
             }
         }
     </style>
@@ -416,7 +326,7 @@
             <ul class="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
-                <li><a href="advanced-mortgage-calculator.html">Advanced Mortgage Calculator</a></li> <!-- Updated link -->
+                <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
                 <li><a href="home-worth.html">What's Your Home Worth?</a></li>
                 <li><a href="mls-listings.html">MLS Listings</a></li>
                 <li><a href="faq.html">FAQ</a></li>
@@ -432,37 +342,10 @@
 
     <section class="section" data-aos="fade-up">
         <div class="container">
-            <h2>Mortgage Calculator</h2>
+            <h2>Home Budget Calculator</h2>
             <div class="calculator" data-aos="fade-right">
-                <form id="mortgageForm">
-                    <div class="form-group">
-                        <label for="principal">Loan Amount ($):</label>
-                        <input type="number" id="principal" name="principal" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="interest">Interest Rate (%):</label>
-                        <input type="number" id="interest" name="interest" step="0.01" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="years">Term (years):</label>
-                        <input type="number" id="years" name="years" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="propertyTax">Annual Property Tax ($):</label>
-                        <input type="number" id="propertyTax" name="propertyTax" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="insurance">Annual Home Insurance ($):</label>
-                        <input type="number" id="insurance" name="insurance" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="pmi">Private Mortgage Insurance (PMI) (%):</label>
-                        <input type="number" id="pmi" name="pmi" step="0.01">
-                    </div>
-                    <button type="button" onclick="calculateMortgage()" class="btn">Calculate</button>
-                </form>
-                <div class="result">
-                    Monthly Payment: <span id="monthlyPayment">$0.00</span>
+                <div class="iframe-container">
+                    <iframe src="https://www.mortgagecalculator.org/calcs/house-affordability.php" frameborder="0"></iframe>
                 </div>
             </div>
         </div>
@@ -497,8 +380,7 @@
             </div>
         </div>
     </section>
-
-    <footer data-aos="fade-up">
+    <footer data-aos="-up">
         <div class="container">
             <div class="social-media">
                 <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="facebook-button">
@@ -526,21 +408,6 @@
             hamburger.classList.toggle('active');
             navUL.classList.toggle('active');
         });
-
-        function calculateMortgage() {
-            const principal = parseFloat(document.getElementById('principal').value);
-            const interest = parseFloat(document.getElementById('interest').value) / 100 / 12;
-            const payments = parseFloat(document.getElementById('years').value) * 12;
-            const propertyTax = parseFloat(document.getElementById('propertyTax').value) / 12;
-            const insurance = parseFloat(document.getElementById('insurance').value) / 12;
-            const pmi = parseFloat(document.getElementById('pmi').value) / 100 / 12;
-
-            const x = Math.pow(1 + interest, payments);
-            const monthlyPrincipalAndInterest = (principal * x * interest) / (x - 1);
-            const monthlyPayment = monthlyPrincipalAndInterest + propertyTax + insurance + (principal * pmi);
-
-            document.getElementById('monthlyPayment').innerText = `$${monthlyPayment.toFixed(2).toLocaleString()}`;
-        }
     </script>
 </body>
 </html>
