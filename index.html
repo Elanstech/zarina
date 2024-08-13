@@ -84,6 +84,9 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
         }
 
         .hero .hamburger div {
@@ -107,7 +110,7 @@
         }
 
         .hero nav ul {
-            display: flex;
+            display: none;
             flex-direction: column;
             position: fixed;
             top: 60px;
@@ -121,6 +124,7 @@
         }
 
         .hero nav ul.active {
+            display: flex;
             transform: translateX(0);
         }
 
@@ -331,7 +335,7 @@
                 padding-right: 0;
                 margin-bottom: 20px;
             }
-            
+
             .about-image {
                 max-width: 100%;
                 margin-bottom: 20px;
@@ -411,6 +415,11 @@
                 <li><a href="budget-calculator.html">Budget Calculator</a></li>
             </ul>
         </nav>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <div class="container" data-aos="fade-in">
             <h1>Discover Your Dream Home</h1>
             <p>Expert Guidance in Rego Park and Forest Hills Real Estate</p>
@@ -519,7 +528,7 @@
             });
         });
 
-        const hamburger = document.querySelector('.hamburger');
+        const hamburger = document.getElementById('hamburger');
         const navUL = document.querySelector('.nav-list');
 
         hamburger.addEventListener('click', () => {
