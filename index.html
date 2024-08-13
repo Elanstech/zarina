@@ -29,7 +29,7 @@
         }
 
         .hero {
-            background: url('https://github.com/Elanstech/zarina/blob/main/homeworthbackround.jpg?raw=true') no-repeat center center/cover;
+            background: url('https://source.unsplash.com/random/1920x1080?real-estate') no-repeat center center/cover;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -277,7 +277,7 @@
         }
 
         .contact-section {
-            background: url('https://github.com/Elanstech/zarina/blob/main/staffbr.jpg?raw=true') no-repeat center center/cover;
+            background: url('https://github.com/Elanstech/zarina/blob/main/homeworthbackround.jpg?raw=true') no-repeat center center/cover;
             padding: 50px 20px;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -347,6 +347,25 @@
 
         .contact-info a:hover {
             text-decoration: underline;
+        }
+
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgb(1, 0, 244);
+            color: #fff;
+            padding: 15px 20px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease-in-out;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .floating-btn:hover {
+            background: rgba(1, 0, 244, 0.8);
         }
 
         footer {
@@ -514,7 +533,7 @@
         <nav>
             <ul class="nav-list">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
+                <!-- Removed Fair Housing Notice from navigation -->
                 <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
                 <li><a href="home-worth.html">What's Your Home Worth?</a></li>
                 <li><a href="mls-listings.html">MLS Listings</a></li>
@@ -568,21 +587,21 @@
         </div>
     </section>
 
-   <section class="section" id="location-reviews" data-aos="fade-up">
-    <div class="container map-reviews-container">
-        <div class="map-section">
-            <h2>Our Location</h2>
-            <p>Find us on the map below to visit our office or get directions.</p>
-            <div class="map-container" data-aos="fade-up">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4646.716306973879!2d-73.86681941389628!3d40.729390604868186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25e346f9f0617%3A0xb19ba7d5ff9f8d02!2sEast%20Coast%20Realty%20by%20Zarina!5e0!3m2!1sen!2sus!4v1723354955822!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <section class="section" id="location-reviews" data-aos="fade-up">
+        <div class="container map-reviews-container">
+            <div class="map-section">
+                <h2>Our Location</h2>
+                <p>Find us on the map below to visit our office or get directions.</p>
+                <div class="map-container" data-aos="fade-up">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4646.716306973879!2d-73.86681941389628!3d40.729390604868186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25e346f9f0617%3A0xb19ba7d5ff9f8d02!2sEast%20Coast%20Realty%20by%20Zarina!5e0!3m2!1sen!2sus!4v1723354955822!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            <div class="reviews-section">
+                <h2>Google Reviews</h2>
+                <div class="elfsight-app-02075f07-4a0b-4bfc-adf6-5578c4f26b9c" data-elfsight-app-lazy></div>
             </div>
         </div>
-        <div class="reviews-section">
-            <h2>Google Reviews</h2>
-            <div class="elfsight-app-02075f07-4a0b-4bfc-adf6-5578c4f26b9c" data-elfsight-app-lazy></div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <section class="section contact-section" id="contact" data-aos="fade-right">
         <div class="container">
@@ -610,6 +629,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Floating Button for Fair Housing Notice -->
+    <a href="fair-housing-notice.html" class="floating-btn">Fair Housing Notice</a>
 
     <footer data-aos="fade-up">
         <div class="container">
