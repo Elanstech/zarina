@@ -215,6 +215,92 @@
                 padding: 20px 10px;
             }
         }
+        /* Custom Styles for Mortgage Calculator */
+        .mortgage-calculator {
+            background: #fff;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .mortgage-calculator h2 {
+            font-size: 2em;
+            color: rgb(1, 0, 244);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .calculator-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .form-group input,
+        .form-group select {
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            background: rgba(0, 0, 0, 0.05);
+            color: #333;
+        }
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 15px;
+            background: #ddd;
+            border-radius: 10px;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+        .slider:hover {
+            opacity: 1;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            background: #1e88e5;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #1e88e5;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #333;
+        }
+        .btn {
+            background: #1e88e5;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+            text-align: center;
+        }
+        .btn:hover {
+            background: #0d47a1;
+        }
     </style>
     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 </head>
@@ -246,23 +332,41 @@
     <section id="mortgage-calculator">
         <div class="container" data-aos="fade-up">
             <h1>Mortgage Calculator</h1>
-            <div class="calculator">
-                <form>
+            <div class="mortgage-calculator">
+                <h2>Calculate Your Monthly Mortgage Payment</h2>
+                <form class="calculator-form">
                     <div class="form-group">
-                        <label for="amount">Loan Amount ($):</label>
-                        <input type="number" id="amount" name="amount" required>
+                        <label for="loan-amount">Loan Amount ($):</label>
+                        <input type="number" id="loan-amount" name="loan-amount" required>
                     </div>
                     <div class="form-group">
-                        <label for="interest">Annual Interest Rate (%):</label>
-                        <input type="number" id="interest" name="interest" required>
+                        <label for="interest-rate">Annual Interest Rate (%):</label>
+                        <input type="number" id="interest-rate" name="interest-rate" step="0.01" required>
                     </div>
                     <div class="form-group">
-                        <label for="years">Loan Term (years):</label>
-                        <input type="number" id="years" name="years" required>
+                        <label for="loan-term">Loan Term (years):</label>
+                        <input type="number" id="loan-term" name="loan-term" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="slider-loan-amount">Adjust Loan Amount:</label>
+                        <input type="range" id="slider-loan-amount" name="slider-loan-amount" min="10000" max="1000000" value="300000" class="slider">
+                        <span id="loan-amount-value">$300,000</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="slider-interest-rate">Adjust Interest Rate:</label>
+                        <input type="range" id="slider-interest-rate" name="slider-interest-rate" min="0.5" max="10" step="0.1" value="4.5" class="slider">
+                        <span id="interest-rate-value">4.5%</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="slider-loan-term">Adjust Loan Term:</label>
+                        <input type="range" id="slider-loan-term" name="slider-loan-term" min="1" max="30" value="30" class="slider">
+                        <span id="loan-term-value">30 years</span>
                     </div>
                     <button type="button" onclick="calculateMortgage()" class="btn">Calculate</button>
                 </form>
-                <h2>Monthly Payment: <span id="monthly-payment">$0.00</span></h2>
+                <div class="result">
+                    Monthly Payment: <span id="monthly-payment">$0.00</span>
+                </div>
             </div>
         </div>
     </section>
@@ -296,13 +400,31 @@
             navUL.classList.toggle('active');
         });
 
+        const loanAmountSlider = document.getElementById('slider-loan-amount');
+        const loanAmountValue = document.getElementById('loan-amount-value');
+        loanAmountSlider.oninput = function() {
+            loanAmountValue.innerHTML = '$' + parseInt(this.value).toLocaleString();
+        }
+
+        const interestRateSlider = document.getElementById('slider-interest-rate');
+        const interestRateValue = document.getElementById('interest-rate-value');
+        interestRateSlider.oninput = function() {
+            interestRateValue.innerHTML = this.value + '%';
+        }
+
+        const loanTermSlider = document.getElementById('slider-loan-term');
+        const loanTermValue = document.getElementById('loan-term-value');
+        loanTermSlider.oninput = function() {
+            loanTermValue.innerHTML = this.value + ' years';
+        }
+
         function calculateMortgage() {
-            const amount = document.getElementById('amount').value;
-            const interest = document.getElementById('interest').value / 100 / 12;
-            const years = document.getElementById('years').value * 12;
-            const x = Math.pow(1 + interest, years);
-            const monthly = (amount * x * interest) / (x - 1);
-            document.getElementById('monthly-payment').innerText = '$' + monthly.toFixed(2);
+            const loanAmount = parseFloat(loanAmountSlider.value);
+            const interestRate = parseFloat(interestRateSlider.value) / 100 / 12;
+            const loanTerm = parseFloat(loanTermSlider.value) * 12;
+            const x = Math.pow(1 + interestRate, loanTerm);
+            const monthlyPayment = (loanAmount * x * interestRate) / (x - 1);
+            document.getElementById('monthly-payment').innerText = '$' + monthlyPayment.toFixed(2).toLocaleString();
         }
     </script>
 </body>
