@@ -229,6 +229,10 @@
             color: #333;
         }
 
+        .form-group select {
+            cursor: pointer;
+        }
+
         .result {
             text-align: center;
             font-size: 1.5em;
@@ -443,11 +447,53 @@
                         <label for="years">Term (years):</label>
                         <input type="number" id="years" name="years" required>
                     </div>
+                    <div class="form-group">
+                        <label for="propertyTax">Annual Property Tax ($):</label>
+                        <input type="number" id="propertyTax" name="propertyTax" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="insurance">Annual Home Insurance ($):</label>
+                        <input type="number" id="insurance" name="insurance" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pmi">Private Mortgage Insurance (PMI) (%):</label>
+                        <input type="number" id="pmi" name="pmi" step="0.01">
+                    </div>
                     <button type="button" onclick="calculateMortgage()" class="btn">Calculate</button>
                 </form>
                 <div class="result">
                     Monthly Payment: <span id="monthlyPayment">$0.00</span>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section background" id="contact" data-aos="fade-right">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-card" data-aos="fade-up">
+                <div class="contact-content">
+                    <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
+                    <form id="contactForm" action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                    <p>Email: <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a></p>
+                    <p>Phone: <a href="tel:+17182712121">718-271-2121</a></p>
+                </div>
+            </div>
+            <div class="social-media" data-aos="fade-up">
+                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -485,11 +531,15 @@
             const principal = parseFloat(document.getElementById('principal').value);
             const interest = parseFloat(document.getElementById('interest').value) / 100 / 12;
             const payments = parseFloat(document.getElementById('years').value) * 12;
+            const propertyTax = parseFloat(document.getElementById('propertyTax').value) / 12;
+            const insurance = parseFloat(document.getElementById('insurance').value) / 12;
+            const pmi = parseFloat(document.getElementById('pmi').value) / 100 / 12;
 
             const x = Math.pow(1 + interest, payments);
-            const monthly = (principal * x * interest) / (x - 1);
+            const monthlyPrincipalAndInterest = (principal * x * interest) / (x - 1);
+            const monthlyPayment = monthlyPrincipalAndInterest + propertyTax + insurance + (principal * pmi);
 
-            document.getElementById('monthlyPayment').innerText = `$${monthly.toFixed(2).toLocaleString()}`;
+            document.getElementById('monthlyPayment').innerText = `$${monthlyPayment.toFixed(2).toLocaleString()}`;
         }
     </script>
 </body>
