@@ -142,6 +142,15 @@
             transform: translateX(-1in);
         }
 
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: color 0.3s ease-in-out;
+            padding-left: 0.3in; /* Adjust this value to move the text */
+        }
+
         .hero {
             text-align: center;
             padding: 150px 20px 100px;
@@ -477,6 +486,10 @@
                 padding: 10px 0;
             }
 
+            nav a {
+                padding-left: 0.3in; /* Ensure this is included in the media query for mobile */
+            }
+
             .hero {
                 padding: 80px 20px 30px;
             }
@@ -645,7 +658,7 @@
             <div class="contact-card" data-aos="fade-up">
                 <div class="contact-content">
                     <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
-                    <form action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
+                    <form id="contactForm" action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
                         <div class="form-group">
                             <input type="text" name="name" placeholder="Your Name" required>
                         </div>
@@ -696,6 +709,12 @@
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navUL.classList.toggle('active');
+        });
+
+        // Prevent default form submission for "Contact Us" form
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Form submission is disabled for this demo.');
         });
     </script>
 </body>
