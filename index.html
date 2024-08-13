@@ -275,6 +275,79 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
+        .contact-section {
+            background: url('https://source.unsplash.com/random/1920x1080?contact') no-repeat center center/cover;
+            padding: 50px 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-card {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            margin: auto;
+            max-width: 600px;
+        }
+
+        .contact-content {
+            margin-bottom: 20px;
+        }
+
+        .contact-content p {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        .contact-form button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: rgb(1, 0, 244);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.2em;
+            transition: background 0.3s ease-in-out;
+            cursor: pointer;
+            border: none;
+        }
+
+        .contact-form button:hover {
+            background: rgba(1, 0, 244, 0.8);
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
         footer {
             background: #2b3e50;
             color: #fff;
@@ -510,32 +583,29 @@
         </div>
     </section>
 
-    <section class="section background" id="contact" data-aos="fade-right">
+    <section class="section contact-section" id="contact" data-aos="fade-right">
         <div class="container">
             <h2>Contact Us</h2>
             <div class="contact-card" data-aos="fade-up">
                 <div class="contact-content">
                     <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
-                    <form id="contactForm" action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+                </div>
+                <form class="contact-form" id="contactForm" action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div class="contact-info" data-aos="fade-up">
                     <p>Email: <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a></p>
                     <p>Phone: <a href="tel:+17182712121">718-271-2121</a></p>
                 </div>
-            </div>
-            <div class="social-media" data-aos="fade-up">
-                <a href="https://www.facebook.com/eastcoastrealtybyzarina/" target="_blank" class="btn">
-                    <i class="fab fa-facebook-f"></i> Facebook
-                </a>
             </div>
         </div>
     </section>
