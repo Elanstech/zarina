@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>East Coast Realty by Zarina</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
             color: #333;
+            background-color: #f4f4f4;
             transition: all 0.3s ease-in-out;
         }
 
@@ -37,7 +36,7 @@
             z-index: 1000;
             display: flex;
             align-items: center;
-            background: #2b3e50;
+            background: rgba(43, 62, 80, 0.8);
             position: fixed;
             justify-content: space-between;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -69,11 +68,7 @@
 
         nav li {
             padding: 0 20px;
-            border-bottom: 1px solid #fff; /* Add a bottom border */
-        }
-
-        nav li:last-child {
-            border-bottom: none; /* Remove the bottom border for the last item */
+            border-bottom: 1px solid transparent; /* Add a bottom border */
         }
 
         nav a {
@@ -81,11 +76,12 @@
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
-            transition: color 0.3s ease-in-out;
+            transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
         }
 
         nav a:hover {
             color: #bbdefb;
+            border-bottom: 1px solid #bbdefb; /* Add border on hover */
         }
 
         .hamburger {
@@ -93,7 +89,7 @@
             flex-direction: column;
             cursor: pointer;
             position: absolute;
-            right: 0.5in;
+            right: 20px;
         }
 
         .hamburger div {
@@ -122,7 +118,7 @@
             position: fixed;
             top: 60px;
             right: 0;
-            background: #2b3e50;
+            background: rgba(43, 62, 80, 0.8);
             width: 200px;
             height: 100vh;
             transform: translateX(100%);
@@ -131,37 +127,28 @@
         }
 
         nav ul.active {
-            transform: translateX(-0.3in); /* Move the bar closer */
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-            transition: color 0.3s ease-in-out;
-            padding-left: 0.3in; /* Adjust this value to move the text */
+            transform: translateX(0);
         }
 
         .hero {
+            background: url('https://source.unsplash.com/random/1920x1080?real-estate') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
             text-align: center;
-            padding: 150px 20px 100px;
-            position: relative;
-            overflow: hidden;
         }
 
-        .hero-title {
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
             font-size: 3em;
-            font-weight: bold;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             animation: fadeInDown 1s ease-in-out;
         }
 
-        .hero-subtitle {
+        .hero p {
             font-size: 1.5em;
-            font-weight: lighter;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
             animation: fadeInUp 1s ease-in-out;
         }
 
@@ -187,12 +174,13 @@
 
         .section {
             padding: 50px 20px;
-            background: #fff;
             margin-top: 20px;
             transition: all 0.3s ease-in-out;
+            background: #fff;
         }
 
         .section h2 {
+            font-family: 'Playfair Display', serif;
             font-size: 2em;
             color: rgb(1, 0, 244);
             text-align: center;
@@ -213,6 +201,7 @@
         }
 
         .about-content h3 {
+            font-family: 'Playfair Display', serif;
             font-size: 1.5em;
             color: rgb(1, 0, 244);
             margin-bottom: 10px;
@@ -339,10 +328,6 @@
                 padding: 10px 0;
             }
 
-            .hero {
-                padding: 100px 20px 50px;
-            }
-
             .section {
                 padding: 30px 20px;
             }
@@ -360,7 +345,7 @@
                 max-width: 100%;
                 margin-bottom: 20px;
             }
-        }
+                }
 
         /* Styles for Mobile Phones */
         @media (max-width: 480px) {
@@ -398,11 +383,11 @@
                 padding: 80px 20px 30px;
             }
 
-            .hero-title {
-                font-size: 2em;
+            .hero h1 {
+                font-size: 2.5em;
             }
 
-            .hero-subtitle {
+            .hero p {
                 font-size: 1.2em;
             }
 
@@ -449,10 +434,10 @@
         </div>
     </header>
 
-    <section id="home" class="hero background">
+    <section id="home" class="hero">
         <div class="container" data-aos="fade-in">
-            <h1 class="hero-title">Discover Your Dream Home</h1>
-            <p class="hero-subtitle">Expert Guidance in Rego Park and Forest Hills Real Estate</p>
+            <h1>Discover Your Dream Home</h1>
+            <p>Expert Guidance in Rego Park and Forest Hills Real Estate</p>
             <div class="button-container">
                 <a href="#contact" class="btn">Contact Us</a>
                 <a href="mls-listings.html" class="btn">View Properties</a>
@@ -564,12 +549,6 @@
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navUL.classList.toggle('active');
-        });
-
-        // Prevent default form submission for "Contact Us" form
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Form submission is disabled for this demo.');
         });
     </script>
 </body>
