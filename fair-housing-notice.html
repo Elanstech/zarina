@@ -30,17 +30,14 @@
 
         header {
             padding: 20px 20px;
-            border-bottom: 3px solid #1a1f26;
             width: 100%;
             top: 0;
             z-index: 1000;
             display: flex;
             align-items: center;
-            background: #2b3e50;
+            background: transparent;
             position: fixed;
             justify-content: space-between;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            animation: fadeInDown 1s ease-in-out;
         }
 
         .logo {
@@ -68,7 +65,7 @@
 
         nav li {
             padding: 0 20px;
-            border-bottom: 1px solid #fff;
+            border-bottom: 1px solid transparent;
         }
 
         nav li:last-child {
@@ -76,15 +73,60 @@
         }
 
         nav a {
-            color: #fff;
+            color: #000;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
-            transition: color 0.3s ease-in-out;
+            transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
         }
 
         nav a:hover {
-            color: #bbdefb;
+            color: rgb(1, 0, 244);
+            border-bottom: 1px solid rgb(1, 0, 244);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #000;
+            margin: 4px 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(-45deg) translate(-6px, 6px);
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(45deg) translate(-6px, -6px);
+        }
+
+        .mobile-nav {
+            display: none;
+        }
+
+        nav ul.active {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 60px;
+            right: 0;
+            background: rgba(43, 62, 80, 0.9);
+            width: 200px;
+            height: 100vh;
+            transform: translateX(0);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
         }
 
         .section {
@@ -140,6 +182,79 @@
             color: #666;
         }
 
+        .contact-section {
+            background: url('https://github.com/Elanstech/zarina/blob/main/homeworthbackround.jpg?raw=true') no-repeat center center/cover;
+            padding: 50px 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-card {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            margin: auto;
+            max-width: 600px;
+        }
+
+        .contact-content {
+            margin-bottom: 20px;
+        }
+
+        .contact-content p {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        .contact-form button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: rgb(1, 0, 244);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.2em;
+            transition: background 0.3s ease-in-out;
+            cursor: pointer;
+            border: none;
+        }
+
+        .contact-form button:hover {
+            background: rgba(1, 0, 244, 0.8);
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
         footer {
             background: #2b3e50;
             color: #fff;
@@ -189,6 +304,10 @@
         @media (max-width: 768px) {
             .container {
                 width: 90%;
+            }
+
+            .hamburger {
+                display: flex;
             }
 
             header nav ul {
@@ -293,6 +412,38 @@
         </div>
     </section>
 
+    <section class="section contact-section" id="contact" data-aos="fade-right">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-card" data-aos="fade-up">
+                <div class="contact-content">
+                    <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
+                </div>
+                <form class="contact-form" id="contactForm" action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div class="contact-info" data-aos="fade-up">
+                    <p>Email: <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a></p>
+                    <p>Phone: <a href="tel:+17182712121">718-271-2121</a></p>
+                </div>
+            </div>
+            <div class="social-media" data-aos="fade-up">
+                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="btn">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </a>
+            </div>
+        </div>
+    </section>
+
     <footer data-aos="fade-up">
         <div class="container">
             <div class="social-media">
@@ -318,6 +469,7 @@
         const navUL = document.querySelector('.nav-list');
 
         hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
             navUL.classList.toggle('active');
         });
     </script>
