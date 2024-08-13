@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>East Coast Realty by Zarina</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f9f9f9;
             color: #333;
-            background-color: #f4f4f4;
             transition: all 0.3s ease-in-out;
         }
 
@@ -29,15 +29,15 @@
         }
 
         header {
-            padding: 20px 20px;
-            border-bottom: 3px solid #1a1f26;
+            padding: 20px;
+            background: rgba(43, 62, 80, 0.9);
+            color: #fff;
+            position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             display: flex;
             align-items: center;
-            background: rgba(43, 62, 80, 0.8);
-            position: fixed;
             justify-content: space-between;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             animation: fadeInDown 1s ease-in-out;
@@ -68,7 +68,7 @@
 
         nav li {
             padding: 0 20px;
-            border-bottom: 1px solid transparent; /* Add a bottom border */
+            border-bottom: 1px solid transparent;
         }
 
         nav a {
@@ -80,16 +80,14 @@
         }
 
         nav a:hover {
-            color: #bbdefb;
-            border-bottom: 1px solid #bbdefb; /* Add border on hover */
+            color: #ff6f61;
+            border-bottom: 1px solid #ff6f61;
         }
 
         .hamburger {
             display: flex;
             flex-direction: column;
             cursor: pointer;
-            position: absolute;
-            right: 20px;
         }
 
         .hamburger div {
@@ -118,7 +116,7 @@
             position: fixed;
             top: 60px;
             right: 0;
-            background: rgba(43, 62, 80, 0.8);
+            background: rgba(43, 62, 80, 0.9);
             width: 200px;
             height: 100vh;
             transform: translateX(100%);
@@ -131,7 +129,7 @@
         }
 
         .hero {
-            background: url('https://github.com/Elanstech/zarina/blob/main/backround.jpg?raw=true') no-repeat center center/cover;
+            background: url('https://source.unsplash.com/random/1920x1080?real-estate') no-repeat center center/cover;
             height: 100vh;
             display: flex;
             align-items: center;
@@ -141,7 +139,7 @@
         }
 
         .hero h1 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 3em;
             margin-bottom: 20px;
             animation: fadeInDown 1s ease-in-out;
@@ -159,30 +157,32 @@
         .btn {
             display: inline-block;
             padding: 15px 30px;
-            background: #1e88e5;
+            background: #ff6f61;
             color: #fff;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 30px;
             font-size: 1.2em;
             margin: 10px;
             transition: background 0.3s ease-in-out;
         }
 
         .btn:hover {
-            background: #0d47a1;
+            background: #e55e54;
         }
 
         .section {
             padding: 50px 20px;
+            background: #fff;
             margin-top: 20px;
             transition: all 0.3s ease-in-out;
-            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
         .section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2em;
-            color: rgb(1, 0, 244);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            color: #ff6f61;
             text-align: center;
             margin-bottom: 20px;
             animation: fadeInDown 1s ease-in-out;
@@ -201,9 +201,9 @@
         }
 
         .about-content h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5em;
-            color: rgb(1, 0, 244);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+            color: #ff6f61;
             margin-bottom: 10px;
         }
 
@@ -222,6 +222,7 @@
         .about-image img {
             max-width: 100%;
             border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
         .about-contact {
@@ -234,7 +235,7 @@
         }
 
         .about-contact a {
-            color: #1e88e5;
+            color: #ff6f61;
             text-decoration: none;
         }
 
@@ -345,7 +346,7 @@
                 max-width: 100%;
                 margin-bottom: 20px;
             }
-                }
+        }
 
         /* Styles for Mobile Phones */
         @media (max-width: 480px) {
@@ -525,7 +526,7 @@
     <footer data-aos="fade-up">
         <div class="container">
             <div class="social-media">
-                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="facebook-button">
+                <a href="https://www.facebook.com/eastcoastrealtybyzarina/" target="_blank" class="facebook-button">
                     <i class="fab fa-facebook-f"></i>
                 </a>
             </div>
@@ -549,6 +550,12 @@
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navUL.classList.toggle('active');
+        });
+
+        // Prevent default form submission for "Contact Us" form
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Form submission is disabled for this demo.');
         });
     </script>
 </body>
