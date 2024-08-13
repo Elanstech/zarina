@@ -25,53 +25,49 @@
             width: 80%;
             margin: auto;
             overflow: hidden;
-            padding-top: 80px; /* Adjust for fixed header */
         }
 
-        header {
-            padding: 20px;
-            background: rgba(43, 62, 80, 0.9);
-            color: #fff;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+        .hero {
+            background: url('https://github.com/Elanstech/zarina/blob/main/homeworthbackround.jpg?raw=true') no-repeat center center/cover;
+            height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            animation: fadeInDown 1s ease-in-out;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 60px;
-            margin-right: 20px;
-        }
-
-        nav {
-            flex-grow: 1;
-            display: flex;
             justify-content: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
         }
 
-        nav ul {
+        .hero .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .hero .logo img {
+            height: 60px;
+        }
+
+        .hero nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .hero nav ul {
             padding: 0;
             list-style: none;
             display: flex;
             margin: 0;
         }
 
-        nav li {
+        .hero nav li {
             padding: 0 20px;
             border-bottom: 1px solid transparent;
         }
 
-        nav a {
+        .hero nav a {
             color: #fff;
             text-decoration: none;
             text-transform: uppercase;
@@ -79,18 +75,18 @@
             transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
         }
 
-        nav a:hover {
+        .hero nav a:hover {
             color: #ff6f61;
             border-bottom: 1px solid #ff6f61;
         }
 
-        .hamburger {
-            display: flex;
+        .hero .hamburger {
+            display: none;
             flex-direction: column;
             cursor: pointer;
         }
 
-        .hamburger div {
+        .hero .hamburger div {
             width: 25px;
             height: 3px;
             background-color: #fff;
@@ -98,19 +94,19 @@
             transition: all 0.3s ease-in-out;
         }
 
-        .hamburger.active div:nth-child(1) {
+        .hero .hamburger.active div:nth-child(1) {
             transform: rotate(-45deg) translate(-6px, 6px);
         }
 
-        .hamburger.active div:nth-child(2) {
+        .hero .hamburger.active div:nth-child(2) {
             opacity: 0;
         }
 
-        .hamburger.active div:nth-child(3) {
+        .hero .hamburger.active div:nth-child(3) {
             transform: rotate(45deg) translate(-6px, -6px);
         }
 
-        nav ul {
+        .hero nav ul {
             display: flex;
             flex-direction: column;
             position: fixed;
@@ -124,18 +120,8 @@
             z-index: 1000;
         }
 
-        nav ul.active {
+        .hero nav ul.active {
             transform: translateX(0);
-        }
-
-        .hero {
-            background: url('https://source.unsplash.com/random/1920x1080?real-estate') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-align: center;
         }
 
         .hero h1 {
@@ -315,17 +301,17 @@
                 display: flex;
             }
 
-            header nav ul {
+            .hero nav ul {
                 flex-direction: column;
                 text-align: center;
                 display: none;
             }
 
-            header nav ul.active {
+            .hero nav ul.active {
                 display: flex;
             }
 
-            header nav ul li {
+            .hero nav ul li {
                 padding: 10px 0;
             }
 
@@ -354,7 +340,7 @@
                 width: 95%;
             }
 
-            header .logo img {
+            .hero .logo img {
                 height: 50px;
             }
 
@@ -362,26 +348,18 @@
                 display: flex;
             }
 
-            header nav ul {
+            .hero nav ul {
                 flex-direction: column;
                 text-align: center;
                 display: none;
             }
 
-            header nav ul.active {
+            .hero nav ul.active {
                 display: flex;
             }
 
-            header nav ul li {
+            .hero nav ul li {
                 padding: 10px 0;
-            }
-
-            nav a {
-                padding-left: 0.3in; /* Ensure this is included in the media query for mobile */
-            }
-
-            .hero {
-                padding: 80px 20px 30px;
             }
 
             .hero h1 {
@@ -411,7 +389,7 @@
     </style>
 </head>
 <body>
-    <header data-aos="fade-down">
+    <section id="home" class="hero">
         <div class="logo">
             <a href="index.html">
                 <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
@@ -428,14 +406,6 @@
                 <li><a href="budget-calculator.html">Budget Calculator</a></li>
             </ul>
         </nav>
-        <div class="hamburger" id="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </header>
-
-    <section id="home" class="hero">
         <div class="container" data-aos="fade-in">
             <h1>Discover Your Dream Home</h1>
             <p>Expert Guidance in Rego Park and Forest Hills Real Estate</p>
@@ -526,7 +496,7 @@
     <footer data-aos="fade-up">
         <div class="container">
             <div class="social-media">
-                <a href="https://www.facebook.com/eastcoastrealtybyzarina/" target="_blank" class="facebook-button">
+                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="facebook-button">
                     <i class="fab fa-facebook-f"></i>
                 </a>
             </div>
@@ -544,7 +514,7 @@
             });
         });
 
-        const hamburger = document.getElementById('hamburger');
+        const hamburger = document.querySelector('.hamburger');
         const navUL = document.querySelector('.nav-list');
 
         hamburger.addEventListener('click', () => {
