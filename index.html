@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,6 +34,7 @@
             width: 80%;
             margin: auto;
             overflow: hidden;
+            padding-top: 80px; /* Adjust for fixed header */
         }
 
         header {
@@ -100,7 +101,7 @@
             flex-direction: column;
             cursor: pointer;
             position: absolute;
-            right: 45px;
+            right: 0.5in;
         }
 
         .hamburger div {
@@ -138,7 +139,7 @@
         }
 
         nav ul.active {
-            transform: translateX(0);
+            transform: translateX(-3in);
         }
 
         .hero {
@@ -214,9 +215,7 @@
 
         .card img {
             max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            margin-bottom: 15px;
+            border-radius: 15px 15px 0 0;
         }
 
         .card-content {
@@ -261,9 +260,9 @@
 
         .staff-photo {
             width: 100%;
-            height: 300px;               /* Adjust height */
-            object-fit: cover;           /* Cover the area */
-            object-position: 50% 20%;    /* Fine-tune the position, adjust the second value to move up/down */
+            height: 300px; /* Adjust height */
+            object-fit: cover; /* Cover the area */
+            object-position: 50% 20%; /* Fine-tune the position, adjust the second value to move up/down */
             display: block;
             margin: auto;
         }
@@ -285,7 +284,8 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
-        .map-section, .reviews-section {
+        .map-section,
+        .reviews-section {
             flex: 1;
             margin: 10px;
         }
@@ -443,6 +443,7 @@
             .staff-member {
                 flex: 1 1 100%;
             }
+
             .staff-member.large {
                 flex: 1 1 100%;
             }
@@ -507,6 +508,7 @@
             .staff-member {
                 flex: 1 1 100%;
             }
+
             .staff-member.large {
                 flex: 1 1 100%;
             }
@@ -528,7 +530,7 @@
                 <li><a href="home-worth.html">What's Your Home Worth?</a></li>
                 <li><a href="mls-listings.html">MLS Listings</a></li>
                 <li><a href="faq.html">FAQ</a></li>
-                <li><a href="budget-calculator.html">Budget Calculator</a></li> <!-- Added link -->
+                <li><a href="budget-calculator.html">Budget Calculator</a></li>
             </ul>
         </nav>
         <div class="hamburger" id="hamburger">
@@ -560,18 +562,18 @@
             </div>
         </div>
     </section>
-
+   
     <section class="section" id="mls" data-aos="fade-right">
-        <div class="container">
-            <h2>MLS Listings</h2>
-            <div class="card" data-aos="fade-up">
-                <div class="card-content">
-                    <p>To view our available properties, please visit our MLS listings:</p>
-                    <a href="https://onekeymls.com/realtor/agents/Zarina-Yusupova/120719" target="_blank">View MLS Listings</a>
-                </div>
+    <div class="container">
+        <h2>MLS Listings</h2>
+        <div class="card" data-aos="fade-up">
+            <div class="card-content">
+                <p>To view our available properties, please visit our MLS listings:</p>
+                <a href="https://onekeymls.com/realtor/agents/Zarina-Yusupova/120719" target="_blank">View MLS Listings</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section class="section" id="location-reviews" data-aos="fade-up">
         <div class="container map-reviews-container">
@@ -698,3 +700,4 @@
     </script>
 </body>
 </html>
+    
