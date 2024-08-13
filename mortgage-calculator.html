@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budget Calculator - East Coast Realty by Zarina</title>
+    <title>Mortgage Calculator - East Coast Realty by Zarina</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -16,8 +16,6 @@
             background-color: #f9f9f9;
             color: #333;
             transition: all 0.3s ease-in-out;
-            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/background.jpg') no-repeat center center fixed;
-            background-size: cover;
         }
 
         html {
@@ -147,7 +145,7 @@
 
         .section {
             padding: 50px 20px;
-            background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            background: #fff;
             margin-top: 20px;
             transition: all 0.3s ease-in-out;
             border-radius: 15px;
@@ -160,20 +158,6 @@
             text-align: center;
             margin-bottom: 20px;
             animation: fadeInDown 1s ease-in-out;
-        }
-
-        .calculator {
-            padding: 50px;
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .calculator h2 {
-            font-size: 2em;
-            color: rgb(1, 0, 244);
-            text-align: center;
-            margin-bottom: 20px;
         }
 
         .iframe-container {
@@ -264,8 +248,8 @@
                 padding: 30px 20px;
             }
 
-            .calculator {
-                padding: 30px;
+            .iframe-container {
+                padding-top: 75%; /* 4:3 aspect ratio for mobile */
             }
         }
 
@@ -305,10 +289,6 @@
                 padding: 20px 10px;
             }
 
-            .calculator {
-                padding: 20px;
-            }
-
             .iframe-container {
                 padding-top: 75%; /* 4:3 aspect ratio for mobile */
             }
@@ -342,10 +322,10 @@
 
     <section class="section" data-aos="fade-up">
         <div class="container">
-            <h2>Home Budget Calculator</h2>
+            <h2>Mortgage Calculator</h2>
             <div class="calculator" data-aos="fade-right">
                 <div class="iframe-container">
-                    <iframe src="https://www.mortgagecalculator.org/calcs/house-affordability.php" frameborder="0"></iframe>
+                    <iframe src="https://www.mortgagecalculator.org/" frameborder="0"></iframe>
                 </div>
             </div>
         </div>
@@ -380,7 +360,8 @@
             </div>
         </div>
     </section>
-    <footer data-aos="-up">
+
+    <footer data-aos="fade-up">
         <div class="container">
             <div class="social-media">
                 <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="facebook-button">
