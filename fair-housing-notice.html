@@ -22,14 +22,6 @@
             scroll-behavior: smooth;
         }
 
-        .background {
-            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/backround.jpg') no-repeat center center;
-            background-size: cover;
-            color: #fff;
-            position: relative;
-            z-index: 1;
-        }
-
         .container {
             width: 80%;
             margin: auto;
@@ -101,7 +93,7 @@
             flex-direction: column;
             cursor: pointer;
             position: absolute;
-            right: calc(1in);
+            right: 0.5in;
         }
 
         .hamburger div {
@@ -139,52 +131,16 @@
         }
 
         nav ul.active {
-            transform: translateX(0);
+            transform: translateX(-0.3in); /* Move the bar closer */
         }
 
-        .hero {
-            text-align: center;
-            padding: 150px 20px 100px;
-            position: relative;
-            overflow: hidden;
-            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/homeworthbackround.jpg') no-repeat center center;
-            background-size: cover;
-            color: #fff;
-        }
-
-        .hero-title {
-            font-size: 3em;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            animation: fadeInDown 1s ease-in-out;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5em;
-            font-weight: lighter;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease-in-out;
-        }
-
-        .button-container {
-            margin-top: 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            background: #1e88e5;
+        nav a {
             color: #fff;
             text-decoration: none;
-            border-radius: 10px;
-            font-size: 1.2em;
-            margin: 10px;
-            transition: background 0.3s ease-in-out;
-        }
-
-        .btn:hover {
-            background: #0d47a1;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: color 0.3s ease-in-out;
+            padding-left: 0.3in; /* Adjust this value to move the text */
         }
 
         .section {
@@ -237,54 +193,6 @@
             color: #666;
         }
 
-        .contact-card {
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .contact-content {
-            text-align: center;
-        }
-
-        .contact-content p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1em;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            transition: background 0.3s ease-in-out;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #ccc;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            background: rgba(255, 255, 255, 0.2);
-            outline: none;
-        }
-
         footer {
             background: #2b3e50;
             color: #fff;
@@ -332,26 +240,32 @@
 
         /* Styles for Tablets */
         @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
             .hamburger {
                 display: flex;
             }
-            nav ul {
+
+            header nav ul {
                 flex-direction: column;
                 text-align: center;
                 display: none;
             }
-            nav ul.active {
+
+            header nav ul.active {
                 display: flex;
             }
-            nav ul li {
+
+            header nav ul li {
                 padding: 10px 0;
             }
-            .container {
-                width: 90%;
-            }
+
             .section {
                 padding: 30px 20px;
             }
+
             .card {
                 margin-bottom: 20px;
             }
@@ -359,68 +273,53 @@
 
         /* Styles for Mobile Phones */
         @media (max-width: 480px) {
+            .container {
+                width: 95%;
+            }
+
+            header .logo img {
+                height: 50px;
+            }
+
             .hamburger {
                 display: flex;
             }
-            nav ul {
+
+            header nav ul {
                 flex-direction: column;
                 text-align: center;
                 display: none;
             }
-            nav ul.active {
+
+            header nav ul.active {
                 display: flex;
             }
-            nav ul li {
+
+            header nav ul li {
                 padding: 10px 0;
             }
-            header .logo img {
-                height: 50px;
+
+            nav a {
+                padding-left: 0.3in; /* Ensure this is included in the media query for mobile */
             }
-            .container {
-                width: 95%;
-            }
-            .hero {
-                padding: 80px 20px 30px;
-            }
-            .hero-title {
-                font-size: 2em;
-            }
-            .hero-subtitle {
-                font-size: 1.2em;
-            }
+
             .section {
                 padding: 20px 10px;
             }
+
             .card {
                 margin-bottom: 20px;
             }
+
             .card-content h3 {
                 font-size: 1.2em;
             }
+
             .card-content p {
                 font-size: 0.9em;
             }
-            .contact-card {
-                padding: 20px;
-            }
-            .form-group input,
-            .form-group textarea {
-                font-size: 0.9em;
-            }
-            .btn {
-                padding: 10px 20px;
-                font-size: 1em;
-            }
-            .button-container {
-                display: flex;
-                flex-direction: column;
-            }
-            .button-container .btn {
-                margin: 10px 0;
-            }
         }
     </style>
-    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 </head>
 <body>
     <header data-aos="fade-down">
@@ -447,52 +346,14 @@
         </div>
     </header>
 
-    <section id="home" class="hero background">
-        <div class="container" data-aos="fade-in">
-            <h1 class="hero-title">Fair Housing Notice</h1>
-        </div>
-    </section>
-
     <section class="section" data-aos="fade-up">
         <div class="container">
             <h2>Fair Housing Notice</h2>
-            <div class="card">
+            <div class="card" data-aos="fade-right">
                 <div class="card-content">
-                    <img src="https://github.com/Elanstech/zarina/blob/main/fairhousingnotice.png?raw=true" alt="Fair Housing Notice">
-                    <h3>Ensuring Equal Housing Opportunities</h3>
-                    <p>At East Coast Realty by Zarina, we are committed to ensuring that everyone has equal access to housing opportunities. We adhere to the principles of the Fair Housing Act and do not discriminate against any individual based on race, color, religion, sex, national origin, disability, or familial status.</p>
-                    <p>If you believe you have been discriminated against, please contact us immediately. We take these matters very seriously and will work to address your concerns promptly and thoroughly.</p>
+                    <h3>Fair Housing Statement</h3>
+                    <p>East Coast Realty by Zarina is committed to providing equal professional service without regard to the race, color, religion, sex, handicap, familial status, or national origin of any prospective client or customer. We will not impose different terms and conditions for the sale or rental of real estate based on these factors. We are committed to ensuring that all people are treated with dignity and respect in their pursuit of housing.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section background" id="contact" data-aos="fade-right">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <div class="contact-card" data-aos="fade-up">
-                <div class="contact-content">
-                    <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
-                    <form action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                    <p>Email: <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a></p>
-                    <p>Phone: <a href="tel:+17182712121">718-271-2121</a></p>
-                </div>
-            </div>
-            <div class="social-media" data-aos="fade-up">
-                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
             </div>
         </div>
     </section>
