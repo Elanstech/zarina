@@ -53,6 +53,8 @@
             position: absolute;
             top: 20px;
             right: 20px;
+            display: flex;
+            align-items: center;
         }
 
         .hero nav ul {
@@ -84,9 +86,6 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
-            position: absolute;
-            top: 20px;
-            right: 20px;
         }
 
         .hamburger div {
@@ -109,8 +108,12 @@
             transform: rotate(45deg) translate(-6px, -6px);
         }
 
-        nav ul {
+        .mobile-nav {
             display: none;
+        }
+
+        nav ul.active {
+            display: flex;
             flex-direction: column;
             position: fixed;
             top: 60px;
@@ -118,14 +121,9 @@
             background: rgba(43, 62, 80, 0.9);
             width: 200px;
             height: 100vh;
-            transform: translateX(100%);
+            transform: translateX(0);
             transition: transform 0.3s ease-in-out;
             z-index: 1000;
-        }
-
-        nav ul.active {
-            display: flex;
-            transform: translateX(0);
         }
 
         .hero h1 {
@@ -312,12 +310,17 @@
                 display: flex;
             }
 
+            .mobile-nav {
+                display: none;
+            }
+
             .hero nav ul {
+                display: none;
                 flex-direction: column;
                 text-align: center;
             }
 
-            nav ul.active {
+            .hero nav ul.active {
                 display: flex;
                 transform: translateX(0);
             }
@@ -354,9 +357,9 @@
             }
 
             .hero nav ul {
+                display: none;
                 flex-direction: column;
                 text-align: center;
-                display: none;
             }
 
             .hero nav ul.active {
@@ -529,7 +532,6 @@
         const navUL = document.querySelector('.nav-list');
 
         hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
             navUL.classList.toggle('active');
         });
 
