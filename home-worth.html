@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What's Your Home Worth? - East Coast Realty by Zarina</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
             color: #333;
             transition: all 0.3s ease-in-out;
-            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/background.jpg') no-repeat center center fixed;
+            background: url('https://raw.githubusercontent.com/Elanstech/zarina/main/backround.jpg') no-repeat center center fixed;
             background-size: cover;
         }
 
@@ -33,16 +32,14 @@
 
         header {
             padding: 20px 20px;
-            border-bottom: 3px solid #1a1f26;
             width: 100%;
             top: 0;
             z-index: 1000;
             display: flex;
             align-items: center;
-            background: #2b3e50;
+            background: none;
             position: fixed;
             justify-content: space-between;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             animation: fadeInDown 1s ease-in-out;
         }
 
@@ -71,31 +68,26 @@
 
         nav li {
             padding: 0 20px;
-            border-bottom: 1px solid #fff; /* Add a bottom border */
-        }
-
-        nav li:last-child {
-            border-bottom: none; /* Remove the bottom border for the last item */
+            border-bottom: 1px solid transparent;
         }
 
         nav a {
-            color: #fff;
+            color: #000;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
-            transition: color 0.3s ease-in-out;
+            transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
         }
 
         nav a:hover {
-            color: #bbdefb;
+            color: rgb(1, 0, 244);
+            border-bottom: 1px solid rgb(1, 0, 244);
         }
 
         .hamburger {
-            display: flex;
+            display: none;
             flex-direction: column;
             cursor: pointer;
-            position: absolute;
-            right: 0.5in;
         }
 
         .hamburger div {
@@ -118,36 +110,23 @@
             transform: rotate(45deg) translate(-6px, -6px);
         }
 
-        nav ul {
+        nav ul.active {
             display: flex;
             flex-direction: column;
             position: fixed;
             top: 60px;
             right: 0;
-            background: #2b3e50;
+            background: rgba(43, 62, 80, 0.9);
             width: 200px;
             height: 100vh;
-            transform: translateX(100%);
+            transform: translateX(0);
             transition: transform 0.3s ease-in-out;
             z-index: 1000;
         }
 
-        nav ul.active {
-            transform: translateX(-0.3in); /* Move the bar closer */
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-            transition: color 0.3s ease-in-out;
-            padding-left: 0.3in; /* Adjust this value to move the text */
-        }
-
         .section {
             padding: 50px 20px;
-            background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            background: rgba(255, 255, 255, 0.9);
             margin-top: 20px;
             transition: all 0.3s ease-in-out;
             border-radius: 15px;
@@ -155,7 +134,8 @@
         }
 
         .section h2 {
-            font-size: 2em;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
             color: rgb(1, 0, 244);
             text-align: center;
             margin-bottom: 20px;
@@ -176,17 +156,12 @@
             transform: translateY(-10px);
         }
 
-        .card img {
-            max-width: 100%;
-            border-radius: 15px 15px 0 0;
-        }
-
         .card-content {
             padding: 15px;
         }
 
         .card-content h3 {
-            font-size: 1.5em;
+            font-size: 1.8em;
             color: rgb(1, 0, 244);
             margin-bottom: 10px;
         }
@@ -217,7 +192,7 @@
         }
 
         .btn {
-            background: #1e88e5;
+            background: rgb(1, 0, 244);
             color: #fff;
             padding: 15px 30px;
             border: none;
@@ -231,7 +206,7 @@
         }
 
         .btn:hover {
-            background: #0d47a1;
+            background: rgba(1, 0, 244, 0.8);
         }
 
         footer {
@@ -340,10 +315,6 @@
                 padding: 10px 0;
             }
 
-            nav a {
-                padding-left: 0.3in; /* Ensure this is included in the media query for mobile */
-            }
-
             .section {
                 padding: 20px 10px;
             }
@@ -424,13 +395,13 @@
         </div>
     </section>
 
-    <section class="section background" id="contact" data-aos="fade-right">
+    <section class="section contact-section" id="contact" data-aos="fade-right" style="background: url('https://github.com/Elanstech/zarina/blob/main/staffbr.jpg?raw=true') no-repeat center center/cover;">
         <div class="container">
             <h2>Contact Us</h2>
             <div class="contact-card" data-aos="fade-up">
                 <div class="contact-content">
                     <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
-                    <form id="contactForm" action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
+                    <form class="contact-form" id="contactForm" action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
                         <div class="form-group">
                             <input type="text" name="name" placeholder="Your Name" required>
                         </div>
@@ -440,15 +411,17 @@
                         <div class="form-group">
                             <textarea name="message" placeholder="Your Message" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit">Send Message</button>
                     </form>
+                </div>
+                <div class="contact-info" data-aos="fade-up">
                     <p>Email: <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a></p>
                     <p>Phone: <a href="tel:+17182712121">718-271-2121</a></p>
                 </div>
             </div>
             <div class="social-media" data-aos="fade-up">
-                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
+                <a href="https://www.facebook.com/eastcoastrealtybyzarina" target="_blank" class="btn">
+                    <i class="fab fa-facebook-f"></i> Facebook
                 </a>
             </div>
         </div>
@@ -457,7 +430,7 @@
     <footer data-aos="fade-up">
         <div class="container">
             <div class="social-media">
-                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="facebook-button">
+                <a href="https://www.facebook.com/eastcoastrealtybyzarina" target="_blank" class="facebook-button">
                     <i class="fab fa-facebook-f"></i>
                 </a>
             </div>
