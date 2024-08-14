@@ -43,9 +43,11 @@
             z-index: 1000;
             display: flex;
             align-items: center;
-            background: none; /* No background color */
+            background: rgba(255, 255, 255, 0.9); /* Light background color for visibility */
             position: fixed;
             justify-content: space-between;
+            animation: fadeInDown 1s ease-in-out;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
@@ -76,12 +78,8 @@
             border-bottom: 1px solid transparent;
         }
 
-        nav li:last-child {
-            border-bottom: none;
-        }
-
         nav a {
-            color: #ffffff; /* Black text color */
+            color: #000;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
@@ -93,6 +91,13 @@
             border-bottom: 1px solid rgb(1, 0, 244);
         }
 
+        .phone-number {
+            font-size: 16px;
+            color: #000;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
         .hamburger {
             display: none;
             flex-direction: column;
@@ -102,7 +107,7 @@
         .hamburger div {
             width: 25px;
             height: 3px;
-            background-color: #000; /* Black hamburger lines */
+            background-color: #000;
             margin: 4px 0;
             transition: all 0.3s ease-in-out;
         }
@@ -401,6 +406,9 @@
                     <li><a href="budget-calculator.html">Budget Calculator</a></li>
                 </ul>
             </nav>
+            <div class="phone-number">
+                <a href="tel:+17182712121">Call Us: 718-271-2121</a>
+            </div>
             <div class="hamburger" id="hamburger">
                 <div></div>
                 <div></div>
@@ -417,6 +425,30 @@
                 <h2>Mortgage Calculator</h2>
                 <div class="iframe-container" data-aos="zoom-in">
                     <iframe src="https://www.mortgagecalculator.org/" frameborder="0"></iframe>
+                </div>
+                <div class="card" data-aos="fade-right">
+                    <div class="card-content">
+                        <h3>Contact Us for More Information</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Your Name:</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Your Phone Number:</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message:</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                    </div>
                 </div>
             </section>
         </div>
@@ -436,6 +468,9 @@
                         <input type="email" name="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
+                        <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                    </div>
+                    <div class="form-group">
                         <textarea name="message" placeholder="Your Message" required></textarea>
                     </div>
                     <button type="submit">Send Message</button>
@@ -453,7 +488,6 @@
         </div>
     </div>
 </section>
-
 
     <footer data-aos="fade-up">
         <div class="container">
