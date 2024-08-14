@@ -70,7 +70,7 @@
         }
 
         .hero nav a {
-            color: #000; /* Changed text color to white */
+            color: #000;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
@@ -351,7 +351,7 @@
         .floating-btn {
             position: fixed;
             bottom: 30px;
-            left: 30px; /* Change this from right to left */
+            left: 30px;
             background: rgb(1, 0, 244);
             color: #fff;
             padding: 15px 20px;
@@ -532,7 +532,6 @@
         <nav>
             <ul class="nav-list">
                 <li><a href="index.html">Home</a></li>
-                <!-- Removed Fair Housing Notice from navigation -->
                 <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
                 <li><a href="home-worth.html">What's Your Home Worth?</a></li>
                 <li><a href="mls-listings.html">MLS Listings</a></li>
@@ -672,11 +671,8 @@
             });
         });
 
-        const hamburger = document.getElementById('hamburger');
-        const navUL = document.querySelector('.nav-list');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
+        document.getElementById('hamburger').addEventListener('click', () => {
+            const navUL = document.querySelector('.nav-list');
             navUL.classList.toggle('active');
         });
 
