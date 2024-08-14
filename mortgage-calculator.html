@@ -25,22 +25,19 @@
             width: 80%;
             margin: auto;
             overflow: hidden;
-            padding-top: 80px; /* Adjust for fixed header */
+            padding-top: 80px;
         }
 
         header {
             padding: 20px 20px;
-            border-bottom: 3px solid #1a1f26;
             width: 100%;
             top: 0;
             z-index: 1000;
             display: flex;
             align-items: center;
-            background: #2b3e50;
+            background: transparent;
             position: fixed;
             justify-content: space-between;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            animation: fadeInDown 1s ease-in-out;
         }
 
         .logo {
@@ -68,31 +65,30 @@
 
         nav li {
             padding: 0 20px;
-            border-bottom: 1px solid #fff; /* Add a bottom border */
+            border-bottom: 1px solid transparent;
         }
 
         nav li:last-child {
-            border-bottom: none; /* Remove the bottom border for the last item */
+            border-bottom: none;
         }
 
         nav a {
-            color: #fff;
+            color: #fff; /* Change to white */
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
-            transition: color 0.3s ease-in-out;
+            transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
         }
 
         nav a:hover {
-            color: #bbdefb;
+            color: rgb(1, 0, 244);
+            border-bottom: 1px solid rgb(1, 0, 244);
         }
 
         .hamburger {
-            display: flex;
+            display: none;
             flex-direction: column;
             cursor: pointer;
-            position: absolute;
-            right: calc(1in);
         }
 
         .hamburger div {
@@ -115,31 +111,18 @@
             transform: rotate(45deg) translate(-6px, -6px);
         }
 
-        nav ul {
+        nav ul.active {
             display: flex;
             flex-direction: column;
             position: fixed;
             top: 60px;
             right: 0;
-            background: #2b3e50;
+            background: rgba(43, 62, 80, 0.9);
             width: 200px;
             height: 100vh;
-            transform: translateX(100%);
+            transform: translateX(0);
             transition: transform 0.3s ease-in-out;
             z-index: 1000;
-        }
-
-        nav ul.active {
-            transform: translateX(0);
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-            transition: color 0.3s ease-in-out;
-            padding-left: 0.3in; /* Adjust this value to move the text */
         }
 
         .section {
@@ -149,10 +132,12 @@
             transition: all 0.3s ease-in-out;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .section h2 {
-            font-size: 2em;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
             color: rgb(1, 0, 244);
             text-align: center;
             margin-bottom: 20px;
@@ -163,6 +148,10 @@
             position: relative;
             overflow: hidden;
             padding-top: 56.25%; /* 16:9 aspect ratio */
+            border: 5px solid rgb(1, 0, 244);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: zoomIn 1s ease-in-out;
         }
 
         .iframe-container iframe {
@@ -172,6 +161,80 @@
             width: 100%;
             height: 100%;
             border: 0;
+        }
+
+        .contact-section {
+            background: url('https://github.com/Elanstech/zarina/blob/main/homeworthbackround.jpg?raw=true') no-repeat center center/cover;
+            padding: 50px 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .contact-card {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            margin: auto;
+            max-width: 600px;
+        }
+
+        .contact-content {
+            margin-bottom: 20px;
+        }
+
+        .contact-content p {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        .contact-form button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: rgb(1, 0, 244);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.2em;
+            transition: background 0.3s ease-in-out;
+            cursor: pointer;
+            border: none;
+        }
+
+        .contact-form button:hover {
+            background: rgba(1, 0, 244, 0.8);
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
         }
 
         footer {
@@ -216,6 +279,15 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
             }
         }
 
@@ -280,10 +352,6 @@
                 padding: 10px 0;
             }
 
-            nav a {
-                padding-left: 0.3in; /* Ensure this is included in the media query for mobile */
-            }
-
             .section {
                 padding: 20px 10px;
             }
@@ -322,21 +390,19 @@
     <section class="section" data-aos="fade-up">
         <div class="container">
             <h2>Mortgage Calculator</h2>
-            <div class="calculator" data-aos="fade-right">
-                <div class="iframe-container">
-                    <iframe src="https://www.mortgagecalculator.org/" frameborder="0"></iframe>
-                </div>
+            <div class="iframe-container" data-aos="zoom-in">
+                <iframe src="https://www.mortgagecalculator.org/" frameborder="0"></iframe>
             </div>
         </div>
     </section>
 
-    <section class="section background" id="contact" data-aos="fade-right">
+    <section class="contact-section" id="contact" data-aos="fade-right">
         <div class="container">
             <h2>Contact Us</h2>
             <div class="contact-card" data-aos="fade-up">
                 <div class="contact-content">
                     <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
-                    <form id="contactForm" action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
+                    <form class="contact-form" id="contactForm" action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
                         <div class="form-group">
                             <input type="text" name="name" placeholder="Your Name" required>
                         </div>
@@ -346,15 +412,17 @@
                         <div class="form-group">
                             <textarea name="message" placeholder="Your Message" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit">Send Message</button>
                     </form>
+                </div>
+                <div class="contact-info" data-aos="fade-up">
                     <p>Email: <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a></p>
                     <p>Phone: <a href="tel:+17182712121">718-271-2121</a></p>
                 </div>
             </div>
             <div class="social-media" data-aos="fade-up">
-                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
+                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="btn">
+                    <i class="fab fa-facebook-f"></i> Facebook
                 </a>
             </div>
         </div>
@@ -387,6 +455,12 @@
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navUL.classList.toggle('active');
+        });
+
+        // Prevent default form submission for "Contact Us" form
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Form submission is disabled for this demo.');
         });
     </script>
 </body>
