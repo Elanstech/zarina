@@ -12,28 +12,13 @@
             font-family: 'Quicksand', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background: url('https://github.com/Elanstech/zarina/blob/main/backround.jpg?raw=true') no-repeat center center/cover;
             color: #333;
             transition: all 0.3s ease-in-out;
         }
 
         html {
             scroll-behavior: smooth;
-        }
-
-        .background-image {
-            background: url('https://github.com/Elanstech/zarina/blob/main/backround.jpg?raw=true') no-repeat center center/cover;
-            min-height: 100vh;
-            position: relative;
-        }
-
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding-top: 150px;
-            position: relative;
-            z-index: 1;
         }
 
         header {
@@ -43,7 +28,7 @@
             z-index: 1000;
             display: flex;
             align-items: center;
-            background: rgba(255, 255, 255, 0.9); /* Light background color for visibility */
+            background: transparent;
             position: fixed;
             justify-content: space-between;
             animation: fadeInDown 1s ease-in-out;
@@ -79,7 +64,7 @@
         }
 
         nav a {
-            color: #000;
+            color: #fff;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
@@ -91,13 +76,6 @@
             border-bottom: 1px solid rgb(1, 0, 244);
         }
 
-        .phone-number {
-            font-size: 16px;
-            color: #000;
-            margin-left: 20px;
-            font-weight: bold;
-        }
-
         .hamburger {
             display: none;
             flex-direction: column;
@@ -107,7 +85,7 @@
         .hamburger div {
             width: 25px;
             height: 3px;
-            background-color: #000;
+            background-color: #fff;
             margin: 4px 0;
             transition: all 0.3s ease-in-out;
         }
@@ -138,78 +116,72 @@
             z-index: 1000;
         }
 
-        .intro-text {
-            text-align: center;
+        .hero {
+            background: rgba(0, 0, 0, 0.5);
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             color: #fff;
-            margin-top: 150px;
-            font-size: 2.5em;
+            text-align: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        .hero h1 {
             font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 20px;
             animation: fadeInDown 1s ease-in-out;
         }
 
         .section {
             padding: 50px 20px;
-            background: rgba(255, 255, 255, 0.8);
-            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 20px;
             transition: all 0.3s ease-in-out;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            animation: fadeInUp 1s ease-in-out;
         }
 
-        .section h1 {
+        .section h2 {
             font-family: 'Montserrat', sans-serif;
             font-size: 2.5em;
             color: rgb(1, 0, 244);
             text-align: center;
             margin-bottom: 20px;
+            animation: fadeInDown 1s ease-in-out;
         }
 
         .faq-container {
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .faq {
             background: #fff;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             transition: transform 0.3s ease-in-out;
         }
 
-        .faq-container:hover {
+        .faq:hover {
             transform: translateY(-10px);
-        }
-
-        .faq {
-            margin-bottom: 30px;
         }
 
         .faq h3 {
             font-size: 1.8em;
             color: rgb(1, 0, 244);
             margin-bottom: 10px;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .faq h3:hover {
-            color: #ff5733;
         }
 
         .faq p {
-            font-size: 1.2em;
+            font-size: 1em;
             line-height: 1.6;
             color: #666;
-        }
-
-        .faq img {
-            max-width: 100%;
-            border-radius: 15px;
-            margin-top: 15px;
-            margin-bottom: 15px;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-
-        .faq img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         footer {
@@ -319,140 +291,76 @@
             }
 
             .faq h3 {
-                font-size: 1.5em;
+                font-size: 1.2em;
             }
 
             .faq p {
-                font-size: 1em;
-            }
-
-            .faq img {
-                max-width: 100%;
+                font-size: 0.9em;
             }
         }
     </style>
 </head>
 <body>
-    <div class="background-image">
-        <header data-aos="fade-down">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
-                </a>
-            </div>
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
-                    <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
-                    <li><a href="home-worth.html">What's Your Home Worth?</a></li>
-                    <li><a href="mls-listings.html">MLS Listings</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="budget-calculator.html">Budget Calculator</a></li>
-                </ul>
-            </nav>
-            <div class="phone-number">
-                <a href="tel:+17182712121">Call Us: 718-271-2121</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </header>
-
-        <div class="container">
-            <div class="intro-text" data-aos="fade-in">
-                Frequently Asked Questions
-            </div>
-
-            <section class="section" data-aos="fade-up">
-                <h1>FAQ</h1>
-
-                <div class="faq-container" data-aos="fade-up">
-                    <div class="faq">
-                        <h3>What services do you offer?</h3>
-                        <p>We offer residential property sales, rentals, and investment property management.</p>
-                        <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/microsoftimage.jpg" alt="Services">
-                    </div>
-                </div>
-
-                <div class="faq-container" data-aos="fade-up">
-                    <div class="faq">
-                        <h3>How can I contact you?</h3>
-                        <p>You can contact us via email at <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a> or call us at 718-271-2121.</p>
-                    </div>
-                </div>
-
-                <div class="faq-container" data-aos="fade-up">
-                    <div class="faq">
-                        <h3>Where are you located?</h3>
-                        <p>We are located in Rego Park and Forest Hills.</p>
-                        <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/officefront.jpeg" alt="Location">
-                    </div>
-                </div>
-
-                <div class="faq-container" data-aos="fade-up">
-                    <div class="faq">
-                        <h3>What is the process of buying a home?</h3>
-                        <p>The process involves several steps including pre-approval for a mortgage, house hunting, making an offer, and closing the deal.</p>
-                        <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/glassbuliding.jpg" alt="Buying Process">
-                    </div>
-                </div>
-
-                <div class="faq-container" data-aos="fade-up">
-                    <div class="faq">
-                        <h3>What should I consider when selling my home?</h3>
-                        <p>Consider the market conditions, pricing your home correctly, and making necessary repairs or upgrades to attract buyers.</p>
-                        <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/bussniesdisccusion.jpg" alt="Selling Tips">
-                    </div>
-                </div>
-
-                <div class="faq-container" data-aos="fade-up">
-                    <div class="faq">
-                        <h3>How do I determine my budget for buying a home?</h3>
-                        <p>Determine your budget by considering your income, expenses, and the amount you can afford for a down payment and monthly mortgage payments.</p>
-                        <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/microsoftimage.jpg" alt="Budget Planning">
-                    </div>
-                </div>
-
-                <div class="faq-container" data-aos="fade-up">
-                    <div class="faq">
-                        <h3>How do I prepare my home for sale?</h3>
-                        <p>Prepare your home for sale by decluttering, cleaning, making necessary repairs, and staging it to appeal to potential buyers.</p>
-                        <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/imac.jpg" alt="Preparing for Sale">
-                    </div>
-                </div>
-            </section>
+    <header data-aos="fade-down">
+        <div class="logo">
+            <a href="index.html">
+                <img src="https://raw.githubusercontent.com/Elanstech/zarina/main/logo-removebg-preview.png" alt="East Coast Realty by Zarina">
+            </a>
         </div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
+                <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                <li><a href="home-worth.html">What's Your Home Worth?</a></li>
+                <li><a href="mls-listings.html">MLS Listings</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="budget-calculator.html">DTI Calculator</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>Frequently Asked Questions</h1>
     </div>
 
-    <section class="contact-section" id="contact" data-aos="fade-right" style="background: url('https://github.com/Elanstech/zarina/blob/main/staffbr.jpg?raw=true') no-repeat center center/cover;">
+    <section class="section" data-aos="fade-up">
         <div class="container">
-            <h2>Contact Us</h2>
-            <div class="contact-card" data-aos="fade-up">
-                <div class="contact-content">
-                    <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
-                    <form id="contactForm" action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                    <p>Email: <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a></p>
-                    <p>Phone: <a href="tel:+17182712121">718-271-2121</a></p>
+            <h2>FAQs</h2>
+            <div class="faq-container">
+                <div class="faq">
+                    <h3>What services do you offer?</h3>
+                    <p>We offer residential property sales, rentals, and investment property management.</p>
                 </div>
-            </div>
-            <div class="social-media" data-aos="fade-up">
-                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
+                <div class="faq">
+                    <h3>How can I contact you?</h3>
+                    <p>You can contact us via email at <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a> or call us at 718-271-2121.</p>
+                </div>
+                <div class="faq">
+                    <h3>Where are you located?</h3>
+                    <p>We are located in Rego Park and Forest Hills.</p>
+                </div>
+                <div class="faq">
+                    <h3>What is the process of buying a home?</h3>
+                    <p>The process involves several steps including pre-approval for a mortgage, house hunting, making an offer, and closing the deal.</p>
+                </div>
+                <div class="faq">
+                    <h3>What should I consider when selling my home?</h3>
+                    <p>Consider the market conditions, pricing your home correctly, and making necessary repairs or upgrades to attract buyers.</p>
+                </div>
+                <div class="faq">
+                    <h3>How do I determine my budget for buying a home?</h3>
+                    <p>Determine your budget by considering your income, expenses, and the amount you can afford for a down payment and monthly mortgage payments.</p>
+                </div>
+                <div class="faq">
+                    <h3>How do I prepare my home for sale?</h3>
+                    <p>Prepare your home for sale by decluttering, cleaning, making necessary repairs, and staging it to appeal to potential buyers.</p>
+                </div>
             </div>
         </div>
     </section>
