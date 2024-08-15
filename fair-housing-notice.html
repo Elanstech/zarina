@@ -12,7 +12,7 @@
             font-family: 'Quicksand', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background: url('https://github.com/Elanstech/zarina/blob/main/backround.jpg?raw=true') no-repeat center center/cover;
             color: #333;
             transition: all 0.3s ease-in-out;
         }
@@ -28,7 +28,7 @@
             z-index: 1000;
             display: flex;
             align-items: center;
-            background: #1a1f26;
+            background: rgba(43, 62, 80, 0.9);
             position: fixed;
             justify-content: space-between;
             animation: fadeInDown 1s ease-in-out;
@@ -108,7 +108,7 @@
             position: fixed;
             top: 60px;
             right: 0;
-            background: rgba(26, 31, 38, 0.95);
+            background: rgba(43, 62, 80, 0.9);
             width: 200px;
             height: 100vh;
             transform: translateX(0);
@@ -117,15 +117,16 @@
         }
 
         .hero {
-            background: #e0e0e0;
-            height: 30vh;
+            background: rgba(0, 0, 0, 0.5);
+            height: 50vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: #333;
+            color: #fff;
             text-align: center;
             position: relative;
+            padding: 20px;
         }
 
         .hero h1 {
@@ -133,9 +134,6 @@
             font-size: 2.5em;
             margin-bottom: 20px;
             animation: fadeInDown 1s ease-in-out;
-            padding: 20px;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.9);
         }
 
         .hero p {
@@ -145,12 +143,11 @@
 
         .section {
             padding: 50px 20px;
-            background: #fff;
-            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 20px;
             transition: all 0.3s ease-in-out;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
         }
 
         .section h2 {
@@ -163,7 +160,7 @@
         }
 
         .card {
-            background: #f9f9f9;
+            background: #fff;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -191,6 +188,13 @@
             font-size: 1em;
             line-height: 1.6;
             color: #666;
+        }
+
+        .fair-housing-notice {
+            width: 100%;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
         .contact-section {
@@ -434,7 +438,7 @@
                     <p>East Coast Realty by Zarina is committed to providing equal professional service without regard to the race, color, religion, sex, handicap, familial status, or national origin of any prospective client or customer. We will not impose different terms and conditions for the sale or rental of real estate based on these factors. We are committed to ensuring that all people are treated with dignity and respect in their pursuit of housing.</p>
                 </div>
             </div>
-            <img src="https://github.com/Elanstech/zarina/blob/main/fairhousingnotice.png?raw=true" alt="Fair Housing Notice" style="width: 100%; border-radius: 15px; margin-top: 20px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
+            <img src="https://github.com/Elanstech/zarina/blob/main/fairhousingnotice.png?raw=true" alt="Fair Housing Notice" class="fair-housing-notice">
         </div>
     </section>
 
