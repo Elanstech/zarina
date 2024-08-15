@@ -6,32 +6,19 @@
     <title>DTI Calculator - East Coast Realty by Zarina</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             font-family: 'Quicksand', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            background: url('https://github.com/Elanstech/zarina/blob/main/backround.jpg?raw=true') no-repeat center center/cover;
             color: #333;
             transition: all 0.3s ease-in-out;
         }
 
         html {
             scroll-behavior: smooth;
-        }
-
-        .background-image {
-            background: url('https://github.com/Elanstech/zarina/blob/main/homeworthbackround.jpg?raw=true') no-repeat center center/cover;
-            height: 100vh;
-            position: relative;
-        }
-
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding-top: 80px;
         }
 
         header {
@@ -41,7 +28,7 @@
             z-index: 1000;
             display: flex;
             align-items: center;
-            background: rgba(255, 255, 255, 0.9);
+            background: transparent;
             position: fixed;
             justify-content: space-between;
             animation: fadeInDown 1s ease-in-out;
@@ -77,7 +64,7 @@
         }
 
         nav a {
-            color: #000;
+            color: #fff;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
@@ -98,7 +85,7 @@
         .hamburger div {
             width: 25px;
             height: 3px;
-            background-color: #000;
+            background-color: #fff;
             margin: 4px 0;
             transition: all 0.3s ease-in-out;
         }
@@ -129,14 +116,33 @@
             z-index: 1000;
         }
 
+        .hero {
+            background: rgba(0, 0, 0, 0.5);
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
         .section {
             padding: 50px 20px;
-            background: rgba(255, 255, 255, 0.8);
-            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 20px;
             transition: all 0.3s ease-in-out;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            animation: fadeInUp 1s ease-in-out;
         }
 
         .section h2 {
@@ -164,6 +170,7 @@
 
         .card-content {
             padding: 15px;
+            text-align: left;
         }
 
         .card-content h3 {
@@ -178,41 +185,129 @@
             color: #666;
         }
 
-        .form-group {
+        .calculator-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .calculator-form .form-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .calculator-form label {
+            font-size: 1.2em;
+            color: #333;
+            flex: 1;
+        }
+
+        .calculator-form input {
+            flex: 2;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1.1em;
+        }
+
+        .calculator-form button {
+            background: rgb(1, 0, 244);
+            color: #fff;
+            padding: 15px;
+            border-radius: 30px;
+            font-size: 1.2em;
+            transition: background 0.3s ease-in-out;
+            cursor: pointer;
+            border: none;
+            margin-top: 20px;
+            align-self: center;
+            width: 50%;
+        }
+
+        .calculator-form button:hover {
+            background: rgba(1, 0, 244, 0.8);
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: rgb(1, 0, 244);
+            text-align: center;
+        }
+
+        .contact-section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 50px 20px;
+            margin: 20px 0;
+            transition: all 0.3s ease-in-out;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-card {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            margin: auto;
+            max-width: 600px;
+        }
+
+        .contact-content {
             margin-bottom: 20px;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 1em;
+        .contact-content p {
+            font-size: 1.2em;
+            line-height: 1.5;
+            color: #fff;
         }
 
-        .form-group input,
-        .form-group textarea {
+        .contact-form .form-group {
+            margin-bottom: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
             width: 100%;
             padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
+            border: none;
+            border-radius: 30px;
             font-size: 1em;
+            margin-top: 10px;
         }
 
-        .btn {
+        .contact-form button {
+            display: inline-block;
+            padding: 15px 30px;
             background: rgb(1, 0, 244);
             color: #fff;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 10px;
+            text-decoration: none;
+            border-radius: 30px;
             font-size: 1.2em;
-            cursor: pointer;
             transition: background 0.3s ease-in-out;
-            text-align: center;
-            display: block;
-            width: 100%;
+            cursor: pointer;
+            border: none;
         }
 
-        .btn:hover {
+        .contact-form button:hover {
             background: rgba(1, 0, 244, 0.8);
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 1.1em;
+            color: #fff;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
         }
 
         footer {
@@ -260,15 +355,6 @@
             }
         }
 
-        @keyframes zoomIn {
-            from {
-                transform: scale(0);
-            }
-            to {
-                transform: scale(1);
-            }
-        }
-
         /* Styles for Tablets */
         @media (max-width: 768px) {
             .container {
@@ -295,10 +381,6 @@
 
             .section {
                 padding: 30px 20px;
-            }
-
-            .card {
-                margin-bottom: 20px;
             }
         }
 
@@ -334,10 +416,6 @@
                 padding: 20px 10px;
             }
 
-            .card {
-                margin-bottom: 20px;
-            }
-
             .card-content h3 {
                 font-size: 1.2em;
             }
@@ -346,12 +424,29 @@
                 font-size: 0.9em;
             }
 
-            .form-group input,
-            .form-group textarea {
+            .calculator-form label {
+                font-size: 1em;
+            }
+
+            .calculator-form input {
+                font-size: 1em;
+            }
+
+            .calculator-form button {
+                font-size: 1em;
                 padding: 10px;
             }
 
-            .btn {
+            .result {
+                font-size: 1.2em;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                padding: 10px;
+            }
+
+            .contact-form button {
                 font-size: 1em;
                 padding: 10px;
             }
@@ -359,7 +454,6 @@
     </style>
 </head>
 <body>
-    <div class="background-image"></div>
     <header data-aos="fade-down">
         <div class="logo">
             <a href="index.html">
@@ -384,34 +478,34 @@
         </div>
     </header>
 
+    <div class="hero">
+        <h1>Debt-to-Income (DTI) Calculator</h1>
+    </div>
+
     <section class="section" data-aos="fade-up">
         <div class="container">
-            <h2>DTI (Debt-to-Income) Calculator</h2>
-            <div class="card" data-aos="fade-right">
+            <h2>Calculate Your DTI</h2>
+            <div class="card">
                 <div class="card-content">
-                    <h3>Calculate Your Debt-to-Income Ratio</h3>
-                    <p>Use this calculator to determine your debt-to-income (DTI) ratio. A DTI ratio is an important metric that lenders use to determine your borrowing risk. It compares your monthly debt payments to your monthly gross income.</p>
-                    <form id="dtiCalculatorForm">
+                    <h3>Find out how much home you can afford</h3>
+                    <form class="calculator-form" id="dtiForm">
                         <div class="form-group">
-                            <label for="monthlyIncome">Monthly Gross Income ($):</label>
-                            <input type="number" id="monthlyIncome" name="monthlyIncome" required>
+                            <label for="monthlyIncome">Monthly Income ($):</label>
+                            <input type="number" id="monthlyIncome" placeholder="Enter your monthly income" required>
                         </div>
                         <div class="form-group">
-                            <label for="monthlyDebts">Total Monthly Debts ($):</label>
-                            <input type="number" id="monthlyDebts" name="monthlyDebts" required>
+                            <label for="monthlyDebt">Monthly Debt Payments ($):</label>
+                            <input type="number" id="monthlyDebt" placeholder="Enter your monthly debt payments" required>
                         </div>
-                        <button type="submit" class="btn">Calculate DTI</button>
+                        <button type="submit">Calculate DTI</button>
                     </form>
-                    <div id="dtiResult" style="display: none; margin-top: 20px;">
-                        <h3>Your DTI Ratio is: <span id="dtiValue"></span>%</h3>
-                        <p id="dtiMessage"></p>
-                    </div>
+                    <div class="result" id="result"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="contact-section" id="contact" data-aos="fade-right" style="background: url('https://github.com/Elanstech/zarina/blob/main/staffbr.jpg?raw=true') no-repeat center center/cover;">
+    <section class="contact-section" id="contact" data-aos="fade-right">
         <div class="container">
             <h2>Contact Us</h2>
             <div class="contact-card" data-aos="fade-up">
@@ -429,14 +523,12 @@
                         </div>
                         <button type="submit">Send Message</button>
                     </form>
-                </div>
-                <div class="contact-info" data-aos="fade-up">
                     <p>Email: <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a></p>
                     <p>Phone: <a href="tel:+17182712121">718-271-2121</a></p>
                 </div>
             </div>
             <div class="social-media" data-aos="fade-up">
-                <a href="https://www.facebook.com/eastcoastrealtybyzarina" target="_blank" class="btn">
+                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="btn">
                     <i class="fab fa-facebook-f"></i> Facebook
                 </a>
             </div>
@@ -446,7 +538,7 @@
     <footer data-aos="fade-up">
         <div class="container">
             <div class="social-media">
-                <a href="https://www.facebook.com/eastcoastrealtybyzarina" target="_blank" class="facebook-button">
+                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="facebook-button">
                     <i class="fab fa-facebook-f"></i>
                 </a>
             </div>
@@ -472,29 +564,17 @@
             navUL.classList.toggle('active');
         });
 
-        document.getElementById('dtiCalculatorForm').addEventListener('submit', function(event) {
+        // DTI Calculation Logic
+        document.getElementById('dtiForm').addEventListener('submit', function(event) {
             event.preventDefault();
-            const monthlyIncome = parseFloat(document.getElementById('monthlyIncome').value);
-            const monthlyDebts = parseFloat(document.getElementById('monthlyDebts').value);
-            const dti = ((monthlyDebts / monthlyIncome) * 100).toFixed(2);
-
-            document.getElementById('dtiValue').textContent = dti;
-            const dtiMessage = document.getElementById('dtiMessage');
-            if (dti < 20) {
-                dtiMessage.textContent = "Your DTI ratio is excellent!";
-                dtiMessage.style.color = "green";
-            } else if (dti < 36) {
-                dtiMessage.textContent = "Your DTI ratio is good.";
-                dtiMessage.style.color = "blue";
-            } else if (dti < 43) {
-                dtiMessage.textContent = "Your DTI ratio is acceptable.";
-                dtiMessage.style.color = "orange";
+            const income = parseFloat(document.getElementById('monthlyIncome').value);
+            const debt = parseFloat(document.getElementById('monthlyDebt').value);
+            if (!isNaN(income) && !isNaN(debt) && income > 0) {
+                const dti = (debt / income) * 100;
+                document.getElementById('result').textContent = `Your Debt-to-Income Ratio (DTI) is ${dti.toFixed(2)}%.`;
             } else {
-                dtiMessage.textContent = "Your DTI ratio is high.";
-                dtiMessage.style.color = "red";
+                document.getElementById('result').textContent = 'Please enter valid numbers for income and debt.';
             }
-
-            document.getElementById('dtiResult').style.display = 'block';
         });
 
         // Prevent default form submission for "Contact Us" form
