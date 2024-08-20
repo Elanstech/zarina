@@ -6,383 +6,155 @@
     <title>FAQ - East Coast Realty by Zarina</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             font-family: 'Quicksand', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('https://github.com/Elanstech/zarina/blob/main/backround.jpg?raw=true') no-repeat center center/cover;
+            background: #e0eafc;  /* A subtle gradient for the background */
             color: #333;
             transition: all 0.3s ease-in-out;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         header {
-            padding: 20px 20px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            display: flex;
-            align-items: center;
-            background: transparent;
-            position: fixed;
-            justify-content: space-between;
-            animation: fadeInDown 1s ease-in-out;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
         }
 
         .logo img {
-            height: 60px;
-            margin-right: 20px;
-        }
-
-        nav {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
+            height: 50px;
         }
 
         nav ul {
-            padding: 0;
             list-style: none;
             display: flex;
+            justify-content: center;
             margin: 0;
         }
 
-        nav li {
-            padding: 0 20px;
-            border-bottom: 1px solid transparent;
-        }
-
         nav a {
-            color: #fff;
+            color: #333;
             text-decoration: none;
+            padding: 10px 20px;
             text-transform: uppercase;
-            font-size: 16px;
-            transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+            font-weight: bold;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: rgb(1, 0, 244);
-            border-bottom: 1px solid rgb(1, 0, 244);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: #fff;
-            margin: 4px 0;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .hamburger.active div:nth-child(1) {
-            transform: rotate(-45deg) translate(-6px, 6px);
-        }
-
-        .hamburger.active div:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active div:nth-child(3) {
-            transform: rotate(45deg) translate(-6px, -6px);
-        }
-
-        nav ul.active {
-            display: flex;
-            flex-direction: column;
-            position: fixed;
-            top: 60px;
-            right: 0;
-            background: rgba(43, 62, 80, 0.9);
-            width: 200px;
-            height: 100vh;
-            transform: translateX(0);
-            transition: transform 0.3s ease-in-out;
-            z-index: 1000;
+            color: #ff6600;
         }
 
         .hero {
-            background: rgba(0, 0, 0, 0.5);
-            height: 30vh;
+            background: url('https://example.com/faq-bg.jpg') no-repeat center center/cover;
+            height: 50vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             color: #fff;
             text-align: center;
-            position: relative;
-            padding: 20px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
         .hero h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            animation: fadeInDown 1s ease-in-out;
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
 
         .section {
             padding: 50px 20px;
-            background: rgba(255, 255, 255, 0.9);
-            margin: 20px;
-            transition: all 0.3s ease-in-out;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .section h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5em;
-            color: rgb(1, 0, 244);
-            text-align: center;
-            margin-bottom: 20px;
-            animation: fadeInDown 1s ease-in-out;
-        }
-
-        .faq-container {
-            margin-bottom: 30px;
-            animation: fadeInUp 1s ease-in-out;
-        }
-
-        .faq {
             background: #fff;
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        .faq-item {
+            background: #f3f4f6;
+            border-radius: 10px;
             padding: 20px;
             margin-bottom: 20px;
-            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background 0.3s ease;
         }
 
-        .faq:hover {
-            transform: translateY(-10px);
+        .faq-item:hover {
+            transform: translateY(-5px);
+            background: #e3e4e6;
         }
 
-        .faq h3 {
-            font-size: 1.8em;
-            color: rgb(1, 0, 244);
+        .faq-item h3 {
+            font-size: 1.5rem;
             margin-bottom: 10px;
+            color: #ff6600;
+            cursor: pointer;
+            transition: color 0.3s ease;
         }
 
-        .faq p {
-            font-size: 1em;
+        .faq-item h3:hover {
+            color: #333;
+        }
+
+        .faq-item p {
+            margin: 0;
+            font-size: 1rem;
             line-height: 1.6;
             color: #666;
+            display: none;
+            overflow: hidden;
         }
 
-        .contact-section {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 50px 20px;
-            margin: 20px 0;
-            transition: all 0.3s ease-in-out;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-card {
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            margin: auto;
-            max-width: 600px;
-        }
-
-        .contact-content {
-            margin-bottom: 20px;
-        }
-
-        .contact-content p {
-            font-size: 1.2em;
-            line-height: 1.5;
-            color: #fff;
-        }
-
-        .contact-form .form-group {
-            margin-bottom: 15px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 30px;
-            font-size: 1em;
-            margin-top: 10px;
-        }
-
-        .contact-form button {
-            display: inline-block;
-            padding: 15px 30px;
-            background: rgb(1, 0, 244);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 1.2em;
-            transition: background 0.3s ease-in-out;
-            cursor: pointer;
-            border: none;
-        }
-
-        .contact-form button:hover {
-            background: rgba(1, 0, 244, 0.8);
-        }
-
-        .contact-info p {
-            margin: 10px 0;
-            font-size: 1.1em;
-            color: #fff;
-        }
-
-        .contact-info a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
+        .faq-item.open p {
+            display: block;
         }
 
         footer {
-            background: #2b3e50;
+            background: #333;
             color: #fff;
-            text-align: center;
             padding: 20px 0;
-            border-top: 3px solid #1a1f26;
-        }
-
-        .social-media {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
+            text-align: center;
+            margin-top: 40px;
         }
 
         .social-media a {
+            color: #fff;
             margin: 0 10px;
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease;
         }
 
         .social-media a:hover {
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Styles for Tablets */
         @media (max-width: 768px) {
-            .container {
-                width: 90%;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            header nav ul {
-                flex-direction: column;
-                text-align: center;
-                display: none;
-            }
-
-            header nav ul.active {
-                display: flex;
-            }
-
-            header nav ul li {
-                padding: 10px 0;
-            }
-
             .section {
-                padding: 30px 20px;
-            }
-        }
-
-        /* Styles for Mobile Phones */
-        @media (max-width: 480px) {
-            .container {
-                width: 95%;
-            }
-
-            header .logo img {
-                height: 50px;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            header nav ul {
-                flex-direction: column;
-                text-align: center;
-                display: none;
-            }
-
-            header nav ul.active {
-                display: flex;
-            }
-
-            header nav ul li {
-                padding: 10px 0;
-            }
-
-            .section {
-                padding: 20px 10px;
-            }
-
-            .faq h3 {
-                font-size: 1.2em;
-            }
-
-            .faq p {
-                font-size: 0.9em;
+                padding: 30px 15px;
             }
         }
     </style>
 </head>
 <body>
-    <header data-aos="fade-down">
+    <header>
         <div class="logo">
             <a href="index.html">
-                <img src="https://github.com/Elanstech/zarina/blob/main/logo.png?raw=true" alt="East Coast Realty by Zarina">
+                <img src="https://example.com/logo.png" alt="East Coast Realty by Zarina">
             </a>
         </div>
         <nav>
-            <ul class="nav-list">
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
                 <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
@@ -392,11 +164,6 @@
                 <li><a href="budget-calculator.html">DTI Calculator</a></li>
             </ul>
         </nav>
-        <div class="hamburger" id="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
     </header>
 
     <div class="hero">
@@ -404,80 +171,37 @@
     </div>
 
     <section class="section" data-aos="fade-up">
-        <div class="container">
-            <h2>FAQs</h2>
-            <div class="faq-container">
-                <div class="faq">
-                    <h3>What services do you offer?</h3>
-                    <p>We offer residential property sales, rentals, and investment property management.</p>
-                </div>
-                <div class="faq">
-                    <h3>How can I contact you?</h3>
-                    <p>You can contact us via email at <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a> or call us at 718-271-2121.</p>
-                </div>
-                <div class="faq">
-                    <h3>Where are you located?</h3>
-                    <p>We are located in Rego Park and Forest Hills.</p>
-                </div>
-                <div class="faq">
-                    <h3>What is the process of buying a home?</h3>
-                    <p>The process involves several steps including pre-approval for a mortgage, house hunting, making an offer, and closing the deal.</p>
-                </div>
-                <div class="faq">
-                    <h3>What should I consider when selling my home?</h3>
-                    <p>Consider the market conditions, pricing your home correctly, and making necessary repairs or upgrades to attract buyers.</p>
-                </div>
-                <div class="faq">
-                    <h3>How do I determine my budget for buying a home?</h3>
-                    <p>Determine your budget by considering your income, expenses, and the amount you can afford for a down payment and monthly mortgage payments.</p>
-                </div>
-                <div class="faq">
-                    <h3>How do I prepare my home for sale?</h3>
-                    <p>Prepare your home for sale by decluttering, cleaning, making necessary repairs, and staging it to appeal to potential buyers.</p>
-                </div>
-            </div>
+        <div class="faq-item" data-aos="fade-up">
+            <h3>What services do you offer?</h3>
+            <p>We offer a range of real estate services including buying, selling, and rental assistance, as well as property management, market analysis, and investment advice.</p>
+        </div>
+        <div class="faq-item" data-aos="fade-up">
+            <h3>How can I get a market analysis of my property?</h3>
+            <p>You can request a market analysis by filling out the form on our "What's Your Home Worth?" page, or by contacting us directly. We'll assess your property and provide a detailed report.</p>
+        </div>
+        <div class="faq-item" data-aos="fade-up">
+            <h3>What areas do you serve?</h3>
+            <p>We serve New York City and the surrounding areas, including Queens, Brooklyn, Manhattan, and Long Island. Our expertise extends to both residential and commercial properties.</p>
+        </div>
+        <div class="faq-item" data-aos="fade-up">
+            <h3>What is your commission rate?</h3>
+            <p>Our commission rates are competitive and vary depending on the type of service and property. Please contact us for a personalized quote.</p>
+        </div>
+        <div class="faq-item" data-aos="fade-up">
+            <h3>How do I get in touch with an agent?</h3>
+            <p>You can reach out to us via our contact page, call us directly, or visit our office. Our agents are always ready to assist you with your real estate needs.</p>
+        </div>
+        <div class="faq-item" data-aos="fade-up">
+            <h3>Can you help with mortgage financing?</h3>
+            <p>Yes, we can connect you with trusted mortgage brokers and lenders who can help you find the best financing options for your situation.</p>
         </div>
     </section>
 
-    <section class="contact-section" id="contact" data-aos="fade-right">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <div class="contact-card" data-aos="fade-up">
-                <div class="contact-content">
-                    <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
-                    <form class="contact-form" id="contactForm" action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit">Send Message</button>
-                    </form>
-                    <p>Email: <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a></p>
-                    <p>Phone: <a href="tel:+17182712121">718-271-2121</a></p>
-                </div>
-            </div>
-            <div class="social-media" data-aos="fade-up">
-                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="btn">
-                    <i class="fab fa-facebook-f"></i> Facebook
-                </a>
-            </div>
+    <footer>
+        <div class="social-media">
+            <a href="https://www.facebook.com/zarina.yusupova" target="_blank"><i class="fab fa-facebook-f"></i></a>
         </div>
-    </section>
-
-    <footer data-aos="fade-up">
-        <div class="container">
-            <div class="social-media">
-                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="facebook-button">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-            </div>
-            <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p>
-        </div>
+        <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -488,14 +212,14 @@
                 easing: 'ease-in-out',
                 once: true
             });
-        });
 
-        const hamburger = document.getElementById('hamburger');
-        const navUL = document.querySelector('.nav-list');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navUL.classList.toggle('active');
+            const faqItems = document.querySelectorAll('.faq-item h3');
+            faqItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const parent = item.parentElement;
+                    parent.classList.toggle('open');
+                });
+            });
         });
     </script>
 </body>
