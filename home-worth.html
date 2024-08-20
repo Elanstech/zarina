@@ -8,7 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* General Styles */
         body {
             font-family: 'Quicksand', sans-serif;
             margin: 0;
@@ -24,13 +23,13 @@
         }
 
         header {
-            padding: 20px 20px;
+            padding: 20px;
             width: 100%;
             top: 0;
             z-index: 1000;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             position: fixed;
             background: rgba(255, 255, 255, 0.9);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -42,9 +41,10 @@
         }
 
         nav {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         nav ul {
@@ -55,8 +55,7 @@
         }
 
         nav li {
-            padding: 0 20px;
-            border-bottom: 1px solid transparent;
+            padding: 0 15px;
         }
 
         nav a {
@@ -69,7 +68,55 @@
 
         nav a:hover {
             color: rgb(1, 0, 244);
-            border-bottom: 1px solid rgb(1, 0, 244);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 11;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 4px 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(-45deg) translate(-6px, 6px);
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(45deg) translate(-6px, -6px);
+        }
+
+        nav ul.active {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 60px;
+            right: 0;
+            background: rgba(43, 62, 80, 0.9);
+            width: 200px;
+            height: 100vh;
+            transform: translateX(0);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
+            padding-top: 20px;
+        }
+
+        nav ul.active li {
+            padding: 10px 20px;
         }
 
         /* Hero Section */
@@ -277,6 +324,18 @@
 
         /* Media Queries */
         @media (max-width: 768px) {
+            header {
+                justify-content: center;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
             .hero {
                 height: 80vh;
                 clip-path: none;
@@ -345,6 +404,11 @@
                 font-size: 0.9em;
                 padding: 10px 20px;
             }
+
+            .hamburger {
+                top: 10px;
+                right: 10px;
+            }
         }
 
     </style>
@@ -366,6 +430,11 @@
                 <li><a href="budget-calculator.html">DTI Calculator</a></li>
             </ul>
         </nav>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </header>
 
     <section class="hero">
@@ -419,6 +488,14 @@
                 duration: 1000,
                 easing: 'ease-in-out',
                 once: true
+            });
+
+            const hamburger = document.getElementById('hamburger');
+            const navList = document.querySelector('.nav-list');
+
+            hamburger.addEventListener('click', () => {
+                navList.classList.toggle('active');
+                hamburger.classList.toggle('active');
             });
         });
     </script>
