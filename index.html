@@ -68,9 +68,6 @@
             list-style: none;
             display: flex;
             margin: 0;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         .hero nav li {
@@ -89,6 +86,52 @@
         .hero nav a:hover {
             color: #00f;
             border-bottom: 1px solid #00f;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 11;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(-45deg) translate(-6px, 6px);
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(45deg) translate(-6px, -6px);
+        }
+
+        nav ul.active {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 60px;
+            right: 0;
+            background: rgba(43, 62, 80, 0.9);
+            width: 200px;
+            height: 100vh;
+            transform: translateX(0);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
+            padding-top: 20px;
+        }
+
+        nav ul.active li {
+            padding: 10px 20px;
         }
 
         .hero h1 {
@@ -140,11 +183,11 @@
         .section {
             padding: 60px 20px;
             background: linear-gradient(to bottom, #fff, #f0f0f0);
-            margin-top: -10vh;
+            margin-top: 0;
             transition: all 0.3s ease-in-out;
             border-radius: 15px 15px 0 0;
             box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
-            clip-path: polygon(0 15px, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             position: relative;
             z-index: 5;
         }
@@ -167,7 +210,6 @@
             border-radius: 15px;
             background: rgba(255, 255, 255, 0.9);
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            transform: translateY(-30px);
             animation: fadeInUp 1s ease-in-out;
         }
 
@@ -237,16 +279,13 @@
             margin-top: 20px;
             animation: fadeInUp 1s ease-in-out;
             position: relative;
+            flex-direction: column;
         }
 
         .map-section, .reviews-section {
             flex: 1;
             padding: 20px;
-            max-width: 48%;
-        }
-
-        .map-section {
-            border-right: 1px solid rgba(0, 0, 244, 0.2);
+            max-width: 100%;
         }
 
         .map-container {
@@ -454,26 +493,17 @@
                 width: 90%;
             }
 
-            .hero nav ul {
+            .hamburger {
                 display: flex;
-                flex-direction: column;
-                padding: 20px;
-                background: rgba(0, 0, 0, 0.8);
-                border-radius: 15px;
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-                position: fixed;
-                top: 60px;
-                right: 20px;
-                z-index: 1000;
             }
 
-            .hero nav ul li {
-                margin-bottom: 10px;
+            nav ul {
+                display: none;
             }
 
-            .hero nav a {
-                color: #fff;
-                font-size: 18px;
+            nav ul.active {
+                display: flex;
+                transform: translateX(0);
             }
 
             .section {
@@ -512,14 +542,17 @@
                 height: 50px;
             }
 
-            .hero nav ul {
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                width: 100%;
-                max-width: 300px;
-                border-radius: 0;
-                box-shadow: none;
+            .hamburger {
+                display: flex;
+            }
+
+            nav ul.active {
+                display: flex;
+                transform: translateX(0);
+            }
+
+            nav ul li {
+                padding: 10px 0;
             }
 
             .hero h1 {
@@ -565,6 +598,11 @@
             <a href="index.html">
                 <img src="https://github.com/Elanstech/zarina/blob/main/logo.png?raw=true" alt="East Coast Realty by Zarina">
             </a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
         <nav>
             <ul class="nav-list">
@@ -612,8 +650,7 @@
                 <div class="card-content">
                     <p>To view our available properties, please visit our MLS listings:</p>
                     <a href="https://onekeymls.com/realtor/offices/East-Coast-Realty-by-Zarina-II/EACS01" target="_blank" class="btn">View MLS Listings</a>
-                </div>
-            </div>
+                                </div>
         </div>
     </section>
 
@@ -700,6 +737,14 @@
                 duration: 1000,
                 easing: 'ease-in-out',
                 once: true
+            });
+
+            const hamburger = document.getElementById('hamburger');
+            const navList = document.querySelector('.nav-list');
+
+            hamburger.addEventListener('click', () => {
+                navList.classList.toggle('active');
+                hamburger.classList.toggle('active');
             });
         });
     </script>
