@@ -12,9 +12,10 @@
             font-family: 'Quicksand', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('https://github.com/Elanstech/zarina/blob/main/backround.jpg?raw=true') no-repeat center center/cover;
+            background-color: #f9f9f9;
             color: #333;
             transition: all 0.3s ease-in-out;
+            overflow-x: hidden;
         }
 
         html {
@@ -28,21 +29,15 @@
             z-index: 1000;
             display: flex;
             align-items: center;
-            background: transparent;
-            position: fixed;
             justify-content: space-between;
-            animation: fadeInDown 1s ease-in-out;
+            position: fixed;
+            background: rgba(255, 255, 255, 0.9);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
+            animation: fadeInDown 1s ease-in-out;
         }
 
         .logo img {
             height: 60px;
-            margin-right: 20px;
         }
 
         nav {
@@ -64,7 +59,7 @@
         }
 
         nav a {
-            color: #fff;
+            color: #333;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
@@ -85,7 +80,7 @@
         .hamburger div {
             width: 25px;
             height: 3px;
-            background-color: #fff;
+            background-color: #333;
             margin: 4px 0;
             transition: all 0.3s ease-in-out;
         }
@@ -117,8 +112,8 @@
         }
 
         .hero {
-            background: rgba(0, 0, 0, 0.5);
-            height: 50vh;
+            background: linear-gradient(135deg, rgba(1, 0, 244, 0.7), rgba(255, 255, 255, 0.7)), url('https://github.com/Elanstech/zarina/blob/main/backround.jpg?raw=true') no-repeat center center/cover;
+            height: 70vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -126,28 +121,32 @@
             color: #fff;
             text-align: center;
             position: relative;
-            padding: 20px;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
 
         .hero h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.5em;
+            font-size: 3em;
             margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
             animation: fadeInDown 1s ease-in-out;
         }
 
         .hero p {
-            font-size: 1.2em;
+            font-size: 1.5em;
             animation: fadeInUp 1s ease-in-out;
         }
 
         .section {
-            padding: 50px 20px;
-            background: rgba(255, 255, 255, 0.9);
-            margin: 20px;
-            transition: all 0.3s ease-in-out;
+            padding: 60px 20px;
+            background: #fff;
+            margin-top: -50px;
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1.2s ease-in-out;
         }
 
         .section h2 {
@@ -155,38 +154,35 @@
             font-size: 2.5em;
             color: rgb(1, 0, 244);
             text-align: center;
-            margin-bottom: 20px;
-            animation: fadeInDown 1s ease-in-out;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            animation: fadeInDown 1.2s ease-in-out;
         }
 
         .card {
-            background: #fff;
+            background: #f1f1f1;
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 40px;
             transition: transform 0.3s ease-in-out;
-            animation: fadeInUp 1s ease-in-out;
+            animation: zoomIn 1.2s ease-in-out;
         }
 
         .card:hover {
             transform: translateY(-10px);
         }
 
-        .card-content {
-            padding: 15px;
-            text-align: left;
-        }
-
         .card-content h3 {
-            font-size: 1.8em;
+            font-size: 2em;
             color: rgb(1, 0, 244);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
         }
 
         .card-content p {
-            font-size: 1em;
-            line-height: 1.6;
+            font-size: 1.2em;
+            line-height: 1.8;
             color: #666;
         }
 
@@ -194,25 +190,35 @@
             width: 100%;
             border-radius: 15px;
             margin-top: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            animation: zoomIn 1.2s ease-in-out;
+        }
+
+        .fair-housing-notice:hover {
+            transform: scale(1.05);
         }
 
         .contact-section {
-            background: rgba(255, 255, 255, 0.9);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 244, 0.5)), url('https://github.com/Elanstech/zarina/blob/main/staffbr.jpg?raw=true') no-repeat center center/cover;
             padding: 50px 20px;
-            margin: 20px 0;
-            transition: all 0.3s ease-in-out;
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+            animation: fadeInRight 1.2s ease-in-out;
         }
 
         .contact-card {
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.7);
             border-radius: 15px;
             padding: 30px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             margin: auto;
             max-width: 600px;
+            transform: translateY(-20px);
+            animation: fadeInUp 1.2s ease-in-out;
         }
 
         .contact-content {
@@ -222,7 +228,6 @@
         .contact-content p {
             font-size: 1.2em;
             line-height: 1.5;
-            color: #fff;
         }
 
         .contact-form .form-group {
@@ -237,29 +242,40 @@
             border-radius: 30px;
             font-size: 1em;
             margin-top: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.05);
         }
 
         .contact-form button {
             display: inline-block;
             padding: 15px 30px;
-            background: rgb(1, 0, 244);
+            background: linear-gradient(45deg, #0100f4, #00aaff);
             color: #fff;
             text-decoration: none;
             border-radius: 30px;
             font-size: 1.2em;
-            transition: background 0.3s ease-in-out;
+            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
             cursor: pointer;
             border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .contact-form button:hover {
-            background: rgba(1, 0, 244, 0.8);
+            background: linear-gradient(45deg, #00aaff, #0100f4);
+            transform: translateY(-5px);
         }
 
         .contact-info p {
             margin: 10px 0;
             font-size: 1.1em;
-            color: #fff;
         }
 
         .contact-info a {
@@ -277,6 +293,7 @@
             text-align: center;
             padding: 20px 0;
             border-top: 3px solid #1a1f26;
+            animation: fadeInUp 1.2s ease-in-out;
         }
 
         .social-media {
@@ -313,6 +330,26 @@
             to {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
             }
         }
 
@@ -394,6 +431,10 @@
                 font-size: 1em;
                 padding: 10px;
             }
+
+            .fair-housing-notice {
+                transform: scale(1);
+            }
         }
     </style>
 </head>
@@ -433,7 +474,7 @@
             <div class="card" data-aos="fade-right">
                 <div class="card-content">
                     <h3>Our Commitment</h3>
-                    <p>East Coast Realty by Zarina is committed to providing equal professional service without regard to the race, color, religion, sex, handicap, familial status, or national origin of any prospective client or customer. We will not impose different terms and conditions for the sale or rental of real estate based on these factors. We are committed to ensuring that all people are treated with dignity and respect in their pursuit of housing.</p>
+                    <p>East Coast Realty by Zarina is committed to providing equal professional service without regard to race, color, religion, sex, handicap, familial status, or national origin of any prospective client or customer. We will not impose different terms and conditions for the sale or rental of real estate based on these factors. We are committed to ensuring that all people are treated with dignity and respect in their pursuit of housing.</p>
                 </div>
             </div>
             <img src="https://github.com/Elanstech/zarina/blob/main/fairhousingnotice.png?raw=true" alt="Fair Housing Notice" class="fair-housing-notice">
@@ -446,7 +487,7 @@
             <div class="contact-card" data-aos="fade-up">
                 <div class="contact-content">
                     <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
-                    <form class="contact-form" id="contactForm" action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
+                    <form class="contact-form" id="contactForm">
                         <div class="form-group">
                             <input type="text" name="name" placeholder="Your Name" required>
                         </div>
@@ -503,20 +544,26 @@
                 easing: 'ease-in-out',
                 once: true
             });
-        });
 
-        const hamburger = document.getElementById('hamburger');
-        const navUL = document.querySelector('.nav-list');
+            const hamburger = document.getElementById('hamburger');
+            const navUL = document.querySelector('.nav-list');
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navUL.classList.toggle('active');
-        });
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navUL.classList.toggle('active');
+            });
 
-        // Prevent default form submission for "Contact Us" form
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Form submission is disabled for this demo.');
+            // Prevent default form submission for "Contact Us" form
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const formData = new FormData(this);
+                const mailtoLink = `mailto:frontdesk@eastcoastrealty.net?subject=Contact Form Submission&body=${encodeURIComponent(
+                    `Name: ${formData.get('name')}\nEmail: ${formData.get('email')}\nMessage: ${formData.get('message')}`
+                )}`;
+
+                window.location.href = mailtoLink;
+            });
         });
     </script>
 </body>
