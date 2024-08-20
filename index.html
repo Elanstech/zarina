@@ -15,6 +15,7 @@
             background-color: #f9f9f9;
             color: #333;
             transition: all 0.3s ease-in-out;
+            overflow-x: hidden;
         }
 
         html {
@@ -28,7 +29,7 @@
         }
 
         .hero {
-            background: url('https://github.com/Elanstech/zarina/blob/main/homeworthbackround.jpg?raw=true') no-repeat center center/cover;
+            background: linear-gradient(135deg, rgba(1, 0, 244, 0.7), rgba(255, 255, 255, 0.7)), url('https://github.com/Elanstech/zarina/blob/main/homeworthbackround.jpg?raw=true') no-repeat center center/cover;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -37,12 +38,15 @@
             color: #fff;
             text-align: center;
             position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
 
         .hero .logo {
             position: absolute;
             top: 20px;
             left: 20px;
+            z-index: 10;
+            animation: fadeInLeft 1s ease-in-out;
         }
 
         .hero .logo img {
@@ -55,6 +59,8 @@
             right: 20px;
             display: flex;
             align-items: center;
+            z-index: 10;
+            animation: fadeInRight 1s ease-in-out;
         }
 
         .hero nav ul {
@@ -78,14 +84,15 @@
         }
 
         .hero nav a:hover {
-            color: rgb(1, 0, 244);
-            border-bottom: 1px solid rgb(1, 0, 244);
+            color: #00f;
+            border-bottom: 1px solid #00f;
         }
 
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
+            z-index: 11;
         }
 
         .hamburger div {
@@ -127,44 +134,57 @@
             font-size: 3em;
             margin-bottom: 20px;
             animation: fadeInDown 1s ease-in-out;
-            border: 5px solid rgb(1, 0, 244);
             padding: 20px;
             border-radius: 15px;
             background: rgba(0, 0, 0, 0.5);
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .hero h1:hover {
+            transform: scale(1.05);
         }
 
         .hero p {
             font-size: 1.5em;
             animation: fadeInUp 1s ease-in-out;
+            margin-bottom: 20px;
+            transition: opacity 0.3s ease-in-out;
         }
 
         .button-container {
             margin-top: 20px;
+            animation: fadeIn 1.2s ease-in-out;
         }
 
         .btn {
             display: inline-block;
             padding: 15px 30px;
-            background: rgb(1, 0, 244);
+            background: linear-gradient(45deg, #0100f4, #00aaff);
             color: #fff;
             text-decoration: none;
             border-radius: 30px;
             font-size: 1.2em;
             margin: 10px;
-            transition: background 0.3s ease-in-out;
+            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .btn:hover {
-            background: rgba(1, 0, 244, 0.8);
+            background: linear-gradient(45deg, #00aaff, #0100f4);
+            transform: translateY(-5px);
         }
 
         .section {
-            padding: 50px 20px;
-            background: #fff;
-            margin-top: 20px;
+            padding: 60px 20px;
+            background: linear-gradient(to bottom, #fff, #f0f0f0);
+            margin-top: -10vh;
             transition: all 0.3s ease-in-out;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+            clip-path: polygon(0 15px, 100% 0, 100% 100%, 0 100%);
+            position: relative;
+            z-index: 5;
         }
 
         .section h2 {
@@ -181,10 +201,12 @@
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            border: 2px solid rgb(1, 0, 244);
             padding: 20px;
             border-radius: 15px;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-30px);
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .about-content, .about-image {
@@ -193,14 +215,18 @@
         }
 
         .about-image {
-            max-width: 100%;
             text-align: center;
         }
 
         .about-image img {
             max-width: 100%;
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .about-image img:hover {
+            transform: scale(1.05);
         }
 
         .about-content h3 {
@@ -214,6 +240,11 @@
             font-size: 1em;
             line-height: 1.6;
             color: #666;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .about-content p:hover {
+            color: #000;
         }
 
         .about-contact {
@@ -237,11 +268,12 @@
         .map-reviews-container {
             display: flex;
             justify-content: space-between;
-            border: 2px solid rgb(1, 0, 244);
             padding: 20px;
             border-radius: 15px;
-            background: #fff;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .map-section, .reviews-section {
@@ -251,13 +283,15 @@
         }
 
         .map-section {
-            border-right: 1px solid rgb(1, 0, 244);
+            border-right: 1px solid rgba(0, 0, 244, 0.2);
         }
 
         .map-container {
             position: relative;
             overflow: hidden;
             padding-top: 56.25%;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
 
         .map-container iframe {
@@ -267,27 +301,33 @@
             width: 100%;
             height: 100%;
             border: 0;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .map-container iframe:hover {
+            transform: scale(1.03);
         }
 
         .contact-section {
-            background: url('https://github.com/Elanstech/zarina/blob/main/staffbr.jpg?raw=true') no-repeat center center/cover;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 244, 0.5)), url('https://github.com/Elanstech/zarina/blob/main/staffbr.jpg?raw=true') no-repeat center center/cover;
             padding: 50px 20px;
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
             color: #fff;
             text-align: center;
             margin-top: 20px;
+            animation: fadeInRight 1s ease-in-out;
         }
 
         .contact-card {
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.7);
             border-radius: 15px;
             padding: 30px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             margin: auto;
             max-width: 600px;
+            transform: translateY(-20px);
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .contact-content {
@@ -311,23 +351,35 @@
             border-radius: 30px;
             font-size: 1em;
             margin-top: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #333;
+            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.05);
         }
 
         .contact-form button {
             display: inline-block;
             padding: 15px 30px;
-            background: rgb(1, 0, 244);
+            background: linear-gradient(45deg, #0100f4, #00aaff);
             color: #fff;
             text-decoration: none;
             border-radius: 30px;
             font-size: 1.2em;
-            transition: background 0.3s ease-in-out;
+            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
             cursor: pointer;
             border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .contact-form button:hover {
-            background: rgba(1, 0, 244, 0.8);
+            background: linear-gradient(45deg, #00aaff, #0100f4);
+            transform: translateY(-5px);
         }
 
         .contact-info p {
@@ -354,13 +406,14 @@
             border-radius: 30px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background 0.3s ease-in-out;
+            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
             text-decoration: none;
             font-size: 16px;
         }
 
         .floating-btn:hover {
             background: rgba(1, 0, 244, 0.8);
+            transform: translateY(-5px);
         }
 
         footer {
@@ -369,6 +422,7 @@
             text-align: center;
             padding: 20px 0;
             border-top: 3px solid #1a1f26;
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .social-media {
@@ -408,6 +462,28 @@
             }
         }
 
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
         /* Styles for Tablets */
         @media (max-width: 768px) {
             .container {
@@ -418,18 +494,12 @@
                 display: flex;
             }
 
-            .hero nav ul {
-                display: none;
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .hero nav ul.active {
+            nav ul.active {
                 display: flex;
                 transform: translateX(0);
             }
 
-            .hero nav ul li {
+            nav ul li {
                 padding: 10px 0;
             }
 
@@ -451,7 +521,7 @@
 
             .map-section {
                 border-right: none;
-                border-bottom: 1px solid rgb(1, 0, 244);
+                border-bottom: 1px solid rgba(0, 0, 244, 0.2);
             }
 
             .map-section, .reviews-section {
@@ -473,17 +543,11 @@
                 display: flex;
             }
 
-            .hero nav ul {
-                display: none;
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .hero nav ul.active {
+            nav ul.active {
                 display: flex;
             }
 
-            .hero nav ul li {
+            nav ul li {
                 padding: 10px 0;
             }
 
