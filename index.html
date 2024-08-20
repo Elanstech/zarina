@@ -401,7 +401,7 @@
         .floating-btn {
             position: fixed;
             bottom: 30px;
-            right: 30px;
+            left: 30px;
             background: rgb(1, 0, 244);
             color: #fff;
             padding: 15px 20px;
@@ -581,7 +581,7 @@
             }
 
             .floating-btn {
-                right: 10px;
+                left: 10px;
                 bottom: 10px;
             }
 
@@ -650,7 +650,8 @@
                 <div class="card-content">
                     <p>To view our available properties, please visit our MLS listings:</p>
                     <a href="https://onekeymls.com/realtor/offices/East-Coast-Realty-by-Zarina-II/EACS01" target="_blank" class="btn">View MLS Listings</a>
-                                </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -678,7 +679,7 @@
                 <div class="contact-content">
                     <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
                 </div>
-                <form class="contact-form" id="contactForm" action="https://example.com/submit-form" method="post">
+                <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Your Name" required>
                     </div>
@@ -745,6 +746,18 @@
             hamburger.addEventListener('click', () => {
                 navList.classList.toggle('active');
                 hamburger.classList.toggle('active');
+            });
+
+            // Handle the "Contact Us" form submission
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const formData = new FormData(this);
+                const mailtoLink = `mailto:broker@eastcoastrealty.net?subject=Contact Form Submission&body=${encodeURIComponent(
+                    `Name: ${formData.get('name')}\nEmail: ${formData.get('email')}\nMessage: ${formData.get('message')}`
+                )}`;
+
+                window.location.href = mailtoLink;
             });
         });
     </script>
