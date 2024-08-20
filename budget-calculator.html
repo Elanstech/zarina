@@ -12,13 +12,19 @@
             font-family: 'Quicksand', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('https://github.com/Elanstech/zarina/blob/main/backround.jpg?raw=true') no-repeat center center/cover;
+            background-color: #f9f9f9;
             color: #333;
             transition: all 0.3s ease-in-out;
         }
 
         html {
             scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
         }
 
         header {
@@ -28,10 +34,9 @@
             z-index: 1000;
             display: flex;
             align-items: center;
-            background: transparent;
             position: fixed;
             justify-content: space-between;
-            animation: fadeInDown 1s ease-in-out;
+            background-color: #fff;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
@@ -64,7 +69,7 @@
         }
 
         nav a {
-            color: #fff;
+            color: #333;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
@@ -85,7 +90,7 @@
         .hamburger div {
             width: 25px;
             height: 3px;
-            background-color: #fff;
+            background-color: #000;
             margin: 4px 0;
             transition: all 0.3s ease-in-out;
         }
@@ -117,8 +122,8 @@
         }
 
         .hero {
-            background: rgba(0, 0, 0, 0.5);
-            height: 30vh;
+            background: url('https://example.com/dti-calculator-bg.jpg') no-repeat center center/cover;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -126,20 +131,28 @@
             color: #fff;
             text-align: center;
             position: relative;
-            padding: 20px;
         }
 
         .hero h1 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 2.5em;
+            font-size: 3em;
             margin-bottom: 20px;
             animation: fadeInDown 1s ease-in-out;
+            border: 5px solid rgb(1, 0, 244);
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .section {
             padding: 50px 20px;
-            background: rgba(255, 255, 255, 0.9);
-            margin: 20px;
+            background: #fff;
+            margin-top: 20px;
             transition: all 0.3s ease-in-out;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -154,160 +167,63 @@
             animation: fadeInDown 1s ease-in-out;
         }
 
-        .card {
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin-bottom: 30px;
-            transition: transform 0.3s ease-in-out;
-            animation: fadeInUp 1s ease-in-out;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card-content {
-            padding: 15px;
-            text-align: left;
-        }
-
-        .card-content h3 {
-            font-size: 1.8em;
-            color: rgb(1, 0, 244);
-            margin-bottom: 10px;
-        }
-
-        .card-content p {
-            font-size: 1em;
-            line-height: 1.6;
-            color: #666;
-        }
-
         .calculator-form {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-        }
-
-        .calculator-form .form-group {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            gap: 30px;
+            padding: 0 20px;
         }
 
         .calculator-form label {
-            font-size: 1.2em;
+            font-weight: bold;
             color: #333;
-            flex: 1;
+            font-size: 1.2rem;
         }
 
         .calculator-form input {
-            flex: 2;
-            padding: 10px;
+            padding: 15px;
             border-radius: 5px;
             border: 1px solid #ccc;
-            font-size: 1.1em;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .calculator-form input:focus {
+            border-color: rgb(1, 0, 244);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
         }
 
         .calculator-form button {
+            padding: 15px;
             background: rgb(1, 0, 244);
             color: #fff;
-            padding: 15px;
-            border-radius: 30px;
-            font-size: 1.2em;
-            transition: background 0.3s ease-in-out;
-            cursor: pointer;
             border: none;
+            border-radius: 30px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
-            align-self: center;
-            width: 50%;
+            width: 100%;
         }
 
         .calculator-form button:hover {
             background: rgba(1, 0, 244, 0.8);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
         .result {
-            margin-top: 20px;
-            font-size: 1.5em;
-            color: rgb(1, 0, 244);
+            margin-top: 40px;
+            font-size: 1.8rem;
+            color: #333;
             text-align: center;
-        }
-
-        .contact-section {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 50px 20px;
-            margin: 20px 0;
-            transition: all 0.3s ease-in-out;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-card {
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            margin: auto;
-            max-width: 600px;
-        }
-
-        .contact-content {
-            margin-bottom: 20px;
-        }
-
-        .contact-content p {
-            font-size: 1.2em;
-            line-height: 1.5;
-            color: #fff;
-        }
-
-        .contact-form .form-group {
-            margin-bottom: 15px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 30px;
-            font-size: 1em;
-            margin-top: 10px;
-        }
-
-        .contact-form button {
-            display: inline-block;
-            padding: 15px 30px;
-            background: rgb(1, 0, 244);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 1.2em;
-            transition: background 0.3s ease-in-out;
-            cursor: pointer;
-            border: none;
-        }
-
-        .contact-form button:hover {
-            background: rgba(1, 0, 244, 0.8);
-        }
-
-        .contact-info p {
-            margin: 10px 0;
-            font-size: 1.1em;
-            color: #fff;
-        }
-
-        .contact-info a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
+            background: #f3f4f6;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
         }
 
         footer {
@@ -318,13 +234,8 @@
             border-top: 3px solid #1a1f26;
         }
 
-        .social-media {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-
         .social-media a {
+            color: #fff;
             margin: 0 10px;
             transition: transform 0.3s ease-in-out;
         }
@@ -348,6 +259,17 @@
             from {
                 opacity: 0;
                 transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -396,6 +318,10 @@
 
             .hamburger {
                 display: flex;
+                position: absolute;
+                top: 20px;
+                right: 50%;
+                transform: translateX(50%);
             }
 
             header nav ul {
@@ -416,54 +342,35 @@
                 padding: 20px 10px;
             }
 
-            .card-content h3 {
-                font-size: 1.2em;
-            }
-
-            .card-content p {
-                font-size: 0.9em;
-            }
-
-            .calculator-form label {
-                font-size: 1em;
-            }
-
-            .calculator-form input {
-                font-size: 1em;
-            }
-
             .calculator-form button {
-                font-size: 1em;
-                padding: 10px;
+                font-size: 1.2rem;
             }
 
             .result {
+                font-size: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+                padding: 10px;
+            }
+
+            .hero p {
                 font-size: 1.2em;
-            }
-
-            .contact-form input,
-            .contact-form textarea {
-                padding: 10px;
-            }
-
-            .contact-form button {
-                font-size: 1em;
-                padding: 10px;
             }
         }
     </style>
 </head>
 <body>
-    <header data-aos="fade-down">
+    <header>
         <div class="logo">
             <a href="index.html">
-                <img src="https://github.com/Elanstech/zarina/blob/main/logo.png?raw=true" alt="East Coast Realty by Zarina">
+                <img src="https://example.com/logo.png" alt="East Coast Realty by Zarina">
             </a>
         </div>
         <nav>
             <ul class="nav-list">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
                 <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
                 <li><a href="home-worth.html">What's Your Home Worth?</a></li>
                 <li><a href="mls-listings.html">MLS Listings</a></li>
@@ -480,70 +387,30 @@
 
     <div class="hero">
         <h1>Debt-to-Income (DTI) Calculator</h1>
+        <p>Calculate your debt-to-income ratio to assess your financial health.</p>
     </div>
 
     <section class="section" data-aos="fade-up">
-        <div class="container">
-            <h2>Calculate Your DTI</h2>
-            <div class="card">
-                <div class="card-content">
-                    <h3>Find out how much home you can afford</h3>
-                    <form class="calculator-form" id="dtiForm">
-                        <div class="form-group">
-                            <label for="monthlyIncome">Monthly Income ($):</label>
-                            <input type="number" id="monthlyIncome" placeholder="Enter your monthly income" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="monthlyDebt">Monthly Debt Payments ($):</label>
-                            <input type="number" id="monthlyDebt" placeholder="Enter your monthly debt payments" required>
-                        </div>
-                        <button type="submit">Calculate DTI</button>
-                    </form>
-                    <div class="result" id="result"></div>
-                </div>
+        <h2>Calculate Your DTI</h2>
+        <form class="calculator-form" id="dtiForm">
+            <div class="form-group">
+                <label for="monthlyIncome">Monthly Income ($):</label>
+                <input type="number" id="monthlyIncome" placeholder="Enter your monthly income" required>
             </div>
-        </div>
+            <div class="form-group">
+                <label for="monthlyDebt">Monthly Debt Payments ($):</label>
+                <input type="number" id="monthlyDebt" placeholder="Enter your monthly debt payments" required>
+            </div>
+            <button type="submit">Calculate DTI</button>
+        </form>
+        <div class="result" id="result"></div>
     </section>
 
-    <section class="contact-section" id="contact" data-aos="fade-right">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <div class="contact-card" data-aos="fade-up">
-                <div class="contact-content">
-                    <p>Have questions or want to get in touch? Reach out to us via the form below:</p>
-                    <form class="contact-form" id="contactForm" action="mailto:frontdesk@eastcoastrealty.net" method="post" enctype="text/plain">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit">Send Message</button>
-                    </form>
-                    <p>Email: <a href="mailto:frontdesk@eastcoastrealty.net">frontdesk@eastcoastrealty.net</a></p>
-                    <p>Phone: <a href="tel:+17182712121">718-271-2121</a></p>
-                </div>
-            </div>
-            <div class="social-media" data-aos="fade-up">
-                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="btn">
-                    <i class="fab fa-facebook-f"></i> Facebook
-                </a>
-            </div>
+    <footer>
+        <div class="social-media">
+            <a href="https://www.facebook.com/zarina.yusupova" target="_blank"><i class="fab fa-facebook-f"></i></a>
         </div>
-    </section>
-
-    <footer data-aos="fade-up">
-        <div class="container">
-            <div class="social-media">
-                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="facebook-button">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-            </div>
-            <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p>
-        </div>
+        <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -554,33 +421,32 @@
                 easing: 'ease-in-out',
                 once: true
             });
-        });
 
-        const hamburger = document.getElementById('hamburger');
-        const navUL = document.querySelector('.nav-list');
+            const hamburger = document.getElementById('hamburger');
+            const navUL = document.querySelector('.nav-list');
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navUL.classList.toggle('active');
-        });
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navUL.classList.toggle('active');
+            });
 
-        // DTI Calculation Logic
-        document.getElementById('dtiForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const income = parseFloat(document.getElementById('monthlyIncome').value);
-            const debt = parseFloat(document.getElementById('monthlyDebt').value);
-            if (!isNaN(income) && !isNaN(debt) && income > 0) {
-                const dti = (debt / income) * 100;
-                document.getElementById('result').textContent = `Your Debt-to-Income Ratio (DTI) is ${dti.toFixed(2)}%.`;
-            } else {
-                document.getElementById('result').textContent = 'Please enter valid numbers for income and debt.';
-            }
-        });
+            // DTI Calculation Logic
+            const dtiForm = document.getElementById('dtiForm');
+            const resultDiv = document.getElementById('result');
 
-        // Prevent default form submission for "Contact Us" form
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('Form submission is disabled for this demo.');
+            dtiForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const monthlyIncome = parseFloat(document.getElementById('monthlyIncome').value);
+                const monthlyDebt = parseFloat(document.getElementById('monthlyDebt').value);
+
+                if (monthlyIncome > 0 && monthlyDebt >= 0) {
+                    const dti = ((monthlyDebt / monthlyIncome) * 100).toFixed(2);
+                    resultDiv.textContent = `Your Debt-to-Income Ratio is ${dti}%.`;
+                } else {
+                    resultDiv.textContent = "Please enter valid income and debt amounts.";
+                }
+            });
         });
     </script>
 </body>
