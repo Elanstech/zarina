@@ -8,164 +8,128 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+        /* Reuse common styles from the main page */
         body {
             font-family: 'Quicksand', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #f9f9f9, #fff);
+            background-color: #f9f9f9;
             color: #333;
             transition: all 0.3s ease-in-out;
-        }
-
-        header {
-            background: #ff6600;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            color: #fff;
-        }
-
-        .logo img {
-            height: 50px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            margin: 0;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            text-transform: uppercase;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #333;
+            overflow-x: hidden;
         }
 
         .hero {
-            background: url('https://example.com/faq-bg.jpg') no-repeat center center/cover;
-            height: 60vh;
+            background: linear-gradient(135deg, rgba(1, 0, 244, 0.7), rgba(255, 255, 255, 0.7)), url('https://github.com/Elanstech/zarina/blob/main/faqbackground.jpg?raw=true') no-repeat center center/cover;
+            height: 70vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             color: #fff;
             text-align: center;
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin: 0;
-            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3em;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+            animation: fadeInDown 1s ease-in-out;
         }
 
-        .section {
+        .faq-section {
             padding: 60px 20px;
             background: #fff;
             border-radius: 15px;
-            margin: 20px auto;
-            max-width: 900px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .section:hover {
-            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: -50px;
+            animation: fadeInUp 1.2s ease-in-out;
         }
 
         .faq-item {
-            background: #f3f4f6;
-            border-radius: 10px;
-            padding: 20px;
             margin-bottom: 20px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, background 0.3s ease;
-        }
-
-        .faq-item:hover {
-            transform: translateY(-5px);
-            background: #e3e4e6;
         }
 
         .faq-item h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: #ff6600;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+            color: rgb(1, 0, 244);
             cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .faq-item h3:hover {
-            color: #333;
+            margin-bottom: 10px;
+            transition: color 0.3s ease-in-out;
         }
 
         .faq-item p {
-            margin: 0;
-            font-size: 1.2rem;
+            font-size: 1em;
             line-height: 1.6;
             color: #666;
             display: none;
-            overflow: hidden;
+            transition: all 0.3s ease-in-out;
         }
 
-        .faq-item.open p {
+        .faq-item.active p {
             display: block;
         }
 
-        footer {
-            background: #333;
-            color: #fff;
-            padding: 30px 0;
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .social-media a {
-            color: #fff;
-            margin: 0 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .social-media a:hover {
-            transform: scale(1.1);
-        }
-
         @media (max-width: 768px) {
-            .section {
-                padding: 40px 15px;
+            .hero {
+                height: 60vh;
+                clip-path: none;
+                padding: 20px;
             }
 
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.5em;
+                padding: 15px;
+            }
+
+            .faq-section {
+                padding: 40px 20px;
             }
 
             .faq-item h3 {
-                font-size: 1.5rem;
+                font-size: 1.6em;
             }
         }
+
+        @media (max-width: 480px) {
+            .hero {
+                height: 50vh;
+                padding: 10px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+                padding: 10px;
+            }
+
+            .faq-section {
+                padding: 30px 15px;
+            }
+
+            .faq-item h3 {
+                font-size: 1.4em;
+            }
+        }
+
     </style>
 </head>
 <body>
-    <header>
+    <header data-aos="fade-down">
         <div class="logo">
             <a href="index.html">
-                <img src="https://example.com/logo.png" alt="East Coast Realty by Zarina">
+                <img src="https://github.com/Elanstech/zarina/blob/main/logo.png?raw=true" alt="East Coast Realty by Zarina">
             </a>
         </div>
         <nav>
-            <ul>
+            <ul class="nav-list">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="fair-housing-notice.html">Fair Housing Notice</a></li>
                 <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
                 <li><a href="home-worth.html">What's Your Home Worth?</a></li>
                 <li><a href="mls-listings.html">MLS Listings</a></li>
@@ -175,42 +139,44 @@
         </nav>
     </header>
 
-    <div class="hero">
+    <section class="hero">
         <h1>Frequently Asked Questions</h1>
-    </div>
+    </section>
 
-    <section class="section" data-aos="fade-up">
-        <div class="faq-item" data-aos="fade-up">
-            <h3>What services do you offer?</h3>
-            <p>We offer a range of real estate services including buying, selling, and rental assistance, as well as property management, market analysis, and investment advice.</p>
-        </div>
-        <div class="faq-item" data-aos="fade-up">
-            <h3>How can I get a market analysis of my property?</h3>
-            <p>You can request a market analysis by filling out the form on our "What's Your Home Worth?" page, or by contacting us directly. We'll assess your property and provide a detailed report.</p>
-        </div>
-        <div class="faq-item" data-aos="fade-up">
-            <h3>What areas do you serve?</h3>
-            <p>We serve New York City and the surrounding areas, including Queens, Brooklyn, Manhattan, and Long Island. Our expertise extends to both residential and commercial properties.</p>
-        </div>
-        <div class="faq-item" data-aos="fade-up">
-            <h3>What is your commission rate?</h3>
-            <p>Our commission rates are competitive and vary depending on the type of service and property. Please contact us for a personalized quote.</p>
-        </div>
-        <div class="faq-item" data-aos="fade-up">
-            <h3>How do I get in touch with an agent?</h3>
-            <p>You can reach out to us via our contact page, call us directly, or visit our office. Our agents are always ready to assist you with your real estate needs.</p>
-        </div>
-        <div class="faq-item" data-aos="fade-up">
-            <h3>Can you help with mortgage financing?</h3>
-            <p>Yes, we can connect you with trusted mortgage brokers and lenders who can help you find the best financing options for your situation.</p>
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-item" data-aos="fade-up">
+                <h3>How do I know the value of my home?</h3>
+                <p>You can use our "What's Your Home Worth?" calculator or get a detailed appraisal by contacting us directly.</p>
+            </div>
+            <div class="faq-item" data-aos="fade-up">
+                <h3>What is the process of buying a home?</h3>
+                <p>Buying a home involves several steps, including pre-qualification, searching for properties, making an offer, and closing the deal. We guide you through each step to ensure a smooth process.</p>
+            </div>
+            <div class="faq-item" data-aos="fade-up">
+                <h3>Can I get assistance with mortgage options?</h3>
+                <p>Yes, we provide assistance with mortgage options, helping you find the best rates and terms that suit your financial situation.</p>
+            </div>
+            <div class="faq-item" data-aos="fade-up">
+                <h3>What areas do you serve?</h3>
+                <p>We serve the New York City area, including Queens, Brooklyn, Manhattan, and beyond. Contact us to see how we can assist in your specific location.</p>
+            </div>
+            <div class="faq-item" data-aos="fade-up">
+                <h3>How do I schedule a viewing?</h3>
+                <p>You can schedule a viewing by contacting us through our website or by calling our office directly. We will work with your schedule to find a convenient time.</p>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <div class="social-media">
-            <a href="https://www.facebook.com/zarina.yusupova" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <footer data-aos="fade-up">
+        <div class="container">
+            <div class="social-media">
+                <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="facebook-button">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+            <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p>
         </div>
-        <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -222,11 +188,11 @@
                 once: true
             });
 
-            const faqItems = document.querySelectorAll('.faq-item h3');
+            const faqItems = document.querySelectorAll('.faq-item');
+
             faqItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    const parent = item.parentElement;
-                    parent.classList.toggle('open');
+                item.querySelector('h3').addEventListener('click', () => {
+                    item.classList.toggle('active');
                 });
             });
         });
