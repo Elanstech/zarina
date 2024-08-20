@@ -26,18 +26,19 @@
             background-color: transparent;
             padding: 15px 0;
             border-bottom: none;
-            position: absolute;
+            position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: slight shadow for separation */
         }
 
         .main-header .logo img {
-            height: 50px;
-            filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.7));
+            height: 80px; /* Adjust the logo size as needed */
+            filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.7)); /* Maintain visibility */
         }
 
         .main-header .main-nav ul {
@@ -50,16 +51,16 @@
 
         .main-header .main-nav ul li a {
             text-decoration: none;
-            color: #fff;
+            color: #fff; /* White text for navigation links */
             font-weight: 600;
             padding: 8px 15px;
             border-radius: 5px;
             transition: background-color 0.3s ease, color 0.3s ease;
-            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7)); /* Text shadow for readability */
         }
 
         .main-header .main-nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.2); /* Slight background change on hover */
             color: #fff;
         }
 
@@ -74,7 +75,6 @@
             text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
         }
 
-        /* Mobile Styles */
         @media (max-width: 768px) {
             .main-header .main-nav ul {
                 display: none;
@@ -433,6 +433,7 @@
         </div>
     </footer>
 
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
