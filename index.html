@@ -23,12 +23,12 @@
         }
 
         .main-header {
-            background-color: #00aaff;
+            background-color: transparent; /* Transparent background */
             padding: 15px 0;
-            border-bottom: 2px solid #005f99;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
+            border-bottom: none; /* Remove the border */
+            position: absolute; /* Position it over the content */
             top: 0;
+            width: 100%;
             z-index: 1000;
         }
 
@@ -40,6 +40,7 @@
 
         .main-header .logo img {
             height: 50px;
+            filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.7)); /* Add drop shadow to logo */
         }
 
         .main-header .main-nav ul {
@@ -52,32 +53,17 @@
 
         .main-header .main-nav ul li a {
             text-decoration: none;
-            color: #fff;
+            color: #fff; /* White text for contrast */
             font-weight: 600;
             padding: 8px 15px;
             border-radius: 5px;
             transition: background-color 0.3s ease, color 0.3s ease;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Add text shadow for readability */
         }
 
         .main-header .main-nav ul li a:hover {
-            background-color: #005f99;
+            background-color: rgba(255, 255, 255, 0.2); /* Slightly visible background on hover */
             color: #fff;
-        }
-
-        .main-header .contact-info p {
-            margin: 0;
-            font-weight: 600;
-            color: #fff;
-        }
-
-        .main-header .contact-info p a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .main-header .contact-info p a:hover {
-            color: #005f99;
         }
 
         .main-header .mobile-menu-toggle {
@@ -87,7 +73,8 @@
 
         .main-header .mobile-menu-toggle i {
             font-size: 24px;
-            color: #fff;
+            color: #fff; /* White icon for visibility */
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* Add text shadow for readability */
         }
 
         /* Mobile Styles */
@@ -95,7 +82,7 @@
             .main-header .main-nav ul {
                 display: none;
                 flex-direction: column;
-                background-color: #00aaff;
+                background-color: rgba(0, 0, 0, 0.8); /* Slightly darker background for mobile menu */
                 position: absolute;
                 top: 100%;
                 right: 0;
@@ -114,7 +101,7 @@
         }
 
         .hero {
-            background: url('https://github.com/Elanstech/zarina/blob/main/homeworthbackround.jpg?raw=true') no-repeat center center/cover;
+            background: url('your-new-background-image.jpg') no-repeat center center/cover;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -303,7 +290,7 @@
         }
 
         .contact-section {
-            background: url('https://github.com/Elanstech/zarina/blob/main/staffbr.jpg?raw=true') no-repeat center center/cover;
+            background: url('your-new-contact-image.jpg') no-repeat center center/cover;
             padding: 50px 20px;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
@@ -602,10 +589,6 @@
                     <li><a href="budget-calculator.html">DTI Calculator</a></li>
                 </ul>
             </nav>
-            <div class="contact-info">
-                <p><a href="tel:+17182712121">718-271-2121</a></p>
-                <p><a href="mailto:broker@eastcoastrealty.net">broker@eastcoastrealty.net</a></p>
-            </div>
             <div class="mobile-menu-toggle" id="mobile-menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
