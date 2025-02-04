@@ -334,7 +334,23 @@ html {
 /* ============================================
    Map and Reviews Section
 ============================================ */
-/* Redesigned Map Section */
+/* Container for Map and Reviews (Side by Side on Desktop) */
+.map-reviews-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* Both sections share equal width */
+.map-section,
+.reviews-section {
+  flex: 1 1 0;
+  min-width: 300px;
+}
+
+/* Redesign for the Map Section Card */
 .map-section {
   background: #fff;
   border-radius: 15px;
@@ -367,7 +383,7 @@ html {
 
 .map-container iframe {
   width: 100%;
-  height: 300px; /* Reduced height for a better layout */
+  height: 300px; /* Reduced height for better layout */
   border: 0;
 }
 
@@ -387,6 +403,30 @@ html {
 .get-directions:hover {
   background: linear-gradient(45deg, #00aaff, #0100f4);
   transform: translateY(-3px);
+}
+
+/* Redesign for the Reviews Section Card */
+.reviews-section {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.reviews-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: rgb(1, 0, 244);
+}
+
+/* Media Query for Mobile (Stacked Layout) */
+@media (max-width: 768px) {
+  .map-reviews-container {
+    flex-direction: column;
+  }
 }
 
 /* ============================================
@@ -785,19 +825,6 @@ footer {
       <div class="elfsight-app-02075f07-4a0b-4bfc-adf6-5578c4f26b9c" data-elfsight-app-lazy></div>
     </div>
   </div>
-</section>
-
-
-   <section class="section contact-section" id="contact" data-aos="fade-right">
-    <div class="container">
-        <h2>Contact Us</h2>
-        <div class="elfsight-contact-form" data-aos="fade-up">
-            <!-- Include the Elfsight platform script (if not already loaded elsewhere) -->
-            <script src="https://static.elfsight.com/platform/platform.js" async></script>
-            <!-- Elfsight contact form widget -->
-            <div class="elfsight-app-5a416045-af4c-479f-95dc-b5f3dcf2f72a" data-elfsight-app-lazy></div>
-        </div>
-    </div>
 </section>
 
 
