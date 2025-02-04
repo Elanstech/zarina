@@ -334,45 +334,59 @@ html {
 /* ============================================
    Map and Reviews Section
 ============================================ */
-.map-reviews-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    animation: fadeInUp 1s ease-in-out;
-    position: relative;
-    flex-direction: column;
+/* Redesigned Map Section */
+.map-section {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.map-section, .reviews-section {
-    flex: 1;
-    padding: 20px;
-    max-width: 100%;
+.map-section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: rgb(1, 0, 244);
+}
+
+.map-section p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  color: #555;
 }
 
 .map-container {
-    position: relative;
-    overflow: hidden;
-    padding-top: 56.25%;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  margin: 0 auto 20px;
+  max-width: 100%;
 }
 
 .map-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-    transition: transform 0.3s ease-in-out;
+  width: 100%;
+  height: 300px; /* Reduced height for a better layout */
+  border: 0;
 }
 
-.map-container iframe:hover {
-    transform: scale(1.03);
+/* Get Directions Button */
+.get-directions {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #0100f4, #00aaff);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1em;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.get-directions:hover {
+  background: linear-gradient(45deg, #00aaff, #0100f4);
+  transform: translateY(-3px);
 }
 
 /* ============================================
@@ -749,22 +763,30 @@ footer {
 </section>
 
 
-    <section class="section" id="location-reviews" data-aos="fade-up">
-        <div class="container map-reviews-container">
-            <div class="map-section">
-                <h2>Our Location</h2>
-                <p>Find us on the map below to visit our office or get directions.</p>
-                <div class="map-container" data-aos="fade-up">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.474689163142!2d-73.8620552!3d40.7295793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25e370ebbf043%3A0x7e9b571bf8451954!2s96-14%20Queens%20Blvd%2C%20Flushing%2C%20NY%2011374!5e0!3m2!1sen!2sus!4v1727986005704!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <p>Our Address: <a href="https://www.google.com/maps/place/East+Coast+Realty+by+Zarina/@40.7300878,-73.8637973,17.74z/data=!4m6!3m5!1s0x89c25e346f9f0617:0xb19ba7d5ff9f8d02!8m2!3d40.7295793!4d-73.8620552!16s%2Fg%2F1w347jmk?entry=ttu&g_ep=EgoyMDI0MTAwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">96-14 Queens Blvd, Rego Park, NY 11374</a></p>
-            </div>
-            <div class="reviews-section">
-                <h2>Google Reviews</h2>
-                <div class="elfsight-app-02075f07-4a0b-4bfc-adf6-5578c4f26b9c" data-elfsight-app-lazy></div>
-            </div>
-        </div>
-    </section>
+ <section class="section" id="location-reviews" data-aos="fade-up">
+  <div class="container map-reviews-container">
+    <div class="map-section">
+      <h2>Our Location</h2>
+      <p>Visit our office for personalized real estate consultations. Find us on the map below.</p>
+      <div class="map-container" data-aos="fade-up">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.474689163142!2d-73.8620552!3d40.7295793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25e370ebbf043%3A0x7e9b571bf8451954!2s96-14%20Queens%20Blvd%2C%20Flushing%2C%20NY%2011374!5e0!3m2!1sen!2sus!4v1727986005704!5m2!1sen!2sus" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <a href="https://www.google.com/maps/place/East+Coast+Realty+by+Zarina/@40.7300878,-73.8637973,17.74z/data=!4m6!3m5!1s0x89c25e346f9f0617:0xb19ba7d5ff9f8d02!8m2!3d40.7295793!4d-73.8620552!16s%2Fg%2F1w347jmk?entry=ttu" 
+         target="_blank" class="get-directions">
+         Get Directions
+      </a>
+    </div>
+    <div class="reviews-section">
+      <h2>Google Reviews</h2>
+      <div class="elfsight-app-02075f07-4a0b-4bfc-adf6-5578c4f26b9c" data-elfsight-app-lazy></div>
+    </div>
+  </div>
+</section>
+
 
    <section class="section contact-section" id="contact" data-aos="fade-right">
     <div class="container">
