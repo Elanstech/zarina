@@ -24,28 +24,29 @@
 </head>
    
     <style>
-        body {
-            font-family: 'Quicksand', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-            transition: all 0.3s ease-in-out;
-            overflow-x: hidden;
-        }
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+    overflow-x: hidden;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-       /* Redesigned Header */
+/* ============================================
+   Redesigned Header
+============================================ */
 .main-header {
     position: absolute;
     top: 0;
     width: 100%;
     z-index: 1000;
-    /* Use a semi-transparent dark background with a blur effect so the header stands out
-       yet still shows some of the hero image underneath. */
+    /* Semi-transparent dark background with blur for a modern frosted-glass effect */
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(8px);
     padding: 15px 0;
@@ -58,7 +59,7 @@
     padding: 0 20px;
 }
 
-/* Wrap the logo in a white container to contrast the dark background */
+/* Logo container with white background to make the navy logo pop */
 .main-header .logo {
     background: #fff;
     padding: 5px 10px;
@@ -66,13 +67,12 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Ensure the logo image fits well inside its container */
 .main-header .logo img {
     height: 75px;
     display: block;
 }
 
-/* Navigation styles remain similar */
+/* Navigation styles */
 .main-header .main-nav ul {
     list-style: none;
     display: flex;
@@ -95,7 +95,7 @@
     color: #fff;
 }
 
-/* Mobile menu toggle (if applicable) */
+/* Mobile menu toggle */
 .main-header .mobile-menu-toggle {
     display: none;
     cursor: pointer;
@@ -106,7 +106,7 @@
     color: #fff;
 }
 
-/* Responsive Mobile Styles */
+/* Responsive Mobile Styles for Header */
 @media (max-width: 768px) {
     .main-header .main-nav ul {
         display: none;
@@ -119,484 +119,515 @@
         text-align: center;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
-
+    
     .main-header .main-nav ul.active {
         display: flex;
     }
-
+    
     .main-header .mobile-menu-toggle {
         display: block;
     }
 }
-        .hero {
-            background: url('DSC03693.JPG') no-repeat center center/cover;
-            height: 180vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-align: center;
-            position: relative;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-        }
-
-        .hero h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3em;
-            margin-bottom: 20px;
-            animation: fadeInDown 1s ease-in-out;
-            padding: 20px;
-            border-radius: 15px;
-            background: rgba(0, 0, 0, 0.5);
-            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .hero h1:hover {
-            transform: scale(1.05);
-        }
-
-        .hero p {
-            font-size: 1.5em;
-            animation: fadeInUp 1s ease-in-out;
-            margin-bottom: 20px;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        .button-container {
-            margin-top: 20px;
-            animation: fadeIn 1.2s ease-in-out;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 30px;
-            background: linear-gradient(45deg, #0100f4, #00aaff);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 1.2em;
-            margin: 10px;
-            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .btn:hover {
-            background: linear-gradient(45deg, #00aaff, #0100f4);
-            transform: translateY(-5px);
-        }
-
-        .section {
-            padding: 60px 20px;
-            background: linear-gradient(to bottom, #fff, #f0f0f0);
-            margin-top: 0;
-            transition: all 0.3s ease-in-out;
-            border-radius: 15px 15px 0 0;
-            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            position: relative;
-            z-index: 5;
-        }
-
-        .section h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5em;
-            color: rgb(1, 0, 244);
-            text-align: center;
-            margin-bottom: 20px;
-            animation: fadeInDown 1s ease-in-out;
-        }
-
-        .about-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            padding: 20px;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            animation: fadeInUp 1s ease-in-out;
-        }
-
-        .about-content, .about-image {
-            flex: 1;
-            padding: 20px;
-        }
-
-        .about-image {
-            text-align: center;
-        }
-
-        .about-image img {
-            max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .about-image img:hover {
-            transform: scale(1.05);
-        }
-
-        .about-content h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8em;
-            color: rgb(1, 0, 244);
-            margin-bottom: 10px;
-        }
-
-        .about-content p {
-            font-size: 1em;
-            line-height: 1.6;
-            color: #666;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .about-content p:hover {
-            color: #000;
-        }
-
-        .about-contact {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .about-contact p {
-            margin: 5px 0;
-        }
-
-        .about-contact a {
-            color: rgb(1, 0, 244);
-            text-decoration: none;
-        }
-
-        .about-contact a:hover {
-            text-decoration: underline;
-        }
-
-        .map-reviews-container {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-            animation: fadeInUp 1s ease-in-out;
-            position: relative;
-            flex-direction: column;
-        }
-
-        .map-section, .reviews-section {
-            flex: 1;
-            padding: 20px;
-            max-width: 100%;
-        }
-
-        .map-container {
-            position: relative;
-            overflow: hidden;
-            padding-top: 56.25%;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .map-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .map-container iframe:hover {
-            transform: scale(1.03);
-        }
-
-        .contact-section {
-            background: url('https://github.com/Elanstech/zarina/blob/main/staffbr.jpg?raw=true') no-repeat center center/cover;
-            padding: 50px 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            color: #fff;
-            text-align: center;
-            margin-top: 20px;
-            animation: fadeInRight 1s ease-in-out;
-        }
-
-        .contact-card {
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            margin: auto;
-            max-width: 600px;
-            transform: translateY(-20px);
-            animation: fadeInUp 1s ease-in-out;
-        }
-
-        .contact-content {
-            margin-bottom: 20px;
-        }
-
-        .contact-content p {
-            font-size: 1.2em;
-            line-height: 1.5;
-        }
-
-        .contact-form .form-group {
-            margin-bottom: 15px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 30px;
-            font-size: 1em;
-            margin-top: 10px;
-            background: rgba(255, 255, 255, 0.8);
-            color: #333;
-            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            background: rgba(255, 255, 255, 1);
-            transform: scale(1.05);
-        }
-
-        .contact-form button {
-            display: inline-block;
-            padding: 15px 30px;
-            background: linear-gradient(45deg, #0100f4, #00aaff);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 1.2em;
-            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
-            cursor: pointer;
-            border: none;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .contact-form button:hover {
-            background: linear-gradient(45deg, #00aaff, #0100f4);
-            transform: translateY(-5px);
-        }
-
-        .contact-info p {
-            margin: 10px 0;
-            font-size: 1.1em;
-        }
-
-        .contact-info a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        .floating-btn {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            background: rgb(1, 0, 244);
-            color: #fff;
-            padding: 15px 20px;
-            border-radius: 30px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
-            text-decoration: none;
-            font-size: 16px;
-            z-index: 1001;
-        }
-
-        .floating-btn:hover {
-            background: rgba(1, 0, 244, 0.8);
-            transform: translateY(-5px);
-        }
-
-        footer {
-            background: #2b3e50;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            border-top: 3px solid #1a1f26;
-            animation: fadeInUp 1s ease-in-out;
-        }
-
-        .social-media {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-        }
-
-        .social-media a {
-            margin: 0 10px;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .social-media a:hover {
-            transform: scale(1.2);
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        /* Styles for Tablets */
-        @media (max-width: 768px) {
-            .container {
-                width: 90%;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            nav ul {
-                display: none;
-            }
-
-            nav ul.active {
-                display: flex;
-                transform: translateX(0);
-            }
-
-            .section {
-                padding: 30px 20px;
-            }
-
-            .about-container {
-                flex-direction: column;
-            }
-
-            .about-content, .about-image {
-                padding: 10px;
-            }
-
-            .map-reviews-container {
-                flex-direction: column;
-            }
-
-            .map-section {
-                border-right: none;
-                border-bottom: 1px solid rgba(0, 0, 244, 0.2);
-            }
-
-            .map-section, .reviews-section {
-                max-width: 100%;
-            }
-        }
-
-        /* Styles for Mobile Phones */
-        @media (max-width: 480px) {
-            .container {
-                width: 95%;
-            }
-
-            .hero .logo img {
-                height: 50px;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            nav ul.active {
-                display: flex;
-                transform: translateX(0);
-            }
-
-            nav ul li {
-                padding: 10px 0;
-            }
-
-            .hero h1 {
-                font-size: 2.5em;
-                padding: 10px;
-            }
-
-            .hero p {
-                font-size: 1.2em;
-            }
-
-            .section {
-                padding: 20px 10px;
-            }
-
-            .about-content h3 {
-                font-size: 1.2em;
-            }
-
-            .about-content p {
-                font-size: 0.9em;
-            }
-
-            .about-image {
-                margin-bottom: 10px;
-            }
-
-            .floating-btn {
-                left: 10px;
-                bottom: 10px;
-            }
-
-            .hero, .map-reviews-container, .contact-section, footer {
-                padding-left: 10px;
-                padding-right: 10px;
-            }
-        }
+
+/* ============================================
+   Updated Hero Section
+============================================ */
+.hero {
+    /* Use a gradient overlay to darken the image and enhance text readability */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url('DSC03693.JPG') no-repeat center center/cover;
+    background-attachment: fixed; /* Maintains parallax scrolling effect */
+    height: 100vh; /* Full viewport height for a modern look */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    transition: all 0.3s ease-in-out;
+}
+
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Added overlay for extra contrast */
+    border-radius: 15px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+    animation: fadeInDown 1s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hero h1:hover {
+    transform: scale(1.05);
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-in-out;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease-in-out;
+}
+
+.button-container {
+    margin-top: 20px;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #0100f4, #00aaff);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    margin: 10px;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #00aaff, #0100f4);
+    transform: translateY(-5px);
+}
+
+/* ============================================
+   Section Styles
+============================================ */
+.section {
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, #fff, #f0f0f0);
+    margin-top: 0;
+    transition: all 0.3s ease-in-out;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    position: relative;
+    z-index: 5;
+}
+
+.section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    color: rgb(1, 0, 244);
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+/* ============================================
+   About Section
+============================================ */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.about-content, .about-image {
+    flex: 1;
+    padding: 20px;
+}
+
+.about-image {
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+}
+
+.about-content h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    color: rgb(1, 0, 244);
+    margin-bottom: 10px;
+}
+
+.about-content p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #666;
+    transition: color 0.3s ease-in-out;
+}
+
+.about-content p:hover {
+    color: #000;
+}
+
+.about-contact {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.about-contact p {
+    margin: 5px 0;
+}
+
+.about-contact a {
+    color: rgb(1, 0, 244);
+    text-decoration: none;
+}
+
+.about-contact a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   Map and Reviews Section
+============================================ */
+.map-reviews-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    animation: fadeInUp 1s ease-in-out;
+    position: relative;
+    flex-direction: column;
+}
+
+.map-section, .reviews-section {
+    flex: 1;
+    padding: 20px;
+    max-width: 100%;
+}
+
+.map-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.map-container iframe:hover {
+    transform: scale(1.03);
+}
+
+/* ============================================
+   Contact Section
+============================================ */
+.contact-section {
+    background: url('https://github.com/Elanstech/zarina/blob/main/staffbr.jpg?raw=true') no-repeat center center/cover;
+    padding: 50px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeInRight 1s ease-in-out;
+}
+
+.contact-card {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    margin: auto;
+    max-width: 600px;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.contact-content {
+    margin-bottom: 20px;
+}
+
+.contact-content p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1em;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+}
+
+.contact-form button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #0100f4, #00aaff);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form button:hover {
+    background: linear-gradient(45deg, #00aaff, #0100f4);
+    transform: translateY(-5px);
+}
+
+.contact-info p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.contact-info a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   Floating Button
+============================================ */
+.floating-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: rgb(1, 0, 244);
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    text-decoration: none;
+    font-size: 16px;
+    z-index: 1001;
+}
+
+.floating-btn:hover {
+    background: rgba(1, 0, 244, 0.8);
+    transform: translateY(-5px);
+}
+
+/* ============================================
+   Footer
+============================================ */
+footer {
+    background: #2b3e50;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 3px solid #1a1f26;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.social-media a {
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-media a:hover {
+    transform: scale(1.2);
+}
+
+/* ============================================
+   Animations
+============================================ */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ============================================
+   Tablet and Mobile Adjustments
+============================================ */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    nav ul {
+        display: none;
+    }
+    
+    nav ul.active {
+        display: flex;
+        transform: translateX(0);
+    }
+    
+    .section {
+        padding: 30px 20px;
+    }
+    
+    .about-container {
+        flex-direction: column;
+    }
+    
+    .about-content, .about-image {
+        padding: 10px;
+    }
+    
+    .map-reviews-container {
+        flex-direction: column;
+    }
+    
+    .map-section {
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 244, 0.2);
+    }
+    
+    .map-section, .reviews-section {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+    
+    .hero .logo img {
+        height: 50px;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    nav ul.active {
+        display: flex;
+        transform: translateX(0);
+    }
+    
+    nav ul li {
+        padding: 10px 0;
+    }
+    
+    .hero h1 {
+        font-size: 2.5em;
+        padding: 10px;
+    }
+    
+    .hero p {
+        font-size: 1.2em;
+    }
+    
+    .section {
+        padding: 20px 10px;
+    }
+    
+    .about-content h3 {
+        font-size: 1.2em;
+    }
+    
+    .about-content p {
+        font-size: 0.9em;
+    }
+    
+    .about-image {
+        margin-bottom: 10px;
+    }
+    
+    .floating-btn {
+        left: 10px;
+        bottom: 10px;
+    }
+    
+    .hero, .map-reviews-container, .contact-section, footer {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
     </style>
 </head>
 <body>
