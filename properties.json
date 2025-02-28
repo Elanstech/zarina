@@ -1,0 +1,214 @@
+[
+  {
+    "id": 1,
+    "title": "43-33 48th St, Sunnyside, NY 11104",
+    "address": "43-33 48th St, Sunnyside, NY 11104",
+    "price": "$2800 + Electricity & Gas",
+    "description": "This charming property in Sunnyside offers a perfect blend of comfort and convenience. Located in a vibrant neighborhood with easy access to public transportation, shopping, and dining options. The area is known for its diverse community and welcoming atmosphere, making it an ideal place to call home.",
+    "images": [
+      "43-33Front.jpeg", 
+      "4333living.jpeg", 
+      "4333bed.jpeg",
+      "4333kitchen.jpeg"
+    ],
+    "status": "For Rent",
+    "propertyType": "Apartment",
+    "neighborhood": "Sunnyside",
+    "features": [
+      "Close to subway",
+      "Neighborhood shops",
+      "Pet-friendly building",
+      "Quiet street",
+      "Hardwood floors",
+      "Updated kitchen"
+    ],
+    "specs": [
+      { "icon": "fas fa-map-marker-alt", "text": "Sunnyside, Queens" },
+      { "icon": "fas fa-building", "text": "Apartment" },
+      { "icon": "fas fa-calendar-alt", "text": "Available Now" }
+    ],
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.7383840788397!2d-73.91780368459491!3d40.74282967932833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f031c31af29%3A0xb79548a219c59eb!2s43-33%2048th%20St%2C%20Queens%2C%20NY%2011104!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "7350 198th St, Fresh Meadows, NY 11366",
+    "address": "7350 198th St, Fresh Meadows, NY 11366",
+    "price": "$2,600 Monthly Rent",
+    "description": "Spacious 2-bedroom apartment in the desirable Fresh Meadows neighborhood. This well-maintained unit features a modern kitchen, ample closet space, and a bright living area. Conveniently located near parks, shopping centers, and major transportation routes. Perfect for professionals or small families looking for a comfortable living space in a peaceful area.",
+    "images": [
+      "7350.jpeg",
+      "73501.jpeg", 
+      "73502.jpeg",
+      "73504.jpeg"
+    ],
+    "status": "For Rent",
+    "propertyType": "House",
+    "neighborhood": "Fresh Meadows",
+    "beds": 2,
+    "baths": 1,
+    "features": [
+      "Modern kitchen",
+      "Hardwood floors",
+      "Ample closet space",
+      "Good natural light",
+      "Close to shopping",
+      "Near public transportation",
+      "Dishwasher",
+      "Heat and hot water included"
+    ],
+    "specs": [
+      { "icon": "fas fa-bed", "text": "2 Bedrooms" },
+      { "icon": "fas fa-bath", "text": "1 Bathroom" },
+      { "icon": "fas fa-building", "text": "House" },
+      { "icon": "fas fa-calendar-alt", "text": "Available Now" }
+    ],
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.6453890788397!2d-73.7814034845949!3d40.74488967932833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c260b9c31af29%3A0xb79548a219c59eb!2s7350%20198th%20St%2C%20Fresh%20Meadows%2C%20NY%2011366!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "75-28 66th Dr #1L, Middle Village, NY 11379",
+    "address": "75-28 66th Dr #1L, Middle Village, NY 11379",
+    "price": "$3,000 Monthly Rent",
+    "description": "Beautiful 2-bedroom apartment in a well-maintained building in Middle Village. Featuring updated appliances, hardwood floors, and large windows. The property is located in a quiet, family-friendly neighborhood with excellent schools and convenient access to local amenities. This unit offers the perfect combination of comfort and urban convenience.",
+    "images": [
+      "75-28.jpeg",
+      "75-281.jpeg", 
+      "75-282.jpeg",
+      "75-283.jpeg",
+      "75-284.jpeg",
+      "75-285.jpeg"
+    ],
+    "status": "For Rent",
+    "propertyType": "Apartment",
+    "neighborhood": "Middle Village",
+    "beds": 2,
+    "baths": 1,
+    "sqft": 850,
+    "features": [
+      "Updated kitchen appliances",
+      "Hardwood floors",
+      "Large windows",
+      "Ample storage space",
+      "Laundry in building",
+      "Close to shops and restaurants",
+      "Quiet residential area"
+    ],
+    "specs": [
+      { "icon": "fas fa-bed", "text": "2 Bedrooms" },
+      { "icon": "fas fa-bath", "text": "1 Bathroom" },
+      { "icon": "fas fa-building", "text": "Apartment" },
+      { "icon": "fas fa-expand-arrows-alt", "text": "Approx. 850 sq ft" },
+      { "icon": "fas fa-calendar-alt", "text": "Available Now" }
+    ],
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1383840788397!2d-73.88780368459491!3d40.74983967932833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f031c31af29%3A0xb79548a219c59eb!2s75-28%2066th%20Dr%2C%20Middle%20Village%2C%20NY%2011379!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus",
+    "featured": true
+  },
+  {
+    "id": 4,
+    "title": "119-15 195th St #1, Saint Albans, NY 11412",
+    "address": "119-15 195th St #1, Saint Albans, NY 11412",
+    "price": "$3,700 Monthly Rent",
+    "description": "Spacious 4-bedroom house in Saint Albans perfect for a large family. This home offers plenty of living space, a full kitchen, and outdoor space. Located in a peaceful residential area with proximity to parks, schools, and shopping centers. Ideal for families looking for extra space in a suburban setting with city conveniences.",
+    "images": [
+      "119-15.jpeg",
+      "119-152.jpeg",
+      "119-153.jpeg",
+      "119-154.jpeg",
+      "119-155.jpeg",
+      "119-156.jpeg",
+      "119-157.jpeg",
+      "119-158.jpeg",
+      "119-159.jpeg",
+      "119-1510.jpeg"
+    ],
+    "status": "For Rent",
+    "propertyType": "House",
+    "neighborhood": "Saint Albans",
+    "beds": 4,
+    "baths": 1,
+    "sqft": 1500,
+    "features": [
+      "Spacious living areas",
+      "Full kitchen",
+      "Outdoor space",
+      "Driveway parking",
+      "Basement storage",
+      "Quiet neighborhood",
+      "Family-friendly area"
+    ],
+    "specs": [
+      { "icon": "fas fa-bed", "text": "4 Bedrooms" },
+      { "icon": "fas fa-bath", "text": "1 Bathroom" },
+      { "icon": "fas fa-home", "text": "House" },
+      { "icon": "fas fa-expand-arrows-alt", "text": "Approx. 1,500 sq ft" },
+      { "icon": "fas fa-calendar-alt", "text": "Available Now" }
+    ],
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.5353840788397!2d-73.75780368459491!3d40.72983967932833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f031c31af29%3A0xb79548a219c59eb!2s119-15%20195th%20St%2C%20Saint%20Albans%2C%20NY%2011412!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus",
+    "featured": false
+  },
+  {
+    "id": 5,
+    "title": "79-22 147th St, Flushing, NY 11367",
+    "address": "79-22 147th St, Flushing, NY 11367",
+    "price": "Call for Price",
+    "description": "Well-maintained property in the heart of Flushing. This desirable location offers convenient access to public transportation, shopping districts, and a variety of dining options. The neighborhood is known for its cultural diversity and community amenities, making it a highly sought-after location for renters.",
+    "images": [
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", 
+      "https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    ],
+    "status": "For Rent",
+    "propertyType": "Residential",
+    "neighborhood": "Flushing",
+    "features": [
+      "Convenient location",
+      "Close to public transit",
+      "Near shopping centers",
+      "Diverse neighborhood",
+      "Local parks nearby",
+      "Excellent dining options"
+    ],
+    "specs": [
+      { "icon": "fas fa-map-marker-alt", "text": "Flushing, Queens" },
+      { "icon": "fas fa-building", "text": "Residential" },
+      { "icon": "fas fa-calendar-alt", "text": "Available Now" }
+    ],
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9383840788397!2d-73.81780368459491!3d40.73983967932833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f031c31af29%3A0xb79548a219c59eb!2s79-22%20147th%20St%2C%20Flushing%2C%20NY%2011367!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus",
+    "featured": false
+  },
+  {
+    "id": 6,
+    "title": "18-85 Greene Ave, Ridgewood, NY 11385",
+    "address": "18-85 Greene Ave, Ridgewood, NY 11385",
+    "price": "$2,100 Monthly Rent",
+    "description": "Cozy 1-bedroom apartment on the first floor of a private house in Ridgewood. This charming space features updated fixtures, good natural light, and a private entrance. Located in a trendy neighborhood with a mix of traditional and modern establishments, offering a perfect blend of comfort and urban lifestyle.",
+    "images": [
+      "https://images.unsplash.com/photo-1494526585095-c41cabfe98bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80", 
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+    ],
+    "status": "For Rent",
+    "propertyType": "Apartment",
+    "neighborhood": "Ridgewood",
+    "beds": 1,
+    "baths": 1,
+    "sqft": 600,
+    "features": [
+      "Private entrance",
+      "Updated fixtures",
+      "Good natural light",
+      "Quiet residential street",
+      "Walk to restaurants and cafes",
+      "Near public transportation",
+      "Trendy neighborhood"
+    ],
+    "specs": [
+      { "icon": "fas fa-bed", "text": "1 Bedroom" },
+      { "icon": "fas fa-home", "text": "Private House (1st Floor)" },
+      { "icon": "fas fa-expand-arrows-alt", "text": "Approx. 600 sq ft" },
+      { "icon": "fas fa-calendar-alt", "text": "Available Now" }
+    ],
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.4383840788397!2d-73.90780368459491!3d40.74683967932833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f031c31af29%3A0xb79548a219c59eb!2s18-85%20Greene%20Ave%2C%20Ridgewood%2C%20NY%2011385!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus",
+    "featured": false
+  }
+]
