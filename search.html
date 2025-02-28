@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Properties - East Coast Realty by Zarina</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
@@ -23,17 +22,22 @@
         }
 
         /* ============================================
-           Redesigned Header - Matching Index.html
+           Header Styles
         ============================================ */
         .main-header {
             position: absolute;
             top: 0;
             width: 100%;
             z-index: 1000;
-            /* Semi-transparent dark background with blur for a modern frosted-glass effect */
             background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(8px);
             padding: 15px 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .main-header .container {
@@ -43,7 +47,6 @@
             padding: 0 20px;
         }
 
-        /* Logo container with white background to make the navy logo pop */
         .main-header .logo {
             background: #fff;
             padding: 5px 10px;
@@ -56,7 +59,6 @@
             display: block;
         }
 
-        /* Navigation styles */
         .main-header .main-nav ul {
             list-style: none;
             display: flex;
@@ -71,15 +73,13 @@
             font-weight: 600;
             padding: 8px 15px;
             border-radius: 5px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.3s ease;
         }
 
         .main-header .main-nav ul li a:hover {
             background-color: rgba(255, 255, 255, 0.2);
-            color: #fff;
         }
 
-        /* Mobile menu toggle */
         .main-header .mobile-menu-toggle {
             display: none;
             cursor: pointer;
@@ -90,46 +90,13 @@
             color: #fff;
         }
 
-        /* Responsive Mobile Styles for Header */
-        @media (max-width: 768px) {
-            .main-header .main-nav ul {
-                display: none;
-                flex-direction: column;
-                background-color: rgba(0, 0, 0, 0.8);
-                position: absolute;
-                top: 100%;
-                right: 0;
-                width: 100%;
-                text-align: center;
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            }
-            
-            .main-header .main-nav ul.active {
-                display: flex;
-            }
-            
-            .main-header .mobile-menu-toggle {
-                display: block;
-            }
-        }
-
-        /* ============================================
-           Container
-        ============================================ */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
         /* ============================================
            Section Styles
         ============================================ */
         .section {
             padding: 60px 20px;
             background: linear-gradient(to bottom, #fff, #f0f0f0);
-            margin-top: 100px; /* Added space for fixed header */
-            transition: all 0.3s ease-in-out;
+            margin-top: 120px;
             border-radius: 15px 15px 0 0;
             box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
             position: relative;
@@ -142,7 +109,6 @@
             color: rgb(1, 0, 244);
             text-align: center;
             margin-bottom: 20px;
-            animation: fadeInDown 1s ease-in-out;
         }
 
         .section-subtitle {
@@ -155,11 +121,6 @@
         /* ============================================
            Property Listings Section
         ============================================ */
-        .property-listings {
-            margin-top: 40px;
-            padding: 20px;
-        }
-        
         .properties-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -470,61 +431,6 @@
             transform: translateY(-3px);
         }
 
-        .cta-button.secondary {
-            background: #f0f0f0;
-            color: #333;
-        }
-
-        .cta-button.secondary:hover {
-            background: #e0e0e0;
-        }
-
-        /* Responsive adjustments for modal */
-        @media (max-width: 768px) {
-            .modal-content {
-                flex-direction: column;
-            }
-            
-            .modal-gallery, .modal-details {
-                width: 100%;
-            }
-            
-            .modal-gallery {
-                height: 250px;
-            }
-            
-            .modal-specs, .features-list {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .modal-cta {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .modal-specs, .features-list {
-                grid-template-columns: 1fr;
-            }
-            
-            .modal-gallery {
-                height: 200px;
-            }
-        }
-
-        /* Responsive adjustments for properties grid */
-        @media (max-width: 768px) {
-            .properties-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .properties-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
         /* ============================================
            Footer
         ============================================ */
@@ -534,7 +440,6 @@
             text-align: center;
             padding: 20px 0;
             border-top: 3px solid #1a1f26;
-            animation: fadeInUp 1s ease-in-out;
         }
 
         .social-media {
@@ -553,27 +458,86 @@
         }
 
         /* ============================================
-           Animations
+           Responsive Design
         ============================================ */
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+        @media (max-width: 992px) {
+            .properties-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
+        @media (max-width: 768px) {
+            .main-header .main-nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.8);
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 100%;
+                text-align: center;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                padding: 10px 0;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            
+            .main-header .main-nav ul.active {
+                display: flex;
+            }
+            
+            .main-header .main-nav ul li {
+                margin: 10px 0;
+            }
+            
+            .main-header .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .properties-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-specs, 
+            .features-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-cta {
+                flex-direction: column;
+            }
+            
+            .section h2 {
+                font-size: 2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-header .logo img {
+                height: 60px;
+            }
+            
+            .section {
+                padding: 40px 15px;
+                margin-top: 100px;
+            }
+            
+            .section h2 {
+                font-size: 1.8em;
+            }
+            
+            .property-location {
+                font-size: 1.1em;
+            }
+            
+            .property-details {
+                font-size: 1em;
+            }
+            
+            .modal-gallery {
+                height: 200px;
+            }
+            
+            .modal-title {
+                font-size: 1.5em;
             }
         }
     </style>
@@ -604,7 +568,7 @@
     </header>
 
     <!-- Property Listings Section -->
-    <section id="property-listings" class="section property-listings" data-aos="fade-up">
+    <section id="property-listings" class="section">
         <div class="container">
             <h2>Available Rental Properties</h2>
             <p class="section-subtitle">Browse our exclusive collection of non-MLS rental properties in New York.</p>
@@ -612,8 +576,9 @@
             <!-- Properties Grid -->
             <div class="properties-grid">
                 <!-- Property 1 -->
-                <div class="property-card" data-aos="fade-up">
-                    <div class="property-image" style="background-image: url('/api/placeholder/500/300');">
+                <div class="property-card">
+                    <div class="property-image" style="background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-building" style="font-size: 60px; color: #aaa;"></i>
                     </div>
                     <div class="property-info">
                         <div class="property-location">43-33 48th St, Sunnyside, NY 11104</div>
@@ -628,13 +593,14 @@
                             </div>
                         </div>
                         <div class="property-details">Located in vibrant Sunnyside neighborhood</div>
-                        <a onclick="showPropertyDetails('sunnyside')" class="view-details-btn">View Details</a>
+                        <button class="view-details-btn" onclick="showPropertyDetails('sunnyside')">View Details</button>
                     </div>
                 </div>
                 
                 <!-- Property 2 -->
-                <div class="property-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="property-image" style="background-image: url('/api/placeholder/500/300');">
+                <div class="property-card">
+                    <div class="property-image" style="background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-building" style="font-size: 60px; color: #aaa;"></i>
                     </div>
                     <div class="property-info">
                         <div class="property-location">7350 198th St, Fresh Meadows, NY 11366</div>
@@ -650,13 +616,14 @@
                         </div>
                         <div class="property-price">$2,600 Monthly Rent</div>
                         <div class="property-details">Spacious 2-bedroom apartment in Fresh Meadows</div>
-                        <a onclick="showPropertyDetails('freshMeadows')" class="view-details-btn">View Details</a>
+                        <button class="view-details-btn" onclick="showPropertyDetails('freshMeadows')">View Details</button>
                     </div>
                 </div>
                 
                 <!-- Property 3 -->
-                <div class="property-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="property-image" style="background-image: url('/api/placeholder/500/300');">
+                <div class="property-card">
+                    <div class="property-image" style="background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-building" style="font-size: 60px; color: #aaa;"></i>
                     </div>
                     <div class="property-info">
                         <div class="property-location">75-28 66th Dr #1L, Middle Village, NY 11379</div>
@@ -672,13 +639,14 @@
                         </div>
                         <div class="property-price">$3,000 Monthly Rent</div>
                         <div class="property-details">Beautiful 2-bedroom unit in Middle Village</div>
-                        <a onclick="showPropertyDetails('middleVillage')" class="view-details-btn">View Details</a>
+                        <button class="view-details-btn" onclick="showPropertyDetails('middleVillage')">View Details</button>
                     </div>
                 </div>
                 
                 <!-- Property 4 -->
-                <div class="property-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="property-image" style="background-image: url('/api/placeholder/500/300');">
+                <div class="property-card">
+                    <div class="property-image" style="background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-home" style="font-size: 60px; color: #aaa;"></i>
                     </div>
                     <div class="property-info">
                         <div class="property-location">119-15 195th St #1, Saint Albans, NY 11412</div>
@@ -694,13 +662,14 @@
                         </div>
                         <div class="property-price">$3,700 Monthly Rent</div>
                         <div class="property-details">Spacious 4-bedroom house in Saint Albans</div>
-                        <a onclick="showPropertyDetails('saintAlbans')" class="view-details-btn">View Details</a>
+                        <button class="view-details-btn" onclick="showPropertyDetails('saintAlbans')">View Details</button>
                     </div>
                 </div>
                 
                 <!-- Property 5 -->
-                <div class="property-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="property-image" style="background-image: url('/api/placeholder/500/300');">
+                <div class="property-card">
+                    <div class="property-image" style="background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-building" style="font-size: 60px; color: #aaa;"></i>
                     </div>
                     <div class="property-info">
                         <div class="property-location">79-22 147th St, Flushing, NY 11367</div>
@@ -715,13 +684,14 @@
                             </div>
                         </div>
                         <div class="property-details">Well-located property in Flushing</div>
-                        <a onclick="showPropertyDetails('flushing')" class="view-details-btn">View Details</a>
+                        <button class="view-details-btn" onclick="showPropertyDetails('flushing')">View Details</button>
                     </div>
                 </div>
                 
                 <!-- Property 6 -->
-                <div class="property-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="property-image" style="background-image: url('/api/placeholder/500/300');">
+                <div class="property-card">
+                    <div class="property-image" style="background-color: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-home" style="font-size: 60px; color: #aaa;"></i>
                     </div>
                     <div class="property-info">
                         <div class="property-location">18-85 Greene Ave, Ridgewood, NY 11385</div>
@@ -737,7 +707,7 @@
                         </div>
                         <div class="property-price">$2,100 Monthly Rent</div>
                         <div class="property-details">Private house, 1st floor apartment in Ridgewood</div>
-                        <a onclick="showPropertyDetails('ridgewood')" class="view-details-btn">View Details</a>
+                        <button class="view-details-btn" onclick="showPropertyDetails('ridgewood')">View Details</button>
                     </div>
                 </div>
             </div>
@@ -745,7 +715,7 @@
     </section>
 
     <!-- Original MLS Search Widget Section -->
-    <section id="search-widget" class="section" data-aos="fade-up">
+    <section id="search-widget" class="section">
         <div class="container">
             <h2>Search MLS Properties</h2>
             <p class="section-subtitle">Use our advanced search tool to find your perfect property in the MLS database.</p>
@@ -766,7 +736,7 @@
         </div>
     </div>
 
-    <footer data-aos="fade-up">
+    <footer>
         <div class="container">
             <div class="social-media">
                 <a href="https://www.facebook.com/zarina.yusupova/?checkpoint_src=any" target="_blank" class="facebook-button">
@@ -776,251 +746,245 @@
             <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            AOS.init({
-                duration: 1000,
-                easing: 'ease-in-out',
-                once: true
-            });
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.getElementById('mobile-menu-toggle');
+        const navList = document.querySelector('.main-nav ul');
 
-            const hamburger = document.getElementById('mobile-menu-toggle');
-            const navList = document.querySelector('.main-nav ul');
-
-            hamburger.addEventListener('click', () => {
-                navList.classList.toggle('active');
-            });
+        hamburger.addEventListener('click', () => {
+            navList.classList.toggle('active');
         });
+    });
 
-        // Property data
-        const propertyData = {
-            sunnyside: {
-                title: "43-33 48th St, Sunnyside, NY 11104",
-                price: "Call for Price",
-                images: ["/api/placeholder/800/500", "/api/placeholder/800/500"],
-                description: "This charming property in Sunnyside offers a perfect blend of comfort and convenience. Located in a vibrant neighborhood with easy access to public transportation, shopping, and dining options.",
-                specs: [
-                    { icon: "fas fa-map-marker-alt", text: "Sunnyside, Queens" },
-                    { icon: "fas fa-building", text: "Apartment" },
-                    { icon: "fas fa-calendar-alt", text: "Available Now" }
-                ],
-                features: [
-                    "Close to subway",
-                    "Neighborhood shops",
-                    "Pet-friendly building",
-                    "Quiet street"
-                ],
-                address: "43-33 48th St, Sunnyside, NY 11104, United States",
-                mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.7383840788397!2d-73.91780368459491!3d40.74282967932833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f031c31af29%3A0xb79548a219c59eb!2s43-33%2048th%20St%2C%20Queens%2C%20NY%2011104!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus"
-            },
-            freshMeadows: {
-                title: "7350 198th St, Fresh Meadows, NY 11366",
-                price: "$2,600 Monthly Rent",
-                images: ["/api/placeholder/800/500", "/api/placeholder/800/500"],
-                description: "Spacious 2-bedroom apartment in the desirable Fresh Meadows neighborhood. This well-maintained unit features a modern kitchen, ample closet space, and a bright living area. Conveniently located near parks, shopping centers, and major transportation routes.",
-                specs: [
-                    { icon: "fas fa-bed", text: "2 Bedrooms" },
-                    { icon: "fas fa-bath", text: "1 Bathroom" },
-                    { icon: "fas fa-building", text: "Apartment" },
-                    { icon: "fas fa-calendar-alt", text: "Available Now" }
-                ],
-                features: [
-                    "Modern kitchen",
-                    "Hardwood floors",
-                    "Ample closet space",
-                    "Good natural light",
-                    "Close to shopping",
-                    "Near public transportation"
-                ],
-                address: "7350 198th St, Fresh Meadows, NY 11366, United States",
-                mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.6453890788397!2d-73.7814034845949!3d40.74488967932833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c260b9c31af29%3A0xb79548a219c59eb!2s7350%20198th%20St%2C%20Fresh%20Meadows%2C%20NY%2011366!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus"
-            },
-            middleVillage: {
-                title: "75-28 66th Dr #1L, Middle Village, NY 11379",
-                price: "$3,000 Monthly Rent",
-                images: ["/api/placeholder/800/500", "/api/placeholder/800/500"],
-                description: "Beautiful 2-bedroom apartment in a well-maintained building in Middle Village. Featuring updated appliances, hardwood floors, and large windows. The property is located in a quiet, family-friendly neighborhood with excellent schools and convenient access to local amenities.",
-                specs: [
-                    { icon: "fas fa-bed", text: "2 Bedrooms" },
-                    { icon: "fas fa-bath", text: "1 Bathroom" },
-                    { icon: "fas fa-building", text: "Apartment" },
-                    { icon: "fas fa-expand-arrows-alt", text: "Approx. 850 sq ft" },
-                    { icon: "fas fa-calendar-alt", text: "Available Now" }
-                ],
-                features: [
-                    "Updated kitchen appliances",
-                    "Hardwood floors",
-                    "Large windows",
-                    "Ample storage space",
-                    "Laundry in building",
-                    "Close to shops and restaurants"
-                ],
-                address: "75-28 66th Dr #1L, Middle Village, NY 11379, United States",
-                mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1383840788397!2d-73.88780368459491!3d40.74983967932833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f031c31af29%3A0xb79548a219c59eb!2s75-28%2066th%20Dr%2C%20Middle%20Village%2C%20NY%2011379!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus"
-            },
-            saintAlbans: {
-                title: "119-15 195th St #1, Saint Albans, NY 11412",
-                price: "$3,700 Monthly Rent",
-                images: ["/api/placeholder/800/500", "/api/placeholder/800/500"],
-                description: "Spacious 4-bedroom house in Saint Albans perfect for a large family. This home offers plenty of living space, a full kitchen, and outdoor space. Located in a peaceful residential area with proximity to parks, schools, and shopping centers.",
-                specs: [
-                    { icon: "fas fa-bed", text: "4 Bedrooms" },
-                    { icon: "fas fa-bath", text: "1 Bathroom" },
-                    { icon: "fas fa-home", text: "House" },
-                    { icon: "fas fa-expand-arrows-alt", text: "Approx. 1,500 sq ft" },
-                    { icon: "fas fa-calendar-alt", text: "Available Now" }
-                ],
-                features: [
-                    "Spacious living areas",
-                    "Full kitchen",
-                    "Outdoor space",
-                    "Driveway parking",
-                    "Basement storage",
-                    "Quiet neighborhood"
-                ],
-                address: "119-15 195th St #1, Saint Albans, NY 11412, United States",
-                mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.5353840788397!2d-73.75780368459491!3d40.72983967932833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f031c31af29%3A0xb79548a219c59eb!2s119-15%20195th%20St%2C%20Saint%20Albans%2C%20NY%2011412!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus"
-            },
-            flushing: {
-                title: "79-22 147th St, Flushing, NY 11367",
-                price: "Call for Price",
-                images: ["/api/placeholder/800/500", "/api/placeholder/800/500"],
-                description: "Well-maintained property in the heart of Flushing. This desirable location offers convenient access to public transportation, shopping districts, and a variety of dining options. The neighborhood is known for its cultural diversity and community amenities.",
-                specs: [
-                    { icon: "fas fa-map-marker-alt", text: "Flushing, Queens" },
-                    { icon: "fas fa-building", text: "Residential" },
-                    { icon: "fas fa-calendar-alt", text: "Available Now" }
-                ],
-                features: [
-                    "Convenient location",
-                    "Close to public transit",
-                    "Near shopping centers",
-                    "Diverse neighborhood",
-                    "Local parks nearby"
-                ],
-                address: "79-22 147th St, Flushing, NY 11367, United States",
-                mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9383840788397!2d-73.81780368459491!3d40.73983967932833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f031c31af29%3A0xb79548a219c59eb!2s79-22%20147th%20St%2C%20Flushing%2C%20NY%2011367!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus"
-            },
-            ridgewood: {
-                title: "18-85 Greene Ave, Ridgewood, NY 11385",
-                price: "$2,100 Monthly Rent",
-                images: ["/api/placeholder/800/500", "/api/placeholder/800/500"],
-                description: "Cozy 1-bedroom apartment on the first floor of a private house in Ridgewood. This charming space features updated fixtures, good natural light, and a private entrance. Located in a trendy neighborhood with a mix of traditional and modern establishments.",
-                specs: [
-                    { icon: "fas fa-bed", text: "1 Bedroom" },
-                    { icon: "fas fa-home", text: "Private House (1st Floor)" },
-                    { icon: "fas fa-expand-arrows-alt", text: "Approx. 600 sq ft" },
-                    { icon: "fas fa-calendar-alt", text: "Available Now" }
-                ],
-                features: [
-                    "Private entrance",
-                    "Updated fixtures",
-                    "Good natural light",
-                    "Quiet residential street",
-                    "Walk to restaurants and cafes",
-                    "Near public transportation"
-                ],
-                address: "18-85 Greene Ave, Ridgewood, NY 11385, United States",
-                mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.4383840788397!2d-73.90780368459491!3d40.74683967932833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f031c31af29%3A0xb79548a219c59eb!2s18-85%20Greene%20Ave%2C%20Ridgewood%2C%20NY%2011385!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus"
-            }
-        };
+    // Property data
+    const propertyData = {
+        sunnyside: {
+            title: "43-33 48th St, Sunnyside, NY 11104",
+            price: "Call for Price",
+            images: ["https://via.placeholder.com/800x500?text=Sunnyside+Property", "https://via.placeholder.com/800x500?text=Sunnyside+Property+2"],
+            description: "This charming property in Sunnyside offers a perfect blend of comfort and convenience. Located in a vibrant neighborhood with easy access to public transportation, shopping, and dining options.",
+            specs: [
+                { icon: "fas fa-map-marker-alt", text: "Sunnyside, Queens" },
+                { icon: "fas fa-building", text: "Apartment" },
+                { icon: "fas fa-calendar-alt", text: "Available Now" }
+            ],
+            features: [
+                "Close to subway",
+                "Neighborhood shops",
+                "Pet-friendly building",
+                "Quiet street"
+            ],
+            address: "43-33 48th St, Sunnyside, NY 11104, United States",
+            mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.7383840788397!2d-73.91780368459491!3d40.74282967932833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f031c31af29%3A0xb79548a219c59eb!2s43-33%2048th%20St%2C%20Queens%2C%20NY%2011104!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus"
+        },
+        freshMeadows: {
+            title: "7350 198th St, Fresh Meadows, NY 11366",
+            price: "$2,600 Monthly Rent",
+            images: ["https://via.placeholder.com/800x500?text=Fresh+Meadows+Property", "https://via.placeholder.com/800x500?text=Fresh+Meadows+Property+2"],
+            description: "Spacious 2-bedroom apartment in the desirable Fresh Meadows neighborhood. This well-maintained unit features a modern kitchen, ample closet space, and a bright living area. Conveniently located near parks, shopping centers, and major transportation routes.",
+            specs: [
+                { icon: "fas fa-bed", text: "2 Bedrooms" },
+                { icon: "fas fa-bath", text: "1 Bathroom" },
+                { icon: "fas fa-building", text: "Apartment" },
+                { icon: "fas fa-calendar-alt", text: "Available Now" }
+            ],
+            features: [
+                "Modern kitchen",
+                "Hardwood floors",
+                "Ample closet space",
+                "Good natural light",
+                "Close to shopping",
+                "Near public transportation"
+            ],
+            address: "7350 198th St, Fresh Meadows, NY 11366, United States",
+            mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.6453890788397!2d-73.7814034845949!3d40.74488967932833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c260b9c31af29%3A0xb79548a219c59eb!2s7350%20198th%20St%2C%20Fresh%20Meadows%2C%20NY%2011366!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus"
+        },
+        middleVillage: {
+            title: "75-28 66th Dr #1L, Middle Village, NY 11379",
+            price: "$3,000 Monthly Rent",
+            images: ["https://via.placeholder.com/800x500?text=Middle+Village+Property", "https://via.placeholder.com/800x500?text=Middle+Village+Property+2"],
+            description: "Beautiful 2-bedroom apartment in a well-maintained building in Middle Village. Featuring updated appliances, hardwood floors, and large windows. The property is located in a quiet, family-friendly neighborhood with excellent schools and convenient access to local amenities.",
+            specs: [
+                { icon: "fas fa-bed", text: "2 Bedrooms" },
+                { icon: "fas fa-bath", text: "1 Bathroom" },
+                { icon: "fas fa-building", text: "Apartment" },
+                { icon: "fas fa-expand-arrows-alt", text: "Approx. 850 sq ft" },
+                { icon: "fas fa-calendar-alt", text: "Available Now" }
+            ],
+            features: [
+                "Updated kitchen appliances",
+                "Hardwood floors",
+                "Large windows",
+                "Ample storage space",
+                "Laundry in building",
+                "Close to shops and restaurants"
+            ],
+            address: "75-28 66th Dr #1L, Middle Village, NY 11379, United States",
+            mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1383840788397!2d-73.88780368459491!3d40.74983967932833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f031c31af29%3A0xb79548a219c59eb!2s75-28%2066th%20Dr%2C%20Middle%20Village%2C%20NY%2011379!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus"
+        },
+        saintAlbans: {
+            title: "119-15 195th St #1, Saint Albans, NY 11412",
+            price: "$3,700 Monthly Rent",
+            images: ["https://via.placeholder.com/800x500?text=Saint+Albans+Property", "https://via.placeholder.com/800x500?text=Saint+Albans+Property+2"],
+            description: "Spacious 4-bedroom house in Saint Albans perfect for a large family. This home offers plenty of living space, a full kitchen, and outdoor space. Located in a peaceful residential area with proximity to parks, schools, and shopping centers.",
+            specs: [
+                { icon: "fas fa-bed", text: "4 Bedrooms" },
+                { icon: "fas fa-bath", text: "1 Bathroom" },
+                { icon: "fas fa-home", text: "House" },
+                { icon: "fas fa-expand-arrows-alt", text: "Approx. 1,500 sq ft" },
+                { icon: "fas fa-calendar-alt", text: "Available Now" }
+            ],
+            features: [
+                "Spacious living areas",
+                "Full kitchen",
+                "Outdoor space",
+                "Driveway parking",
+                "Basement storage",
+                "Quiet neighborhood"
+            ],
+            address: "119-15 195th St #1, Saint Albans, NY 11412, United States",
+            mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.5353840788397!2d-73.75780368459491!3d40.72983967932833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f031c31af29%3A0xb79548a219c59eb!2s119-15%20195th%20St%2C%20Saint%20Albans%2C%20NY%2011412!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus"
+        },
+        flushing: {
+            title: "79-22 147th St, Flushing, NY 11367",
+            price: "Call for Price",
+            images: ["https://via.placeholder.com/800x500?text=Flushing+Property", "https://via.placeholder.com/800x500?text=Flushing+Property+2"],
+            description: "Well-maintained property in the heart of Flushing. This desirable location offers convenient access to public transportation, shopping districts, and a variety of dining options. The neighborhood is known for its cultural diversity and community amenities.",
+            specs: [
+                { icon: "fas fa-map-marker-alt", text: "Flushing, Queens" },
+                { icon: "fas fa-building", text: "Residential" },
+                { icon: "fas fa-calendar-alt", text: "Available Now" }
+            ],
+            features: [
+                "Convenient location",
+                "Close to public transit",
+                "Near shopping centers",
+                "Diverse neighborhood",
+                "Local parks nearby"
+            ],
+            address: "79-22 147th St, Flushing, NY 11367, United States",
+            mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9383840788397!2d-73.81780368459491!3d40.73983967932833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f031c31af29%3A0xb79548a219c59eb!2s79-22%20147th%20St%2C%20Flushing%2C%20NY%2011367!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus"
+        },
+        ridgewood: {
+            title: "18-85 Greene Ave, Ridgewood, NY 11385",
+            price: "$2,100 Monthly Rent",
+            images: ["https://via.placeholder.com/800x500?text=Ridgewood+Property", "https://via.placeholder.com/800x500?text=Ridgewood+Property+2"],
+            description: "Cozy 1-bedroom apartment on the first floor of a private house in Ridgewood. This charming space features updated fixtures, good natural light, and a private entrance. Located in a trendy neighborhood with a mix of traditional and modern establishments.",
+            specs: [
+                { icon: "fas fa-bed", text: "1 Bedroom" },
+                { icon: "fas fa-home", text: "Private House (1st Floor)" },
+                { icon: "fas fa-expand-arrows-alt", text: "Approx. 600 sq ft" },
+                { icon: "fas fa-calendar-alt", text: "Available Now" }
+            ],
+            features: [
+                "Private entrance",
+                "Updated fixtures",
+                "Good natural light",
+                "Quiet residential street",
+                "Walk to restaurants and cafes",
+                "Near public transportation"
+            ],
+            address: "18-85 Greene Ave, Ridgewood, NY 11385, United States",
+            mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.4383840788397!2d-73.90780368459491!3d40.74683967932833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f031c31af29%3A0xb79548a219c59eb!2s18-85%20Greene%20Ave%2C%20Ridgewood%2C%20NY%2011385!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus"
+        }
+    };
 
-        // Show property details modal
-        function showPropertyDetails(propertyId) {
-            const property = propertyData[propertyId];
-            if (!property) return;
-            
-            const modalContent = document.getElementById('modalContent');
-            
-            // Build the modal content HTML
-            let modalHTML = `
-                <div class="modal-gallery">
-                    <img src="${property.images[0]}" alt="${property.title}">
-                </div>
-                <div class="modal-details">
-                    <h2 class="modal-title">${property.title}</h2>
-                    <div class="modal-price">${property.price}</div>
-                    <div class="modal-description">${property.description}</div>
-                    
-                    <div class="modal-specs">
-            `;
-            
-            // Add specifications
-            property.specs.forEach(spec => {
-                modalHTML += `
-                    <div class="spec-item">
-                        <i class="${spec.icon}"></i>
-                        <span>${spec.text}</span>
-                    </div>
-                `;
-            });
-            
+    // Show property details modal
+    function showPropertyDetails(propertyId) {
+        const property = propertyData[propertyId];
+        if (!property) return;
+        
+        const modalContent = document.getElementById('modalContent');
+        
+        // Build the modal content HTML
+        let modalHTML = `
+            <div class="modal-gallery">
+                <img src="${property.images[0]}" alt="${property.title}">
+            </div>
+            <div class="modal-details">
+                <h2 class="modal-title">${property.title}</h2>
+                <div class="modal-price">${property.price}</div>
+                <div class="modal-description">${property.description}</div>
+                
+                <div class="modal-specs">
+        `;
+        
+        // Add specifications
+        property.specs.forEach(spec => {
             modalHTML += `
-                    </div>
-                    
-                    <div class="modal-features">
-                        <h3>Features</h3>
-                        <div class="features-list">
-            `;
-            
-            // Add features
-            property.features.forEach(feature => {
-                modalHTML += `
-                    <div class="feature-item">
-                        <i class="fas fa-check"></i>
-                        <span>${feature}</span>
-                    </div>
-                `;
-            });
-            
-            modalHTML += `
-                        </div>
-                    </div>
-                    
-                    <div class="modal-location">
-                        <h3>Location</h3>
-                        <div class="modal-map">
-                            <iframe src="${property.mapUrl}" allowfullscreen="" loading="lazy"></iframe>
-                        </div>
-                        <div class="modal-address">${property.address}</div>
-                    </div>
-                    
-                    <div class="modal-cta">
-                        <a href="mailto:broker@eastcoastrealty.net?subject=Inquiry about ${encodeURIComponent(property.title)}" class="cta-button">
-                            <i class="fas fa-envelope"></i> Email Inquiry
-                        </a>
-                        <a href="tel:+17182712121" class="cta-button">
-                            <i class="fas fa-phone"></i> Call Agent
-                        </a>
-                    </div>
+                <div class="spec-item">
+                    <i class="${spec.icon}"></i>
+                    <span>${spec.text}</span>
                 </div>
             `;
-            
-            modalContent.innerHTML = modalHTML;
-            
-            // Show the modal
-            document.getElementById('propertyModal').classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling while modal is open
-        }
-        
-        // Close property details modal
-        function closePropertyModal() {
-            document.getElementById('propertyModal').classList.remove('active');
-            document.body.style.overflow = ''; // Restore scrolling
-        }
-        
-        // Close modal when clicking outside
-        document.getElementById('propertyModal').addEventListener('click', function(event) {
-            if (event.target === this) {
-                closePropertyModal();
-            }
         });
         
-        // Close modal with escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closePropertyModal();
-            }
+        modalHTML += `
+                </div>
+                
+                <div class="modal-features">
+                    <h3>Features</h3>
+                    <div class="features-list">
+        `;
+        
+        // Add features
+        property.features.forEach(feature => {
+            modalHTML += `
+                <div class="feature-item">
+                    <i class="fas fa-check"></i>
+                    <span>${feature}</span>
+                </div>
+            `;
         });
+        
+        modalHTML += `
+                    </div>
+                </div>
+                
+                <div class="modal-location">
+                    <h3>Location</h3>
+                    <div class="modal-map">
+                        <iframe src="${property.mapUrl}" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="modal-address">${property.address}</div>
+                </div>
+                
+                <div class="modal-cta">
+                    <a href="mailto:broker@eastcoastrealty.net?subject=Inquiry about ${encodeURIComponent(property.title)}" class="cta-button">
+                        <i class="fas fa-envelope"></i> Email Inquiry
+                    </a>
+                    <a href="tel:+17182712121" class="cta-button">
+                        <i class="fas fa-phone"></i> Call Agent
+                    </a>
+                </div>
+            </div>
+        `;
+        
+        modalContent.innerHTML = modalHTML;
+        
+        // Show the modal
+        document.getElementById('propertyModal').classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling while modal is open
+    }
+    
+    // Close property details modal
+    function closePropertyModal() {
+        document.getElementById('propertyModal').classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+    
+    // Close modal when clicking outside
+    document.getElementById('propertyModal').addEventListener('click', function(event) {
+        if (event.target === this) {
+            closePropertyModal();
+        }
+    });
+    
+    // Close modal with escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closePropertyModal();
+        }
+    });
+</script>
