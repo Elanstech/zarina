@@ -1675,5 +1675,383 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
+    // Current image index for gallery
+let currentImageIndex = 0;
+let currentPropertyImages = [];
 
+// Property slider counters
+let counter = 0;
+let size = 0;
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS animation library
+    AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true
+    });
+
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+
+    mobileMenuToggle.addEventListener('click', function() {
+        mainNav.classList.toggle('active');
+        mobileMenuToggle.querySelector('i').classList.toggle('fa-bars');
+        mobileMenuToggle.querySelector('i').classList.toggle('fa-times');
+    });
+
+    // Close mobile menu when clicking menu items
+    const navLinks = document.querySelectorAll('.main-nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            mainNav.classList.remove('active');
+            mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+            mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+        });
+    });
+
+    // Header scroll effect
+    const header = document.querySelector('.main-header');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Back to top button visibility
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 500) {
+            backToTop.classList.add('active');
+        } else {
+            backToTop.classList.remove('active');
+        }
+    });
+
+    backToTop.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // FAQ Accordions
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const faqItem = this.parentElement;
+            faqItem.classList.toggle('active');
+        });
+    });
+
+    // Load properties from JSON file
+    loadProperties();
+
+    // Property slider navigation
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    
+    if (prevBtn && nextBtn) {
+        nextBtn.addEventListener('click', function() {
+            const propertyCards = document.querySelectorAll('.property-card');
+            if (counter >= propertyCards.length - 1) return;
+            counter++;
+            updateSlider();
+        });
+        
+        prevBtn.addEventListener('click', function() {
+            if (counter <= 0) return;
+            counter--;
+            updateSlider();
+        });
+    }
+    
+    // Responsive slider adjustments
+    window.addEventListener('resize', function() {
+        counter = 0;
+        updateSlider();
+    });
+
+    // Close modal when clicking outside
+    document.getElementById('propertyModal').addEventListener('click', function(event) {
+        if (event.target === this) {
+            closePropertyModal();
+        }
+    });
+    
+    // Close modal with escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closePropertyModal();
+        }
+    });
+});
+
+// Load properties from JSON file
+function loadProperties() {
+    fetch('properties.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(properties => {
+            // Get only featured properties for homepage
+            const featuredProperties = properties.filter(property => property.featured);
+            
+            // Get the container where properties will be added
+            const propertiesContainer = document.getElementById('propertiesContainer');
+            
+            // Clear any existing content
+            propertiesContainer.innerHTML = '';
+            
+            // Add each property to the container
+            featuredProperties.forEach(property => {
+                // Create property card HTML
+                const propertyCard = createPropertyCard(property);
+                
+                // Add the property card to the container
+                propertiesContainer.appendChild(propertyCard);
+            });
+            
+            // Reset slider counter and update size calculation
+            counter = 0;
+            const propertyCards = document.querySelectorAll('.property-card');
+            if (propertyCards.length > 0) {
+                size = propertyCards[0].clientWidth + 20; // card width + margin
+            }
+            updateSlider();
+        })
+        .catch(error => {
+            console.error('Error loading properties:', error);
+            if (document.getElementById('propertiesContainer')) {
+                document.getElementById('propertiesContainer').innerHTML = '<div style="text-align: center; padding: 30px;"><p>Unable to load properties. Please try again later.</p></div>';
+            }
+        });
+}
+
+// Create a property card element
+function createPropertyCard(property) {
+    // Create card elements
+    const card = document.createElement('div');
+    card.className = 'property-card';
+    
+    // Create property image section
+    const imageDiv = document.createElement('div');
+    imageDiv.className = 'property-image';
+    
+    const img = document.createElement('img');
+    img.src = property.images[0]; // Use the first image as the thumbnail
+    img.alt = property.title;
+    
+    const badge = document.createElement('span');
+    badge.className = 'property-badge';
+    badge.textContent = property.status;
+    
+    imageDiv.appendChild(img);
+    imageDiv.appendChild(badge);
+    
+    // Create property content section
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'property-content';
+    
+    const price = document.createElement('div');
+    price.className = 'property-price';
+    price.textContent = property.price;
+    
+    const address = document.createElement('div');
+    address.className = 'property-address';
+    address.textContent = property.address;
+    
+    const description = document.createElement('p');
+    // Limit description to first 100 characters with ellipsis
+    description.textContent = property.description.length > 100 ? 
+        property.description.substring(0, 100) + '...' : 
+        property.description;
+    
+    const features = document.createElement('div');
+    features.className = 'property-features';
+    
+    // Add beds/baths/sqft if available
+    if (property.beds) {
+        const bedsFeature = document.createElement('div');
+        bedsFeature.className = 'property-feature';
+        bedsFeature.innerHTML = `<i class="fas fa-bed"></i> ${property.beds} Beds`;
+        features.appendChild(bedsFeature);
+    }
+    
+    if (property.baths) {
+        const bathsFeature = document.createElement('div');
+        bathsFeature.className = 'property-feature';
+        bathsFeature.innerHTML = `<i class="fas fa-bath"></i> ${property.baths} Baths`;
+        features.appendChild(bathsFeature);
+    }
+    
+    if (property.sqft) {
+        const sqftFeature = document.createElement('div');
+        sqftFeature.className = 'property-feature';
+        sqftFeature.innerHTML = `<i class="fas fa-vector-square"></i> ${property.sqft} sqft`;
+        features.appendChild(sqftFeature);
+    }
+    
+    // Add neighborhood if not already included in features
+    if (property.neighborhood && features.children.length < 3) {
+        const neighborhoodFeature = document.createElement('div');
+        neighborhoodFeature.className = 'property-feature';
+        neighborhoodFeature.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${property.neighborhood}`;
+        features.appendChild(neighborhoodFeature);
+    }
+    
+    // Add property type if not already included in features
+    if (property.propertyType && features.children.length < 3) {
+        const typeFeature = document.createElement('div');
+        typeFeature.className = 'property-feature';
+        typeFeature.innerHTML = `<i class="fas fa-home"></i> ${property.propertyType}`;
+        features.appendChild(typeFeature);
+    }
+    
+    // Build content structure
+    contentDiv.appendChild(price);
+    contentDiv.appendChild(address);
+    contentDiv.appendChild(description);
+    contentDiv.appendChild(features);
+    
+    // Add view details button with click event
+    const viewButton = document.createElement('button');
+    viewButton.className = 'btn';
+    viewButton.textContent = 'View Details';
+    viewButton.style.marginTop = '15px';
+    viewButton.style.width = '100%';
+    viewButton.onclick = function() {
+        showPropertyDetails(property);
+    };
+    
+    contentDiv.appendChild(viewButton);
+    
+    // Build full card
+    card.appendChild(imageDiv);
+    card.appendChild(contentDiv);
+    
+    return card;
+}
+
+// Update slider position
+function updateSlider() {
+    const propertiesContainer = document.querySelector('.properties-container');
+    if (propertiesContainer && size > 0) {
+        propertiesContainer.style.transform = `translateX(${-size * counter}px)`;
+    }
+}
+
+// Show property details modal
+function showPropertyDetails(property) {
+    currentImageIndex = 0;
+    currentPropertyImages = property.images;
+    
+    const modalContent = document.getElementById('modalContent');
+    
+    // Build the modal content HTML
+    let modalHTML = `
+        <div class="modal-gallery">
+            <img src="${property.images[0]}" alt="${property.title}" class="modal-gallery-image" id="galleryImage">
+            
+            <div class="gallery-nav gallery-prev" onclick="prevImage()">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="gallery-nav gallery-next" onclick="nextImage()">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+        <div class="modal-details">
+            <h2 class="modal-title">${property.title}</h2>
+            <div class="modal-price">${property.price}</div>
+            <div class="modal-description">${property.description}</div>
+            
+            <div class="modal-specs">
+    `;
+    
+    // Add specifications
+    property.specs.forEach(spec => {
+        modalHTML += `
+            <div class="spec-item">
+                <i class="${spec.icon}"></i>
+                <span>${spec.text}</span>
+            </div>
+        `;
+    });
+    
+    modalHTML += `
+            </div>
+            
+            <div class="modal-features">
+                <h3>Features & Amenities</h3>
+                <div class="features-list">
+    `;
+    
+    // Add features
+    property.features.forEach(feature => {
+        modalHTML += `
+            <div class="feature-item">
+                <i class="fas fa-check"></i>
+                <span>${feature}</span>
+            </div>
+        `;
+    });
+    
+    modalHTML += `
+                </div>
+            </div>
+            
+            <div class="modal-location">
+                <h3>Location</h3>
+                <div class="modal-map">
+                    <iframe src="${property.mapUrl}" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="modal-address">${property.address}</div>
+            </div>
+            
+            <div class="modal-cta">
+                <a href="mailto:broker@eastcoastrealty.net?subject=Inquiry about ${encodeURIComponent(property.title)}" class="cta-button">
+                    <i class="fas fa-envelope"></i> Email Inquiry
+                </a>
+                <a href="tel:+17182712121" class="cta-button">
+                    <i class="fas fa-phone"></i> Call Agent
+                </a>
+            </div>
+        </div>
+    `;
+    
+    modalContent.innerHTML = modalHTML;
+    
+    // Show the modal
+    document.getElementById('propertyModal').classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling while modal is open
+}
+
+// Close property details modal
+function closePropertyModal() {
+    document.getElementById('propertyModal').classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+}
+
+// Next image in gallery
+function nextImage() {
+    if (currentPropertyImages.length <= 1) return;
+    
+    currentImageIndex = (currentImageIndex + 1) % currentPropertyImages.length;
+    document.getElementById('galleryImage').src = currentPropertyImages[currentImageIndex];
+}
+
+// Previous image in gallery
+function prevImage() {
+    if (currentPropertyImages.length <= 1) return;
+    
+    currentImageIndex = (currentImageIndex - 1 + currentPropertyImages.length) % currentPropertyImages.length;
+    document.getElementById('galleryImage').src = currentPropertyImages[currentImageIndex];
+}
         
