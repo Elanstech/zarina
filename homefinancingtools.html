@@ -1034,16 +1034,16 @@
             <div class="tools-container">
                 <!-- Tool Navigation -->
                 <div class="tool-nav">
-                    <button class="tool-nav-btn active" data-tool="mortgage">
-                        <i class="fas fa-home"></i> Mortgage Calculator
-                    </button>
-                    <button class="tool-nav-btn" data-tool="dti">
-                        <i class="fas fa-calculator"></i> DTI Calculator
-                    </button>
-                    <button class="tool-nav-btn" data-tool="homeworth">
-                        <i class="fas fa-chart-line"></i> Home Value Estimator
-                    </button>
-                </div>
+    <button class="tool-nav-btn active" onclick="document.getElementById('mortgage').style.display='block'; document.getElementById('dti').style.display='none'; document.getElementById('homeworth').style.display='none'; document.querySelectorAll('.tool-nav-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active');">
+        <i class="fas fa-home"></i> Mortgage Calculator
+    </button>
+    <button class="tool-nav-btn" onclick="document.getElementById('mortgage').style.display='none'; document.getElementById('dti').style.display='block'; document.getElementById('homeworth').style.display='none'; document.querySelectorAll('.tool-nav-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active');">
+        <i class="fas fa-calculator"></i> DTI Calculator
+    </button>
+    <button class="tool-nav-btn" onclick="document.getElementById('mortgage').style.display='none'; document.getElementById('dti').style.display='none'; document.getElementById('homeworth').style.display='block'; document.querySelectorAll('.tool-nav-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active');">
+        <i class="fas fa-chart-line"></i> Home Value Estimator
+    </button>
+            </div>
 
                 <!-- Mortgage Calculator Tool -->
                 <section id="mortgage" class="tool-section active">
@@ -1462,40 +1462,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-
-    // FIX: Direct handler for tool navigation
-    document.querySelectorAll('.tool-nav-btn').forEach(button => {
-        button.onclick = function() {
-            // Get the targeted tool section
-            const toolId = this.getAttribute('data-tool');
-            console.log("Button clicked for:", toolId);
-            
-            // Update button states
-            document.querySelectorAll('.tool-nav-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            this.classList.add('active');
-            
-            // Hide all tool sections
-            document.querySelectorAll('.tool-section').forEach(section => {
-                section.classList.remove('active');
-                section.style.display = 'none';
-            });
-            
-            // Show the targeted tool section
-            const targetSection = document.getElementById(toolId);
-            if (targetSection) {
-                targetSection.classList.add('active');
-                targetSection.style.display = 'block';
-                console.log("Section displayed:", toolId);
-            } else {
-                console.error("Section not found:", toolId);
-            }
-            
-            // Prevent any default action
-            return false;
-        };
-    });
     
     // Ensure the mortgage section is visible initially
     const mortgageSection = document.getElementById('mortgage');
