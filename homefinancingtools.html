@@ -7,10 +7,20 @@
     <meta name="description" content="Access comprehensive mortgage calculator, DTI calculator, and home valuation tools from East Coast Realty by Zarina.">
     <meta name="keywords" content="Mortgage Calculator, DTI Calculator, Home Valuation, East Coast Realty, Zarina Yusupova, real estate, New York City">
     <meta name="author" content="Zarina Yusupova">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11536744618"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-11536744618');
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+        /* Base Styles */
         :root {
             --primary-color: #0100f4;
             --secondary-color: #00aaff;
@@ -20,36 +30,41 @@
             --text-light: #fff;
             --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             --hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            --section-padding: 80px 0;
             --border-radius: 15px;
             --transition: all 0.3s ease-in-out;
         }
 
-        body {
-            font-family: 'Quicksand', sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
             background-color: var(--light-gray);
             color: var(--text-dark);
-            transition: all 0.3s ease-in-out;
-            overflow-x: hidden;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         html {
             scroll-behavior: smooth;
         }
 
-        /* ============================================
-           Header
-        ============================================ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
         .main-header {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            /* Semi-transparent dark background with blur for a modern frosted-glass effect */
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.7);
             backdrop-filter: blur(8px);
             padding: 15px 0;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -59,12 +74,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
-        /* Logo container with white background to make the navy logo pop */
         .main-header .logo {
             background: #fff;
             padding: 5px 10px;
@@ -77,13 +88,10 @@
             display: block;
         }
 
-        /* Navigation styles */
         .main-header .main-nav ul {
             list-style: none;
             display: flex;
             gap: 20px;
-            margin: 0;
-            padding: 0;
         }
 
         .main-header .main-nav ul li a {
@@ -97,46 +105,26 @@
 
         .main-header .main-nav ul li a:hover {
             background-color: rgba(255, 255, 255, 0.2);
-            color: #fff;
         }
 
-        /* Mobile menu toggle */
         .main-header .mobile-menu-toggle {
             display: none;
             cursor: pointer;
             background: transparent;
             border: none;
-        }
-
-        .main-header .mobile-menu-toggle i {
-            font-size: 24px;
             color: #fff;
+            font-size: 24px;
         }
 
-        /* ============================================
-           Hero Section
-        ============================================ */
+        /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                url('https://images.unsplash.com/photo-1565514158740-064f34bd6cfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-            background-attachment: fixed;
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+                url('https://images.unsplash.com/photo-1560520031-3a4dc4e9de0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1773&q=80') no-repeat center center/cover;
+            padding-top: 120px;
+            padding-bottom: 80px;
             color: #fff;
             text-align: center;
-            position: relative;
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-            margin-top: 0;
-            padding-top: 80px;
-        }
-
-        .hero .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
         }
 
         .hero h1 {
@@ -147,43 +135,28 @@
             background: rgba(0, 0, 0, 0.5);
             border-radius: 15px;
             text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
-            animation: fadeInDown 1s ease-in-out;
-            transition: transform 0.3s ease;
-        }
-
-        .hero h1:hover {
-            transform: scale(1.05);
+            display: inline-block;
         }
 
         .hero p {
             font-size: 1.5em;
             margin-bottom: 20px;
-            animation: fadeInUp 1s ease-in-out;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        /* ============================================
-           Main Content
-        ============================================ */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
+        /* Main Content */
         .main-content {
             padding: 60px 0;
             margin-top: -50px;
             position: relative;
             z-index: 10;
+            background: transparent;
         }
 
-        /* ============================================
-           Tool Navigation
-        ============================================ */
+        /* Tool Navigation */
         .tool-nav {
             display: flex;
             justify-content: center;
@@ -196,10 +169,8 @@
             padding: 15px 30px;
             background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
             color: #fff;
-            text-decoration: none;
             border-radius: 30px;
             font-size: 1.1em;
-            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
             font-weight: bold;
@@ -210,10 +181,6 @@
             background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .tool-nav-btn.active {
-            position: relative;
         }
 
         .tool-nav-btn.active::after {
@@ -228,17 +195,14 @@
             border-radius: 3px;
         }
 
-        /* ============================================
-           Tool Sections
-        ============================================ */
+        /* Tool Sections */
         .tool-section {
-            display: none;
             background: #fff;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             padding: 40px;
             margin-bottom: 40px;
-            animation: fadeIn 0.5s ease-in-out;
+            display: none;
         }
 
         .tool-section.active {
@@ -262,9 +226,7 @@
             line-height: 1.6;
         }
 
-        /* ============================================
-           Mortgage Calculator Section
-        ============================================ */
+        /* Mortgage Calculator */
         .iframe-container {
             position: relative;
             overflow: hidden;
@@ -284,9 +246,7 @@
             border: 0;
         }
 
-        /* ============================================
-           DTI Calculator Section
-        ============================================ */
+        /* DTI Calculator */
         .calculator-container {
             display: flex;
             flex-direction: column;
@@ -307,12 +267,10 @@
             border: 1px solid #ddd;
             background: rgba(255, 255, 255, 0.8);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
             font-size: 1.1em;
         }
 
         .calculator-container input:focus {
-            transform: scale(1.02);
             outline: none;
             border-color: var(--primary-color);
         }
@@ -325,7 +283,6 @@
             font-size: 1.2em;
             border: none;
             cursor: pointer;
-            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             margin-top: 20px;
         }
@@ -342,7 +299,6 @@
             padding: 15px;
             border-radius: 10px;
             text-align: center;
-            transition: all 0.3s ease;
             min-height: 30px;
         }
 
@@ -352,9 +308,7 @@
             display: none;
         }
 
-        /* ============================================
-           Home Worth Section
-        ============================================ */
+        /* Home Worth Form */
         .home-worth-form {
             max-width: 800px;
             margin: 0 auto;
@@ -390,7 +344,6 @@
             border-radius: 10px;
             border: 1px solid #ddd;
             font-family: 'Quicksand', sans-serif;
-            transition: all 0.3s ease;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
         }
 
@@ -400,12 +353,6 @@
             outline: none;
             border-color: var(--primary-color);
             box-shadow: 0 2px 10px rgba(1, 0, 244, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .form-group input[type="file"] {
-            padding: 10px;
-            background: #fff;
         }
 
         .form-submit {
@@ -421,7 +368,6 @@
             border-radius: 30px;
             font-size: 1.1em;
             cursor: pointer;
-            transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
@@ -431,9 +377,7 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
-        /* ============================================
-           Info Cards
-        ============================================ */
+        /* Info Cards */
         .info-cards {
             display: flex;
             flex-wrap: wrap;
@@ -447,7 +391,6 @@
             background: #fff;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .info-card:hover {
@@ -468,9 +411,7 @@
             color: #555;
         }
 
-        /* ============================================
-           Footer 
-        ============================================ */
+        /* Footer */
         footer {
             background: var(--dark-blue);
             color: #fff;
@@ -505,16 +446,13 @@
         footer a {
             color: var(--secondary-color);
             text-decoration: none;
-            transition: color 0.3s ease;
         }
 
         footer a:hover {
             color: #fff;
         }
 
-        /* ============================================
-           Floating button
-        ============================================ */
+        /* Floating Button */
         .floating-btn {
             position: fixed;
             bottom: 30px;
@@ -527,7 +465,6 @@
             font-size: 0.9rem;
             font-weight: 600;
             box-shadow: var(--box-shadow);
-            transition: var(--transition);
             z-index: 99;
         }
 
@@ -537,39 +474,13 @@
             box-shadow: var(--hover-shadow);
         }
 
-        /* ============================================
-           Animations
-        ============================================ */
+        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ============================================
-           Responsive Styles
-        ============================================ */
+        /* Responsive Styles */
         @media (max-width: 768px) {
             .main-header .mobile-menu-toggle {
                 display: block;
@@ -623,7 +534,8 @@
 
         @media (max-width: 480px) {
             .hero {
-                height: 50vh;
+                padding-top: 100px;
+                padding-bottom: 60px;
             }
             
             .hero h1 {
@@ -687,7 +599,7 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container" data-aos="fade-in">
+        <div class="container">
             <h1>Home Financing Tools</h1>
             <p>Calculate mortgage payments, evaluate your budget, and discover your home's value with our comprehensive suite of financing tools.</p>
         </div>
@@ -697,31 +609,31 @@
     <main class="main-content">
         <div class="container">
             <!-- Tool Navigation -->
-            <div class="tool-nav" data-aos="fade-up">
+            <div class="tool-nav">
                 <button class="tool-nav-btn active" data-tool="mortgage">Mortgage Calculator</button>
                 <button class="tool-nav-btn" data-tool="dti">DTI Calculator</button>
                 <button class="tool-nav-btn" data-tool="homeworth">Home Value Estimator</button>
             </div>
 
             <!-- Mortgage Calculator Tool -->
-            <section id="mortgage" class="tool-section active" data-aos="fade-up">
+            <section id="mortgage" class="tool-section active">
                 <h2>Mortgage Calculator</h2>
                 <p class="intro">Plan your home purchase with our comprehensive mortgage calculator. Determine your monthly payments, calculate interest rates, and find the right mortgage for your budget.</p>
                 
-                <div class="iframe-container" data-aos="zoom-in">
+                <div class="iframe-container">
                     <iframe src="https://www.mortgagecalculator.org/" frameborder="0"></iframe>
                 </div>
                 
                 <div class="info-cards">
-                    <div class="info-card" data-aos="fade-up">
+                    <div class="info-card">
                         <h3>Understanding Your Mortgage</h3>
                         <p>A mortgage is a loan taken out to buy property or land. The loan is secured against the value of your home until it's paid off. It's crucial to understand how much you can afford to borrow before committing to a mortgage.</p>
                     </div>
-                    <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="info-card">
                         <h3>Types of Mortgages</h3>
                         <p>There are many types of mortgages available, including fixed-rate, adjustable-rate, FHA, VA, and jumbo loans. Each has its own advantages depending on your financial situation and home buying goals.</p>
                     </div>
-                    <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="info-card">
                         <h3>Ready to Get Started?</h3>
                         <p>Once you've calculated your estimated mortgage payments, contact us for personalized guidance. We can help you navigate the mortgage process and find the best loan options for your needs.</p>
                     </div>
@@ -729,11 +641,11 @@
             </section>
 
             <!-- DTI Calculator Tool -->
-            <section id="dti" class="tool-section" data-aos="fade-up">
+            <section id="dti" class="tool-section">
                 <h2>Debt-to-Income (DTI) Calculator</h2>
                 <p class="intro">Your debt-to-income ratio (DTI) is a key factor lenders use to determine how much you can borrow. A lower DTI ratio means you have less debt compared to your income.</p>
                 
-                <div class="calculator-container" data-aos="fade-up">
+                <div class="calculator-container">
                     <input type="number" id="income" placeholder="Monthly Gross Income ($)" required>
                     <input type="number" id="debts" placeholder="Total Monthly Debt Payments ($)" required>
                     <button id="calculate-dti">Calculate DTI</button>
@@ -742,15 +654,15 @@
                 </div>
                 
                 <div class="info-cards">
-                    <div class="info-card" data-aos="fade-up">
+                    <div class="info-card">
                         <h3>What is DTI?</h3>
                         <p>Debt-to-Income (DTI) ratio is a personal finance measure that compares your monthly debt payments to your monthly gross income. Lenders use this ratio to determine your borrowing risk and how much you can afford to borrow.</p>
                     </div>
-                    <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="info-card">
                         <h3>Why DTI Matters</h3>
                         <p>Most lenders prefer a DTI ratio of 36% or less, with no more than 28% of that debt going toward servicing your mortgage. A lower DTI ratio demonstrates your ability to manage monthly payments and repay debts responsibly.</p>
                     </div>
-                    <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="info-card">
                         <h3>Improving Your DTI</h3>
                         <p>To improve your DTI ratio, focus on paying down existing debt, increasing your income, or both. Consider creating a debt repayment plan and avoid taking on new debt before applying for a mortgage.</p>
                     </div>
@@ -758,11 +670,11 @@
             </section>
 
             <!-- Home Worth Tool -->
-            <section id="homeworth" class="tool-section" data-aos="fade-up">
+            <section id="homeworth" class="tool-section">
                 <h2>What's Your Home Worth?</h2>
                 <p class="intro">Get a professional estimate of your home's value. Our team of real estate experts will analyze your property details and provide you with a comprehensive valuation report.</p>
                 
-                <div class="home-worth-form" data-aos="fade-up">
+                <div class="home-worth-form">
                     <form id="homeWorthForm">
                         <div class="form-row">
                             <div class="form-group">
@@ -858,15 +770,15 @@
                 </div>
                 
                 <div class="info-cards">
-                    <div class="info-card" data-aos="fade-up">
+                    <div class="info-card">
                         <h3>Professional Valuation</h3>
                         <p>Our team of experienced real estate professionals will analyze your property details, current market trends, and comparable sales in your area to provide an accurate valuation.</p>
                     </div>
-                    <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="info-card">
                         <h3>Local Market Expertise</h3>
                         <p>We have in-depth knowledge of the New York City real estate market, allowing us to provide valuations that consider neighborhood-specific factors that online estimators might miss.</p>
                     </div>
-                    <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="info-card">
                         <h3>Thinking of Selling?</h3>
                         <p>A professional home valuation is the first step in the selling process. Once you know your home's worth, we can help you develop a strategic marketing plan to maximize your sale price.</p>
                     </div>
@@ -899,60 +811,84 @@
     <a href="fair-housing-notice.html" class="floating-btn">Fair Housing Notice</a>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS animation library
-            AOS.init({
-                duration: 1000,
-                easing: 'ease-in-out',
-                once: true
-            });
-
+            console.log("DOM Loaded - Initializing scripts");
+            
             // Mobile Menu Toggle
             const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
             const navMenu = document.getElementById('nav-menu');
 
-            mobileMenuToggle.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-                mobileMenuToggle.querySelector('i').classList.toggle('fa-bars');
-                mobileMenuToggle.querySelector('i').classList.toggle('fa-times');
-            });
+            if (mobileMenuToggle && navMenu) {
+                console.log("Mobile menu elements found");
+                mobileMenuToggle.addEventListener('click', function() {
+                    console.log("Mobile menu toggle clicked");
+                    navMenu.classList.toggle('active');
+                    const icon = mobileMenuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-bars');
+                        icon.classList.toggle('fa-times');
+                    }
+                });
+            } else {
+                console.log("Mobile menu elements not found");
+            }
 
             // Tool Navigation
             const toolButtons = document.querySelectorAll('.tool-nav-btn');
             const toolSections = document.querySelectorAll('.tool-section');
 
-            toolButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    toolButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    button.classList.add('active');
-                    
-                    // Hide all tool sections
-                    toolSections.forEach(section => {
-                        section.classList.remove('active');
+            if (toolButtons.length > 0 && toolSections.length > 0) {
+                console.log(`Found ${toolButtons.length} tool buttons and ${toolSections.length} tool sections`);
+                
+                toolButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const toolId = this.getAttribute('data-tool');
+                        console.log(`Tool button clicked: ${toolId}`);
+                        
+                        // Remove active class from all buttons
+                        toolButtons.forEach(btn => btn.classList.remove('active'));
+                        
+                        // Add active class to clicked button
+                        this.classList.add('active');
+                        
+                        // Hide all tool sections
+                        toolSections.forEach(section => {
+                            section.classList.remove('active');
+                            section.style.display = 'none';
+                        });
+                        
+                        // Show the corresponding tool section
+                        const targetSection = document.getElementById(toolId);
+                        if (targetSection) {
+                            console.log(`Showing section: ${toolId}`);
+                            targetSection.classList.add('active');
+                            targetSection.style.display = 'block';
+                        } else {
+                            console.error(`Section not found: ${toolId}`);
+                        }
                     });
-                    
-                    // Show the corresponding tool section
-                    const toolId = button.getAttribute('data-tool');
-                    document.getElementById(toolId).classList.add('active');
                 });
-            });
+            } else {
+                console.log("Tool navigation elements not found");
+            }
 
             // DTI Calculator
             const calculateDTIButton = document.getElementById('calculate-dti');
             if (calculateDTIButton) {
+                console.log("DTI calculator found");
                 calculateDTIButton.addEventListener('click', function() {
+                    console.log("Calculate DTI button clicked");
                     const income = parseFloat(document.getElementById('income').value);
                     const debts = parseFloat(document.getElementById('debts').value);
                     const resultElement = document.getElementById('result');
                     const interpretationElement = document.getElementById('interpretation');
                     
+                    console.log(`Income: ${income}, Debts: ${debts}`);
+                    
                     if (income > 0 && !isNaN(income) && !isNaN(debts)) {
                         const dti = (debts / income) * 100;
+                        console.log(`Calculated DTI: ${dti.toFixed(2)}%`);
                         resultElement.innerText = `Your DTI is ${dti.toFixed(2)}%`;
                         
                         // Provide interpretation based on DTI value
@@ -972,19 +908,24 @@
                             interpretationElement.innerHTML = '<strong>Attention needed.</strong> Your DTI is higher than what most lenders prefer.<br>Consider paying down debt or increasing income before applying.';
                         }
                     } else {
+                        console.log("Invalid input for DTI calculator");
                         resultElement.innerText = 'Please enter valid income and debt values.';
                         resultElement.style.backgroundColor = 'transparent';
                         resultElement.style.color = '#333';
                         interpretationElement.style.display = 'none';
                     }
                 });
+            } else {
+                console.log("DTI calculator not found");
             }
 
             // Home Worth Form Submission
             const homeWorthForm = document.getElementById('homeWorthForm');
             if (homeWorthForm) {
+                console.log("Home worth form found");
                 homeWorthForm.addEventListener('submit', function(event) {
                     event.preventDefault();
+                    console.log("Home worth form submitted");
 
                     // Get form data
                     const formData = new FormData(this);
@@ -993,6 +934,8 @@
                     formData.forEach((value, key) => {
                         formDataObject[key] = value;
                     });
+                    
+                    console.log("Form data:", formDataObject);
                     
                     // Create email body from form data
                     let emailBody = `Name: ${formDataObject.name}\n`;
@@ -1028,25 +971,16 @@
                     // Reset form
                     this.reset();
                 });
+            } else {
+                console.log("Home worth form not found");
             }
 
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
+            // Ensure the mortgage section is visible initially
+            const mortgageSection = document.getElementById('mortgage');
+            if (mortgageSection) {
+                console.log("Setting mortgage section as visible");
+                mortgageSection.style.display = 'block';
+            }
         });
     </script>
 </body>
