@@ -9,7 +9,8 @@
       "43-33Front.jpeg", 
       "4333living.jpeg", 
       "4333bed.jpeg",
-      "4333kitchen.jpeg"
+      "4333kitchen.jpeg",
+      "4333bathroom.jpeg"
     ],
     "status": "For Rent",
     "propertyType": "Apartment",
@@ -40,7 +41,8 @@
       "7350.jpeg",
       "73501.jpeg", 
       "73502.jpeg",
-      "73504.jpeg"
+      "73504.jpeg",
+      "73505.jpeg"
     ],
     "status": "For Rent",
     "propertyType": "House",
@@ -77,8 +79,7 @@
       "75-281.jpeg", 
       "75-282.jpeg",
       "75-283.jpeg",
-      "75-284.jpeg",
-      "75-285.jpeg"
+      "75-284.jpeg"
     ],
     "status": "For Rent",
     "propertyType": "Apartment",
@@ -116,12 +117,7 @@
       "119-152.jpeg",
       "119-153.jpeg",
       "119-154.jpeg",
-      "119-155.jpeg",
-      "119-156.jpeg",
-      "119-157.jpeg",
-      "119-158.jpeg",
-      "119-159.jpeg",
-      "119-1510.jpeg"
+      "119-155.jpeg"
     ],
     "status": "For Rent",
     "propertyType": "House",
@@ -147,5 +143,103 @@
     ],
     "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.5353840788397!2d-73.75780368459491!3d40.72983967932833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25f031c31af29%3A0xb79548a219c59eb!2s119-15%20195th%20St%2C%20Saint%20Albans%2C%20NY%2011412!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus",
     "featured": true
+  },
+  {
+    "id": 5,
+    "title": "313 Onderdonk Ave, Ridgewood, NY 11385",
+    "address": "313 Onderdonk Ave, Ridgewood, NY 11385",
+    "price": "$2900 plus electricity and cooking gas",
+    "description": "Charming 2-bedroom apartment on the 1st floor in Ridgewood. This pet-friendly unit offers a comfortable living space with 1 bathroom. Great location with easy access to neighborhood amenities.",
+    "images": [
+      "313onderdonk1.jpeg",
+      "313onderdonk2.jpeg",
+      "313onderdonk3.jpeg",
+      "313onderdonk4.jpeg",
+      "313onderdonk5.jpeg"
+    ],
+    "status": "For Rent",
+    "propertyType": "Apartment",
+    "neighborhood": "Ridgewood",
+    "beds": 2,
+    "baths": 1,
+    "features": [
+      "Pet friendly",
+      "1st floor",
+      "2 bedrooms",
+      "1 bathroom"
+    ],
+    "specs": [
+      { "icon": "fas fa-bed", "text": "2 Bedrooms" },
+      { "icon": "fas fa-bath", "text": "1 Bathroom" },
+      { "icon": "fas fa-building", "text": "Apartment" },
+      { "icon": "fas fa-calendar-alt", "text": "Available Now" }
+    ],
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.3!2d-73.9!3d40.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25c!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus",
+    "featured": false
+  },
+  {
+    "id": 6,
+    "title": "180 Beach 117th St, Rockaway Park, NY 11694",
+    "address": "180 Beach 117th St, Rockaway Park, NY 11694",
+    "price": "$1900 Monthly Rent",
+    "description": "Large studio for rent in Rockaway Park. This unit offers a 2H and 6H layout. Great location with convenient access to local amenities and public transportation.",
+    "images": [
+      "180beach1.jpeg",
+      "180beach2.jpeg",
+      "180beach3.jpeg",
+      "180beach4.jpeg",
+      "180beach5.jpeg"
+    ],
+    "status": "For Rent",
+    "propertyType": "Studio",
+    "neighborhood": "Rockaway Park",
+    "beds": 0,
+    "baths": 1,
+    "features": [
+      "Large studio space",
+      "2H 6H layout",
+      "Close to beach"
+    ],
+    "specs": [
+      { "icon": "fas fa-building", "text": "Studio" },
+      { "icon": "fas fa-bath", "text": "1 Bathroom" },
+      { "icon": "fas fa-map-marker-alt", "text": "Rockaway Park" },
+      { "icon": "fas fa-calendar-alt", "text": "Available Now" }
+    ],
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2!2d-73.8!3d40.58!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25e!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus",
+    "featured": false
+  },
+  {
+    "id": 7,
+    "title": "9825 64 Road Apt 7e, Studio for Rent",
+    "address": "9825 64 Road Apt 7e, Forest Hills, NY",
+    "price": "$1800 Monthly Rent (all utilities included)",
+    "description": "Studio apartment for rent with all utilities included. Board approval required. Conveniently located in Forest Hills. Available starting March 15.",
+    "images": [
+      "9825studio1.jpeg",
+      "9825studio2.jpeg",
+      "9825studio3.jpeg",
+      "9825studio4.jpeg",
+      "9825studio5.jpeg"
+    ],
+    "status": "For Rent",
+    "propertyType": "Studio",
+    "neighborhood": "Forest Hills",
+    "beds": 0,
+    "baths": 1,
+    "features": [
+      "All utilities included",
+      "Board approval required",
+      "7th floor unit",
+      "Available March 15"
+    ],
+    "specs": [
+      { "icon": "fas fa-building", "text": "Studio" },
+      { "icon": "fas fa-bath", "text": "1 Bathroom" },
+      { "icon": "fas fa-map-marker-alt", "text": "Forest Hills" },
+      { "icon": "fas fa-calendar-alt", "text": "Available March 15" }
+    ],
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.1!2d-73.85!3d40.72!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25d!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus",
+    "featured": false
   }
 ]
