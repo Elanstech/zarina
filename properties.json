@@ -215,16 +215,20 @@
   },
   {
     "id": 7,
-    "title": "9825 64 Road Apt 7e, Studio for Rent",
-    "address": "9825 64 Road Apt 7e, Forest Hills, NY",
+    "title": "9825 64 Road Apt 7E, Studio for Rent",
+    "address": "9825 64 Road Apt 7E, Forest Hills, NY",
     "price": "$1800 Monthly Rent (all utilities included)",
     "description": "Studio apartment for rent with all utilities included. Board approval required. Conveniently located in Forest Hills. Available starting March 15.",
     "images": [
-      "9825studio1.jpeg",
-      "9825studio2.jpeg",
-      "9825studio3.jpeg",
-      "9825studio4.jpeg",
-      "9825studio5.jpeg"
+      "9825.jpeg",
+      "98251.jpeg",
+      "98252.jpeg",
+      "98253.jpeg",
+      "98254.jpeg",
+      "98255.jpeg",
+      "98256.jpeg",
+      "98257.jpeg",
+      "98258.jpeg"
     ],
     "status": "For Rent",
     "propertyType": "Studio",
