@@ -1335,180 +1335,184 @@
     </a>
 
     <!-- Scripts -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log("DOM fully loaded");
-            
-            // Header scroll effect
-            const header = document.getElementById('header');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-            
-            // Mobile Menu Toggle
-            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-            const mainNav = document.getElementById('main-nav');
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("DOM fully loaded");
+    
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mainNav = document.getElementById('main-nav');
 
-            if (mobileMenuToggle && mainNav) {
-                mobileMenuToggle.addEventListener('click', function() {
-                    mainNav.classList.toggle('active');
-                    const icon = mobileMenuToggle.querySelector('i');
-                    if (icon) {
-                        icon.classList.toggle('fa-bars');
-                        icon.classList.toggle('fa-times');
-                    }
-                });
-            }
-
-            // Tool Navigation
-            const toolButtons = document.querySelectorAll('.tool-nav-btn');
-            const toolSections = document.querySelectorAll('.tool-section');
-
-            if (toolButtons.length > 0 && toolSections.length > 0) {
-                toolButtons.forEach(button => {
-                    button.addEventListener('click', function() {
-                        const toolId = this.getAttribute('data-tool');
-                        
-                        // Remove active class from all buttons
-                        toolButtons.forEach(btn => btn.classList.remove('active'));
-                        
-                        // Add active class to clicked button
-                        this.classList.add('active');
-                        
-                        // Hide all tool sections
-                        toolSections.forEach(section => {
-                            section.classList.remove('active');
-                            section.style.display = 'none';
-                        });
-                        
-                        // Show the corresponding tool section
-                        const targetSection = document.getElementById(toolId);
-                        if (targetSection) {
-                            targetSection.classList.add('active');
-                            targetSection.style.display = 'block';
-                        }
-                    });
-                });
-            }
-
-            // DTI Calculator
-            const calculateDTIButton = document.getElementById('calculate-dti');
-            if (calculateDTIButton) {
-                calculateDTIButton.addEventListener('click', function() {
-                    const income = parseFloat(document.getElementById('income').value);
-                    const debts = parseFloat(document.getElementById('debts').value);
-                    const resultElement = document.getElementById('result');
-                    const interpretationElement = document.getElementById('interpretation');
-                    
-                    if (income > 0 && !isNaN(income) && !isNaN(debts)) {
-                        const dti = (debts / income) * 100;
-                        resultElement.innerText = `Your DTI is ${dti.toFixed(2)}%`;
-                        
-                        // Provide interpretation based on DTI value
-                        interpretationElement.style.display = 'block';
-                        
-                        if (dti < 36) {
-                            resultElement.style.backgroundColor = '#d4edda';
-                            resultElement.style.color = '#155724';
-                            interpretationElement.innerHTML = '<strong>Great!</strong> Most lenders prefer a DTI ratio below 36%.<br>You're in a strong position to qualify for a mortgage.';
-                        } else if (dti < 43) {
-                            resultElement.style.backgroundColor = '#fff3cd';
-                            resultElement.style.color = '#856404';
-                            interpretationElement.innerHTML = '<strong>Good.</strong> Your DTI is in an acceptable range for many loans.<br>You may still qualify, but could face some limitations.';
-                        } else {
-                            resultElement.style.backgroundColor = '#f8d7da';
-                            resultElement.style.color = '#721c24';
-                            interpretationElement.innerHTML = '<strong>Attention needed.</strong> Your DTI is higher than what most lenders prefer.<br>Consider paying down debt or increasing income before applying.';
-                        }
-                    } else {
-                        resultElement.innerText = 'Please enter valid income and debt values.';
-                        resultElement.style.backgroundColor = 'transparent';
-                        resultElement.style.color = '#333';
-                        interpretationElement.style.display = 'none';
-                    }
-                });
-            }
-
-            // Home Worth Form Submission
-            const homeWorthForm = document.getElementById('homeWorthForm');
-            if (homeWorthForm) {
-                homeWorthForm.addEventListener('submit', function(event) {
-                    event.preventDefault();
-
-                    // Get form data
-                    const formData = new FormData(this);
-                    const formDataObject = {};
-                    
-                    formData.forEach((value, key) => {
-                        formDataObject[key] = value;
-                    });
-                    
-                    // Create email body from form data
-                    let emailBody = `Name: ${formDataObject.name}\n`;
-                    emailBody += `Email: ${formDataObject.email}\n`;
-                    emailBody += `Phone: ${formDataObject.phone}\n`;
-                    emailBody += `Property Address: ${formDataObject.address}\n`;
-                    emailBody += `Property Type: ${formDataObject.propertyType}\n`;
-                    emailBody += `Bedrooms: ${formDataObject.bedrooms}\n`;
-                    emailBody += `Bathrooms: ${formDataObject.bathrooms}\n`;
-                    emailBody += `Square Footage: ${formDataObject.sqft}\n`;
-                    
-                    if (formDataObject.yearBuilt) {
-                        emailBody += `Year Built: ${formDataObject.yearBuilt}\n`;
-                    }
-                    
-                    if (formDataObject.lastRenovated) {
-                        emailBody += `Last Renovated: ${formDataObject.lastRenovated}\n`;
-                    }
-                    
-                    if (formDataObject.additionalInfo) {
-                        emailBody += `Additional Information: ${formDataObject.additionalInfo}\n`;
-                    }
-                    
-                    // Create mailto link
-                    const mailtoLink = `mailto:broker@eastcoastrealty.net?subject=Home Valuation Request - ${formDataObject.address}&body=${encodeURIComponent(emailBody)}`;
-                    
-                    // Open email client
-                    window.location.href = mailtoLink;
-                    
-                    // Show success message
-                    alert('Thank you for your submission! Your email client should open soon. If it doesn\'t, please contact us directly at broker@eastcoastrealty.net');
-                    
-                    // Reset form
-                    this.reset();
-                });
-            }
-
-            // Back to Top button
-            const backToTopButton = document.getElementById('back-to-top');
-            if (backToTopButton) {
-                window.addEventListener('scroll', function() {
-                    if (window.scrollY > 300) {
-                        backToTopButton.classList.add('active');
-                    } else {
-                        backToTopButton.classList.remove('active');
-                    }
-                });
-                
-                backToTopButton.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                });
-            }
-
-            // Ensure the mortgage section is visible initially
-            const mortgageSection = document.getElementById('mortgage');
-            if (mortgageSection) {
-                mortgageSection.style.display = 'block';
+    if (mobileMenuToggle && mainNav) {
+        mobileMenuToggle.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            if (icon) {
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
             }
         });
-    </script>
+    }
+
+    // DTI Calculator
+    const calculateDTIButton = document.getElementById('calculate-dti');
+    if (calculateDTIButton) {
+        calculateDTIButton.addEventListener('click', function() {
+            const income = parseFloat(document.getElementById('income').value);
+            const debts = parseFloat(document.getElementById('debts').value);
+            const resultElement = document.getElementById('result');
+            const interpretationElement = document.getElementById('interpretation');
+            
+            if (income > 0 && !isNaN(income) && !isNaN(debts)) {
+                const dti = (debts / income) * 100;
+                resultElement.innerText = `Your DTI is ${dti.toFixed(2)}%`;
+                
+                // Provide interpretation based on DTI value
+                interpretationElement.style.display = 'block';
+                
+                if (dti < 36) {
+                    resultElement.style.backgroundColor = '#d4edda';
+                    resultElement.style.color = '#155724';
+                    interpretationElement.innerHTML = '<strong>Great!</strong> Most lenders prefer a DTI ratio below 36%.<br>You're in a strong position to qualify for a mortgage.';
+                } else if (dti < 43) {
+                    resultElement.style.backgroundColor = '#fff3cd';
+                    resultElement.style.color = '#856404';
+                    interpretationElement.innerHTML = '<strong>Good.</strong> Your DTI is in an acceptable range for many loans.<br>You may still qualify, but could face some limitations.';
+                } else {
+                    resultElement.style.backgroundColor = '#f8d7da';
+                    resultElement.style.color = '#721c24';
+                    interpretationElement.innerHTML = '<strong>Attention needed.</strong> Your DTI is higher than what most lenders prefer.<br>Consider paying down debt or increasing income before applying.';
+                }
+            } else {
+                resultElement.innerText = 'Please enter valid income and debt values.';
+                resultElement.style.backgroundColor = 'transparent';
+                resultElement.style.color = '#333';
+                interpretationElement.style.display = 'none';
+            }
+        });
+    }
+
+    // Home Worth Form Submission
+    const homeWorthForm = document.getElementById('homeWorthForm');
+    if (homeWorthForm) {
+        homeWorthForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get form data
+            const formData = new FormData(this);
+            const formDataObject = {};
+            
+            formData.forEach((value, key) => {
+                formDataObject[key] = value;
+            });
+            
+            // Create email body from form data
+            let emailBody = `Name: ${formDataObject.name}\n`;
+            emailBody += `Email: ${formDataObject.email}\n`;
+            emailBody += `Phone: ${formDataObject.phone}\n`;
+            emailBody += `Property Address: ${formDataObject.address}\n`;
+            emailBody += `Property Type: ${formDataObject.propertyType}\n`;
+            emailBody += `Bedrooms: ${formDataObject.bedrooms}\n`;
+            emailBody += `Bathrooms: ${formDataObject.bathrooms}\n`;
+            emailBody += `Square Footage: ${formDataObject.sqft}\n`;
+            
+            if (formDataObject.yearBuilt) {
+                emailBody += `Year Built: ${formDataObject.yearBuilt}\n`;
+            }
+            
+            if (formDataObject.lastRenovated) {
+                emailBody += `Last Renovated: ${formDataObject.lastRenovated}\n`;
+            }
+            
+            if (formDataObject.additionalInfo) {
+                emailBody += `Additional Information: ${formDataObject.additionalInfo}\n`;
+            }
+            
+            // Create mailto link
+            const mailtoLink = `mailto:broker@eastcoastrealty.net?subject=Home Valuation Request - ${formDataObject.address}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            alert('Thank you for your submission! Your email client should open soon. If it doesn\'t, please contact us directly at broker@eastcoastrealty.net');
+            
+            // Reset form
+            this.reset();
+        });
+    }
+
+    // Back to Top button
+    const backToTopButton = document.getElementById('back-to-top');
+    if (backToTopButton) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // FIX: Direct handler for tool navigation
+    document.querySelectorAll('.tool-nav-btn').forEach(button => {
+        button.onclick = function() {
+            // Get the targeted tool section
+            const toolId = this.getAttribute('data-tool');
+            console.log("Button clicked for:", toolId);
+            
+            // Update button states
+            document.querySelectorAll('.tool-nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            this.classList.add('active');
+            
+            // Hide all tool sections
+            document.querySelectorAll('.tool-section').forEach(section => {
+                section.classList.remove('active');
+                section.style.display = 'none';
+            });
+            
+            // Show the targeted tool section
+            const targetSection = document.getElementById(toolId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+                targetSection.style.display = 'block';
+                console.log("Section displayed:", toolId);
+            } else {
+                console.error("Section not found:", toolId);
+            }
+            
+            // Prevent any default action
+            return false;
+        };
+    });
+    
+    // Ensure the mortgage section is visible initially
+    const mortgageSection = document.getElementById('mortgage');
+    if (mortgageSection) {
+        mortgageSection.style.display = 'block';
+        mortgageSection.classList.add('active');
+    }
+});
+</script>
 </body>
 </html>
