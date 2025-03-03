@@ -188,11 +188,11 @@
     "price": "$1900 Monthly Rent",
     "description": "Large studio for rent in Rockaway Park. This unit offers a 2H and 6H layout. Great location with convenient access to local amenities and public transportation.",
     "images": [
-      "180beach1.jpeg",
-      "180beach2.jpeg",
-      "180beach3.jpeg",
-      "180beach4.jpeg",
-      "180beach5.jpeg"
+      "180Beach.jpeg",
+      "180Beach1.jpeg",
+      "180Beach2.jpeg",
+      "180Beach3.jpeg",
+      "180Beach4.jpeg"
     ],
     "status": "For Rent",
     "propertyType": "Studio",
@@ -201,7 +201,7 @@
     "baths": 1,
     "features": [
       "Large studio space",
-      "2H 6H layout",
+      "Apt 2H & 6H Avaliable",
       "Close to beach"
     ],
     "specs": [
