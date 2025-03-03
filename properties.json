@@ -249,5 +249,41 @@
     ],
     "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.1!2d-73.85!3d40.72!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25d!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus",
     "featured": false
+  },
+  {
+    "id": 8,
+    "title": "6471 Wetherole Street, Queens, NY",
+    "address": "6471 Wetherole Street, Queens, NY",
+    "price": "$3200 plus electricity and cooking gas",
+    "description": "Spacious 2-bedroom apartment with 1.5 bathrooms on the 2nd floor (walk-up). This well-maintained unit offers comfortable living space in a convenient location. Great for small families or roommates looking for extra space.",
+    "images": [
+      "6471wetherole1.jpeg",
+      "6471wetherole2.jpeg",
+      "6471wetherole3.jpeg",
+      "6471wetherole4.jpeg",
+      "6471wetherole5.jpeg",
+      "6471wetherole6.jpeg",
+      "6471wetherole7.jpeg",
+      "6471wetherole8.jpeg"
+    ],
+    "status": "For Rent",
+    "propertyType": "Apartment",
+    "neighborhood": "Rego Park",
+    "beds": 2,
+    "baths": 1.5,
+    "features": [
+      "1.5 bathrooms",
+      "2nd floor walk-up",
+      "2 bedrooms",
+      "Spacious layout"
+    ],
+    "specs": [
+      { "icon": "fas fa-bed", "text": "2 Bedrooms" },
+      { "icon": "fas fa-bath", "text": "1.5 Bathrooms" },
+      { "icon": "fas fa-building", "text": "Apartment" },
+      { "icon": "fas fa-calendar-alt", "text": "Available Now" }
+    ],
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.2!2d-73.86!3d40.73!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25d!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus",
+    "featured": false
   }
 ]
