@@ -285,5 +285,45 @@
     ],
     "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.2!2d-73.86!3d40.73!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25d!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus",
     "featured": false
+   },
+  {
+    "id": 9,
+    "title": "70-41 Vleigh Pl, Flushing, NY 11367",
+    "address": "70-41 Vleigh Pl, Flushing, NY 11367, United States",
+    "price": "$2500 Monthly Rent",
+    "description": "Cozy 2 bedroom, 1 bathroom basement apartment located in a private house in Flushing. This unit features a separate entrance, utilities included, and is situated in a quiet residential neighborhood with convenient access to public transportation, shopping, and dining options.",
+    "images": [
+      "7041Vleigh.jpeg",
+      "70412Vleigh.jpeg",
+      "70413Vleigh.jpeg",
+      "70414Vleigh.jpeg",
+      "70415Vleigh.jpeg",
+      "70416Vleigh.jpeg",
+      "70417Vleigh.jpeg",
+      "70418Vleigh.jpeg",
+      "70419Vleigh.jpeg"
+    ],
+    "status": "For Rent",
+    "propertyType": "Basement Apartment",
+    "neighborhood": "Flushing",
+    "beds": 2,
+    "baths": 1,
+    "features": [
+      "Basement unit in a house",
+      "2 bedrooms",
+      "1 bathroom",
+      "Separate entrance",
+      "Residential neighborhood",
+      "Close to public transportation",
+      "Utilities included"
+    ],
+    "specs": [
+      { "icon": "fas fa-bed", "text": "2 Bedrooms" },
+      { "icon": "fas fa-bath", "text": "1 Bathroom" },
+      { "icon": "fas fa-building", "text": "Basement Apartment" },
+      { "icon": "fas fa-calendar-alt", "text": "Available Now" }
+    ],
+    "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.2!2d-73.8!3d40.73!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25d!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus",
+    "featured": false
   }
 ]
