@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - East Coast Realty by Zarina</title>
+    <meta name="description" content="Learn about East Coast Realty by Zarina - a premier real estate agency in New York City led by Zarina Yusupova with over 20 years of experience.">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11536744618"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-11536744618');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #0100f4;
+            --secondary-color: #00aaff;
+            --dark-blue: #2b3e50;
+            --light-gray: #f9f9f9;
+            --text-dark: #333;
+            --text-light: #fff;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            --section-padding: 80px 0;
+            --border-radius: 15px;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header styles */
+        .main-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            padding: 10px 0;
+            transition: var(--transition);
+        }
+
+        .main-header.scrolled {
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main-header .logo {
+            background: #fff;
+            padding: 5px 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .main-header .logo img {
+            height: 60px;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .main-header .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-header .main-nav ul li a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        .main-header .main-nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .main-header .mobile-menu-toggle {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 24px;
+        }
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            background-attachment: fixed;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-align: center;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: var(--border-radius);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            animation: fadeInDown 1s ease-in-out;
+            transition: transform 0.3s ease;
+        }
+
+        .hero h1:hover {
+            transform: scale(1.03);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-in-out;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .button-container {
+            margin-top: 30px;
+            animation: fadeIn 1.2s ease-in-out;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--text-light);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Section styles */
+        section {
+            padding: var(--section-padding);
+            position: relative;
+        }
+
+        section:nth-of-type(odd) {
+            background-color: #fff;
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--light-gray);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 10px;
+        }
+
+        .section-description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* Founder Section */
+        .founder-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+
+        .founder-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+        }
+
+        .founder-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .founder-image img:hover {
+            transform: scale(1.03);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .founder-image::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary-color);
+            border-radius: var(--border-radius);
+            top: 15px;
+            left: 15px;
+            z-index: -1;
+        }
+
+        .founder-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .founder-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .founder-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .founder-content p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .founder-quote {
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(1, 0, 244, 0.05), rgba(0, 170, 255, 0.05));
+            border-left: 4px solid var(--primary-color);
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        /* Company History */
+        .history-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .history-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            border-radius: 5px;
+        }
+
+        .history-item {
+            margin-bottom: 40px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .history-item::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 5px;
+            width: 30px;
+            height: 30px;
+            background: white;
+            border: 3px solid var(--primary-color);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .history-year {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .history-description {
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        /* Our Values */
+        .values-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .value-card {
+            background: #fff;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-top: -40px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .value-content {
+            padding: 0 25px 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .value-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .value-description {
+            text-align: center;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        /* Team Section */
+        .team-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background: #fff;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .team-photo {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-member:hover .team-photo img {
+            transform: scale(1.1);
+        }
+
+        .team-social {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -50px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            transition: var(--transition);
+            opacity: 0;
+        }
+
+        .team-member:hover .team-social {
+            bottom: 20px;
+            opacity: 1;
+        }
+
+        .team-social a {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .team-social a:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .team-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .team-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .team-position {
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .team-bio {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            background: linear-gradient(rgba(0, 10, 50, 0.85), rgba(0, 10, 50, 0.85)), 
+                        url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1772&q=80') no-repeat center center/cover;
+            background-attachment: fixed;
+            color: var(--text-light);
+            position: relative;
+        }
+
+        .testimonials-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .testimonial-slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            flex: 0 0 100%;
+            padding: 30px;
+        }
+
+        .testimonial-content {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .testimonial-content::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.2);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right:
+            15px;
+            border: 3px solid var(--secondary-color);
+        }
+
+        .author-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .testimonial-dot.active {
+            background: var(--secondary-color);
+            transform: scale(1.2);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
+            margin-top: -50px;
+            margin-bottom: -50px;
+        }
+
+        .cta-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .cta-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .cta-btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: var(--text-light);
+            text-align: center;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            flex: 1;
+            min-width: 200px;
+            text-align: left;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            margin-bottom: 15px;
+            background: #fff;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        .footer-logo p {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            max-width: 300px;
+        }
+
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-links h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 10px;
+            text-align: left;
+        }
+
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .footer-contact {
+            flex: 1;
+            min-width: 200px;
+            text-align: left;
+        }
+
+        .social-media {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .social-media a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            font-size: 1.2rem;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-media a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        .copyright a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive styles */
+        @media (max-width: 991px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-header .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .main-header .main-nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                padding: 20px;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: var(--transition);
+                pointer-events: none;
+            }
+            
+            .main-header .main-nav.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                pointer-events: all;
+            }
+            
+            .main-header .main-nav ul {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+                padding: 15px;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .button-container {
+                gap: 10px;
+            }
+            
+            .btn {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .cta-text {
+                font-size: 1rem;
+            }
+            
+            .founder-image::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-header .logo img {
+                height: 45px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+                padding: 10px;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .cta-btn, .cta-btn-outline {
+                width: 100%;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="East Coast Realty by Zarina">
+                </a>
+            </div>
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="homefinancingtools.html">Home Financing Tools</a></li>
+                    <li><a href="properties.html">Our Properties</a></li>
+                    <li><a href="search.html">Browse All Rentals</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content" data-aos="fade-in">
+            <h1>About East Coast Realty</h1>
+            <p>Your trusted partner in New York City real estate</p>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Meet Our Founder</h2>
+                <p class="section-description">Learn about Zarina Yusupova, the driving force behind East Coast Realty</p>
+            </div>
+            <div class="founder-section">
+                <div class="founder-image" data-aos="fade-right">
+                    <img src="zarina2.jpeg" alt="Zarina Yusupova - Founder & CEO of East Coast Realty">
+                </div>
+                <div class="founder-content" data-aos="fade-left">
+                    <h2>Zarina Yusupova</h2>
+                    <h3>Founder & Principal Broker</h3>
+                    <p>With over 20 years of experience in New York City real estate, Zarina Yusupova has established herself as a respected and knowledgeable industry leader. Her expertise spans residential sales, property management, and investment consulting throughout Manhattan, Brooklyn, and Queens.</p>
+                    <p>Zarina founded East Coast Realty with a vision to provide personalized service that exceeds client expectations. Her deep understanding of the New York City market, combined with her commitment to integrity and transparency, has helped hundreds of families find their perfect homes and investors secure profitable properties.</p>
+                    <div class="founder-quote">
+                        "Real estate is more than just buying and selling properties. It's about helping people create homes, build wealth, and realize their dreams. Every client deserves our best effort, knowledge, and dedication."
+                    </div>
+                    <p>As a long-time New York resident, Zarina's insight into the city's diverse neighborhoods gives her clients a distinct advantage in navigating the competitive real estate landscape. Her multilingual abilities and cultural awareness also make her particularly effective in serving New York's diverse communities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company History -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Our Journey</h2>
+                <p class="section-description">The evolution of East Coast Realty from its founding to today</p>
+            </div>
+            <div class="history-timeline" data-aos="fade-up">
+                <div class="history-item" data-aos="fade-up">
+                    <div class="history-year">2003</div>
+                    <div class="history-description">
+                        <p>East Coast Realty was founded by Zarina Yusupova with a vision to provide exceptional real estate services to the New York City community. Starting with a small office in Queens and a team of just three agents, the company began building its reputation for personalized service and market expertise.</p>
+                    </div>
+                </div>
+                <div class="history-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="history-year">2008</div>
+                    <div class="history-description">
+                        <p>Despite the challenges of the global financial crisis, East Coast Realty not only survived but thrived by focusing on client needs and adapting to market conditions. Our expertise in helping clients navigate difficult market conditions solidified our reputation as a trusted advisor.</p>
+                    </div>
+                </div>
+                <div class="history-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="history-year">2013</div>
+                    <div class="history-description">
+                        <p>To better serve our growing client base, East Coast Realty relocated to our current flagship office on Queens Boulevard. This expanded space allowed us to grow our team and enhance our services to include dedicated investment property consulting and property management divisions.</p>
+                    </div>
+                </div>
+                <div class="history-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="history-year">2018</div>
+                    <div class="history-description">
+                        <p>Celebrating 15 years of excellence, East Coast Realty reached the milestone of having assisted over 1,000 families in buying or selling homes. Our commitment to community involvement also grew with the establishment of our annual neighborhood improvement initiative.</p>
+                    </div>
+                </div>
+                <div class="history-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="history-year">2023</div>
+                    <div class="history-description">
+                        <p>East Coast Realty marked its 20th anniversary by expanding our digital presence and incorporating innovative technology solutions to enhance client experiences. Today, we continue to grow while maintaining the personalized service that has been our hallmark for two decades.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Our Core Values</h2>
+                <p class="section-description">The principles that guide everything we do at East Coast Realty</p>
+            </div>
+            <div class="values-container">
+                <div class="value-card" data-aos="fade-up">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="value-content">
+                        <h3 class="value-title">Integrity</h3>
+                        <p class="value-description">We conduct every transaction with honesty and transparency. Our clients can trust that we always act in their best interest, providing accurate information and ethical guidance throughout the real estate process.</p>
+                    </div>
+                </div>
+                <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="value-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="value-content">
+                        <h3 class="value-title">Excellence</h3>
+                        <p class="value-description">We strive for excellence in every aspect of our service. From market research and property marketing to negotiation and closing, we maintain the highest standards of professionalism and attention to detail.</p>
+                    </div>
+                </div>
+                <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="value-content">
+                        <h3 class="value-title">Client-Focused</h3>
+                        <p class="value-description">Our clients' needs always come first. We take time to understand their unique goals and preferences, tailoring our approach to provide personalized service that exceeds expectations.</p>
+                    </div>
+                </div>
+                <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="value-content">
+                        <h3 class="value-title">Knowledge</h3>
+                        <p class="value-description">We continuously invest in our expertise, staying ahead of market trends, regulations, and best practices. Our deep understanding of New York City real estate empowers our clients to make informed decisions.</p>
+                    </div>
+                </div>
+                <div class="value-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="value-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="value-content">
+                        <h3 class="value-title">Community</h3>
+                        <p class="value-description">We are committed to giving back to the communities we serve. By supporting local initiatives and organizations, we help build stronger, more vibrant neighborhoods throughout New York City.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section team-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Our Team</h2>
+                <p class="section-description">Meet the dedicated professionals who make East Coast Realty exceptional</p>
+            </div>
+            <div class="team-container">
+                <div class="team-member" data-aos="fade-up">
+                    <div class="team-photo">
+                        <img src="zarina2.jpeg" alt="Zarina Yusupova">
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Zarina Yusupova</h3>
+                        <div class="team-position">Founder & Principal Broker</div>
+                        <p class="team-bio">With over 20 years of experience in NYC real estate, Zarina leads our team with expertise and vision.</p>
+                    </div>
+                </div>
+                <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Michael Rodriguez">
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Michael Rodriguez</h3>
+                        <div class="team-position">Senior Sales Agent</div>
+                        <p class="team-bio">Michael specializes in luxury properties and has consistently ranked among the top-producing agents in Queens.</p>
+                    </div>
+                </div>
+                <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Jennifer Chen">
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Jennifer Chen</h3>
+                        <div class="team-position">Investment Property Specialist</div>
+                        <p class="team-bio">With a background in finance, Jennifer helps investors maximize returns on their real estate portfolios.</p>
+                    </div>
+                </div>
+                <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-photo">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="David Washington">
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">David Washington</h3>
+                        <div class="team-position">Property Manager</div>
+                        <p class="team-bio">David oversees our property management division, ensuring both owners and tenants receive exceptional service.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 50px;">
+                <img src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="East Coast Realty Team" style="max-width: 100%; border-radius: var(--border-radius); box-shadow: var(--box-shadow);" data-aos="zoom-in">
+                <p style="margin-top: 15px; font-style: italic; color: #666;">The East Coast Realty team at our annual retreat, discussing new ways to better serve our clients.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-description">Hear from those who've experienced the East Coast Realty difference</p>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial-slider" data-aos="fade-up">
+                    <div class="testimonial-track" id="testimonialTrack">
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">Working with Zarina and her team at East Coast Realty was a game-changer for our home search. They took the time to understand exactly what we were looking for and showed us properties that perfectly matched our needs. Their knowledge of Queens neighborhoods helped us find the perfect location, and their negotiation skills saved us thousands on our purchase.</p>
+                                <div class="testimonial-author">
+                                    <div class="author-image">
+                                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Martinez">
+                                    </div>
+                                    <div class="author-info">
+                                        <h3>Sarah Martinez</h3>
+                                        <p>First-time Homebuyer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">As an investor managing multiple properties, I needed a real estate partner I could trust. East Coast Realty has exceeded my expectations in every way. Their market analysis is spot-on, helping me identify undervalued properties with great potential. Their property management services are equally impressive - responsive, thorough, and always professional.</p>
+                                <div class="testimonial-author">
+                                    <div class="author-image">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Robert Kim">
+                                    </div>
+                                    <div class="author-info">
+                                        <h3>Robert Kim</h3>
+                                        <p>Property Investor</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">Selling our family home of 30 years was emotionally challenging, but Zarina and her team handled everything with such care and professionalism. They guided us through preparing the house for sale, priced it perfectly, and created beautiful marketing materials. The result? Multiple offers within the first week and a sale price that exceeded our expectations!</p>
+                                <div class="testimonial-author">
+                                    <div class="author-image">
+                                        <img src="https://randomuser.me/api/portraits/women/42.jpg" alt="Patricia Johnson">
+                                    </div>
+                                    <div class="author-info">
+                                        <h3>Patricia Johnson</h3>
+                                        <p>Home Seller</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-nav">
+                        <div class="testimonial-dot active" data-index="0"></div>
+                        <div class="testimonial-dot" data-index="1"></div>
+                        <div class="testimonial-dot" data-index="2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title" data-aos="fade-up">Ready to Work With Us?</h2>
+            <p class="cta-text" data-aos="fade-up" data-aos-delay="100">Whether you're buying, selling, or investing, our team is ready to provide the expertise and personalized service you deserve.</p>
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
+                <a href="properties.html" class="btn cta-btn">View Our Properties</a>
+                <a href="tel:+17182712121" class="btn cta-btn-outline">Call Us: 718-271-2121</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="East Coast Realty by Zarina">
+                    <p>Your trusted partner in New York City real estate, specializing in residential sales and investment properties.</p>
+                    <div class="social-media">
+                        <a href="https://www.facebook.com/eastcoastrealtybyzarina/?_rdr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="homefinancingtools.html">Home Financing Tools</a></li>
+                        <li><a href="properties.html">Our Properties</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Residential Sales</a></li>
+                        <li><a href="#">Investment Properties</a></li>
+                        <li><a href="#">Property Management</a></li>
+                        <li><a href="#">Buyer Representation</a></li>
+                        <li><a href="#">Mortgage Guidance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+17182712121">718-271-2121</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:broker@eastcoastrealty.net">broker@eastcoastrealty.net</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> 96-14 Queens Blvd, Flushing, NY 11374</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p>
+                <p>Designed by <a href="https://elanstechworld.com/index.html" target="_blank">Elan's Tech World</a></p>
+                <img src="https://github.com/Elanstech/zarina/blob/main/IMG_1002.PNG?raw=true" alt="Elan's Tech World Logo" style="height:50px; margin-top:10px;">
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS animation library
+            AOS.init({
+                duration: 1000,
+                easing: 'ease-in-out',
+                once: true
+            });
+
+            // Mobile Menu Toggle
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+
+            if (mobileMenuToggle && mainNav) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    mobileMenuToggle.querySelector('i').classList.toggle('fa-bars');
+                    mobileMenuToggle.querySelector('i').classList.toggle('fa-times');
+                });
+            }
+
+            // Close mobile menu when clicking menu items
+            const navLinks = document.querySelectorAll('.main-nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (mainNav) {
+                        mainNav.classList.remove('active');
+                        if (mobileMenuToggle) {
+                            mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+                            mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+                        }
+                    }
+                });
+            });
+
+            // Header scroll effect
+            const header = document.querySelector('.main-header');
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 100) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }
+
+            // Back to top button visibility
+            const backToTop = document.getElementById('backToTop');
+            if (backToTop) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 500) {
+                        backToTop.classList.add('active');
+                    } else {
+                        backToTop.classList.remove('active');
+                    }
+                });
+
+                backToTop.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
+            // Testimonials slider
+            let currentTestimonial = 0;
+            const testimonialTrack = document.getElementById('testimonialTrack');
+            const testimonialDots = document.querySelectorAll('.testimonial-dot');
+            
+            if (testimonialTrack && testimonialDots.length > 0) {
+                // Set up testimonial dot click events
+                testimonialDots.forEach(dot => {
+                    dot.addEventListener('click', function() {
+                        const index = parseInt(this.getAttribute('data-index'));
+                        goToTestimonial(index);
+                    });
+                });
+                
+                // Function to navigate to specific testimonial
+                function goToTestimonial(index) {
+                    currentTestimonial = index;
+                    testimonialTrack.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+                    
+                    // Update active dot
+                    testimonialDots.forEach((dot, i) => {
+                        if (i === currentTestimonial) {
+                            dot.classList.add('active');
+                        } else {
+                            dot.classList.remove('active');
+                        }
+                    });
+                }
+                
+                // Auto rotate testimonials
+                setInterval(function() {
+                    currentTestimonial = (currentTestimonial + 1) % testimonialDots.length;
+                    goToTestimonial(currentTestimonial);
+                }, 6000);
+            }
+        });
+    </script>
+</body>
+</html>
