@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties - East Coast Realty by Zarina</title>
+    <meta name="description" content="Browse our exclusive MLS property listings across New York City. East Coast Realty by Zarina offers a curated selection of homes for sale and rent.">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11536744618"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-11536744618');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #0100f4;
+            --secondary-color: #00aaff;
+            --dark-blue: #2b3e50;
+            --light-gray: #f9f9f9;
+            --text-dark: #333;
+            --text-light: #fff;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --hover-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            --section-padding: 80px 0;
+            --border-radius: 15px;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header styles */
+        .main-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            padding: 10px 0;
+            transition: var(--transition);
+        }
+
+        .main-header.scrolled {
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main-header .logo {
+            background: #fff;
+            padding: 5px 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .main-header .logo img {
+            height: 60px;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .main-header .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-header .main-nav ul li a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        .main-header .main-nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .main-header .mobile-menu-toggle {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 24px;
+        }
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            background-attachment: fixed;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            text-align: center;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: var(--border-radius);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            animation: fadeInDown 1s ease-in-out;
+            transition: transform 0.3s ease;
+        }
+
+        .hero h1:hover {
+            transform: scale(1.03);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-in-out;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .button-container {
+            margin-top: 30px;
+            animation: fadeIn 1.2s ease-in-out;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--text-light);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Section styles */
+        section {
+            padding: var(--section-padding);
+            position: relative;
+        }
+
+        section:nth-of-type(odd) {
+            background-color: #fff;
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--light-gray);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 10px;
+        }
+
+        .section-description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* Widget Section Styles */
+        .widget-section {
+            background: #fff;
+            padding: 80px 0;
+        }
+
+        .widget-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .widget-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .widget-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            padding: 20px;
+        }
+
+        /* Advanced Search Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: #fff;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .feature-icon {
+            height: 200px;
+            background: linear-gradient(135deg, rgba(1, 0, 244, 0.05), rgba(0, 170, 255, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon i {
+            font-size: 4rem;
+            color: var(--primary-color);
+        }
+
+        .feature-content {
+            padding: 25px;
+        }
+
+        .feature-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .feature-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Browse Rentals CTA Section */
+        .cta-section {
+            background: linear-gradient(rgba(0, 10, 50, 0.85), rgba(0, 10, 50, 0.85)), 
+                        url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') no-repeat center center/cover;
+            background-attachment: fixed;
+            padding: 100px 0;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            background: #fff;
+            color: var(--primary-color);
+            padding: 15px 35px;
+            font-size: 1.2rem;
+        }
+
+        .cta-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Property Insights Section */
+        .insights-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .insight-item {
+            flex: 1;
+            min-width: 300px;
+            background: #fff;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .insight-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .insight-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .insight-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .insight-icon i {
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .insight-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+        }
+
+        .insight-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: var(--text-light);
+            text-align: center;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            flex: 1;
+            min-width: 200px;
+            text-align: left;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            margin-bottom: 15px;
+            background: #fff;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        .footer-logo p {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            max-width: 300px;
+        }
+
+        .footer-links {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-links h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 10px;
+            text-align: left;
+        }
+
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .footer-contact {
+            flex: 1;
+            min-width: 200px;
+            text-align: left;
+        }
+
+        .social-media {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .social-media a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            font-size: 1.2rem;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-media a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        .copyright a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--secondary-color);
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive styles */
+        @media (max-width: 991px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-header .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .main-header .main-nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                padding: 20px;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: var(--transition);
+                pointer-events: none;
+            }
+            
+            .main-header .main-nav.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                pointer-events: all;
+            }
+            
+            .main-header .main-nav ul {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+                padding: 15px;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .button-container {
+                gap: 10px;
+            }
+            
+            .btn {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-header .logo img {
+                height: 45px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+                padding: 10px;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="East Coast Realty by Zarina">
+                </a>
+            </div>
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="homefinancingtools.html">Home Financing Tools</a></li>
+                    <li><a href="properties.html">Our Properties</a></li>
+                    <li><a href="search.html">Browse All Rentals</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content" data-aos="fade-in">
+            <h1>Exclusive Properties</h1>
+            <p>Discover our carefully selected portfolio of exceptional properties</p>
+        </div>
+    </section>
+
+    <!-- MLS Search Widget Section -->
+    <section id="search-widget" class="widget-section">
+        <div class="container">
+            <h2 class="text-center">Search MLS Properties</h2>
+            <p class="section-subtitle">Use our advanced search tool to find your perfect property in the MLS database.</p>
+            <div class="widget-container">
+                <!-- Embed the MLS widget here -->
+                <script charset="UTF-8" type="text/javascript" id="idxwidgetsrc-59692" src="//eastcoastrealtybyzarina.idxbroker.com/idx/widgets/59692"></script>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Browse Rentals CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Looking for Rental Properties?</h2>
+                <p>Browse our collection of available rentals throughout New York City. From cozy apartments to spacious houses, we have options for every lifestyle and budget.</p>
+                <a href="search.html" class="btn cta-btn">Browse All Rentals</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Search Features Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Advanced Search Features</h2>
+                <p class="section-description">Our property search tools help you find exactly what you're looking for</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Location-Based Search</h3>
+                        <p class="feature-description">Search for properties in specific neighborhoods, school districts, or within a certain radius of your preferred location. Our detailed maps help you visualize exactly where each property is situated in relation to important amenities.</p>
+                    </div>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Customizable Filters</h3>
+                        <p class="feature-description">Refine your search with our extensive set of filters including price range, square footage, number of bedrooms and bathrooms, property type, and specific amenities like swimming pools, garages, or waterfront views.</p>
+                    </div>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Saved Searches & Alerts</h3>
+                        <p class="feature-description">Save your favorite search criteria and receive instant notifications when new properties matching your preferences hit the market. Never miss out on your dream home again with our timely property alerts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Market Insights Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">New York Real Estate Insights</h2>
+                <p class="section-description">Current trends and opportunities in the NYC property market</p>
+            </div>
+            <div class="insights-container">
+                <div class="insight-item" data-aos="fade-up">
+                    <div class="insight-header">
+                        <div class="insight-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="insight-title">Market Trends</h3>
+                    </div>
+                    <p class="insight-description">The New York City real estate market continues to evolve with neighborhoods like Queens and Brooklyn showing strong growth potential. Property values in these areas have increased by an average of 5-7% annually over the past three years, making them attractive options for both homebuyers and investors.</p>
+                </div>
+                <div class="insight-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="insight-header">
+                        <div class="insight-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="insight-title">Property Types</h3>
+                    </div>
+                    <p class="insight-description">From sleek Manhattan condos to charming Brooklyn brownstones and spacious Queens single-family homes, New York offers diverse property types to suit various lifestyles. Recent trends show increased demand for properties with outdoor space and home office capabilities, reflecting changes in how people live and work.</p>
+                </div>
+                <div class="insight-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="insight-header">
+                        <div class="insight-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3 class="insight-title">Investment Opportunities</h3>
+                    </div>
+                    <p class="insight-description">With the city's robust rental market and strong appreciation history, New York real estate continues to be a sound long-term investment. Emerging neighborhoods like Ridgewood, Flushing, and Sunnyside offer particularly attractive opportunities for investors seeking properties with strong potential for equity growth and rental income.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="East Coast Realty by Zarina">
+                    <p>Your trusted partner in New York City real estate, specializing in residential sales and investment properties.</p>
+                    <div class="social-media">
+                        <a href="https://www.facebook.com/eastcoastrealtybyzarina/?_rdr" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="homefinancingtools.html">Home Financing Tools</a></li>
+                        <li><a href="properties.html">Our Properties</a></li>
+                        <li><a href="search.html">Browse All Rentals</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Residential Sales</a></li>
+                        <li><a href="#">Investment Properties</a></li>
+                        <li><a href="#">Property Management</a></li>
+                        <li><a href="#">Buyer Representation</a></li>
+                        <li><a href="#">Mortgage Guidance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-phone-alt"></i> <a href="tel:+17182712121">718-271-2121</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:broker@eastcoastrealty.net">broker@eastcoastrealty.net</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> 96-14 Queens Blvd, Flushing, NY 11374</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 East Coast Realty by Zarina. All Rights Reserved.</p>
+                <p>Designed by <a href="https://elanstechworld.com/index.html" target="_blank">Elan's Tech World</a></p>
+                <img src="https://github.com/Elanstech/zarina/blob/main/IMG_1002.PNG?raw=true" alt="Elan's Tech World Logo" style="height:50px; margin-top:10px;">
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS animation library
+            AOS.init({
+                duration: 1000,
+                easing: 'ease-in-out',
+                once: true
+            });
+
+            // Mobile Menu Toggle
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mainNav = document.getElementById('main-nav');
+
+            if (mobileMenuToggle && mainNav) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    mobileMenuToggle.querySelector('i').classList.toggle('fa-bars');
+                    mobileMenuToggle.querySelector('i').classList.toggle('fa-times');
+                });
+            }
+
+            // Close mobile menu when clicking menu items
+            const navLinks = document.querySelectorAll('.main-nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (mainNav) {
+                        mainNav.classList.remove('active');
+                        if (mobileMenuToggle) {
+                            mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+                            mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+                        }
+                    }
+                });
+            });
+
+            // Header scroll effect
+            const header = document.querySelector('.main-header');
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 100) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }
+
+            // Back to top button visibility
+            const backToTop = document.getElementById('backToTop');
+            if (backToTop) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 500) {
+                        backToTop.classList.add('active');
+                    } else {
+                        backToTop.classList.remove('active');
+                    }
+                });
+
+                backToTop.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
