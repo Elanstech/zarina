@@ -146,10 +146,10 @@
   },
   {
     "id": 5,
-    "title": "313 Onderdonk Ave, Ridgewood, NY 11385",
-    "address": "313 Onderdonk Ave, Ridgewood, NY 11385",
-    "price": "$2900 + Electricity & Gas",
-    "description": "Charming 2-bedroom apartment on the 1st floor in Ridgewood. This pet-friendly unit offers a comfortable living space with 1 bathroom. Great location with easy access to neighborhood amenities.",
+    "title": "106-22 Corona Ave., Corona, NY 11368",
+    "address": "106-22 Corona Ave., Corona, NY 11368",
+    "price": "$1000",
+    "description": "Room for rent at 106-22 Corona Avenue. $1000/month, includes utilities and WiFi. Shared bathroom.",
     "images": [
       "313Onderdonk Ave.jpeg",
       "313Onderdonk Ave1.jpeg",
@@ -163,20 +163,20 @@
     ],
     "status": "For Rent",
     "propertyType": "Apartment",
-    "neighborhood": "Ridgewood",
-    "beds": 2,
+    "neighborhood": "Corona",
+    "beds": 1,
     "baths": 1,
     "features": [
       "Pet friendly",
-      "1st floor",
-      "2 bedrooms",
+      "Includes Utilites",
+      "1 bedrooms",
       "1 bathroom"
     ],
     "specs": [
-      { "icon": "fas fa-bed", "text": "2 Bedrooms" },
+      { "icon": "fas fa-bed", "text": "1 Bedrooms" },
       { "icon": "fas fa-bath", "text": "1 Bathroom" },
       { "icon": "fas fa-building", "text": "Apartment" },
-      { "icon": "fas fa-calendar-alt", "text": "Available Now" }
+      { "icon": "fas fa-calendar-alt", "text": "Available Apr 1" }
     ],
     "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.3!2d-73.9!3d40.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25c!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus",
     "featured": false
