@@ -326,5 +326,111 @@
     ],
     "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.2!2d-73.8!3d40.73!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25d!5e0!3m2!1sen!2sus!4v1653501677986!5m2!1sen!2sus",
     "featured": false
+  },
+  {
+    "id": 10,
+    "title": "6259 108 St #4U, Forest Hills, NY 11375",
+    "address": "6259 108 St #4U, Forest Hills, NY 11375",
+    "price": "$2100 Monthly Rent (all utilities included except electric)",
+    "description": "Studio apartment for rent with all utilities included except electricity. Board approval required. Conveniently located in Forest Hills.",
+    "images": [],
+    "status": "For Rent",
+    "propertyType": "Studio",
+    "neighborhood": "Forest Hills",
+    "beds": 0,
+    "baths": 1,
+    "features": [
+      "All utilities included except electric",
+      "Board approval required",
+      "4th floor unit"
+    ],
+    "specs": [
+      { "icon": "fas fa-building", "text": "Studio" },
+      { "icon": "fas fa-bath", "text": "1 Bathroom" },
+      { "icon": "fas fa-map-marker-alt", "text": "Forest Hills" },
+      { "icon": "fas fa-calendar-alt", "text": "Available Now" }
+    ],
+    "mapUrl": "",
+    "featured": false,
+    "contact": "Zarina Yusupova"
+  },
+  {
+    "id": 11,
+    "title": "150-15 79th Avenue, Flushing, NY 11367",
+    "address": "150-15 79th Avenue, Apt 6E, Flushing, NY 11367",
+    "price": "$1000 Monthly Rent",
+    "description": "Room for rent with shared bathroom and kitchen. Located in Flushing, NY.",
+    "images": [],
+    "status": "For Rent",
+    "propertyType": "Room",
+    "neighborhood": "Flushing",
+    "beds": 1,
+    "baths": 1,
+    "features": [
+      "Shared bathroom",
+      "Shared kitchen",
+      "6th floor unit"
+    ],
+    "specs": [
+      { "icon": "fas fa-bed", "text": "Room" },
+      { "icon": "fas fa-bath", "text": "Shared Bathroom" },
+      { "icon": "fas fa-map-marker-alt", "text": "Flushing" },
+      { "icon": "fas fa-calendar-alt", "text": "Available Now" }
+    ],
+    "mapUrl": "",
+    "featured": false,
+    "contact": "Gabriel (Gaby)"
+  },
+  {
+    "id": 12,
+    "title": "63-21 Boelsen Cres, Rego Park, NY 11374",
+    "address": "63-21 Boelsen Cres, Rego Park, NY 11374, United States",
+    "price": "$3000 Monthly Rent",
+    "description": "Spacious 3-bedroom, 1-bathroom apartment in Rego Park. Convenient location with easy access to local amenities.",
+    "images": [],
+    "status": "For Rent",
+    "propertyType": "Apartment",
+    "neighborhood": "Rego Park",
+    "beds": 3,
+    "baths": 1,
+    "features": [
+      "3 bedrooms",
+      "1 bathroom",
+      "Residential neighborhood"
+    ],
+    "specs": [
+      { "icon": "fas fa-bed", "text": "3 Bedrooms" },
+      { "icon": "fas fa-bath", "text": "1 Bathroom" },
+      { "icon": "fas fa-building", "text": "Apartment" },
+      { "icon": "fas fa-calendar-alt", "text": "Available Now" }
+    ],
+    "mapUrl": "",
+    "featured": false
+  },
+  {
+    "id": 13,
+    "title": "6712 Yellowstone Blvd, Forest Hills, NY 11375",
+    "address": "6712 Yellowstone Blvd, Apt D21, Forest Hills, NY 11375",
+    "price": "$2,900 Monthly Rent",
+    "description": "2-bedroom, 1-bathroom apartment located in Forest Hills. Excellent location with easy access to public transportation and local amenities.",
+    "images": [],
+    "status": "For Rent",
+    "propertyType": "Apartment",
+    "neighborhood": "Forest Hills",
+    "beds": 2,
+    "baths": 1,
+    "features": [
+      "2 bedrooms",
+      "1 bathroom",
+      "Convenient location"
+    ],
+    "specs": [
+      { "icon": "fas fa-bed", "text": "2 Bedrooms" },
+      { "icon": "fas fa-bath", "text": "1 Bathroom" },
+      { "icon": "fas fa-building", "text": "Apartment" },
+      { "icon": "fas fa-calendar-alt", "text": "Available Now" }
+    ],
+    "mapUrl": "",
+    "featured": false
   }
 ]
